@@ -1,11 +1,10 @@
 # scatteredpearls.studio
 
-Website für das Studio **Scattered Pearls**. (Noch nicht gebaut — Platzhalter.)
+Website for the **Scattered Pearls** studio. (Not built yet — placeholder.)
 
 - **Domain:** `scatteredpearls.studio`
-- **Apps als Pfade:** z. B. `scatteredpearls.studio/butterfingers` (eigene App-Domains gibt es
-  bewusst nicht).
-- **Inhalt später:** Studio-Vorstellung, App-Liste/Landingpages, Datenschutz („keine Daten"),
-  Kontakt/Support.
+- **Apps as paths:** e.g. `scatteredpearls.studio/butterfingers` (no separate per-app domains,
+  by design).
+- **Later:** studio intro, app list / landing pages, privacy label ("no data"), contact/support.
 
-Design & Marke kommen aus dem Studio-Repo `../scatteredpearls` (Design-System).
+Design & brand come from the studio repo `../scatteredpearls` (design system).
