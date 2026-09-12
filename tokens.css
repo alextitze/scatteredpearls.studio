@@ -79,6 +79,9 @@
   --sp-accent-2-strong: #77b3ab;
   --sp-danger-color:    #d0605a;   /* warm coral */
 
+  --sp-accent-soft:     rgba(179, 160, 209, .16);
+  --sp-danger-soft:     rgba(208, 96, 90, .12);
+
   /* Semantic slots — components reference these only */
   --surface-0:     var(--sp-paper);
   --surface-1:     var(--sp-surface);
@@ -92,7 +95,9 @@
   --accent:        var(--sp-accent);
   --accent-2:      var(--sp-accent-2);
   --on-accent:     #ffffff;
+  --accent-soft:   var(--sp-accent-soft);
   --danger:        var(--sp-danger-color);
+  --danger-soft:   var(--sp-danger-soft);
   --focus-ring:    rgba(124, 92, 174, .5);
 
   --radius-control: var(--sp-radius-md);
