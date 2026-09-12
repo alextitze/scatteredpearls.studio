@@ -1,0 +1,29 @@
+/* Scattered Pearls — platform hardening for web-in-native-shell (Capacitor / WKWebView)
+   plus baseline accessibility. Vendor alongside tokens.css and link it AFTER tokens.css.
+   App components keep their own styles; this only sets platform-safe defaults. */
+
+/* Don't let iOS silently re-scale text. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* No grey tap flash — apps provide their own :active press state instead. */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* iOS zooms the whole page when a focused text field is < 16px. Keep them at 16px. */
+input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+select, textarea { font-size: 16px; }
+
+/* Remove the double-tap-zoom delay on interactive elements. */
+a, button, label, select, summary, [role="button"] { touch-action: manipulation; }
+
+/* Keep rubber-band scrolling from bouncing the whole app shell. */
+html, body { overscroll-behavior: contain; }
+
+/* Respect Reduce Motion: damp animations/transitions to near-instant (fade, don't move). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
