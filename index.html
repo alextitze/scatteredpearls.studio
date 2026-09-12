@@ -1,11 +1,101 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="warm">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scattered Pearls Studio</title>
+  <title>Scattered Pearls — coming soon</title>
+  <meta name="description" content="A tiny studio for lean, ad-free, pay-once apps. No accounts, no tracking. First app coming soon.">
+  <meta name="theme-color" content="#f6f1e9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238f7ec2'%3E%3Crect x='3' y='3' width='4.5' height='4.5' rx='1.3'/%3E%3Crect x='9.75' y='3' width='4.5' height='4.5' rx='1.3'/%3E%3Crect x='16.5' y='3' width='4.5' height='4.5' rx='1.3'/%3E%3Crect x='3' y='9.75' width='4.5' height='4.5' rx='1.3' opacity='.7'/%3E%3Crect x='9.75' y='9.75' width='4.5' height='4.5' rx='1.3' opacity='.7'/%3E%3Crect x='16.5' y='9.75' width='4.5' height='4.5' rx='1.3' opacity='.7'/%3E%3Crect x='3' y='16.5' width='4.5' height='4.5' rx='1.3' opacity='.45'/%3E%3Crect x='9.75' y='16.5' width='4.5' height='4.5' rx='1.3' opacity='.45'/%3E%3Crect x='16.5' y='16.5' width='4.5' height='4.5' rx='1.3' opacity='.45'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/hanken-400.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/hanken-600.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/hanken-700.woff2") format("woff2"); }
+    @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/bricolage-600.woff2") format("woff2"); }
+    @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/bricolage-700.woff2") format("woff2"); }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(760px 420px at 50% -8%, rgba(179, 160, 209, .16), transparent 60%),
+        var(--surface-0);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: var(--sp-text-md);
+      line-height: var(--sp-leading-normal);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page { flex: 1 0 auto; width: 100%; max-width: 680px; margin: 0 auto; padding: var(--sp-space-8) var(--sp-space-5); display: flex; flex-direction: column; justify-content: center; gap: var(--sp-space-6); }
+
+    .pearls { display: flex; gap: var(--sp-space-2); }
+    .pearls span { width: 12px; height: 12px; border-radius: var(--sp-radius-pill); background: var(--accent); }
+    .pearls span:nth-child(2) { opacity: .7; }
+    .pearls span:nth-child(3) { opacity: .5; }
+    .pearls span:nth-child(4) { background: var(--accent-2); opacity: .8; }
+
+    .brand { display: flex; flex-direction: column; gap: var(--sp-space-3); }
+    h1 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-3xl); line-height: var(--sp-leading-tight); letter-spacing: var(--sp-tracking-tight); }
+    .claim { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-xl); color: var(--text-soft); }
+    .lede { font-size: var(--sp-text-lg); color: var(--text-soft); max-width: 46ch; }
+
+    .badges { display: flex; flex-wrap: wrap; gap: var(--sp-space-2); }
+    .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
+
+    .app { display: flex; align-items: center; gap: var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-5); }
+    .app .icon { flex: 0 0 auto; width: 52px; height: 52px; border-radius: var(--radius-control); background: var(--pad-loop-active-bg); box-shadow: var(--pad-active-shadow); display: flex; align-items: center; justify-content: center; }
+    .app .icon svg { width: 30px; height: 30px; }
+    .app .meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .app .name { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); }
+    .app .desc { color: var(--text-muted); font-size: var(--sp-text-sm); }
+    .app .tag { margin-left: auto; flex: 0 0 auto; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); text-transform: uppercase; letter-spacing: var(--sp-tracking-label); color: var(--accent); background: rgba(179, 160, 209, .16); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-3); white-space: nowrap; }
+
+    footer { flex-shrink: 0; text-align: center; color: var(--text-muted); font-size: var(--sp-text-sm); padding: var(--sp-space-5); border-top: 1px solid var(--border); }
+
+    @media (max-width: 480px) {
+      h1 { font-size: var(--sp-text-2xl); }
+      .app { flex-wrap: wrap; }
+      .app .tag { margin-left: 0; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Scattered Pearls Studio</h1>
+  <main class="page">
+    <div class="pearls" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <div class="brand">
+      <h1>Scattered Pearls</h1>
+      <div class="claim">Small, precious, scattered pearls.</div>
+    </div>
+
+    <p class="lede">A tiny studio for lean apps you buy once and simply use — no ads, no accounts, no tracking.</p>
+
+    <div class="badges">
+      <span class="badge">ad-free</span>
+      <span class="badge">pay once</span>
+      <span class="badge">no accounts</span>
+      <span class="badge">no data collection</span>
+    </div>
+
+    <div class="app">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><rect x="3" y="3" width="4.5" height="4.5" rx="1.3"/><rect x="9.75" y="3" width="4.5" height="4.5" rx="1.3"/><rect x="16.5" y="3" width="4.5" height="4.5" rx="1.3"/><rect x="3" y="9.75" width="4.5" height="4.5" rx="1.3" opacity=".75"/><rect x="9.75" y="9.75" width="4.5" height="4.5" rx="1.3" opacity=".75"/><rect x="16.5" y="9.75" width="4.5" height="4.5" rx="1.3" opacity=".75"/><rect x="3" y="16.5" width="4.5" height="4.5" rx="1.3" opacity=".5"/><rect x="9.75" y="16.5" width="4.5" height="4.5" rx="1.3" opacity=".5"/><rect x="16.5" y="16.5" width="4.5" height="4.5" rx="1.3" opacity=".5"/></svg>
+      </div>
+      <div class="meta">
+        <span class="name">Butterfingers</span>
+        <span class="desc">a soundboard — loops &amp; one-shots, finger-drumming</span>
+      </div>
+      <span class="tag">coming soon</span>
+    </div>
+  </main>
+
+  <footer>© 2026 Scattered Pearls · no accounts · no tracking</footer>
 </body>
 </html>
