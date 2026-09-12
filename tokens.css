@@ -156,3 +156,29 @@
   --sp-vol-fill:     rgba(255, 255, 255, .50);
   --sp-sheet-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
 }
+
+/* ── Increase Contrast (maps to iOS "Increase Contrast" / Android high contrast) ──────
+   Drops the muted step to full body text, strengthens borders and the focus ring.
+   Scoped per theme so it composes with the light/dark blocks above. */
+@media (prefers-contrast: more) {
+  :root:not([data-theme="dark"]) {                 /* light (auto or forced) */
+    --sp-muted:       var(--sp-ink-soft);
+    --sp-line:        rgba(42, 36, 32, .28);
+    --sp-line-strong: rgba(42, 36, 32, .5);
+    --focus-ring:     rgba(95, 63, 181, .9);
+  }
+  [data-theme="dark"] {                            /* forced dark */
+    --sp-muted:       var(--sp-ink-soft);
+    --sp-line:        rgba(255, 255, 255, .30);
+    --sp-line-strong: rgba(255, 255, 255, .5);
+    --focus-ring:     rgba(155, 125, 240, .95);
+  }
+}
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root:not([data-theme="warm"]):not([data-theme="light"]) {   /* dark (auto) — wins on specificity */
+    --sp-muted:       var(--sp-ink-soft);
+    --sp-line:        rgba(255, 255, 255, .30);
+    --sp-line-strong: rgba(255, 255, 255, .5);
+    --focus-ring:     rgba(155, 125, 240, .95);
+  }
+}
