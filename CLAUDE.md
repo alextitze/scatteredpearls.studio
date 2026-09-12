@@ -13,7 +13,7 @@ Follow the Scattered Pearls studio conventions:
 ## App-specific
 
 - Static site (GitHub Pages), custom domain via `CNAME`. Apps live as paths
-  (e.g. `scatteredpearls.studio/butterfingers`).
+  (e.g. `scatteredpearls.studio/blitzfingers`).
 - Consumes the shared design system: `tokens.css` is **vendored** (a copy) from
   `../scatteredpearls/design-system/tokens.css`. Re-sync it when the tokens change.
 - Brand fonts are **self-hosted** in `fonts/` (no CDN) so no visitor data leaves to a

@@ -4,7 +4,7 @@ The website for **Scattered Pearls** — a tiny studio for lean, ad-free, pay-on
 No accounts, no tracking.
 
 - **Domain:** `scatteredpearls.studio`
-- **Apps as paths:** e.g. `scatteredpearls.studio/butterfingers` (no separate per-app
+- **Apps as paths:** e.g. `scatteredpearls.studio/blitzfingers` (no separate per-app
   domains, by design).
 - **Status:** coming soon.
 
