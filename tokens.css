@@ -1,22 +1,17 @@
 /* Scattered Pearls — design tokens (source of truth).
-   Three layers: Foundation (:root, studio-wide, app-agnostic) → Theme
-   ([data-theme], per-app skin, swappable) → Semantic slots (what components
-   consume). Components must reference only the semantic slots, never the raw
-   --sp-* values, so a theme swap re-skins an app without touching its code. */
+   Three layers:
+     Foundation  — theme-agnostic scales (type, space, radii, motion) on :root.
+     Theme       — light (warm) is the default; dark follows the OS via
+                   prefers-color-scheme, or is forced with [data-theme="dark"].
+                   [data-theme="warm"|"light"] forces light.
+     Semantic    — the slots components consume (--surface-*, --text, --accent,
+                   --pad-*, …). Components reference ONLY these slots (plus the
+                   documented --sp-* type/space/radii scales) — never raw theme
+                   colours — so a theme swap re-skins an app without code changes.
+   Colour choices meet WCAG AA (see contrast notes). */
 
-/* ── Layer 1 · Foundation (studio-wide) ───────────────────────────── */
 :root {
-  /* Neutrals — warm */
-  --sp-paper:        #f6f1e9;
-  --sp-surface:      #fffdf9;
-  --sp-surface-2:    #efe8dc;
-  --sp-ink:          #2a2420;
-  --sp-ink-soft:     #4a4139;
-  --sp-muted:        #8a8074;
-  --sp-line:         rgba(42, 36, 32, .09);
-  --sp-line-strong:  rgba(42, 36, 32, .16);
-
-  /* Type */
+  /* ── Foundation · scales (theme-agnostic) ── */
   --sp-font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --sp-font-body:    "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
 
@@ -41,48 +36,43 @@
   --sp-tracking-label: 0.16em;
   --sp-tracking-tight: -0.01em;
 
-  /* Space — 4px rhythm */
-  --sp-space-1:  4px;
-  --sp-space-2:  8px;
-  --sp-space-3:  12px;
-  --sp-space-4:  16px;
-  --sp-space-5:  24px;
-  --sp-space-6:  32px;
-  --sp-space-7:  48px;
-  --sp-space-8:  64px;
+  --sp-space-1: 4px;  --sp-space-2: 8px;  --sp-space-3: 12px; --sp-space-4: 16px;
+  --sp-space-5: 24px; --sp-space-6: 32px; --sp-space-7: 48px; --sp-space-8: 64px;
 
-  /* Radii */
-  --sp-radius-sm:   8px;
-  --sp-radius-md:   14px;
-  --sp-radius-lg:   18px;
-  --sp-radius-xl:   22px;
-  --sp-radius-pill: 999px;
+  --sp-radius-sm: 8px; --sp-radius-md: 14px; --sp-radius-lg: 18px;
+  --sp-radius-xl: 22px; --sp-radius-pill: 999px;
 
-  /* Elevation — soft, warm */
+  --sp-ease: cubic-bezier(.2, .7, .3, 1);
+  --sp-dur-fast: 0.12s; --sp-dur-base: 0.20s;
+
+  /* ── Theme · light (warm) — default appearance ── */
+  --sp-paper:        #f6f1e9;
+  --sp-surface:      #fffdf9;
+  --sp-surface-2:    #efe8dc;
+  --sp-ink:          #2a2420;
+  --sp-ink-soft:     #4a4139;
+  --sp-muted:        #736a5e;   /* 4.7:1 on paper, 5.2:1 on surface */
+  --sp-line:         rgba(42, 36, 32, .09);
+  --sp-line-strong:  rgba(42, 36, 32, .16);
+
   --sp-shadow-1: 0 1px 2px rgba(42, 36, 32, .05);
   --sp-shadow-2: 0 2px 6px rgba(42, 36, 32, .06);
   --sp-shadow-3: 0 14px 34px rgba(42, 36, 32, .08);
 
-  /* Motion */
-  --sp-ease:      cubic-bezier(.2, .7, .3, 1);
-  --sp-dur-fast:  0.12s;
-  --sp-dur-base:  0.20s;
-}
-
-/* ── Layer 2 · Theme "warm" (Blitzfingers skin) ──────────────────────
-   Raw accents + the semantic slots the app consumes. A second theme is a
-   second [data-theme="…"] block that redefines the same slots. */
-[data-theme="warm"] {
-  --sp-accent:          #b3a0d1;   /* lilac — loops */
-  --sp-accent-strong:   #9a83c4;
-  --sp-accent-2:        #8fc4bd;   /* teal — one-shots */
+  --sp-accent:          #7450c0;   /* lilac/purple — loops; white text 5.8:1 */
+  --sp-accent-strong:   #5f3fb5;   /* gradient dark end; white text 7.3:1 */
+  --sp-accent-2:        #8fc4bd;   /* teal — one-shots (flash accent only) */
   --sp-accent-2-strong: #77b3ab;
-  --sp-danger-color:    #d0605a;   /* warm coral */
+  --sp-danger-color:    #b84a44;   /* warm red; white text 5.1:1 */
+  --sp-accent-soft:     rgba(116, 80, 192, .14);
+  --sp-danger-soft:     rgba(184, 74, 68, .12);
 
-  --sp-accent-soft:     rgba(179, 160, 209, .16);
-  --sp-danger-soft:     rgba(208, 96, 90, .12);
+  --sp-key-bg:      rgba(42, 36, 32, .10);
+  --sp-vol-track:   rgba(42, 36, 32, .12);
+  --sp-vol-fill:    rgba(42, 36, 32, .45);
+  --sp-sheet-shadow: 0 -8px 30px rgba(42, 36, 32, .18);
 
-  /* Semantic slots — components reference these only */
+  /* ── Semantic slots (theme-agnostic mappings — the app's contract) ── */
   --surface-0:     var(--sp-paper);
   --surface-1:     var(--sp-surface);
   --surface-2:     var(--sp-surface-2);
@@ -98,7 +88,7 @@
   --accent-soft:   var(--sp-accent-soft);
   --danger:        var(--sp-danger-color);
   --danger-soft:   var(--sp-danger-soft);
-  --focus-ring:    rgba(124, 92, 174, .5);
+  --focus-ring:    rgba(116, 80, 192, .55);
 
   --radius-control: var(--sp-radius-md);
   --radius-pad:     var(--sp-radius-lg);
@@ -114,7 +104,55 @@
   --pad-loop-active-bg:   linear-gradient(160deg, var(--sp-accent), var(--sp-accent-strong));
   --pad-shot-active-bg:   linear-gradient(160deg, var(--sp-accent-2), var(--sp-accent-2-strong));
   --pad-active-text:      var(--on-accent);
-  --pad-active-shadow:    0 8px 22px rgba(124, 92, 174, .28);
-  --pad-active-ring:      0 0 0 2px var(--focus-ring), 0 8px 26px rgba(124, 92, 174, .35);
+  --pad-active-shadow:    0 8px 22px rgba(95, 63, 181, .30);
+  --pad-active-ring:      0 0 0 2px var(--focus-ring), 0 8px 26px rgba(95, 63, 181, .38);
   --pad-add-border:       1px dashed var(--sp-line-strong);
+
+  /* Keycaps, volume indicator, sheet elevation */
+  --key-bg:         var(--sp-key-bg);
+  --key-active-bg:  rgba(255, 255, 255, .22);
+  --vol-track:      var(--sp-vol-track);
+  --vol-fill:       var(--sp-vol-fill);
+  --sheet-shadow:   var(--sp-sheet-shadow);
+}
+
+/* ── Theme · dark ──────────────────────────────────────────────────────
+   Overrides the raw theme colours; the semantic slots above follow. Applies
+   when the OS is dark (unless a light theme is forced) and when [data-theme="dark"]
+   is set. Accents stay the deep purple (white text still passes on dark). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="warm"]):not([data-theme="light"]) {
+    --sp-paper:        #17151b;
+    --sp-surface:      #201d26;
+    --sp-surface-2:    #2a2531;
+    --sp-ink:          #f1ede6;
+    --sp-ink-soft:     #cfc7bb;
+    --sp-muted:        #a49a8d;
+    --sp-line:         rgba(255, 255, 255, .10);
+    --sp-line-strong:  rgba(255, 255, 255, .18);
+    --sp-shadow-1: 0 1px 2px rgba(0, 0, 0, .40);
+    --sp-shadow-2: 0 2px 8px rgba(0, 0, 0, .50);
+    --sp-shadow-3: 0 14px 34px rgba(0, 0, 0, .55);
+    --sp-key-bg:       rgba(255, 255, 255, .14);
+    --sp-vol-track:    rgba(255, 255, 255, .12);
+    --sp-vol-fill:     rgba(255, 255, 255, .50);
+    --sp-sheet-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
+  }
+}
+[data-theme="dark"] {
+  --sp-paper:        #17151b;
+  --sp-surface:      #201d26;
+  --sp-surface-2:    #2a2531;
+  --sp-ink:          #f1ede6;
+  --sp-ink-soft:     #cfc7bb;
+  --sp-muted:        #a49a8d;
+  --sp-line:         rgba(255, 255, 255, .10);
+  --sp-line-strong:  rgba(255, 255, 255, .18);
+  --sp-shadow-1: 0 1px 2px rgba(0, 0, 0, .40);
+  --sp-shadow-2: 0 2px 8px rgba(0, 0, 0, .50);
+  --sp-shadow-3: 0 14px 34px rgba(0, 0, 0, .55);
+  --sp-key-bg:       rgba(255, 255, 255, .14);
+  --sp-vol-track:    rgba(255, 255, 255, .12);
+  --sp-vol-fill:     rgba(255, 255, 255, .50);
+  --sp-sheet-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
 }
