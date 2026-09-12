@@ -69,7 +69,7 @@
   --sp-dur-base:  0.20s;
 }
 
-/* ── Layer 2 · Theme "warm" (Butterfingers skin) ──────────────────────
+/* ── Layer 2 · Theme "warm" (Blitzfingers skin) ──────────────────────
    Raw accents + the semantic slots the app consumes. A second theme is a
    second [data-theme="…"] block that redefines the same slots. */
 [data-theme="warm"] {
