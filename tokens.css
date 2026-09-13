@@ -61,10 +61,11 @@
 
   --sp-accent:          #d83a2a;   /* coral/red (Blitzfingers) — white text 4.6:1 */
   --sp-accent-strong:   #b8321f;   /* gradient dark end; white text 6.0:1 */
-  --sp-accent-2:        #8fc4bd;   /* teal — one-shots (flash accent only) */
-  --sp-accent-2-strong: #77b3ab;
+  --sp-accent-2:        #22796d;   /* deep teal — one-shots; white text 5.2:1, readable as text */
+  --sp-accent-2-strong: #1a6255;
   --sp-danger-color:    #8f2d3b;   /* bordeaux — distinct from the red accent */
   --sp-accent-soft:     rgba(216, 58, 42, .14);
+  --sp-accent-2-soft:   rgba(34, 121, 109, .16);
   --sp-danger-soft:     rgba(143, 45, 59, .12);
 
   --sp-key-bg:      rgba(42, 36, 32, .10);
@@ -86,6 +87,7 @@
   --accent-2:      var(--sp-accent-2);
   --on-accent:     #ffffff;
   --accent-soft:   var(--sp-accent-soft);
+  --accent-2-soft: var(--sp-accent-2-soft);
   --danger:        var(--sp-danger-color);
   --danger-soft:   var(--sp-danger-soft);
   --focus-ring:    rgba(216, 58, 42, .6);
