@@ -40,7 +40,8 @@
 
     .page { flex: 1 0 auto; width: 100%; max-width: 680px; margin: 0 auto; padding: var(--sp-space-8) var(--sp-space-5); display: flex; flex-direction: column; justify-content: center; gap: var(--sp-space-6); }
 
-    .pearls { display: block; width: 132px; height: auto; }
+    .hero { display: flex; align-items: center; gap: var(--sp-space-5); }
+    .pearls { display: block; width: 116px; height: auto; flex: 0 0 auto; }
 
     .brand { display: flex; flex-direction: column; gap: var(--sp-space-3); }
     h1 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-3xl); line-height: var(--sp-leading-tight); letter-spacing: var(--sp-tracking-tight); }
@@ -64,6 +65,8 @@
 
     @media (max-width: 480px) {
       h1 { font-size: var(--sp-text-2xl); }
+      .hero { flex-direction: column; align-items: flex-start; gap: var(--sp-space-4); }
+      .pearls { width: 96px; }
       .app { flex-wrap: wrap; }
       .app .tag { margin-left: 0; }
     }
@@ -71,6 +74,7 @@
 </head>
 <body>
   <main class="page">
+    <div class="hero">
     <svg class="pearls" viewBox="0 0 118 100" aria-hidden="true">
       <defs>
         <radialGradient id="wp-cor" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fdeeeb"/><stop offset="45%" stop-color="#eaa198"/><stop offset="100%" stop-color="#d0605a"/></radialGradient>
@@ -90,6 +94,7 @@
     <div class="brand">
       <h1>Scattered Pearls</h1>
       <div class="claim">Small, precious, scattered pearls.</div>
+    </div>
     </div>
 
     <p class="lede">A tiny studio for lean apps you buy once and simply use — no ads, no accounts, no tracking.</p>
