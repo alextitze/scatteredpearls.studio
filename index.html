@@ -40,8 +40,8 @@
 
     .page { flex: 1 0 auto; width: 100%; max-width: 680px; margin: 0 auto; padding: var(--sp-space-8) var(--sp-space-5); display: flex; flex-direction: column; justify-content: center; gap: var(--sp-space-6); }
 
-    .hero { display: flex; align-items: center; gap: var(--sp-space-5); }
-    .pearls { display: block; width: 116px; height: auto; flex: 0 0 auto; }
+    .hero { display: flex; align-items: center; gap: var(--sp-space-4); }
+    .pearls { display: block; width: 88px; height: auto; flex: 0 0 auto; }
 
     .brand { display: flex; flex-direction: column; gap: var(--sp-space-3); }
     h1 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-3xl); line-height: var(--sp-leading-tight); letter-spacing: var(--sp-tracking-tight); }
@@ -59,14 +59,14 @@
     .app .meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
     .app .name { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); }
     .app .desc { color: var(--text-muted); font-size: var(--sp-text-sm); }
-    .app .tag { margin-left: auto; flex: 0 0 auto; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); text-transform: uppercase; letter-spacing: var(--sp-tracking-label); color: var(--accent); background: var(--accent-soft); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-3); white-space: nowrap; }
+    .app .tag { margin-left: auto; flex: 0 0 auto; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); text-transform: uppercase; letter-spacing: var(--sp-tracking-label); color: var(--text-soft); background: var(--surface-2); background: color-mix(in srgb, var(--sp-pad-slate) 16%, var(--surface-1)); border: 1px solid var(--border-strong); border-color: color-mix(in srgb, var(--sp-pad-slate) 40%, var(--border-strong)); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-3); white-space: nowrap; }
 
     footer { flex-shrink: 0; text-align: center; color: var(--text-muted); font-size: var(--sp-text-sm); padding: var(--sp-space-5); border-top: 1px solid var(--border); }
 
     @media (max-width: 480px) {
       h1 { font-size: var(--sp-text-2xl); }
-      .hero { flex-direction: column; align-items: flex-start; gap: var(--sp-space-4); }
-      .pearls { width: 96px; }
+      .hero { flex-direction: column; align-items: flex-start; gap: var(--sp-space-3); }
+      .pearls { width: 76px; }
       .app { flex-wrap: wrap; }
       .app .tag { margin-left: 0; }
     }
@@ -74,35 +74,20 @@
 </head>
 <body>
   <main class="page">
-    <div class="hero">
-    <svg class="pearls" viewBox="0 0 118 100" aria-hidden="true">
-      <defs>
-        <radialGradient id="wp-cor" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fdeeeb"/><stop offset="45%" stop-color="#eaa198"/><stop offset="100%" stop-color="#d0605a"/></radialGradient>
-        <radialGradient id="wp-tea" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#eefbf7"/><stop offset="45%" stop-color="#a2dad0"/><stop offset="100%" stop-color="#4ea99b"/></radialGradient>
-        <radialGradient id="wp-amb" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fff6e6"/><stop offset="45%" stop-color="#eccf8b"/><stop offset="100%" stop-color="#d9a441"/></radialGradient>
-        <radialGradient id="wp-ros" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fdedf3"/><stop offset="45%" stop-color="#edaac6"/><stop offset="100%" stop-color="#d5729b"/></radialGradient>
-        <radialGradient id="wp-cre" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fffdf7"/><stop offset="45%" stop-color="#ece0cd"/><stop offset="100%" stop-color="#cdb894"/></radialGradient>
-      </defs>
-      <circle cx="27" cy="52" r="13" fill="url(#wp-cor)"/>
-      <circle cx="48" cy="33" r="11" fill="url(#wp-tea)"/>
-      <circle cx="44" cy="72" r="8" fill="url(#wp-amb)"/>
-      <circle cx="70" cy="57" r="12" fill="url(#wp-ros)"/>
-      <circle cx="89" cy="42" r="9" fill="url(#wp-cor)"/>
-      <circle cx="98" cy="68" r="6" fill="url(#wp-cre)"/>
-    </svg>
-
     <div class="brand">
-      <h1>Scattered Pearls</h1>
+      <div class="hero">
+        <img class="pearls" src="studio-logo.svg" alt="" aria-hidden="true">
+        <h1>Scattered Pearls</h1>
+      </div>
       <div class="claim">Small, precious, scattered pearls.</div>
-    </div>
     </div>
 
     <p class="lede">A tiny studio for lean apps you buy once and simply use — no ads, no accounts, no tracking.</p>
 
     <div class="badges">
-      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-coral) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-coral) 42%, var(--border-strong))">pay once</span>
+      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-amber) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-amber) 42%, var(--border-strong))">pay once</span>
       <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-teal) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-teal) 42%, var(--border-strong))">ad-free</span>
-      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-amber) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-amber) 42%, var(--border-strong))">no accounts</span>
+      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-blue) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-blue) 42%, var(--border-strong))">no accounts</span>
       <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-purple) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-purple) 42%, var(--border-strong))">no data collection</span>
     </div>
 

@@ -1,15 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 100" role="img" aria-label="Scattered Pearls">
-  <defs>
-    <radialGradient id="wp-cor" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fdeeeb"/><stop offset="45%" stop-color="#eaa198"/><stop offset="100%" stop-color="#d0605a"/></radialGradient>
-    <radialGradient id="wp-tea" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#eefbf7"/><stop offset="45%" stop-color="#a2dad0"/><stop offset="100%" stop-color="#4ea99b"/></radialGradient>
-    <radialGradient id="wp-amb" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fff6e6"/><stop offset="45%" stop-color="#eccf8b"/><stop offset="100%" stop-color="#d9a441"/></radialGradient>
-    <radialGradient id="wp-ros" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fdedf3"/><stop offset="45%" stop-color="#edaac6"/><stop offset="100%" stop-color="#d5729b"/></radialGradient>
-    <radialGradient id="wp-cre" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fffdf7"/><stop offset="45%" stop-color="#ece0cd"/><stop offset="100%" stop-color="#cdb894"/></radialGradient>
-  </defs>
-  <circle cx="27" cy="52" r="13" fill="url(#wp-cor)"/>
-  <circle cx="48" cy="33" r="11" fill="url(#wp-tea)"/>
-  <circle cx="44" cy="72" r="8" fill="url(#wp-amb)"/>
-  <circle cx="70" cy="57" r="12" fill="url(#wp-ros)"/>
-  <circle cx="89" cy="42" r="9" fill="url(#wp-cor)"/>
-  <circle cx="98" cy="68" r="6" fill="url(#wp-cre)"/>
+  <!-- Flat pearl colours (no shading) — the maker prefers the flat look of the favicon/app icon. -->
+  <circle cx="27" cy="52" r="13" fill="#d0605a"/>
+  <circle cx="48" cy="33" r="11" fill="#4ea99b"/>
+  <circle cx="44" cy="72" r="8" fill="#d9a441"/>
+  <circle cx="70" cy="57" r="12" fill="#d5729b"/>
+  <circle cx="89" cy="42" r="9" fill="#d0605a"/>
+  <circle cx="98" cy="68" r="6" fill="#cdb894"/>
 </svg>
