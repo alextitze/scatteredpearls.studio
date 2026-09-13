@@ -59,13 +59,13 @@
   --sp-shadow-2: 0 2px 6px rgba(42, 36, 32, .06);
   --sp-shadow-3: 0 14px 34px rgba(42, 36, 32, .08);
 
-  --sp-accent:          #7450c0;   /* lilac/purple — loops; white text 5.8:1 */
-  --sp-accent-strong:   #5f3fb5;   /* gradient dark end; white text 7.3:1 */
+  --sp-accent:          #d83a2a;   /* coral/red (Blitzfingers) — white text 4.6:1 */
+  --sp-accent-strong:   #b8321f;   /* gradient dark end; white text 6.0:1 */
   --sp-accent-2:        #8fc4bd;   /* teal — one-shots (flash accent only) */
   --sp-accent-2-strong: #77b3ab;
-  --sp-danger-color:    #b84a44;   /* warm red; white text 5.1:1 */
-  --sp-accent-soft:     rgba(116, 80, 192, .14);
-  --sp-danger-soft:     rgba(184, 74, 68, .12);
+  --sp-danger-color:    #8f2d3b;   /* bordeaux — distinct from the red accent */
+  --sp-accent-soft:     rgba(216, 58, 42, .14);
+  --sp-danger-soft:     rgba(143, 45, 59, .12);
 
   --sp-key-bg:      rgba(42, 36, 32, .10);
   --sp-vol-track:   rgba(42, 36, 32, .12);
@@ -88,7 +88,7 @@
   --accent-soft:   var(--sp-accent-soft);
   --danger:        var(--sp-danger-color);
   --danger-soft:   var(--sp-danger-soft);
-  --focus-ring:    rgba(116, 80, 192, .55);
+  --focus-ring:    rgba(216, 58, 42, .6);
 
   --radius-control: var(--sp-radius-md);
   --radius-pad:     var(--sp-radius-lg);
@@ -104,8 +104,8 @@
   --pad-loop-active-bg:   linear-gradient(160deg, var(--sp-accent), var(--sp-accent-strong));
   --pad-shot-active-bg:   linear-gradient(160deg, var(--sp-accent-2), var(--sp-accent-2-strong));
   --pad-active-text:      var(--on-accent);
-  --pad-active-shadow:    0 8px 22px rgba(95, 63, 181, .30);
-  --pad-active-ring:      0 0 0 2px var(--focus-ring), 0 8px 26px rgba(95, 63, 181, .38);
+  --pad-active-shadow:    0 8px 22px rgba(184, 50, 31, .30);
+  --pad-active-ring:      0 0 0 2px var(--focus-ring), 0 8px 26px rgba(184, 50, 31, .38);
   --pad-add-border:       1px dashed var(--sp-line-strong);
 
   /* Keycaps, volume indicator, sheet elevation */
@@ -128,6 +128,8 @@
     --sp-ink:          #f1ede6;
     --sp-ink-soft:     #cfc7bb;
     --sp-muted:        #a49a8d;
+    --sp-danger-color: #e59aa4;   /* rose — readable on dark */
+    --sp-danger-soft:  rgba(229, 154, 164, .16);
     --sp-line:         rgba(255, 255, 255, .10);
     --sp-line-strong:  rgba(255, 255, 255, .18);
     --sp-shadow-1: 0 1px 2px rgba(0, 0, 0, .40);
@@ -146,6 +148,8 @@
   --sp-ink:          #f1ede6;
   --sp-ink-soft:     #cfc7bb;
   --sp-muted:        #a49a8d;
+  --sp-danger-color: #e59aa4;   /* rose — readable on dark */
+  --sp-danger-soft:  rgba(229, 154, 164, .16);
   --sp-line:         rgba(255, 255, 255, .10);
   --sp-line-strong:  rgba(255, 255, 255, .18);
   --sp-shadow-1: 0 1px 2px rgba(0, 0, 0, .40);
@@ -165,13 +169,13 @@
     --sp-muted:       var(--sp-ink-soft);
     --sp-line:        rgba(42, 36, 32, .28);
     --sp-line-strong: rgba(42, 36, 32, .5);
-    --focus-ring:     rgba(95, 63, 181, .9);
+    --focus-ring:     rgba(184, 50, 31, .9);
   }
   [data-theme="dark"] {                            /* forced dark */
     --sp-muted:       var(--sp-ink-soft);
     --sp-line:        rgba(255, 255, 255, .30);
     --sp-line-strong: rgba(255, 255, 255, .5);
-    --focus-ring:     rgba(155, 125, 240, .95);
+    --focus-ring:     rgba(233, 120, 110, .95);
   }
 }
 @media (prefers-color-scheme: dark) and (prefers-contrast: more) {
@@ -179,6 +183,6 @@
     --sp-muted:       var(--sp-ink-soft);
     --sp-line:        rgba(255, 255, 255, .30);
     --sp-line-strong: rgba(255, 255, 255, .5);
-    --focus-ring:     rgba(155, 125, 240, .95);
+    --focus-ring:     rgba(233, 120, 110, .95);
   }
 }
