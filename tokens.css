@@ -59,14 +59,15 @@
   --sp-shadow-2: 0 2px 6px rgba(42, 36, 32, .06);
   --sp-shadow-3: 0 14px 34px rgba(42, 36, 32, .08);
 
-  --sp-accent:          #d83a2a;   /* coral/red (Blitzfingers) — white text 4.6:1 */
-  --sp-accent-strong:   #b8321f;   /* gradient dark end; white text 6.0:1 */
-  --sp-accent-2:        #22796d;   /* deep teal — one-shots; white text 5.2:1, readable as text */
+  --sp-accent:          #6d4fc0;   /* purple (Blitzfingers primary) — white text 5.95:1 */
+  --sp-accent-strong:   #5a3fb0;   /* gradient dark end; white text 7.6:1 */
+  --sp-accent-2:        #22796d;   /* deep teal — secondary chrome; white text 5.2:1 */
   --sp-accent-2-strong: #1a6255;
-  --sp-danger-color:    #8f2d3b;   /* bordeaux — distinct from the red accent */
-  --sp-accent-soft:     rgba(216, 58, 42, .14);
+  --sp-highlight:       #ffd23f;   /* yellow bolt — highlight only (not text/fills; poor contrast) */
+  --sp-danger-color:    #c8372a;   /* red — destructive only; text 5.1:1 on surface */
+  --sp-accent-soft:     rgba(109, 79, 192, .14);
   --sp-accent-2-soft:   rgba(34, 121, 109, .16);
-  --sp-danger-soft:     rgba(143, 45, 59, .12);
+  --sp-danger-soft:     rgba(200, 55, 42, .12);
 
   /* Per-sound identity palette — jewel tones (same family as the studio pearls).
      Colour is a usability aid: each sound keeps its own hue so the eye finds it
@@ -104,7 +105,7 @@
   --accent-2-soft: var(--sp-accent-2-soft);
   --danger:        var(--sp-danger-color);
   --danger-soft:   var(--sp-danger-soft);
-  --focus-ring:    rgba(216, 58, 42, .6);
+  --focus-ring:    rgba(109, 79, 192, .6);
 
   --radius-control: var(--sp-radius-md);
   --radius-pad:     var(--sp-radius-lg);
@@ -120,8 +121,8 @@
   --pad-loop-active-bg:   linear-gradient(160deg, var(--sp-accent), var(--sp-accent-strong));
   --pad-shot-active-bg:   linear-gradient(160deg, var(--sp-accent-2), var(--sp-accent-2-strong));
   --pad-active-text:      var(--on-accent);
-  --pad-active-shadow:    0 8px 22px rgba(184, 50, 31, .30);
-  --pad-active-ring:      0 0 0 2px var(--focus-ring), 0 8px 26px rgba(184, 50, 31, .38);
+  --pad-active-shadow:    0 8px 22px rgba(90, 63, 176, .30);
+  --pad-active-ring:      0 0 0 2px var(--focus-ring), 0 8px 26px rgba(90, 63, 176, .38);
   --pad-add-border:       1px dashed var(--sp-line-strong);
 
   /* Keycaps, volume indicator, sheet elevation */
@@ -144,8 +145,8 @@
     --sp-ink:          #f1ede6;
     --sp-ink-soft:     #cfc7bb;
     --sp-muted:        #a49a8d;
-    --sp-danger-color: #e59aa4;   /* rose — readable on dark */
-    --sp-danger-soft:  rgba(229, 154, 164, .16);
+    --sp-danger-color: #ef9a8f;   /* soft red — readable on dark (7.7:1) */
+    --sp-danger-soft:  rgba(239, 154, 143, .16);
     --sp-line:         rgba(255, 255, 255, .10);
     --sp-line-strong:  rgba(255, 255, 255, .18);
     --sp-shadow-1: 0 1px 2px rgba(0, 0, 0, .40);
@@ -164,8 +165,8 @@
   --sp-ink:          #f1ede6;
   --sp-ink-soft:     #cfc7bb;
   --sp-muted:        #a49a8d;
-  --sp-danger-color: #e59aa4;   /* rose — readable on dark */
-  --sp-danger-soft:  rgba(229, 154, 164, .16);
+  --sp-danger-color: #ef9a8f;   /* soft red — readable on dark (7.7:1) */
+  --sp-danger-soft:  rgba(239, 154, 143, .16);
   --sp-line:         rgba(255, 255, 255, .10);
   --sp-line-strong:  rgba(255, 255, 255, .18);
   --sp-shadow-1: 0 1px 2px rgba(0, 0, 0, .40);
@@ -185,13 +186,13 @@
     --sp-muted:       var(--sp-ink-soft);
     --sp-line:        rgba(42, 36, 32, .28);
     --sp-line-strong: rgba(42, 36, 32, .5);
-    --focus-ring:     rgba(184, 50, 31, .9);
+    --focus-ring:     rgba(90, 63, 176, .9);
   }
   [data-theme="dark"] {                            /* forced dark */
     --sp-muted:       var(--sp-ink-soft);
     --sp-line:        rgba(255, 255, 255, .30);
     --sp-line-strong: rgba(255, 255, 255, .5);
-    --focus-ring:     rgba(233, 120, 110, .95);
+    --focus-ring:     rgba(158, 138, 224, .95);
   }
 }
 @media (prefers-color-scheme: dark) and (prefers-contrast: more) {
@@ -199,6 +200,6 @@
     --sp-muted:       var(--sp-ink-soft);
     --sp-line:        rgba(255, 255, 255, .30);
     --sp-line-strong: rgba(255, 255, 255, .5);
-    --focus-ring:     rgba(233, 120, 110, .95);
+    --focus-ring:     rgba(158, 138, 224, .95);
   }
 }
