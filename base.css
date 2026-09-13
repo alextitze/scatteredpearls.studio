@@ -2,8 +2,15 @@
    plus baseline accessibility. Vendor alongside tokens.css and link it AFTER tokens.css.
    App components keep their own styles; this only sets platform-safe defaults. */
 
-/* Don't let iOS silently re-scale text. */
+/* Don't let iOS silently re-scale text (the layout autosizer). */
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* Dynamic Type: text should track the system "Larger Text" setting. On Apple platforms
+   `-apple-system-body` resolves to the user's Dynamic Type body size, so our rem-based type
+   scale (tokens are in rem) follows it. Elsewhere the value is invalid and ignored, so the
+   root stays 16px. Brand fonts are preserved: only the SIZE comes from the system here —
+   body/components set their own font-family, which descendants inherit. */
+:root { font: -apple-system-body; }
 
 /* No grey tap flash — apps provide their own :active press state instead. */
 * { -webkit-tap-highlight-color: transparent; }
