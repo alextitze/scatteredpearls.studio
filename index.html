@@ -8,7 +8,9 @@
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f1e9">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17151b">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 118 100'%3E%3Ccircle cx='27' cy='52' r='13' fill='%23d0605a'/%3E%3Ccircle cx='48' cy='33' r='11' fill='%234ea99b'/%3E%3Ccircle cx='44' cy='72' r='8' fill='%23d9a441'/%3E%3Ccircle cx='70' cy='57' r='12' fill='%23d5729b'/%3E%3Ccircle cx='89' cy='42' r='9' fill='%23d0605a'/%3E%3Ccircle cx='98' cy='68' r='6' fill='%23cdb894'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="studio-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="studio-favicon-32.png">
+  <link rel="apple-touch-icon" href="studio-favicon-180.png">
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="base.css">
   <style>
@@ -46,11 +48,11 @@
     .lede { font-size: var(--sp-text-lg); color: var(--text-soft); max-width: 46ch; }
 
     .badges { display: flex; flex-wrap: wrap; gap: var(--sp-space-2); }
-    .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
+    .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: color-mix(in srgb, var(--c) 15%, var(--surface-1)); border: 1px solid color-mix(in srgb, var(--c) 35%, var(--border)); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
 
     .app { display: flex; align-items: center; gap: var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-5); }
-    .app .icon { flex: 0 0 auto; width: 52px; height: 52px; border-radius: var(--radius-control); background: var(--pad-loop-active-bg); box-shadow: var(--pad-active-shadow); display: flex; align-items: center; justify-content: center; }
-    .app .icon svg { width: 30px; height: 30px; }
+    .app .icon { flex: 0 0 auto; width: 52px; height: 52px; border-radius: var(--radius-control); overflow: hidden; box-shadow: var(--pad-active-shadow); }
+    .app .icon img { width: 100%; height: 100%; display: block; }
     .app .meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
     .app .name { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); }
     .app .desc { color: var(--text-muted); font-size: var(--sp-text-sm); }
@@ -91,15 +93,15 @@
     <p class="lede">A tiny studio for lean apps you buy once and simply use — no ads, no accounts, no tracking.</p>
 
     <div class="badges">
-      <span class="badge">ad-free</span>
-      <span class="badge">pay once</span>
-      <span class="badge">no accounts</span>
-      <span class="badge">no data collection</span>
+      <span class="badge" style="--c: var(--sp-pad-coral)">pay once</span>
+      <span class="badge" style="--c: var(--sp-pad-teal)">ad-free</span>
+      <span class="badge" style="--c: var(--sp-pad-amber)">no accounts</span>
+      <span class="badge" style="--c: var(--sp-pad-purple)">no data collection</span>
     </div>
 
     <div class="app">
       <div class="icon">
-        <svg viewBox="0 0 150 150" aria-hidden="true"><g fill="#fff" opacity=".3"><rect x="28" y="28" width="28" height="28" rx="8"/><rect x="61" y="28" width="28" height="28" rx="8"/><rect x="94" y="28" width="28" height="28" rx="8"/><rect x="28" y="61" width="28" height="28" rx="8"/><rect x="61" y="61" width="28" height="28" rx="8"/><rect x="94" y="61" width="28" height="28" rx="8"/><rect x="28" y="94" width="28" height="28" rx="8"/><rect x="61" y="94" width="28" height="28" rx="8"/><rect x="94" y="94" width="28" height="28" rx="8"/></g><path d="M86 26 L52 82 H72 L64 124 L104 64 H80 Z" fill="#fff"/></svg>
+        <img src="blitzfingers-icon.svg" alt="Blitzfingers app icon">
       </div>
       <div class="meta">
         <span class="name">Blitzfingers</span>

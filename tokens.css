@@ -68,6 +68,20 @@
   --sp-accent-2-soft:   rgba(34, 121, 109, .16);
   --sp-danger-soft:     rgba(143, 45, 59, .12);
 
+  /* Per-sound identity palette — jewel tones (same family as the studio pearls).
+     Colour is a usability aid: each sound keeps its own hue so the eye finds it
+     fast. Every colour passes white text ≥4.5:1 (used at full strength on an
+     active pad); idle pads mix it ~16% into the surface, so theme text carries.
+     The loop/one-shot split is carried by label + glyph, not by colour. */
+  --sp-pad-coral:  #c53f36;
+  --sp-pad-amber:  #8f6412;
+  --sp-pad-green:  #3f7d3a;
+  --sp-pad-teal:   #1f8477;
+  --sp-pad-blue:   #3a5bc7;
+  --sp-pad-purple: #6d4fc0;
+  --sp-pad-rose:   #b23a6a;
+  --sp-pad-slate:  #566173;
+
   --sp-key-bg:      rgba(42, 36, 32, .10);
   --sp-vol-track:   rgba(42, 36, 32, .12);
   --sp-vol-fill:    rgba(42, 36, 32, .45);
