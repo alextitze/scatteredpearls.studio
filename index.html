@@ -48,7 +48,9 @@
     .lede { font-size: var(--sp-text-lg); color: var(--text-soft); max-width: 46ch; }
 
     .badges { display: flex; flex-wrap: wrap; gap: var(--sp-space-2); }
-    .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: color-mix(in srgb, var(--c) 15%, var(--surface-1)); border: 1px solid color-mix(in srgb, var(--c) 35%, var(--border)); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
+    /* Solid, always-valid badge look (fallback); the per-badge inline color-mix tints
+       it and is simply ignored by any engine that can't resolve it. */
+    .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: var(--surface-1); border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
 
     .app { display: flex; align-items: center; gap: var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-5); }
     .app .icon { flex: 0 0 auto; width: 52px; height: 52px; border-radius: var(--radius-control); overflow: hidden; box-shadow: var(--pad-active-shadow); }
@@ -93,10 +95,10 @@
     <p class="lede">A tiny studio for lean apps you buy once and simply use — no ads, no accounts, no tracking.</p>
 
     <div class="badges">
-      <span class="badge" style="--c: var(--sp-pad-coral)">pay once</span>
-      <span class="badge" style="--c: var(--sp-pad-teal)">ad-free</span>
-      <span class="badge" style="--c: var(--sp-pad-amber)">no accounts</span>
-      <span class="badge" style="--c: var(--sp-pad-purple)">no data collection</span>
+      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-coral) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-coral) 42%, var(--border-strong))">pay once</span>
+      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-teal) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-teal) 42%, var(--border-strong))">ad-free</span>
+      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-amber) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-amber) 42%, var(--border-strong))">no accounts</span>
+      <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-purple) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-purple) 42%, var(--border-strong))">no data collection</span>
     </div>
 
     <div class="app">
