@@ -1,13 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scattered Pearls — coming soon</title>
   <meta name="description" content="A tiny studio for lean, ad-free, pay-once apps. No accounts, no tracking. First app coming soon.">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f1e9">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#17151b">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f1e9">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="studio-favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="studio-favicon-32.png">
@@ -48,13 +47,18 @@
     h1 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-3xl); line-height: var(--sp-leading-tight); letter-spacing: var(--sp-tracking-tight); }
     .claim { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-xl); color: var(--text-soft); }
     .lede { font-size: var(--sp-text-lg); color: var(--text-soft); max-width: 46ch; }
+    .intro { display: flex; flex-direction: column; gap: var(--sp-space-3); }
+    .intro .lede { max-width: 54ch; }
+    .intro-more { margin: 0; font-size: var(--sp-text-md); color: var(--text-muted); }
 
     .badges { display: flex; flex-wrap: wrap; gap: var(--sp-space-2); }
     /* Solid, always-valid badge look (fallback); the per-badge inline color-mix tints
        it and is simply ignored by any engine that can't resolve it. */
     .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: var(--surface-1); border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
 
-    .app { display: flex; align-items: center; gap: var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-5); }
+    .app { display: flex; align-items: center; gap: var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-5); text-decoration: none; color: inherit; transition: transform var(--sp-dur-base) var(--sp-ease), box-shadow var(--sp-dur-base) var(--sp-ease), border-color var(--sp-dur-base) var(--sp-ease); }
+    a.app:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); box-shadow: 0 18px 40px rgba(42, 36, 32, .12); }
+    a.app:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
     .app .icon { flex: 0 0 auto; width: 52px; height: 52px; border-radius: var(--radius-control); overflow: hidden; box-shadow: var(--pad-active-shadow); }
     .app .icon img { width: 100%; height: 100%; display: block; }
     .app .meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
@@ -83,7 +87,10 @@
       <div class="claim">Small, precious, scattered pearls.</div>
     </div>
 
-    <p class="lede">A tiny studio for lean apps you buy once and simply use — no ads, no accounts, no tracking.</p>
+    <div class="intro">
+      <p class="lede">Hi, I'm Alex. Scattered Pearls is my one-man studio. I make small, honest apps — the kind you buy once and simply use. No ads, no accounts, no subscriptions, nothing watching you. Lean and instantly useful, but made with care.</p>
+      <p class="intro-more">Blitzfingers is the first. More will follow.</p>
+    </div>
 
     <div class="badges">
       <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-amber) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-amber) 42%, var(--border-strong))">pay once</span>
@@ -92,7 +99,7 @@
       <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-purple) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-purple) 42%, var(--border-strong))">no data collection</span>
     </div>
 
-    <div class="app">
+    <a class="app" href="/blitzfingers/" aria-label="Blitzfingers — a soundboard. Learn more.">
       <div class="icon">
         <img src="blitzfingers-icon.svg" alt="Blitzfingers app icon">
       </div>
@@ -101,7 +108,7 @@
         <span class="desc">a soundboard — loops &amp; one-shots, finger-drumming</span>
       </div>
       <span class="tag">coming soon</span>
-    </div>
+    </a>
   </main>
 
   <footer>© 2026 Scattered Pearls</footer>
