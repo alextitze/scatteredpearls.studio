@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Scattered Pearls — a one-man app studio</title>
-  <meta name="description" content="A tiny studio for lean, ad-free, pay-once apps. No accounts, no subscriptions, no tracking. First app coming soon.">
+  <meta name="description" content="A tiny studio for lean, ad-free, pay-once apps. No accounts, no subscriptions, no tracking. First app: Blitzfingers, a soundboard.">
   <link rel="canonical" href="https://scatteredpearls.studio/">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#46203a">
@@ -125,14 +125,33 @@
     .promises li { display: inline-flex; align-items: center; gap: var(--sp-space-3); }
     .promises li + li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(253, 246, 238, .55); }
 
-    /* ── Coming-soon card (replaces the app list until the first app ships) ── */
-    .soon {
+    /* ── App cards on the brand ground: live app links + a coming-soon slot.
+       Both are the same cream card; .app is the interactive (link) variant. ── */
+    .apps { display: flex; flex-direction: column; gap: var(--sp-space-4); }
+
+    .soon,
+    .app {
       display: flex; align-items: center; gap: var(--sp-space-5);
       background: var(--sp-card); color: var(--sp-card-ink);
       border-radius: var(--sp-radius-xl);
       padding: var(--sp-space-5);
       box-shadow: 0 24px 54px rgba(28, 6, 20, .44);
     }
+
+    /* Live app link */
+    .app { text-decoration: none; transition: transform var(--sp-dur-base) var(--sp-ease), box-shadow var(--sp-dur-base) var(--sp-ease); }
+    .app:hover { transform: translateY(-2px); box-shadow: 0 32px 64px rgba(28, 6, 20, .52); }
+    .app .icon { flex: 0 0 auto; width: 56px; height: 56px; }
+    .app .icon img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 14px rgba(28, 6, 20, .32)); }
+    .app .meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .app .name { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-xl); letter-spacing: -0.02em; }
+    .app .desc { font-size: var(--sp-text-md); color: var(--sp-card-ink-2); }
+    .app .tag { margin-left: auto; flex: 0 0 auto; display: inline-flex; align-items: center; gap: 7px; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: var(--sp-card-muted); border: 1px solid rgba(42, 36, 32, .26); border-radius: var(--sp-radius-pill); padding: 9px 15px; white-space: nowrap; }
+    .app .tag .arr { transition: transform var(--sp-dur-base) var(--sp-ease); }
+    .app:hover .tag { color: var(--sp-card-ink); border-color: rgba(42, 36, 32, .5); }
+    .app:hover .tag .arr { transform: translateX(3px); }
+
+    /* Coming-soon slot */
     .soon .dots { display: flex; gap: 10px; flex: 0 0 auto; }
     .soon .dots span { width: 14px; height: 14px; border-radius: 50%; background: #d9cec0; }
     .soon .dots span:nth-child(1) { background: #c9b9a6; }
@@ -158,8 +177,8 @@
 
       .scrim { background: linear-gradient(180deg, rgba(38, 12, 30, .30) 0%, rgba(38, 12, 30, .14) 38%, rgba(38, 12, 30, .34) 100%); }
 
-      .soon { flex-wrap: wrap; gap: var(--sp-space-4); padding: var(--sp-space-4); border-radius: var(--sp-radius-lg); }
-      .soon .tag { margin-left: 0; }
+      .soon, .app { flex-wrap: wrap; gap: var(--sp-space-4); padding: var(--sp-space-4); border-radius: var(--sp-radius-lg); }
+      .soon .tag, .app .tag { margin-left: 0; }
       footer { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
 
@@ -202,13 +221,24 @@
       </ul>
     </main>
 
-    <div class="soon">
-      <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="txt">
-        <span class="title">The first app is on its way</span>
-        <span class="sub">One at a time, each one small enough to finish and good enough to keep.</span>
+    <div class="apps">
+      <a class="app" href="/blitzfingers/" aria-label="Blitzfingers — a soundboard for iPhone. View the app.">
+        <span class="icon"><img src="blitzfingers-icon.svg" alt="" width="56" height="56"></span>
+        <span class="meta">
+          <span class="name">Blitzfingers</span>
+          <span class="desc">A soundboard — loops &amp; one-shots, finger-drumming, MIDI.</span>
+        </span>
+        <span class="tag">View app <span class="arr" aria-hidden="true">→</span></span>
+      </a>
+
+      <div class="soon">
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="txt">
+          <span class="title">The next app is on its way</span>
+          <span class="sub">One at a time, each one small enough to finish and good enough to keep.</span>
+        </div>
+        <span class="tag">coming soon</span>
       </div>
-      <span class="tag">coming soon</span>
     </div>
 
     <footer>
