@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-surface="brand">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,26 +31,10 @@
     @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/hanken-700.woff2") format("woff2"); }
     @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/bricolage-700.woff2") format("woff2"); }
 
-    /* ── Page palette ────────────────────────────────────────────────────────
-       This page is always dark — it is a single branded surface, not a themed
-       app screen, so it does not follow the light/dark slots in tokens.css.
-       The type and space scales DO come from tokens.css.
-       See HANDOVER.md § "What belongs in tokens.css". */
-    :root {
-      color-scheme: dark;
-
-      --sp-ground:       #46203a;   /* deep plum base */
-      --sp-ground-warm:  #9a4433;   /* lower-left field */
-      --sp-ground-rose:  #8a2f56;   /* upper-right field */
-      --sp-on-ground:    #fdf6ee;   /* cream — 12.4:1 on the base */
-      --sp-on-ground-2:  rgba(253, 246, 238, .84);
-      --sp-on-ground-3:  rgba(253, 246, 238, .74);
-      --sp-eyebrow:      #ffc98d;   /* warm amber — 7.9:1 on the base */
-      --sp-card:         #fdf8f0;
-      --sp-card-ink:     #2a2420;
-      --sp-card-ink-2:   #4a4139;
-      --sp-card-muted:   #736a5e;
-    }
+    /* Palette comes from the design system's brand surface: this page opts in
+       with data-surface="brand" on <html>, so tokens.css provides the plum
+       ground, cream card and on-ground text (plus the type/space/radius
+       scales). Not themed — one fixed branded surface, always dark. */
 
     * { box-sizing: border-box; }
     html, body { min-height: 100%; }
