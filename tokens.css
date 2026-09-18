@@ -203,3 +203,29 @@
     --focus-ring:     rgba(158, 138, 224, .95);
   }
 }
+
+/* ── Brand surface — the studio marketing ground ───────────────────────────
+   A third surface, distinct from the app's light/dark paper/ink themes: one
+   fixed branded ground (deep plum, nacre pearls) for the studio website and
+   future app landing pages. Theme-agnostic on purpose — it does NOT follow
+   prefers-color-scheme; it is always this dark jewel surface. Opt in with
+   data-surface="brand" on <html>. It uses its own token names, so it never
+   collides with the app theme slots above (a page consuming it also keeps the
+   type/space/radius scales from :root). Contrast on --sp-ground: --sp-on-ground
+   12.4:1, --sp-eyebrow 7.9:1, --sp-on-ground-2 passes AA for body. Introduced
+   with the studio-home redesign (see DECISIONS.md, 2026-09-18). */
+[data-surface="brand"] {
+  color-scheme: dark;
+
+  --sp-ground:       #46203a;   /* deep plum base */
+  --sp-ground-warm:  #9a4433;   /* lower-left field */
+  --sp-ground-rose:  #8a2f56;   /* upper-right field */
+  --sp-on-ground:    #fdf6ee;   /* cream — 12.4:1 on the base */
+  --sp-on-ground-2:  rgba(253, 246, 238, .84);   /* body copy — passes AA */
+  --sp-on-ground-3:  rgba(253, 246, 238, .74);   /* footer */
+  --sp-eyebrow:      #ffc98d;   /* warm amber — 7.9:1 on the base */
+  --sp-card:         #fdf8f0;   /* the cream card */
+  --sp-card-ink:     #2a2420;
+  --sp-card-ink-2:   #4a4139;
+  --sp-card-muted:   #736a5e;
+}
