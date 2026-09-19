@@ -478,6 +478,7 @@
           <details><summary>Which platforms does it run on?</summary><p>iPhone first. macOS and Android are planned and will follow.</p></details>
           <details><summary>Can I use my own sounds?</summary><p>Yes. Record with the mic or import your own audio, then trim, colour and arrange each pad. You can export a whole board and share or re-import it.</p></details>
           <details><summary>Does it work with a MIDI controller?</summary><p>Yes — map pads to a MIDI controller, including Bluetooth MIDI, and learn notes and CCs. (Pro.)</p></details>
+          <details id="faq-knob-mode"><summary>My MIDI knob controls volume oddly — what are “Absolute” and “Relative”?</summary><p>Under <strong>MIDI controller</strong> you can choose how knobs are read. <strong>Absolute</strong> suits most knobs and faders — the ones with a fixed start and end; the app follows the knob’s position directly. Pick <strong>Relative</strong> for <em>endless encoders</em> that spin without a start or end (they send only small step changes). So: if a knob mapped to volume jumps, sticks or barely moves, switch it to Relative; otherwise leave it on Absolute. Most controllers work on Absolute.</p></details>
         </div>
       </section>
     </div>
@@ -512,9 +513,24 @@
       { "@type": "Question", "name": "Does it collect my data?", "acceptedAnswer": { "@type": "Answer", "text": "No. There are no ads and no tracking. Your sounds and boards stay on your device — nothing is uploaded." } },
       { "@type": "Question", "name": "Which platforms does it run on?", "acceptedAnswer": { "@type": "Answer", "text": "iPhone first. macOS and Android are planned and will follow." } },
       { "@type": "Question", "name": "Can I use my own sounds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Record with the mic or import your own audio, then trim, colour and arrange each pad. You can export a whole board and share or re-import it." } },
-      { "@type": "Question", "name": "Does it work with a MIDI controller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — map pads to a MIDI controller, including Bluetooth MIDI, and learn notes and CCs. This is a Pro feature." } }
+      { "@type": "Question", "name": "Does it work with a MIDI controller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — map pads to a MIDI controller, including Bluetooth MIDI, and learn notes and CCs. This is a Pro feature." } },
+      { "@type": "Question", "name": "My MIDI knob controls volume oddly — what are Absolute and Relative?", "acceptedAnswer": { "@type": "Answer", "text": "Under MIDI controller you can choose how knobs are read. Absolute suits most knobs and faders — the ones with a fixed start and end; the app follows the knob's position directly. Pick Relative for endless encoders that spin without a start or end (they send only small step changes). If a knob mapped to volume jumps, sticks or barely moves, switch it to Relative; otherwise leave it on Absolute. Most controllers work on Absolute." } }
     ]
   }
+  </script>
+
+  <!-- Open a FAQ item when linked directly (e.g. from the app: …/blitzfingers#faq-knob-mode) -->
+  <script>
+    (function () {
+      function openTarget() {
+        var h = location.hash ? location.hash.slice(1) : '';
+        if (!h) return;
+        var el = document.getElementById(h);
+        if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView({ block: 'start' }); }
+      }
+      window.addEventListener('hashchange', openTarget);
+      openTarget();
+    })();
   </script>
 </body>
 </html>
