@@ -125,6 +125,12 @@
     .promises li { display: inline-flex; align-items: center; gap: var(--sp-space-3); }
     .promises li + li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(253, 246, 238, .55); }
 
+    /* The promises row is a label strip, not prose, so it does not share the hero's text
+       measure: from tablet up it runs to its natural width and stays on one line. */
+    @media (min-width: 560px) {
+      .promises { flex-wrap: nowrap; width: max-content; }
+    }
+
     /* ── Coming-soon card (replaces the app list until the first app ships) ── */
     .soon {
       display: flex; align-items: center; gap: var(--sp-space-5);
