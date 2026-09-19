@@ -1,29 +1,29 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ── SEO ─────────────────────────────────────────────────────────────── -->
-  <title>Blitzfingers — a pay-once soundboard &amp; finger-drumming app for iPhone</title>
-  <meta name="description" content="Blitzfingers is a lean soundboard and finger-drumming pad grid for iPhone. Play loops and one-shots, record and shape your own sounds, map a MIDI controller. Ad-free, pay once, no subscription, no accounts, no tracking.">
+  <title>Blitzfingers — a soundboard &amp; finger-drumming app for iPhone, iPad and Mac</title>
+  <meta name="description" content="Blitzfingers is a lean soundboard and finger-drumming pad grid. Play loops and one-shots, record and shape your own sounds, map a MIDI controller. No subscriptions, no ads, no accounts, no tracking — yours to keep.">
   <link rel="canonical" href="https://scatteredpearls.studio/blitzfingers/">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#f6f1e9">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#17151b">
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Scattered Pearls">
-  <meta property="og:title" content="Blitzfingers — a pay-once soundboard for iPhone">
-  <meta property="og:description" content="Play loops and one-shots, record and shape your own sounds, map a MIDI controller. Ad-free, pay once, no subscription, no tracking.">
+  <meta property="og:title" content="Blitzfingers — a finger-drumming soundboard for your pocket">
+  <meta property="og:description" content="Play loops and one-shots, record and shape your own sounds, map a MIDI controller. No subscriptions, no ads, no tracking.">
   <meta property="og:url" content="https://scatteredpearls.studio/blitzfingers/">
   <meta property="og:image" content="https://scatteredpearls.studio/blitzfingers/img/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Blitzfingers — a soundboard and finger-drumming pad grid.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blitzfingers — a pay-once soundboard for iPhone">
-  <meta name="twitter:description" content="Play loops and one-shots, record and shape your own sounds, map a MIDI controller. Ad-free, pay once, no tracking.">
+  <meta name="twitter:title" content="Blitzfingers — a finger-drumming soundboard for your pocket">
+  <meta name="twitter:description" content="Play loops and one-shots, record and shape your own sounds, map a MIDI controller. No subscriptions, no ads, no tracking.">
   <meta name="twitter:image" content="https://scatteredpearls.studio/blitzfingers/img/og.png">
 
   <!-- Favicons (the app's own mark) -->
@@ -43,11 +43,27 @@
     "name": "Blitzfingers",
     "applicationCategory": "MultimediaApplication",
     "applicationSubCategory": "Soundboard",
-    "operatingSystem": "iOS",
-    "description": "A lean, pay-once soundboard and finger-drumming pad grid for iPhone. Play loops and one-shots, record and shape your own sounds, and map a MIDI controller. Ad-free, no subscription, no accounts, no tracking.",
+    "operatingSystem": "iOS, iPadOS, macOS",
+    "description": "A lean soundboard and finger-drumming pad grid. Play loops and one-shots, record and shape your own sounds, and map a MIDI controller. No subscriptions, no ads, no accounts, no tracking.",
     "url": "https://scatteredpearls.studio/blitzfingers/",
     "image": "https://scatteredpearls.studio/blitzfingers/img/og.png",
     "isAccessibleForFree": false,
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Blitzfingers",
+        "price": "2.99",
+        "priceCurrency": "EUR",
+        "category": "one-time purchase"
+      },
+      {
+        "@type": "Offer",
+        "name": "Blitzfingers Pro",
+        "price": "9.99",
+        "priceCurrency": "EUR",
+        "category": "one-time in-app purchase"
+      }
+    ],
     "publisher": {
       "@type": "Organization",
       "name": "Scattered Pearls",
@@ -55,7 +71,6 @@
     }
   }
   </script>
-
   <style>
     /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
     @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/hanken-400.woff2") format("woff2"); }
@@ -64,14 +79,37 @@
     @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/bricolage-600.woff2") format("woff2"); }
     @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/bricolage-700.woff2") format("woff2"); }
 
+    /* ── Page-local: the on-dark per-sound palette ─────────────────────────
+       tokens.css carries --sp-pad-* tuned for WHITE TEXT ON THE COLOUR (an
+       active pad, light theme). This page draws the colour ON a dark pad face
+       instead — as the pad's lip and its press bloom — where those same values
+       land at 2.1–2.9:1 and read as mud. These are the lifted counterparts,
+       each ≥4.5:1 on the pad face (#30303a).
+       TODO: these are being added to the design system as --sp-pad-*-on-dark
+       with the app's pad rework (see docs/ui-review-2026-09.md, item 4). When
+       the hub ships them and tokens.css is re-vendored, delete this block and
+       point the --p-* names at the tokens. */
+    :root {
+      --p-coral:  239, 128, 121;   /* #ef8079 — 4.99:1 on the pad face */
+      --p-amber:  224, 180,  85;   /* #e0b455 — 6.73 */
+      --p-green:  127, 194, 118;   /* #7fc276 — 6.14 */
+      --p-teal:    79, 196, 178;   /* #4fc4b2 — 6.13 */
+      --p-blue:   138, 162, 234;   /* #8aa2ea — 5.24 */
+      --p-purple: 168, 148, 230;   /* #a894e6 — 5.00 */
+      --p-rose:   224, 121, 159;   /* #e0799f — 4.60 */
+      --p-slate:  154, 166, 186;   /* #9aa6ba — 5.30 */
+
+      --pad-face-top: #30303a;
+      --pad-face-bot: #26262e;
+      --pad-foot:     #131319;
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     html, body { min-height: 100%; }
     body {
       margin: 0;
-      background:
-        radial-gradient(820px 460px at 50% -10%, var(--accent-soft), transparent 60%),
-        var(--surface-0);
+      background: var(--surface-0);
       color: var(--text);
       font-family: var(--font-body);
       font-size: var(--sp-text-md);
@@ -82,455 +120,813 @@
     /* Skip link (a11y) */
     .skip { position: absolute; left: -9999px; top: 0; background: var(--accent); color: var(--on-accent); padding: var(--sp-space-2) var(--sp-space-4); border-radius: 0 0 var(--sp-radius-md) 0; z-index: 10; }
     .skip:focus { left: 0; }
-
     :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+    .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
-    .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding-inline: var(--sp-space-5); }
+    a { color: #9e8ae0; }
+    a:hover { color: #b3a1ea; }
 
-    /* ── Site chrome ── */
-    .site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); padding-block: var(--sp-space-4); }
-    .site-head .home { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--text); }
-    .site-head .home img { width: 34px; height: 34px; }
-    .site-head .home .studio { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-md); }
-    .site-head .head-right { display: flex; align-items: center; gap: var(--sp-space-4); }
-    .site-head nav { display: flex; gap: var(--sp-space-4); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-sm); }
-    .site-head nav a { color: var(--text-soft); text-decoration: none; }
-    .site-head nav a:hover { color: var(--accent); }
+    .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding-inline: var(--sp-space-5); }
 
-    /* ── Buttons (from the design system) ── */
-    .btn { display: inline-flex; align-items: center; gap: var(--sp-space-2); border: none; cursor: pointer; text-decoration: none; font-family: var(--font-body); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-md); padding: var(--sp-space-3) var(--sp-space-5); border-radius: var(--radius-control); transition: transform var(--sp-dur-fast) var(--sp-ease), box-shadow var(--sp-dur-base) var(--sp-ease); }
+    /* ── Site chrome ─────────────────────────────────────────────────────── */
+    .site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); padding-block: var(--sp-space-5); }
+    .site-head .home { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--text-soft); }
+    .site-head .home img { width: 28px; height: 28px; display: block; }
+    .site-head .home span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
+    .site-head .home:hover { color: var(--text); }
+
+    /* ── Type ────────────────────────────────────────────────────────────── */
+    .kicker { display: block; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: #e0b455; }
+    .kicker.pro { color: #a894e6; }
+
+    h1, h2, h3 { font-family: var(--font-display); font-weight: var(--sp-weight-bold); letter-spacing: -0.03em; margin: 0; }
+    h1 { font-size: clamp(3rem, 9vw, 5.75rem); line-height: 0.98; letter-spacing: -0.04em; }
+    h2 { font-size: clamp(1.95rem, 4.4vw, 2.75rem); line-height: 1.05; }
+    h3 { font-size: var(--sp-text-lg); letter-spacing: -0.015em; line-height: 1.25; }
+
+    .lede { margin: 0; font-size: clamp(1rem, 1.6vw, 1.0625rem); line-height: 1.55; color: var(--text-soft); }
+    .muted { color: var(--text-muted); }
+
+    /* ── Buttons ─────────────────────────────────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-space-2); min-height: 48px; border: none; cursor: pointer; text-decoration: none; font-family: var(--font-body); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-md); padding-inline: var(--sp-space-5); border-radius: var(--radius-control); transition: transform var(--sp-dur-fast) var(--sp-ease), box-shadow var(--sp-dur-base) var(--sp-ease); }
     .btn:active { transform: scale(.97); }
-    .btn-primary { background: var(--accent); color: var(--on-accent); box-shadow: var(--pad-active-shadow); }
-    .btn-primary:hover { box-shadow: var(--pad-active-ring); }
-    .btn-ghost { background: transparent; color: var(--text-soft); border: 1px solid var(--border-strong); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 8px 22px rgba(90, 63, 176, .40); }
+    .btn-primary:hover { color: var(--on-accent); box-shadow: 0 0 0 2px var(--focus-ring), 0 8px 26px rgba(90, 63, 176, .48); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+    .btn-ghost:hover { color: var(--text); border-color: var(--accent); }
 
-    .kicker { text-transform: uppercase; letter-spacing: var(--sp-tracking-label); font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); color: var(--text-muted); }
+    /* ── Sections ────────────────────────────────────────────────────────── */
+    section { border-top: 1px solid rgba(255, 255, 255, .07); padding-block: clamp(var(--sp-space-7), 7vw, var(--sp-space-8)); }
+    .sec-head { display: flex; flex-direction: column; align-items: center; gap: var(--sp-space-3); text-align: center; }
+    .sec-head .lede { max-width: 62ch; }
 
-    /* ── Hero ── */
-    .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--sp-space-8); align-items: center; padding-block: var(--sp-space-8) var(--sp-space-7); }
-    .hero .app-icon { width: 74px; height: 74px; border-radius: 22%; box-shadow: var(--sp-shadow-3); display: block; margin-bottom: var(--sp-space-4); }
-    .hero h1 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-3xl); line-height: var(--sp-leading-tight); letter-spacing: var(--sp-tracking-tight); }
-    .hero .tagline { margin: var(--sp-space-3) 0 0; font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-xl); color: var(--text-soft); }
-    .hero .lede { margin: var(--sp-space-4) 0 0; font-size: var(--sp-text-lg); color: var(--text-soft); max-width: 48ch; }
-    .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-space-3); margin-top: var(--sp-space-6); }
-    .platform-note { font-size: var(--sp-text-sm); color: var(--text-muted); margin-top: var(--sp-space-3); }
-    .platform-note strong { color: var(--text-soft); }
+    /* ── The pad ─────────────────────────────────────────────────────────────
+       One CSS object, three parts, used everywhere on the page:
+         · the dark face                     — linear-gradient
+         · the per-sound LIP, full width     — ::after (3px, the colour at 92%)
+         · the underglow above it            — inset shadow, same colour
+       A pressed pad adds .lit: a radial bloom at full-strength colour, brightest
+       at the centre and falling off outward. That mirrors the app exactly — the
+       colour identifies the sound at rest, the bloom shows the press.          */
+    .pad {
+      position: relative; overflow: hidden; border: 0; width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: inherit; color: var(--text); font-weight: var(--sp-weight-semibold);
+      background: linear-gradient(var(--pad-face-top), var(--pad-face-bot));
+      box-shadow:
+        inset 0 -12px 16px -12px rgba(var(--c), .85),
+        0 2px 0 var(--pad-foot),
+        0 5px 12px rgba(0, 0, 0, .45);
+    }
+    .pad::after { content: ""; position: absolute; inset: auto 0 0 0; height: 3px; background: rgba(var(--c), .92); }
+    .pad.lit {
+      background:
+        radial-gradient(circle at 50% 50%,
+          rgba(var(--cs), .82) 0%, rgba(var(--cs), .44) 38%,
+          rgba(var(--cs), .13) 70%, rgba(var(--cs), 0) 100%),
+        linear-gradient(var(--pad-face-top), var(--pad-face-bot));
+    }
+    .pad .chip { position: absolute; left: 8px; bottom: 9px; display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 15px; border-radius: 5px; background: var(--key-bg); color: var(--text-soft); font-weight: var(--sp-weight-bold); letter-spacing: .06em; padding-inline: 5px; font-size: 9px; line-height: 1; }
+    .pad .chip.glyph { font-size: 13px; letter-spacing: 0; }
 
-    /* ── Why (personal intro) ── */
-    .why { max-width: 66ch; padding-block: var(--sp-space-8) var(--sp-space-6); }
-    .why h2 { margin: var(--sp-space-2) 0 var(--sp-space-5); font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-2xl); line-height: var(--sp-leading-snug); letter-spacing: var(--sp-tracking-tight); }
-    .why p { margin: 0 0 var(--sp-space-4); color: var(--text-soft); font-size: var(--sp-text-lg); }
-    .why p.lead-p { font-size: var(--sp-text-xl); color: var(--text); }
-    .why p.sign { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); color: var(--text); margin-bottom: 0; }
+    /* ── Hero ──────────────────────────────────────────────────────────────
+       One screen tall, with the board last: on a normal viewport the fold cuts
+       the instrument off, which is what says there is more below. It is the
+       FOLD that crops it, never a clip — scroll a little and every pad, lip
+       included, is whole. */
+    .hero {
+      min-height: 100svh; display: flex; flex-direction: column;
+      background:
+        radial-gradient(940px 560px at 50% -12%, rgba(109, 79, 192, .22), rgba(23, 21, 27, 0) 62%),
+        radial-gradient(800px 420px at 50% 112%, rgba(224, 70, 58, .16), rgba(23, 21, 27, 0) 60%);
+    }
+    .hero-main { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: clamp(var(--sp-space-6), 5vw, var(--sp-space-7)); padding-bottom: var(--sp-space-6); }
+    .hero-inner { display: flex; flex-direction: column; align-items: center; gap: var(--sp-space-5); text-align: center; }
+    .hero-icon { width: clamp(68px, 9vw, 82px); height: auto; border-radius: 19px; box-shadow: 0 14px 34px rgba(0, 0, 0, .55); }
+    .hero .claim { margin: 0; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: var(--sp-weight-semibold); line-height: 1.3; max-width: 34ch; color: var(--text); }
+    .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-space-3); }
+    .hero-note { margin: 0; font-size: var(--sp-text-sm); color: var(--text-muted); }
+    .promises { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-space-3); font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); }
+    .promises li { display: inline-flex; align-items: center; gap: var(--sp-space-3); }
+    .promises li + li::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: rgba(255, 255, 255, .4); }
 
-    /* ── Areas (loops vs one-shots rationale) ── */
-    .areas .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-space-4); margin-top: var(--sp-space-6); }
-    .area { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-2); padding: var(--sp-space-5); }
-    .area h3 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); }
-    .area .role { margin: 2px 0 var(--sp-space-4); color: var(--text-muted); font-size: var(--sp-text-sm); }
-    .area .mini { display: flex; gap: var(--sp-space-2); margin-bottom: var(--sp-space-4); }
-    .area .mini .pad { flex: 1; aspect-ratio: 1/1; font-size: var(--sp-text-xs); border-radius: var(--radius-pad); }
-    .area ul.beh { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-space-2); }
-    .area ul.beh li { display: flex; gap: var(--sp-space-2); font-size: var(--sp-text-sm); color: var(--text-soft); }
-    .area ul.beh li::before { content: "→"; color: var(--accent); font-weight: var(--sp-weight-bold); }
-    .play-example { margin-top: var(--sp-space-5); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border)); border-radius: var(--radius-sheet); padding: var(--sp-space-5) var(--sp-space-6); font-size: var(--sp-text-lg); color: var(--text); }
-    .play-example strong { font-family: var(--font-display); }
+    .board { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--sp-space-3); }
+    .board .pad { aspect-ratio: 1; border-radius: var(--sp-radius-xl); align-items: flex-end; justify-content: flex-start; padding: 0 0 var(--sp-space-4) var(--sp-space-4); font-size: var(--sp-text-md); box-shadow: inset 0 -20px 26px -20px rgba(var(--c), .85), 0 3px 0 var(--pad-foot), 0 7px 16px rgba(0, 0, 0, .45); }
+    .board .pad::after { height: 3.5px; }
+    .board .kind { position: absolute; top: 14px; left: var(--sp-space-4); font-size: 9.5px; font-weight: var(--sp-weight-bold); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; color: var(--text-muted); }
 
-    /* ── Pad-grid mock (authentic app visual, from the pad component) ── */
-    .board { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-5); }
-    .board .board-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--sp-space-4); }
-    .board .board-label .name { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); }
-    .pad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-space-3); }
-    .pad { position: relative; overflow: hidden; aspect-ratio: 1/1; border-radius: var(--radius-pad); display: flex; align-items: center; justify-content: center; font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-sm); text-align: center; background: color-mix(in srgb, var(--pc) 34%, var(--surface-1)); color: var(--text); border: 1px solid color-mix(in srgb, var(--pc) 46%, var(--border)); }
-    .pad.active { background: linear-gradient(160deg, var(--pc), color-mix(in srgb, var(--pc) 76%, #000)); color: var(--pad-active-text); border-color: transparent; box-shadow: var(--pad-active-shadow); }
-    .pad.add { background: transparent; color: var(--text-muted); border: var(--pad-add-border); }
+    /* ── Section 2 · loops and one-shots ─────────────────────────────────── */
+    .halves { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-space-5); margin-top: var(--sp-space-6); }
+    .card { display: flex; flex-direction: column; gap: var(--sp-space-5); background: rgba(255, 255, 255, .028); border: 1px solid var(--border); border-radius: var(--sp-radius-xl); padding: var(--sp-space-5); }
+    .card-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--sp-space-3); }
+    .card-head h3 { font-size: var(--sp-text-xl); }
+    .card-head .note { font-size: var(--sp-text-md); color: var(--text-soft); }
+    .card .row { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-space-3); }
+    .card .row .pad { aspect-ratio: 1; border-radius: var(--sp-radius-lg); font-size: var(--sp-text-sm); }
+    .rules { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--sp-space-3); }
+    .rules li { display: flex; align-items: flex-start; gap: 11px; font-size: var(--sp-text-md); line-height: 1.5; color: var(--text-soft); }
+    .rules .dot { flex: 0 0 auto; width: 6px; height: 6px; border-radius: 999px; margin-top: 9px; background: rgb(var(--c)); }
+    .rules strong { color: var(--text); font-weight: var(--sp-weight-semibold); }
+    .picture { margin: var(--sp-space-6) auto 0; max-width: 72ch; text-align: center; font-size: clamp(1.0625rem, 1.8vw, 1.15rem); line-height: 1.6; color: var(--text-soft); }
 
-    /* ── Section scaffolding ── */
-    section { padding-block: var(--sp-space-8); }
-    .section-head { max-width: 60ch; margin-bottom: var(--sp-space-6); }
-    .section-head h2 { margin: var(--sp-space-2) 0 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-2xl); line-height: var(--sp-leading-snug); letter-spacing: var(--sp-tracking-tight); }
-    .section-head p { margin: var(--sp-space-3) 0 0; color: var(--text-soft); font-size: var(--sp-text-lg); }
+    /* ── Two-column feature sections (make it yours / pro) ───────────────── */
+    .split { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: clamp(var(--sp-space-6), 4vw, 56px); align-items: center; }
+    .split.flip { grid-template-columns: 400px minmax(0, 1fr); }
+    .split > .copy { display: flex; flex-direction: column; gap: var(--sp-space-3); }
+    .split h2 { margin-block: var(--sp-space-2) 0; }
 
-    /* Principles strip */
-    .principles { display: flex; flex-wrap: wrap; gap: var(--sp-space-2); justify-content: center; padding-block: var(--sp-space-5); border-block: 1px solid var(--border); }
-    .badge { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); background: var(--surface-1); border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); padding: var(--sp-space-2) var(--sp-space-4); }
+    .items { margin: var(--sp-space-3) 0 0; padding: 0; list-style: none; }
+    .items li { display: flex; gap: var(--sp-space-4); padding-block: var(--sp-space-4); border-top: 1px solid var(--border); }
+    .items li:last-child { border-bottom: 1px solid var(--border); }
+    .items .mk { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 999px; margin-top: 8px; background: rgb(var(--c)); }
+    .items h3 { margin-bottom: 3px; display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+    .items p { margin: 0; font-size: var(--sp-text-md); line-height: 1.5; color: var(--text-soft); }
 
-    /* Feature groups */
-    .feature-group { margin-top: var(--sp-space-7); }
-    .feature-group > h3 { display: flex; align-items: baseline; gap: var(--sp-space-3); font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-xl); margin: 0 0 var(--sp-space-4); }
-    .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-space-4); }
-    .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-2); padding: var(--sp-space-5); }
-    .card .dot { width: 30px; height: 30px; border-radius: var(--sp-radius-sm); background: color-mix(in srgb, var(--pc, var(--accent)) 24%, var(--surface-1)); border: 1px solid color-mix(in srgb, var(--pc, var(--accent)) 42%, var(--border)); margin-bottom: var(--sp-space-3); }
-    .card h4 { margin: 0 0 var(--sp-space-2); font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); display: flex; align-items: center; gap: var(--sp-space-2); flex-wrap: wrap; }
-    .card p { margin: 0; color: var(--text-muted); font-size: var(--sp-text-sm); }
-    .pro-tag { font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); text-transform: uppercase; letter-spacing: var(--sp-tracking-label); color: var(--accent); background: var(--accent-soft); border-radius: var(--sp-radius-pill); padding: 2px var(--sp-space-2); }
+    .tag-pro { font-family: var(--font-body); font-size: 10px; font-weight: var(--sp-weight-bold); letter-spacing: .14em; text-transform: uppercase; color: #a894e6; border: 1px solid rgba(168, 148, 230, .5); border-radius: var(--sp-radius-pill); padding: 3px 8px; }
 
-    /* Standard vs Pro */
-    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-space-4); }
-    .plan { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-2); padding: var(--sp-space-6); }
-    .plan.pro { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); box-shadow: var(--sp-shadow-3); }
-    .plan h3 { margin: 0; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-xl); }
-    .plan .price { margin: var(--sp-space-2) 0 var(--sp-space-4); color: var(--text-soft); font-weight: var(--sp-weight-semibold); }
-    .plan ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-space-2); }
-    .plan li { display: flex; gap: var(--sp-space-2); font-size: var(--sp-text-sm); color: var(--text-soft); }
-    .plan li::before { content: "✓"; color: var(--accent); font-weight: var(--sp-weight-bold); }
+    /* Device-ish panels (the pad sheet, the FX rack) */
+    .panel { display: flex; flex-direction: column; gap: var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--sp-radius-xl); padding: var(--sp-space-5); box-shadow: 0 26px 60px rgba(0, 0, 0, .55); }
+    .panel .grab { width: 56px; height: 4px; border-radius: 3px; background: rgba(255, 255, 255, .22); align-self: center; }
+    .panel .label { font-size: 11px; font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: var(--text-muted); }
+    .panel .field { display: flex; align-items: center; justify-content: space-between; background: var(--surface-0); border: 1px solid var(--border-strong); border-radius: 13px; padding: 13px 15px; }
+    .panel .swatches { display: flex; flex-wrap: wrap; gap: 9px; }
+    .panel .sw { width: 30px; height: 30px; border-radius: 999px; background: rgb(var(--c)); }
+    .panel .sw[data-on] { box-shadow: 0 0 0 2px var(--surface-1), 0 0 0 4px var(--text); }
+    .panel .nav { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-3); border: 1px solid var(--border-strong); border-radius: var(--radius-control); padding: 13px 15px; }
+    .panel .nav b { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
+    .panel .nav span { font-size: var(--sp-text-sm); color: var(--text-muted); }
+    .panel-note { margin: var(--sp-space-3) 0 0; text-align: center; font-size: var(--sp-text-sm); color: var(--text-muted); }
 
-    /* Screenshots */
-    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-space-5); align-items: end; }
-    .shot { display: flex; flex-direction: column; align-items: center; gap: var(--sp-space-3); }
-    .frame { width: 100%; background: var(--surface-2); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: var(--sp-text-sm); text-align: center; padding: var(--sp-space-4); }
-    .frame.phone { aspect-ratio: 9/19; max-width: 220px; margin-inline: auto; border-radius: 34px; }
-    .frame.tablet { aspect-ratio: 3/4; border-radius: 22px; }
-    .frame.desktop { aspect-ratio: 16/10; border-radius: var(--radius-sheet); }
-    .shot .cap { font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-soft); }
+    /* ── The stage ───────────────────────────────────────────────────────────
+       The side column of the two feature sections is no longer one fixed
+       picture: it is a stage that shows whichever item the pointer, the
+       keyboard focus or a tap is currently on. Every figure is drawn in CSS and
+       SVG from the same tokens as the page — no raster, so it is sharp at any
+       density, weighs nothing extra, and cannot drift out of date the way a
+       screenshot does.
+       All figures share one grid cell, so the stage is as tall as the tallest
+       and nothing jumps when it swaps. The first one carries .on in the markup,
+       so with JavaScript off the section still shows a picture — it just stops
+       following the list. */
+    .stage { display: grid; }
+    .stage > .fig { grid-area: 1 / 1; align-self: center; opacity: 0; visibility: hidden; transition: opacity var(--sp-dur-base) var(--sp-ease); }
+    .stage > .fig.on { opacity: 1; visibility: visible; }
 
-    /* FAQ */
-    .faq { display: flex; flex-direction: column; gap: var(--sp-space-3); max-width: 760px; }
-    details { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-control); padding: var(--sp-space-4) var(--sp-space-5); }
-    details[open] { box-shadow: var(--sp-shadow-2); }
-    summary { cursor: pointer; font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); list-style: none; }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; float: right; color: var(--text-muted); font-weight: var(--sp-weight-bold); }
-    details[open] summary::after { content: "–"; }
-    details p { margin: var(--sp-space-3) 0 0; color: var(--text-muted); }
+    /* The list item that is driving the stage. The marker grows into a bar so
+       the link between the text and the picture is readable without colour. */
+    .items li { border-radius: var(--sp-radius-md); transition: background var(--sp-dur-base) var(--sp-ease); }
+    .items li .mk { transition: height var(--sp-dur-base) var(--sp-ease), border-radius var(--sp-dur-base) var(--sp-ease); }
+    .has-stage .items li { padding-inline: var(--sp-space-3); margin-inline: calc(var(--sp-space-3) * -1); }
+    .has-stage.is-live .items li { cursor: pointer; }
+    .has-stage.is-live .items li.sel { background: rgba(255, 255, 255, .04); }
+    .has-stage.is-live .items li.sel .mk { height: 30px; border-radius: 999px; }
 
-    /* Final CTA */
-    .cta-band { text-align: center; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-sheet); box-shadow: var(--sp-shadow-3); padding: var(--sp-space-8) var(--sp-space-6); }
-    .cta-band h2 { margin: 0 0 var(--sp-space-3); font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-2xl); letter-spacing: var(--sp-tracking-tight); }
-    .cta-band p { margin: 0 auto var(--sp-space-5); color: var(--text-soft); max-width: 52ch; font-size: var(--sp-text-lg); }
+    /* ── Figure parts ────────────────────────────────────────────────────── */
+    .fig-cap { margin: var(--sp-space-3) 0 0; text-align: center; font-size: var(--sp-text-sm); color: var(--text-muted); }
+    .fig .panel { gap: var(--sp-space-4); }
+    .row-b { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-3); }
+    .dname { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
 
-    footer { text-align: center; color: var(--text-muted); font-size: var(--sp-text-sm); padding: var(--sp-space-7) var(--sp-space-5); border-top: 1px solid var(--border); }
-    footer a { color: var(--text-soft); }
+    /* A waveform: fixed bars, mirrored around the middle. */
+    .wave { display: flex; align-items: center; gap: 2px; height: 76px; }
+    .wave i { flex: 1 1 0; border-radius: 2px; background: rgba(255, 255, 255, .26); height: var(--h); }
+    .wave i[data-keep] { background: rgb(var(--c)); }
+    .wave.sm { height: 34px; gap: 1.5px; }
 
-    /* ── Responsive ── */
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; gap: var(--sp-space-6); padding-block: var(--sp-space-7) var(--sp-space-6); }
-      .cards { grid-template-columns: 1fr 1fr; }
-      .shots { grid-template-columns: 1fr; justify-items: center; }
-      .frame.tablet, .frame.desktop { max-width: 420px; }
+    /* The trimmed-away ends, and the two handles between them. */
+    .trim { position: relative; }
+    .trim .cut { position: absolute; top: 0; bottom: 0; background: rgba(23, 21, 27, .72); }
+    .trim .hd { position: absolute; top: -6px; bottom: -6px; width: 3px; border-radius: 3px; background: rgb(var(--c)); }
+    .trim .hd::after { content: ""; position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: 13px; height: 13px; border-radius: 4px; background: rgb(var(--c)); }
+
+    .keycap { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding-inline: 8px; border-radius: 7px; background: var(--key-bg); border-bottom: 2px solid rgba(0, 0, 0, .45); font-size: var(--sp-text-sm); font-weight: var(--sp-weight-bold); color: var(--text-soft); }
+    .minipad { position: relative; overflow: hidden; aspect-ratio: 1; border-radius: 10px; background: linear-gradient(var(--pad-face-top), var(--pad-face-bot)); box-shadow: inset 0 -8px 11px -8px rgba(var(--c), .85); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: var(--sp-weight-semibold); color: var(--text-soft); }
+    .minipad::after { content: ""; position: absolute; inset: auto 0 0 0; height: 2px; background: rgba(var(--c), .92); }
+    .grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-space-2); }
+
+    .pill { display: inline-flex; align-items: center; border-radius: var(--sp-radius-pill); padding: 5px 11px; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); color: var(--text-muted); border: 1px solid var(--border-strong); }
+    .pill[data-on] { color: #a894e6; border-color: rgba(168, 148, 230, .5); background: rgba(168, 148, 230, .12); }
+
+    .track { position: relative; height: 6px; border-radius: 3px; background: var(--vol-track); }
+    .track i { position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: 3px; background: rgb(var(--c)); }
+    .track b { position: absolute; top: 50%; left: var(--v); translate: -50% -50%; width: 17px; height: 17px; border-radius: 999px; background: var(--text); box-shadow: 0 2px 6px rgba(0, 0, 0, .5); }
+
+    .rec { width: 60px; height: 60px; border-radius: 999px; background: rgba(197, 63, 54, .16); border: 2px solid #ef8079; display: flex; align-items: center; justify-content: center; align-self: center; }
+    .rec i { width: 24px; height: 24px; border-radius: 6px; background: #ef8079; }
+    .meter { display: flex; align-items: flex-end; gap: 3px; height: 42px; }
+    .meter i { flex: 1 1 0; border-radius: 2px; background: rgb(var(--c)); height: var(--h); opacity: var(--o, 1); }
+
+    .lane { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: center; gap: var(--sp-space-3); }
+    .lane span { font-size: 11px; font-weight: var(--sp-weight-bold); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+
+    .file { display: flex; align-items: center; gap: var(--sp-space-4); border: 1px solid var(--border-strong); border-radius: var(--radius-control); padding: var(--sp-space-4); }
+    .file .ic { flex: 0 0 auto; width: 40px; height: 48px; border-radius: 6px 10px 6px 6px; background: rgba(168, 148, 230, .18); border: 1px solid rgba(168, 148, 230, .45); }
+
+    .dial { width: 92px; height: 92px; border-radius: 999px; background: conic-gradient(from 220deg, #a894e6 0turn, #a894e6 0.42turn, rgba(255,255,255,.1) 0.42turn, rgba(255,255,255,.1) 0.72turn, transparent 0.72turn); display: flex; align-items: center; justify-content: center; align-self: center; }
+    .dial i { width: 68px; height: 68px; border-radius: 999px; background: var(--surface-1); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); color: var(--text); font-style: normal; }
+
+    .fx { display: flex; flex-direction: column; }
+    .fx-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: var(--sp-space-3); }
+    .fx-top b { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); }
+    .fx-play { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 13px; }
+    .fx-row { display: grid; grid-template-columns: 46px minmax(0, 96px) minmax(0, 1fr); align-items: center; gap: var(--sp-space-3); padding-block: var(--sp-space-3); border-top: 1px solid var(--border-strong); }
+    .fx-row:last-of-type { border-bottom: 1px solid var(--border-strong); }
+    .sw-t { width: 46px; height: 26px; border-radius: 999px; background: var(--key-bg); position: relative; }
+    .sw-t i { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 999px; background: #6f6a62; }
+    .sw-t[data-on] { background: rgba(168, 148, 230, .4); }
+    .sw-t[data-on] i { left: 23px; background: #a894e6; }
+    .fx-row b { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
+    .fx-row span { font-size: var(--sp-text-sm); color: var(--text-muted); }
+
+    /* ── Why ─────────────────────────────────────────────────────────────── */
+    .why { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(var(--sp-space-6), 4vw, 48px); align-items: center; }
+    .portrait { aspect-ratio: 1; border-radius: var(--sp-radius-xl); border: 1px dashed var(--border-strong); display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--sp-space-5); font-size: var(--sp-text-sm); line-height: 1.5; color: var(--text-muted); }
+    .why .copy { display: flex; flex-direction: column; gap: var(--sp-space-4); }
+    .why .copy p { margin: 0; font-size: clamp(1.0625rem, 1.9vw, 1.1875rem); line-height: 1.62; color: var(--text-soft); max-width: 58ch; }
+    .signature { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); color: #e0b455; }
+    .details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-space-6); margin-top: var(--sp-space-6); padding-top: var(--sp-space-6); border-top: 1px solid var(--border); }
+    .details h3 { margin-bottom: var(--sp-space-2); }
+    .details p { margin: 0; font-size: var(--sp-text-md); line-height: 1.55; color: var(--text-soft); }
+
+    /* ── Screens ─────────────────────────────────────────────────────────── */
+    .shots { display: flex; align-items: flex-end; justify-content: center; gap: var(--sp-space-5); margin-top: var(--sp-space-6); }
+    .shot { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: var(--sp-space-3); }
+    .shot .frame { height: 380px; width: var(--w); border: 1px dashed var(--border-strong); background: rgba(255, 255, 255, .022); display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--sp-space-4); font-size: var(--sp-text-sm); line-height: 1.5; color: var(--text-muted); }
+    .shot .cap { font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
+    .footnote { margin: var(--sp-space-6) 0 0; text-align: center; font-size: var(--sp-text-sm); color: var(--text-muted); }
+
+    /* ── Price ───────────────────────────────────────────────────────────── */
+    .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-space-5); margin-top: var(--sp-space-6); }
+    .plan { display: flex; flex-direction: column; gap: var(--sp-space-3); background: rgba(255, 255, 255, .028); border: 1px solid var(--border); border-radius: var(--sp-radius-xl); padding: var(--sp-space-5); }
+    .plan.is-pro { border-color: rgba(168, 148, 230, .32); }
+    .plan h3 { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; font-size: var(--sp-text-xl); }
+    .plan .price { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: clamp(1.9rem, 3.4vw, 2.2rem); letter-spacing: -0.02em; }
+    .plan .price small { font-family: var(--font-body); font-size: var(--sp-text-md); font-weight: var(--sp-weight-regular); color: var(--text-muted); }
+    .plan .sub { font-size: var(--sp-text-md); line-height: 1.55; color: var(--text-soft); }
+    .plan ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .plan li { font-size: var(--sp-text-sm); color: var(--text-soft); }
+
+    .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 44px; margin-top: var(--sp-space-6); }
+    .faq > div { padding-block: var(--sp-space-4); border-top: 1px solid var(--border); }
+    .faq b { display: block; font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); margin-bottom: 4px; }
+    .faq p { margin: 0; font-size: var(--sp-text-md); line-height: 1.5; color: var(--text-soft); }
+    .faq > div:target b { color: #e0b455; }
+    .get { display: flex; flex-direction: column; align-items: center; gap: var(--sp-space-3); margin-top: var(--sp-space-7); }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    .site-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-space-4); padding-block: var(--sp-space-5) var(--sp-space-6); border-top: 1px solid var(--border); font-size: var(--sp-text-sm); color: var(--text-muted); }
+    .site-foot .home { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--text-soft); }
+    .site-foot .home img { width: 24px; height: 24px; display: block; }
+    .site-foot .home span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-sm); }
+
+    /* ── Responsive ──────────────────────────────────────────────────────────
+       Three breakpoints, each undoing one desktop assumption:
+         1024 — the side panels stop earning their column
+          760 — two columns become one
+          560 — the board halves its row count; type steps down            */
+    @media (max-width: 1024px) {
+      .split, .split.flip { grid-template-columns: minmax(0, 1fr); }
+      .split .panel-wrap, .split .stage { max-width: 440px; width: 100%; margin-inline: auto; }
+      .stage > .fig:not(.on) { display: none; }
+      .split.flip .copy { order: -1; }
+      .why { grid-template-columns: minmax(0, 1fr); }
+      .portrait { max-width: 240px; }
+    }
+    @media (max-width: 760px) {
+      .halves, .plans, .faq, .details { grid-template-columns: minmax(0, 1fr); }
+      .faq > div:first-child { border-top: 1px solid var(--border); }
+      .details { gap: var(--sp-space-5); }
+      .hero-cta { flex-direction: column; align-self: stretch; }
+      .hero-cta .btn { width: 100%; }
+    }
+
+    /* The four device frames need ~1050px to sit in a row. Below that they are
+       swiped instead of stacked — four 320px boxes stacked is a lot of scroll
+       for what are still placeholders. Edge to edge, the section gutter as the
+       inset, snapping so a frame always lands centred. */
+    @media (max-width: 1079px) {
+      .shots {
+        justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory;
+        margin-inline: calc(var(--sp-space-5) * -1);
+        padding-inline: var(--sp-space-5); padding-bottom: var(--sp-space-3);
+        scroll-padding-inline: var(--sp-space-5);
+      }
+      .shot { scroll-snap-align: center; }
+      .shot .frame { height: 320px; }
     }
     @media (max-width: 560px) {
-      .hero h1 { font-size: var(--sp-text-2xl); }
-      .cards { grid-template-columns: 1fr; }
-      .plans { grid-template-columns: 1fr; }
-      .areas .two { grid-template-columns: 1fr; }
-      .area .mini .pad { max-width: 96px; }
-      .site-head nav { display: none; }
+      .board { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-inline: 0; gap: 10px; }
+      .board .pad { border-radius: var(--sp-radius-lg); padding: 0 0 12px 12px; font-size: var(--sp-text-sm); }
+      /* "One-shot" needs more room than a 4-up pad has: drop to the app's own
+         short marker rather than letting it wrap onto the label. */
+      .board .kind { top: 11px; left: 12px; font-size: 8.5px; letter-spacing: .12em; }
+      .board .kind .long { display: none; }
+      .card .row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .card .row li:nth-child(4) { display: none; }
+      .promises { gap: var(--sp-space-2); }
+      .promises li + li::before { display: none; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-  <header class="wrap site-head">
-    <a class="home" href="/">
-      <img src="../studio-logo.svg" alt="" aria-hidden="true">
-      <span class="studio">Scattered Pearls</span>
-    </a>
-    <div class="head-right">
-      <nav aria-label="Page sections">
-        <a href="#why">Why</a>
-        <a href="#areas">Layout</a>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-    </div>
-  </header>
+<!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+<div class="hero">
+  <div class="wrap">
+    <header class="site-head">
+      <a class="home" href="/">
+        <img src="../studio-tile.svg" alt="" width="28" height="28">
+        <span>Scattered Pearls</span>
+      </a>
+      <!-- The language selector lands here, matching the studio home. -->
+    </header>
+  </div>
 
-  <main id="main">
-    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <main id="main" class="hero-main">
     <div class="wrap">
-      <section class="hero" style="padding-top: var(--sp-space-6);">
-        <div>
-          <img class="app-icon" src="img/icon-square.svg" alt="Blitzfingers app icon">
-          <h1>Blitzfingers</h1>
-          <p class="tagline">A finger-drumming soundboard for your pocket.</p>
-          <p class="lede">Tap colourful pads to fire loops and one-shots, record and shape your own
-            sounds, and drum with your fingers. Ad-free, pay once — no subscription, no accounts,
-            nothing tracked.</p>
-          <div class="cta-row">
-            <!-- TODO(launch): swap href for the real App Store URL + official Apple badge asset. -->
-            <a class="btn btn-primary" href="#" aria-disabled="true">Download on the App Store</a>
-            <a class="btn btn-ghost" href="#features">See what it does</a>
-          </div>
-          <p class="platform-note"><strong>iPhone first.</strong> macOS and Android are on the way.
-            One-time unlock for the Pro features — coming soon.</p>
+      <div class="hero-inner">
+        <img class="hero-icon" src="img/icon.svg" alt="" width="82" height="82">
+        <h1>Blitzfingers</h1>
+        <p class="claim">A finger-drumming soundboard for your pocket.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#pricing">Download on the App&nbsp;Store</a>
+          <a class="btn btn-ghost" href="#areas">See what it does</a>
         </div>
-
-        <!-- Illustrative board (design-system pad component; generic labels, not bundled content). -->
-        <div class="board" role="img" aria-label="Blitzfingers pad grid: a board of colourful sound pads, one playing.">
-          <div class="board-label">
-            <span class="name">Party</span>
-            <span class="kicker">Bank ▾</span>
-          </div>
-          <div class="pad-grid">
-            <div class="pad" style="--pc: var(--sp-pad-coral)">Kick</div>
-            <div class="pad active" style="--pc: var(--sp-pad-amber)">Snare</div>
-            <div class="pad" style="--pc: var(--sp-pad-green)">Hat</div>
-            <div class="pad" style="--pc: var(--sp-pad-blue)">Clap</div>
-            <div class="pad" style="--pc: var(--sp-pad-teal)">Bass</div>
-            <div class="pad" style="--pc: var(--sp-pad-rose)">Chord</div>
-            <div class="pad" style="--pc: var(--sp-pad-purple)">Vox</div>
-            <div class="pad" style="--pc: var(--sp-pad-slate)">Zap</div>
-            <div class="pad add">+ Add</div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ── Why (personal intro) ─────────────────────────────────────────── -->
-    <div class="wrap">
-      <section id="why" class="why">
-        <span class="kicker">Why</span>
-        <h2>Why I made Blitzfingers</h2>
-        <p class="lead-p">I wanted a soundboard I actually enjoyed. The App Store is full of them —
-          but they drowned me in ads, or hid the good parts behind a subscription. That's not my
-          thing. So I built the one I was missing.</p>
-        <p>The rule was simple: open it and just play. Tap a pad, a sound fires. Stack one-shots
-          like a drummer; layer loops into a groove. Fun in the first second — no setup, no manual.</p>
-        <p>But I didn't want "easy" to mean "shallow." So it goes as deep as you like: record your
-          own sounds, trim and shape them on a waveform, add real effects, bend the pitch, layer
-          takes, and play the whole thing from a MIDI controller.</p>
-        <p>And the small things are there because I sweated them — colours that help your eye find a
-          sound, haptics you feel on every hit, a screen that won't fall asleep mid-take, sound that
-          steps aside politely when a call comes in.</p>
-        <p class="sign">Made with care, by one pair of hands. Pay once, and it's yours.</p>
-      </section>
-    </div>
-
-    <!-- ── Principles strip ─────────────────────────────────────────────── -->
-    <div class="wrap">
-      <div class="principles" aria-label="What Blitzfingers promises">
-        <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-amber) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-amber) 42%, var(--border-strong))">pay once</span>
-        <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-teal) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-teal) 42%, var(--border-strong))">ad-free</span>
-        <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-blue) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-blue) 42%, var(--border-strong))">no accounts</span>
-        <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-purple) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-purple) 42%, var(--border-strong))">no tracking</span>
-        <span class="badge" style="background: color-mix(in srgb, var(--sp-pad-rose) 16%, var(--surface-1)); border-color: color-mix(in srgb, var(--sp-pad-rose) 42%, var(--border-strong))">no subscription</span>
+        <p class="hero-note">Coming soon — [the official Apple badge replaces this button at launch]</p>
+        <ul class="promises">
+          <li>Yours to keep</li>
+          <li>No subscriptions</li>
+          <li>No ads</li>
+          <li>No tracking</li>
+        </ul>
       </div>
     </div>
 
-    <!-- ── Areas: why loops & one-shots are split ───────────────────────── -->
+    <!-- The board. Not interactive on the web — it is a picture of the
+         instrument, so it is marked up as a list, not as buttons. -->
     <div class="wrap">
-      <section id="areas" class="areas">
-        <div class="section-head">
-          <span class="kicker">The layout</span>
-          <h2>Why loops and one-shots live apart</h2>
-          <p>Watch how you actually play and you'll see two different jobs — so they get two
-            areas that behave differently on purpose.</p>
-        </div>
-
-        <div class="two">
-          <div class="area">
-            <h3>Loops</h3>
-            <p class="role">your bed — a groove, a drone, a backing</p>
-            <div class="mini" aria-hidden="true">
-              <div class="pad active" style="--pc: var(--sp-pad-amber)">Groove</div>
-              <div class="pad" style="--pc: var(--sp-pad-blue)">Drone</div>
-              <div class="pad" style="--pc: var(--sp-pad-teal)">Chords</div>
-            </div>
-            <ul class="beh">
-              <li>Tap it and it runs and repeats</li>
-              <li>Tap another and it crossfades in — one at a time, so the vibe never jars</li>
-              <li>Latch one to keep it playing underneath the next</li>
-            </ul>
-          </div>
-
-          <div class="area">
-            <h3>One-shots</h3>
-            <p class="role">your hits — a clap, a stab, a vocal snip</p>
-            <div class="mini" aria-hidden="true">
-              <div class="pad active" style="--pc: var(--sp-pad-coral)">Clap</div>
-              <div class="pad active" style="--pc: var(--sp-pad-purple)">Zap</div>
-              <div class="pad" style="--pc: var(--sp-pad-rose)">Vox</div>
-            </div>
-            <ul class="beh">
-              <li>Tap it and it fires instantly</li>
-              <li>They overlap and stack, so you can drum with your fingers</li>
-              <li>Hold one to make it repeat</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="play-example">Picture it: a warm loop holds the groove while you tap claps and zaps
-          over the top, in time. <strong>You need both — at the same time.</strong> A bed that swaps
-          smoothly, and hits that pile up: two sets of rules, so each gets its own space.</p>
-      </section>
-    </div>
-
-    <!-- ── Features ─────────────────────────────────────────────────────── -->
-    <div class="wrap">
-      <section id="features">
-        <div class="section-head">
-          <span class="kicker">Features</span>
-          <h2>Everything a soundboard should be — and an instrument too.</h2>
-          <p>Start playing in a second. Go as deep as you like: record, trim, add effects, layer
-            takes, and play it all from a MIDI controller.</p>
-        </div>
-
-        <div class="feature-group">
-          <h3>Play</h3>
-          <div class="cards">
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-coral)"></div><h4>Tap-to-play pads</h4><p>A board of colourful pads — tap to fire a sound instantly. Pick the pad size that suits you: Auto, S, M or L.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-amber)"></div><h4>One-shots that overlap</h4><p>Percussive hits stack and overlap, so you can actually finger-drum instead of waiting for one sound to finish.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-teal)"></div><h4>Loops with crossfade</h4><p>Backing loops play one at a time and crossfade smoothly — or layer them to build up a bed.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-purple)"></div><h4>Keep playing &amp; hold-to-repeat</h4><p>Latch a loop so it keeps running under the next one, or hold a pad to repeat it while pressed.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-blue)"></div><h4>Banks</h4><p>Group your sounds into named sets — create, rename and switch banks for different gigs, jokes or projects.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-slate)"></div><h4>Keyboard &amp; Stop-all</h4><p>On a keyboard, fire one-shots from the number row and loops from letters. One key stops everything.</p></div>
-          </div>
-        </div>
-
-        <div class="feature-group">
-          <h3>Make it yours</h3>
-          <div class="cards">
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-rose)"></div><h4>Record your own</h4><p>Capture sounds with the mic and turn them into pads — your voice, an instrument, anything around you.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-green)"></div><h4>Trim &amp; normalize</h4><p>Auto-trim the quiet start and end on a waveform, or set it by hand. Even out levels so every pad sits right.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-blue)"></div><h4>Effects rack <span class="pro-tag">Pro</span></h4><p>Filter, delay, reverb, chorus, phaser, distortion, lo-fi, pan and bitcrush — tweaked live, with no clicks.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-amber)"></div><h4>Pitch, speed &amp; reverse <span class="pro-tag">Pro</span></h4><p>Shift pitch ±12 semitones without changing tempo, speed a sound up or down, or play it backwards.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-purple)"></div><h4>Overdub layering <span class="pro-tag">Pro</span></h4><p>Sing or play along and stack takes on each loop pass, with automatic latency calibration. Headphones required.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-coral)"></div><h4>Per-pad editing</h4><p>Rename, recolour, set volume, and reorder pads by dragging. Your colour follows the sound.</p></div>
-          </div>
-        </div>
-
-        <div class="feature-group">
-          <h3>Take it anywhere</h3>
-          <div class="cards">
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-teal)"></div><h4>Export &amp; import boards <span class="pro-tag">Pro</span></h4><p>Save a whole bank as a single file you can browse in Files and share — then re-import it with everything intact.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-blue)"></div><h4>MIDI controller <span class="pro-tag">Pro</span></h4><p>Map pads to a MIDI controller, including Bluetooth MIDI, and learn notes and CCs for hands-on play.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-amber)"></div><h4>Themes &amp; jewel-tone colours</h4><p>System, Light or Dark. Each sound keeps its own hue so your eye finds it fast.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-rose)"></div><h4>Haptics &amp; screen-awake</h4><p>Feel each hit with subtle haptics, and the screen stays awake while you record or play.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-slate)"></div><h4>Plays nice with iOS</h4><p>Sounds through the silent switch, steps aside for calls and Siri, and pauses when you unplug headphones.</p></div>
-            <div class="card"><div class="dot" style="--pc: var(--sp-pad-green)"></div><h4>Everything on-device</h4><p>Your sounds and boards live on your device. No cloud, no account, nothing uploaded.</p></div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ── Screenshots ──────────────────────────────────────────────────── -->
-    <div class="wrap">
-      <section id="screens">
-        <div class="section-head">
-          <span class="kicker">See it</span>
-          <h2>Made for iPhone — and iPad and Mac later.</h2>
-          <p>Real screenshots land here before launch.</p>
-        </div>
-        <div class="shots">
-          <!-- TODO(launch): replace frames with real captures in img/screens/ (iPhone, iPad, macOS). -->
-          <div class="shot"><div class="frame phone">iPhone screenshot<br>coming before launch</div><span class="cap">iPhone</span></div>
-          <div class="shot"><div class="frame tablet">iPad screenshot<br>coming before launch</div><span class="cap">iPad</span></div>
-          <div class="shot"><div class="frame desktop">macOS screenshot<br>coming later</div><span class="cap">macOS</span></div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ── Pricing ──────────────────────────────────────────────────────── -->
-    <div class="wrap">
-      <section id="pricing">
-        <div class="section-head">
-          <span class="kicker">Pricing</span>
-          <h2>Pay once. No subscription, ever.</h2>
-          <p>A small one-time price for the app, with everything you need to play. Unlock the
-            advanced creative tools with a second one-time purchase — never a subscription.</p>
-        </div>
-        <div class="plans">
-          <div class="plan">
-            <h3>Standard</h3>
-            <div class="price">A small one-time purchase</div>
-            <ul>
-              <li>Tap-to-play pad grid</li>
-              <li>One-shots &amp; crossfading loops</li>
-              <li>Keep-playing &amp; hold-to-repeat</li>
-              <li>Banks, reorder, rename, recolour</li>
-              <li>Record your own sounds</li>
-              <li>Trim &amp; normalize</li>
-              <li>Volume, fades, themes, pad size</li>
-            </ul>
-          </div>
-          <div class="plan pro">
-            <h3>Pro <span class="pro-tag">one-time unlock</span></h3>
-            <div class="price">Everything in Standard, plus a one-time unlock</div>
-            <ul>
-              <li>Effects rack (9 live effects)</li>
-              <li>Pitch, speed &amp; reverse</li>
-              <li>Overdub layering</li>
-              <li>Export &amp; import boards</li>
-              <li>MIDI controller mapping</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
-    <div class="wrap">
-      <section id="faq">
-        <div class="section-head">
-          <span class="kicker">FAQ</span>
-          <h2>Good to know</h2>
-        </div>
-        <div class="faq">
-          <details><summary>What is Blitzfingers?</summary><p>A lean soundboard and finger-drumming app for iPhone. You tap colourful pads to play loops and one-shots, and you can record and shape your own sounds too.</p></details>
-          <details><summary>How much does it cost?</summary><p>Blitzfingers is a small one-time purchase — no subscription. The advanced creative tools (effects, overdub, export and MIDI) are an additional one-time Pro unlock.</p></details>
-          <details><summary>Is there a subscription?</summary><p>No. Blitzfingers is pay-once. You unlock Pro with a single purchase and keep it — there is no subscription and no recurring fee.</p></details>
-          <details><summary>Do I need an account?</summary><p>No account, no sign-up. There is nothing to log into.</p></details>
-          <details><summary>Does it collect my data?</summary><p>No. There are no ads and no tracking. Your sounds and boards stay on your device — nothing is uploaded.</p></details>
-          <details><summary>Which platforms does it run on?</summary><p>iPhone first. macOS and Android are planned and will follow.</p></details>
-          <details><summary>Can I use my own sounds?</summary><p>Yes. Record with the mic or import your own audio, then trim, colour and arrange each pad. You can export a whole board and share or re-import it.</p></details>
-          <details><summary>Does it work with a MIDI controller?</summary><p>Yes — map pads to a MIDI controller, including Bluetooth MIDI, and learn notes and CCs. (Pro.)</p></details>
-          <details id="faq-knob-mode"><summary>My MIDI knob controls volume oddly — what are “Absolute” and “Relative”?</summary><p>Under <strong>MIDI controller</strong> you can choose how knobs are read. <strong>Absolute</strong> suits most knobs and faders — the ones with a fixed start and end; the app follows the knob’s position directly. Pick <strong>Relative</strong> for <em>endless encoders</em> that spin without a start or end (they send only small step changes). So: if a knob mapped to volume jumps, sticks or barely moves, switch it to Relative; otherwise leave it on Absolute. Most controllers work on Absolute.</p></details>
-        </div>
-      </section>
-    </div>
-
-    <!-- ── Final CTA ────────────────────────────────────────────────────── -->
-    <div class="wrap">
-      <section>
-        <div class="cta-band">
-          <h2>Ready to play?</h2>
-          <p>Blitzfingers is coming to the App Store. Ad-free, pay once, yours to keep.</p>
-          <!-- TODO(launch): swap href for the real App Store URL + official Apple badge asset. -->
-          <a class="btn btn-primary" href="#" aria-disabled="true">Download on the App Store</a>
-        </div>
-      </section>
+      <ul class="board">
+        <li class="pad"     style="--c: var(--p-coral);"><span class="kind"><span class="long">One-</span>shot</span>Kick</li>
+        <li class="pad lit" style="--c: var(--p-amber);  --cs: 143, 100, 18;"><span class="kind"><span class="long">One-</span>shot</span>Snare</li>
+        <li class="pad"     style="--c: var(--p-green);"><span class="kind"><span class="long">One-</span>shot</span>Hat</li>
+        <li class="pad"     style="--c: var(--p-blue);"><span class="kind"><span class="long">One-</span>shot</span>Clap</li>
+        <li class="pad lit" style="--c: var(--p-teal);   --cs: 31, 132, 119;"><span class="kind">Loop</span>Bass</li>
+        <li class="pad"     style="--c: var(--p-rose);"><span class="kind">Loop</span>Chord</li>
+        <li class="pad"     style="--c: var(--p-purple);"><span class="kind">Loop</span>Vox</li>
+        <li class="pad"     style="--c: var(--p-slate);"><span class="kind">Loop</span>Air</li>
+      </ul>
     </div>
   </main>
+</div>
 
-  <footer>
-    <p><a href="/">Scattered Pearls</a> — small, precious, scattered pearls. · © 2026</p>
+<!-- ── 2 · The layout ───────────────────────────────────────────────────── -->
+<section id="areas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">The layout</span>
+      <h2>Why loops and one-shots live apart</h2>
+      <p class="lede">Two kinds of sound, two ways of behaving. Keeping them in separate halves of the board is what lets you play with both hands without thinking about it.</p>
+    </div>
+
+    <div class="halves">
+      <div class="card">
+        <div class="card-head">
+          <h3>One-shots</h3>
+          <span class="note">your hits — a clap, a stab, a vocal snip</span>
+        </div>
+        <ul class="row">
+          <li class="pad lit" style="--c: var(--p-coral); --cs: 197, 63, 54;">Kick</li>
+          <li class="pad lit" style="--c: var(--p-blue);  --cs: 58, 91, 199;">Clap</li>
+          <li class="pad lit" style="--c: var(--p-slate); --cs: 86, 97, 115;">Zap</li>
+          <li class="pad"     style="--c: var(--p-green);">Hat<span class="chip">HOLD</span></li>
+        </ul>
+        <ul class="rules">
+          <li style="--c: var(--p-coral);"><span class="dot"></span><span>Tap it and it fires instantly.</span></li>
+          <li style="--c: var(--p-blue);"><span class="dot"></span><span><strong>They overlap and stack</strong> — three at once is normal, which is what makes finger-drumming possible.</span></li>
+          <li style="--c: var(--p-green);"><span class="dot"></span><span>Hold one to make it repeat while your finger stays down.</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Loops</h3>
+          <span class="note">your bed — a groove, a drone, a backing</span>
+        </div>
+        <ul class="row">
+          <li class="pad lit" style="--c: var(--p-teal);  --cs: 31, 132, 119;">Bass</li>
+          <li class="pad lit" style="--c: var(--p-amber); --cs: 143, 100, 18;">Drone<span class="chip glyph">∞</span></li>
+          <li class="pad"     style="--c: var(--p-rose);">Chord</li>
+          <li class="pad"     style="--c: var(--p-purple);">Air</li>
+        </ul>
+        <ul class="rules">
+          <li style="--c: var(--p-teal);"><span class="dot"></span><span>Tap it and it runs, and keeps running.</span></li>
+          <li style="--c: var(--p-rose);"><span class="dot"></span><span><strong>One at a time</strong> — tap another and it crossfades in, so the vibe never jars.</span></li>
+          <li style="--c: var(--p-amber);"><span class="dot"></span><span>Latch one and it keeps playing underneath the next. That is the <strong>∞</strong> above.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="picture">Picture it: a warm loop holds the groove while you tap claps and zaps over the top. That is the whole app, and you had to learn nothing to get there.</p>
+  </div>
+</section>
+
+<!-- ── 3 · Make it yours ────────────────────────────────────────────────── -->
+<section id="features">
+  <div class="wrap">
+    <div class="split has-stage">
+      <div class="copy">
+        <span class="kicker">In the app</span>
+        <h2>Make it yours</h2>
+        <p class="lede">The board that ships is a starting point. Everything on it can be replaced, renamed and rearranged until it is your board.</p>
+        <ul class="items">
+          <li style="--c: var(--p-rose);"><span class="mk"></span><div><h3>Record your own</h3><p>Capture anything with the mic and it becomes a pad — your voice, an instrument, the dog.</p></div></li>
+          <li style="--c: var(--p-green);"><span class="mk"></span><div><h3>Trim and normalize</h3><p>Cut the silence off the start and end on a waveform, or set it by hand. Even out levels so one pad does not shout.</p></div></li>
+          <li style="--c: var(--p-coral);"><span class="mk"></span><div><h3>Name it, colour it, move it</h3><p>Drag a pad where your hand expects it. Give it a name and a hue — the colour sits in the pad's lip, so you find it without reading.</p></div></li>
+          <li style="--c: var(--p-blue);"><span class="mk"></span><div><h3>Banks</h3><p>Group sounds into named sets and switch between them — one for the gig, one for the running joke.</p></div></li>
+          <li style="--c: var(--p-slate);"><span class="mk"></span><div><h3>Keyboard, and one key for silence</h3><p>On a keyboard the number row fires one-shots and letters fire loops. One key stops everything at once.</p></div></li>
+        </ul>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+
+        <!-- 1 · Record your own -->
+        <div class="fig on" data-i="1">
+          <div class="panel">
+            <div class="row-b"><span class="label">Recording</span><span class="dname" style="color: #ef8079;">0:04</span></div>
+            <div class="rec"><i></i></div>
+            <div class="meter" style="--c: var(--p-coral)"><i style="--h: 50%; --o: .55"></i><i style="--h: 98%; --o: 1"></i><i style="--h: 23%; --o: .55"></i><i style="--h: 99%; --o: 1"></i><i style="--h: 41%; --o: .55"></i><i style="--h: 92%; --o: 1"></i><i style="--h: 66%; --o: 1"></i><i style="--h: 75%; --o: 1"></i><i style="--h: 85%; --o: 1"></i><i style="--h: 52%; --o: .55"></i><i style="--h: 97%; --o: 1"></i><i style="--h: 26%; --o: .55"></i><i style="--h: 100%; --o: 1"></i><i style="--h: 38%; --o: .55"></i><i style="--h: 93%; --o: 1"></i><i style="--h: 64%; --o: 1"></i><i style="--h: 77%; --o: 1"></i><i style="--h: 84%; --o: 1"></i><i style="--h: 55%; --o: .55"></i><i style="--h: 96%; --o: 1"></i><i style="--h: 28%; --o: .55"></i><i style="--h: 100%; --o: 1"></i></div>
+            <p class="panel-note" style="margin: 0;">Speak, play, bang a pot — it lands on a pad when you stop.</p>
+          </div>
+          <p class="fig-cap">The mic is the fastest way onto the board.</p>
+        </div>
+
+        <!-- 2 · Trim and normalize -->
+        <div class="fig" data-i="2">
+          <div class="panel">
+            <div class="row-b"><span class="label">Trim</span><span class="dname">0:00.31 — 0:01.84</span></div>
+            <div class="trim" style="--c: var(--p-green);">
+              <div class="wave"><i style="--h: 91%"></i><i style="--h: 75%"></i><i style="--h: 28%"></i><i style="--h: 50%"></i><i style="--h: 72%"></i><i style="--h: 58%"></i><i style="--h: 26%"></i><i style="--h: 23%" data-keep></i><i style="--h: 15%" data-keep></i><i style="--h: 50%" data-keep></i><i style="--h: 82%" data-keep></i><i style="--h: 84%" data-keep></i><i style="--h: 49%" data-keep></i><i style="--h: 32%" data-keep></i><i style="--h: 70%" data-keep></i><i style="--h: 72%" data-keep></i><i style="--h: 44%" data-keep></i><i style="--h: 15%" data-keep></i><i style="--h: 22%" data-keep></i><i style="--h: 31%" data-keep></i><i style="--h: 67%" data-keep></i><i style="--h: 85%" data-keep></i><i style="--h: 66%" data-keep></i><i style="--h: 17%" data-keep></i><i style="--h: 60%" data-keep></i><i style="--h: 80%" data-keep></i><i style="--h: 63%" data-keep></i><i style="--h: 28%" data-keep></i><i style="--h: 22%" data-keep></i><i style="--h: 16%" data-keep></i><i style="--h: 49%" data-keep></i><i style="--h: 78%" data-keep></i><i style="--h: 76%" data-keep></i><i style="--h: 38%" data-keep></i><i style="--h: 43%" data-keep></i><i style="--h: 79%"></i><i style="--h: 78%"></i><i style="--h: 47%"></i><i style="--h: 14%"></i><i style="--h: 21%"></i><i style="--h: 30%"></i><i style="--h: 64%"></i><i style="--h: 78%"></i><i style="--h: 56%"></i></div>
+              <span class="cut" style="left: 0; width: 15%;"></span>
+              <span class="cut" style="right: 0; width: 22%;"></span>
+              <span class="hd" style="left: 15%;"></span>
+              <span class="hd" style="left: 78%;"></span>
+            </div>
+            <div class="row-b" style="border-top: 1px solid var(--border); padding-top: var(--sp-space-4);">
+              <span class="dname">Normalize</span><span class="sw-t" data-on><i></i></span>
+            </div>
+          </div>
+          <p class="fig-cap">Drag the ends in, or let it find them.</p>
+        </div>
+
+        <!-- 3 · Name it, colour it, move it -->
+        <div class="fig" data-i="3">
+          <div class="panel">
+            <span class="grab"></span>
+            <div style="display: flex; flex-direction: column; gap: var(--sp-space-2);">
+              <span class="label">Name</span>
+              <div class="field"><span style="font-size: var(--sp-text-lg);">Clap</span><span class="muted">✕</span></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: var(--sp-space-3);">
+              <span class="label">Pad colour</span>
+              <div class="swatches">
+                <span class="sw" style="--c: var(--p-coral);"></span>
+                <span class="sw" style="--c: var(--p-amber);"></span>
+                <span class="sw" style="--c: var(--p-green);"></span>
+                <span class="sw" style="--c: var(--p-teal);"></span>
+                <span class="sw" data-on style="--c: var(--p-blue);"></span>
+                <span class="sw" style="--c: var(--p-purple);"></span>
+                <span class="sw" style="--c: var(--p-rose);"></span>
+                <span class="sw" style="--c: 233, 227, 215;"></span>
+              </div>
+            </div>
+            <div class="nav"><b>Playback</b><span>100 % ›</span></div>
+            <div class="nav"><b>Trim</b><span>Full length ›</span></div>
+          </div>
+          <p class="fig-cap">Every pad has this sheet behind it.</p>
+        </div>
+
+        <!-- 4 · Banks -->
+        <div class="fig" data-i="4">
+          <div class="panel">
+            <span class="label">Banks</span>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--sp-space-2);">
+              <span class="pill" data-on style="color: #e0b455; border-color: rgba(224,180,85,.5); background: rgba(224,180,85,.12);">Live set</span>
+              <span class="pill">Podcast</span>
+              <span class="pill">The running joke</span>
+            </div>
+            <div class="grid4">
+              <span class="minipad" style="--c: var(--p-coral);">Kick</span>
+              <span class="minipad" style="--c: var(--p-blue);">Clap</span>
+              <span class="minipad" style="--c: var(--p-slate);">Zap</span>
+              <span class="minipad" style="--c: var(--p-green);">Hat</span>
+              <span class="minipad" style="--c: var(--p-teal);">Bass</span>
+              <span class="minipad" style="--c: var(--p-amber);">Drone</span>
+              <span class="minipad" style="--c: var(--p-rose);">Chord</span>
+              <span class="minipad" style="--c: var(--p-purple);">Air</span>
+            </div>
+            <p class="panel-note" style="margin: 0;">Switching a bank swaps the whole board at once.</p>
+          </div>
+          <p class="fig-cap">One for the gig, one for the running joke.</p>
+        </div>
+
+        <!-- 5 · Keyboard -->
+        <div class="fig" data-i="5">
+          <div class="panel">
+            <span class="label">Keyboard</span>
+            <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-space-2); text-align: center;">
+              <span class="keycap">1</span><span class="keycap">2</span><span class="keycap">3</span><span class="keycap">4</span>
+            </div>
+            <div class="grid4">
+              <span class="minipad" style="--c: var(--p-coral);">Kick</span>
+              <span class="minipad" style="--c: var(--p-blue);">Clap</span>
+              <span class="minipad" style="--c: var(--p-slate);">Zap</span>
+              <span class="minipad" style="--c: var(--p-green);">Hat</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-space-2); text-align: center;">
+              <span class="keycap">Q</span><span class="keycap">W</span><span class="keycap">E</span><span class="keycap">R</span>
+            </div>
+            <div class="grid4">
+              <span class="minipad" style="--c: var(--p-teal);">Bass</span>
+              <span class="minipad" style="--c: var(--p-amber);">Drone</span>
+              <span class="minipad" style="--c: var(--p-rose);">Chord</span>
+              <span class="minipad" style="--c: var(--p-purple);">Air</span>
+            </div>
+            <div class="row-b" style="border-top: 1px solid var(--border); padding-top: var(--sp-space-4);">
+              <span class="keycap" style="min-width: 120px;">space</span><span class="muted" style="font-size: var(--sp-text-sm);">stops everything</span>
+            </div>
+          </div>
+          <p class="fig-cap">Numbers hit, letters run, one key for silence.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4 · Pro ──────────────────────────────────────────────────────────── -->
+<section id="pro">
+  <div class="wrap">
+    <div class="split flip has-stage">
+      <div class="stage" aria-hidden="true">
+
+        <!-- 1 · Effects rack -->
+        <div class="fig on" data-i="1">
+          <div class="panel fx">
+            <div class="fx-top"><b>Effects</b><span class="fx-play">▶</span></div>
+            <div class="fx-row"><span class="sw-t" data-on><i></i></span><b>Filter</b><span>darker ↔ brighter</span></div>
+            <div class="fx-row"><span class="sw-t"><i></i></span><b>Delay</b><span>echoes</span></div>
+            <div class="fx-row"><span class="sw-t" data-on><i></i></span><b>Reverb</b><span>room &amp; tail</span></div>
+            <div class="fx-row"><span class="sw-t"><i></i></span><b>Chorus</b><span>thicken &amp; shimmer</span></div>
+            <div class="fx-row"><span class="sw-t"><i></i></span><b>Lo-fi</b><span>warble &amp; dropouts</span></div>
+            <div class="fx-row"><span class="sw-t"><i></i></span><b>Bitcrush</b><span>crushed</span></div>
+          </div>
+          <p class="fig-cap">Nine effects, tweakable while the sound runs.</p>
+        </div>
+
+        <!-- 2 · Pitch, speed and reverse -->
+        <div class="fig" data-i="2">
+          <div class="panel">
+            <div class="row-b"><span class="label">Pitch</span><span class="dname" style="color: #a894e6;">+5 st</span></div>
+            <div class="track" style="--c: var(--p-purple); --v: 70%;"><i></i><b></b></div>
+            <div class="row-b" style="padding-top: var(--sp-space-2);"><span class="label">Speed</span><span class="dname" style="color: #a894e6;">0.82×</span></div>
+            <div class="track" style="--c: var(--p-purple); --v: 41%;"><i></i><b></b></div>
+            <div class="row-b" style="border-top: 1px solid var(--border); padding-top: var(--sp-space-4); margin-top: var(--sp-space-2);">
+              <span class="dname">Reverse</span><span class="sw-t" data-on><i></i></span>
+            </div>
+            <div class="wave sm"><i style="--h: 34%"></i><i style="--h: 28%"></i><i style="--h: 73%"></i><i style="--h: 91%"></i><i style="--h: 72%"></i><i style="--h: 30%"></i><i style="--h: 25%"></i><i style="--h: 29%"></i><i style="--h: 13%"></i><i style="--h: 39%"></i><i style="--h: 41%"></i><i style="--h: 11%"></i><i style="--h: 56%"></i><i style="--h: 88%"></i><i style="--h: 85%"></i><i style="--h: 49%"></i><i style="--h: 13%"></i><i style="--h: 34%"></i><i style="--h: 24%"></i><i style="--h: 24%"></i><i style="--h: 40%"></i><i style="--h: 25%"></i><i style="--h: 36%"></i><i style="--h: 78%"></i><i style="--h: 92%"></i><i style="--h: 68%"></i><i style="--h: 24%"></i><i style="--h: 31%"></i><i style="--h: 36%"></i><i style="--h: 13%"></i><i style="--h: 32%"></i><i style="--h: 33%"></i><i style="--h: 17%"></i><i style="--h: 62%"></i><i style="--h: 90%"></i><i style="--h: 82%"></i><i style="--h: 43%"></i><i style="--h: 21%"></i><i style="--h: 42%"></i><i style="--h: 30%"></i><i style="--h: 18%"></i><i style="--h: 33%"></i><i style="--h: 18%"></i><i style="--h: 42%"></i></div>
+          </div>
+          <p class="fig-cap">Twelve semitones either way — tempo stays put.</p>
+        </div>
+
+        <!-- 3 · Overdub -->
+        <div class="fig" data-i="3">
+          <div class="panel">
+            <div class="row-b"><span class="label">Overdub</span><span class="dname" style="color: #a894e6;">Pass 3</span></div>
+            <div class="lane"><span>Take 1</span><div class="wave sm"><i style="--h: 63%"></i><i style="--h: 78%"></i><i style="--h: 63%"></i><i style="--h: 28%"></i><i style="--h: 26%"></i><i style="--h: 32%"></i><i style="--h: 16%"></i><i style="--h: 29%"></i><i style="--h: 33%"></i><i style="--h: 13%"></i><i style="--h: 49%"></i><i style="--h: 75%"></i><i style="--h: 73%"></i><i style="--h: 44%"></i><i style="--h: 16%"></i><i style="--h: 35%"></i><i style="--h: 29%"></i><i style="--h: 17%"></i><i style="--h: 32%"></i><i style="--h: 22%"></i><i style="--h: 33%"></i><i style="--h: 66%"></i><i style="--h: 78%"></i><i style="--h: 59%"></i><i style="--h: 22%"></i><i style="--h: 32%"></i><i style="--h: 38%"></i><i style="--h: 21%"></i><i style="--h: 24%"></i><i style="--h: 28%"></i></div></div>
+            <div class="lane"><span>Take 2</span><div class="wave sm"><i style="--h: 13%"></i><i style="--h: 51%"></i><i style="--h: 83%"></i><i style="--h: 83%"></i><i style="--h: 52%"></i><i style="--h: 15%"></i><i style="--h: 42%"></i><i style="--h: 39%"></i><i style="--h: 14%"></i><i style="--h: 30%"></i><i style="--h: 24%"></i><i style="--h: 33%"></i><i style="--h: 71%"></i><i style="--h: 87%"></i><i style="--h: 68%"></i><i style="--h: 26%"></i><i style="--h: 36%"></i><i style="--h: 48%"></i><i style="--h: 30%"></i><i style="--h: 20%"></i><i style="--h: 28%"></i><i style="--h: 17%"></i><i style="--h: 55%"></i><i style="--h: 83%"></i><i style="--h: 79%"></i><i style="--h: 45%"></i><i style="--h: 24%"></i><i style="--h: 50%"></i><i style="--h: 45%"></i><i style="--h: 19%"></i></div></div>
+            <div class="lane"><span>Take 3</span><div class="wave sm"><i style="--h: 20%"></i><i style="--h: 18%"></i><i style="--h: 29%"></i><i style="--h: 56%"></i><i style="--h: 66%"></i><i style="--h: 51%"></i><i style="--h: 17%"></i><i style="--h: 37%"></i><i style="--h: 46%"></i><i style="--h: 33%"></i><i style="--h: 12%"></i><i style="--h: 20%"></i><i style="--h: 17%"></i><i style="--h: 44%"></i><i style="--h: 63%"></i><i style="--h: 59%"></i><i style="--h: 32%"></i><i style="--h: 27%"></i><i style="--h: 48%"></i><i style="--h: 44%"></i><i style="--h: 24%"></i><i style="--h: 17%"></i><i style="--h: 15%"></i><i style="--h: 31%"></i><i style="--h: 55%"></i><i style="--h: 63%"></i><i style="--h: 45%"></i><i style="--h: 14%"></i><i style="--h: 44%"></i><i style="--h: 51%"></i></div></div>
+            <div class="track" style="--c: var(--p-purple); --v: 58%; margin-top: var(--sp-space-2);"><i></i><b></b></div>
+            <p class="panel-note" style="margin: 0;">Each pass stacks on the last. Latency calibrates itself.</p>
+          </div>
+          <p class="fig-cap">Sing over the loop; bring headphones.</p>
+        </div>
+
+        <!-- 4 · MIDI controller -->
+        <div class="fig" data-i="4">
+          <div class="panel">
+            <div class="row-b"><span class="label">MIDI</span><span class="dname" style="color: #a894e6;">LPD8 · Bluetooth</span></div>
+            <div class="grid4">
+              <span class="minipad" style="--c: var(--p-coral);">1</span>
+              <span class="minipad" style="--c: var(--p-blue);">2</span>
+              <span class="minipad" style="--c: var(--p-slate);">3</span>
+              <span class="minipad" style="--c: var(--p-green);">4</span>
+              <span class="minipad" style="--c: var(--p-teal);">5</span>
+              <span class="minipad" style="--c: var(--p-amber);">6</span>
+              <span class="minipad" style="--c: var(--p-rose);">7</span>
+              <span class="minipad" style="--c: var(--p-purple);">8</span>
+            </div>
+            <div class="dial"><i>62</i></div>
+            <div class="row-b" style="justify-content: center; gap: var(--sp-space-2);">
+              <span class="pill" data-on>Absolute</span><span class="pill">Relative</span>
+            </div>
+          </div>
+          <p class="fig-cap">One "how much" knob per effect.</p>
+        </div>
+
+        <!-- 5 · Export and import boards -->
+        <div class="fig" data-i="5">
+          <div class="panel">
+            <span class="label">Board file</span>
+            <div class="file">
+              <span class="ic"></span>
+              <span style="display: flex; flex-direction: column; gap: 3px;">
+                <span class="dname">Live set.bfboard</span>
+                <span class="muted" style="font-size: var(--sp-text-sm);">8 pads · sounds included · 3.4 MB</span>
+              </span>
+            </div>
+            <div class="nav"><b>Export</b><span>to Files ›</span></div>
+            <div class="nav"><b>Import</b><span>from Files ›</span></div>
+            <p class="panel-note" style="margin: 0;">Send it to someone. It comes back intact.</p>
+          </div>
+          <p class="fig-cap">A whole bank as one file.</p>
+        </div>
+
+      </div>
+
+      <div class="copy">
+        <span class="kicker pro">Blitzfingers Pro</span>
+        <h2>When the board stops being enough</h2>
+        <p class="lede">Pro is a separate one-time unlock inside the app. It adds the parts you grow into — nothing in the list below is taken away from the app you already bought.</p>
+        <ul class="items">
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Effects rack <span class="tag-pro">Pro</span></h3><p>Filter, delay, reverb, chorus, phaser, distortion, lo-fi, pan and bitcrush — per pad, live, without a click.</p></div></li>
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Pitch, speed and reverse <span class="tag-pro">Pro</span></h3><p>Shift twelve semitones either way without changing tempo, stretch a sound out, or play it backwards.</p></div></li>
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Overdub <span class="tag-pro">Pro</span></h3><p>Sing or play along and stack takes on each loop pass. Latency calibrates itself; bring headphones.</p></div></li>
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>MIDI controller <span class="tag-pro">Pro</span></h3><p>Map pads to a controller, over cable or Bluetooth, and put one "how much" knob on each effect.</p></div></li>
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Export and import boards <span class="tag-pro">Pro</span></h3><p>A whole bank as one file you can see in Files and send to someone. It comes back intact.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5 · Why ──────────────────────────────────────────────────────────── -->
+<section id="why">
+  <div class="wrap">
+    <div class="why">
+      <div class="portrait">[ photo of Alex — at the desk, or hands on the pads. Optional, but this is the section that earns one. ]</div>
+      <div class="copy">
+        <span class="kicker">Why</span>
+        <h2>I built the one I was missing</h2>
+        <p>I wanted a soundboard I actually enjoyed. The App Store is full of them — but they drowned me in ads, or rented me the good parts by the month. So I built this one: open it and just play, fun in a second, and still deep when you want more.</p>
+        <p>Nothing here renews. Nothing watches you. You buy it, and it is yours.</p>
+        <p class="signature">Made with care, by one pair of hands. — Alex</p>
+      </div>
+    </div>
+
+    <div class="details">
+      <div><h3>Everything stays on the device</h3><p>Your sounds and boards live on your phone. No cloud, no account, nothing uploaded — and it all works with the plane mode on.</p></div>
+      <div><h3>It behaves on iOS</h3><p>Sound comes through even with the silent switch on, it steps aside for a call or Siri, and it stops when you unplug the headphones.</p></div>
+      <div><h3>Small things you only miss when they are gone</h3><p>A short haptic under every hit, and a screen that refuses to sleep while you are recording or playing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6 · See it ───────────────────────────────────────────────────────── -->
+<section id="screens">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">See it</span>
+      <h2>The same board, shaped for the screen you are on</h2>
+      <p class="lede">iPhone, iPad and Mac. Portrait stacks one-shots over loops; on a bigger screen the pads grow into the room they have. Turn the phone and the board goes edge to edge, nothing but pads — that is Performance Mode.</p>
+    </div>
+
+    <div class="shots">
+      <div class="shot">
+        <div class="frame" style="--w: 168px; border-radius: 26px;">iPhone, portrait<br>the board<br><br>[ simulator capture ]</div>
+        <span class="cap">iPhone</span>
+      </div>
+      <div class="shot">
+        <div class="frame" style="--w: 272px; border-radius: 20px;">iPad, portrait<br>one-shots over loops, pads scaled up<br><br>[ simulator capture ]</div>
+        <span class="cap">iPad</span>
+      </div>
+      <div class="shot">
+        <div class="frame" style="--w: 262px; border-radius: 26px;">iPhone, landscape<br>Performance Mode<br><br>[ simulator capture ]</div>
+        <span class="cap">Performance Mode</span>
+      </div>
+      <div class="shot">
+        <div class="frame" style="--w: 228px; border-radius: 16px;">macOS<br>keyboard, bigger pads<br><br>[ simulator capture ]</div>
+        <span class="cap">macOS</span>
+      </div>
+    </div>
+
+    <p class="footnote">Android is a maybe, not a promise. · Placeholders — real captures come from the simulator before launch.</p>
+  </div>
+</section>
+
+<!-- ── 7 · Price ────────────────────────────────────────────────────────── -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Price</span>
+      <h2>No subscriptions. Ever.</h2>
+      <p class="lede">Two things you can buy, each once. Neither of them renews, and neither of them expires.</p>
+      <p class="lede" style="color: #e0b455;">[ prices provisional — confirm before launch ]</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Blitzfingers</h3>
+        <span class="price">2,99&nbsp;€</span>
+        <span class="sub">The app. Complete on its own — you never have to buy anything else.</span>
+        <ul>
+          <li>The board, banks, and the whole way of playing</li>
+          <li>Record, trim, normalize, name, colour, reorder</li>
+          <li>Keyboard control and stop-all</li>
+        </ul>
+      </div>
+      <div class="plan is-pro">
+        <h3>Blitzfingers Pro <span class="tag-pro">Pro</span></h3>
+        <span class="price">9,99&nbsp;€ <small>on top, once, inside the app</small></span>
+        <span class="sub">Adds the deep end. Buy it the day you install, or three months later — same price either way.</span>
+        <ul>
+          <li>Effects rack, pitch, speed and reverse</li>
+          <li>Overdub, MIDI controller</li>
+          <li>Export and import whole boards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 8 · Questions ────────────────────────────────────────────────────── -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Questions</span>
+      <h2>Before you buy</h2>
+    </div>
+
+    <div class="faq">
+      <div><b>Is there a subscription?</b><p>No. Neither the app nor Pro renews. You are never billed again.</p></div>
+      <div><b>Do I need Pro?</b><p>No. The app is finished without it. Pro adds effects, MIDI and overdub for people who want them.</p></div>
+      <div><b>Where do my sounds live?</b><p>On your device, and only there. No account, no upload, no cloud.</p></div>
+      <div><b>Does it work offline?</b><p>Entirely. The app never needs a connection.</p></div>
+      <div><b>iPhone, iPad or Mac?</b><p>All three, and one purchase covers them. Android is a maybe, not a promise.</p></div>
+      <div><b>Can I use my own sounds?</b><p>That is the point. Record them, import them, trim them, keep them.</p></div>
+      <div id="faq-knob-mode"><b>How does a MIDI knob behave? <span class="tag-pro">Pro</span></b><p>Each effect gets one "how much" knob. In <strong>Absolute</strong> mode the value jumps to where the knob is — fast, but it can leap. In <strong>Relative</strong> mode the knob nudges the value from where it already sits, so nothing jumps when your controller and the app disagree. Pick per controller in the MIDI settings.</p></div>
+      <div><b>Can I get a refund?</b><p>Purchases go through Apple, so refunds do too — ask Apple through <a href="https://reportaproblem.apple.com/" rel="noopener">Report a Problem</a>.</p></div>
+    </div>
+
+    <div class="get">
+      <a class="btn btn-primary" href="#pricing">Download on the App&nbsp;Store</a>
+      <p class="hero-note">Coming soon — [the official Apple badge replaces this button at launch]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────── -->
+<div class="wrap">
+  <footer class="site-foot">
+    <a class="home" href="/">
+      <img src="../studio-tile.svg" alt="" width="24" height="24">
+      <span>A Scattered Pearls app</span>
+    </a>
+    <span>© 2026 Scattered Pearls · <a href="/">scatteredpearls.studio</a></span>
   </footer>
+</div>
 
-  <!-- FAQ structured data (kept in sync with the FAQ section above) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What is Blitzfingers?", "acceptedAnswer": { "@type": "Answer", "text": "A lean soundboard and finger-drumming app for iPhone. You tap colourful pads to play loops and one-shots, and you can record and shape your own sounds too." } },
-      { "@type": "Question", "name": "How much does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "Blitzfingers is a small one-time purchase — no subscription. The advanced creative tools (effects, overdub, export and MIDI) are an additional one-time Pro unlock." } },
-      { "@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": { "@type": "Answer", "text": "No. Blitzfingers is pay-once. You unlock Pro with a single purchase and keep it — there is no subscription and no recurring fee." } },
-      { "@type": "Question", "name": "Do I need an account?", "acceptedAnswer": { "@type": "Answer", "text": "No account, no sign-up. There is nothing to log into." } },
-      { "@type": "Question", "name": "Does it collect my data?", "acceptedAnswer": { "@type": "Answer", "text": "No. There are no ads and no tracking. Your sounds and boards stay on your device — nothing is uploaded." } },
-      { "@type": "Question", "name": "Which platforms does it run on?", "acceptedAnswer": { "@type": "Answer", "text": "iPhone first. macOS and Android are planned and will follow." } },
-      { "@type": "Question", "name": "Can I use my own sounds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Record with the mic or import your own audio, then trim, colour and arrange each pad. You can export a whole board and share or re-import it." } },
-      { "@type": "Question", "name": "Does it work with a MIDI controller?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — map pads to a MIDI controller, including Bluetooth MIDI, and learn notes and CCs. This is a Pro feature." } },
-      { "@type": "Question", "name": "My MIDI knob controls volume oddly — what are Absolute and Relative?", "acceptedAnswer": { "@type": "Answer", "text": "Under MIDI controller you can choose how knobs are read. Absolute suits most knobs and faders — the ones with a fixed start and end; the app follows the knob's position directly. Pick Relative for endless encoders that spin without a start or end (they send only small step changes). If a knob mapped to volume jumps, sticks or barely moves, switch it to Relative; otherwise leave it on Absolute. Most controllers work on Absolute." } }
-    ]
+<script>
+  /* Progressive enhancement. In the two feature sections the stage follows the
+     list item the pointer is on, or the one you tap — so it works with a mouse,
+     with a finger, and it degrades to a still picture with the script off (the
+     first figure carries .on in the markup).
+     It is gated on the two-column layout (>1024px), because that is exactly
+     where the list and the stage are on screen together. Narrower than that the
+     stage sits below the list, so tapping item five would change a picture you
+     cannot see — worse than no interaction. There the first figure just stays.
+     The figures are decorative: the stage is aria-hidden and everything it
+     shows is already written out in the list beside it. So they deliberately
+     add NO tab stops — ten focusable items that announce nothing would make the
+     page worse to keyboard through, not better. */
+  const sideBySide = window.matchMedia('(min-width: 1025px)');
+  for (const sec of document.querySelectorAll('.split.has-stage')) {
+    const items = [...sec.querySelectorAll('.items > li')];
+    const figs  = [...sec.querySelectorAll('.stage > .fig')];
+    if (!items.length || items.length !== figs.length) continue;
+    const show = (i) => {
+      items.forEach((li, n) => li.classList.toggle('sel', n === i));
+      figs.forEach((f, n) => f.classList.toggle('on', n === i));
+    };
+    const pick = (i) => { if (sideBySide.matches) show(i); };
+    items.forEach((li, i) => {
+      li.addEventListener('pointerenter', () => pick(i));
+      li.addEventListener('click', () => pick(i));
+    });
+    const sync = () => { sec.classList.toggle('is-live', sideBySide.matches); show(0); };
+    sideBySide.addEventListener('change', sync);
+    sync();
   }
-  </script>
-
-  <!-- Open a FAQ item when linked directly (e.g. from the app: …/blitzfingers#faq-knob-mode) -->
-  <script>
-    (function () {
-      function openTarget() {
-        var h = location.hash ? location.hash.slice(1) : '';
-        if (!h) return;
-        var el = document.getElementById(h);
-        if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView({ block: 'start' }); }
-      }
-      window.addEventListener('hashchange', openTarget);
-      openTarget();
-    })();
-  </script>
+</script>
 </body>
 </html>
