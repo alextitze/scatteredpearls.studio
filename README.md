@@ -1,6 +1,6 @@
 # scatteredpearls.studio
 
-The website for **Scattered Pearls** — a tiny studio for lean, ad-free, pay-once apps.
+The website for **Scattered Pearls** — a tiny studio for lean, ad-free apps that are yours to keep.
 No accounts, no tracking.
 
 - **Domain:** `scatteredpearls.studio`

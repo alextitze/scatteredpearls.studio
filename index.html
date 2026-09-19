@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Scattered Pearls — a one-man app studio</title>
-  <meta name="description" content="A tiny studio for lean, ad-free, pay-once apps. No accounts, no subscriptions, no tracking. First app: Blitzfingers, a soundboard.">
+  <meta name="description" content="A tiny studio for lean, ad-free apps that are yours to keep. No accounts, no subscriptions, no tracking. First app: Blitzfingers, a soundboard.">
   <link rel="canonical" href="https://scatteredpearls.studio/">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#46203a">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Scattered Pearls">
   <meta property="og:title" content="Scattered Pearls — a one-man app studio">
-  <meta property="og:description" content="Small, honest apps — the kind you buy once and simply use. No ads, no accounts, no subscriptions, nothing watching you.">
+  <meta property="og:description" content="Small, honest apps — the kind you buy, own, and simply use. No ads, no accounts, no subscriptions, nothing watching you.">
   <meta property="og:url" content="https://scatteredpearls.studio/">
 
   <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -125,6 +125,12 @@
     .promises li { display: inline-flex; align-items: center; gap: var(--sp-space-3); }
     .promises li + li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(253, 246, 238, .55); }
 
+    /* The promises row is a label strip, not prose, so it does not share the hero's text
+       measure: from tablet up it runs to its natural width and stays on one line. */
+    @media (min-width: 560px) {
+      .promises { flex-wrap: nowrap; width: max-content; }
+    }
+
     /* ── App cards on the brand ground: live app links + a coming-soon slot.
        Both are the same cream card; .app is the interactive (link) variant. ── */
     .apps { display: flex; flex-direction: column; gap: var(--sp-space-4); }
@@ -212,12 +218,13 @@
       <span class="eyebrow">A one-man studio</span>
       <h1>Scattered<br>Pearls</h1>
       <p class="claim">Small, precious, scattered pearls.</p>
-      <p class="lede"><strong>Hi, I'm Alex.</strong> I make small, honest apps — the kind you buy once and simply use. No ads, no accounts, no subscriptions, nothing watching you. Lean and instantly useful, but made with care.</p>
+      <p class="lede"><strong>Hi, I'm Alex.</strong> I make small, honest apps — the kind you buy, own, and simply use. No ads, no accounts, no subscriptions, nothing watching you. Lean and instantly useful, but made with care.</p>
       <ul class="promises">
-        <li>pay once</li>
-        <li>ad-free</li>
+        <li>Yours to keep</li>
+        <li>no subscriptions</li>
+        <li>no ads</li>
         <li>no accounts</li>
-        <li>no data collection</li>
+        <li>no tracking</li>
       </ul>
     </main>
 
