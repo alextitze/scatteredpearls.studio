@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Blitzfingers — guide</title>
+  <meta name="description" content="How Blitzfingers works: the board, banks, editing a pad, trimming, effects, recording, overdubbing and mapping a MIDI controller.">
+  <link rel="canonical" href="https://scatteredpearls.studio/blitzfingers/guide/">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#17151b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Scattered Pearls">
+  <meta property="og:title" content="Blitzfingers — guide">
+  <meta property="og:description" content="How Blitzfingers works, screen by screen.">
+  <meta property="og:url" content="https://scatteredpearls.studio/blitzfingers/guide/">
+
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../../tokens.css">
+  <link rel="stylesheet" href="../../base.css">
+
+  <style>
+    /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("../../fonts/hanken-400.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("../../fonts/hanken-600.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("../../fonts/hanken-700.woff2") format("woff2"); }
+    @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("../../fonts/bricolage-700.woff2") format("woff2"); }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--surface-0); color: var(--text);
+      font-family: var(--font-body); font-size: var(--sp-text-md); line-height: var(--sp-leading-normal);
+      -webkit-font-smoothing: antialiased; }
+
+    .wrap { width: min(760px, 100% - 2.5rem); margin-inline: auto; }
+
+    .site-head, .site-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding-block: 18px; }
+    .site-foot { justify-content: space-between; border-top: 1px solid var(--border);
+      margin-top: 56px; color: var(--text-muted); font-size: var(--sp-text-sm); }
+    .home { display: inline-flex; align-items: center; gap: 8px; color: var(--text);
+      text-decoration: none; font-weight: 600; }
+    a { color: var(--accent-text); }
+
+    h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem); margin: 8px 0 6px; }
+    .lede { color: var(--text-soft); font-size: var(--sp-text-lg); margin: 0 0 8px; max-width: 46rem; }
+
+    /* The deep-link contract: every section the app can open is an id below, and the app links to
+       these names. Renaming one breaks an in-app link that is already shipped, so treat them as an
+       interface rather than as markup. */
+    section { scroll-margin-top: 16px; padding-block: 26px; border-top: 1px solid var(--border); }
+    section h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 10px; }
+    section h3 { font-size: 1rem; margin: 18px 0 4px; }
+    p, li { max-width: 46rem; }
+    ul { padding-left: 1.1rem; }
+    li { margin-bottom: 6px; }
+
+    .toc { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 18px 0 0; list-style: none; }
+    .toc a { display: inline-block; padding: 6px 11px; border: 1px solid var(--border-strong);
+      border-radius: var(--sp-radius-pill); text-decoration: none; font-size: var(--sp-text-sm); }
+
+    .note { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--text-soft); }
+    .pro { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--accent-text); border: 1px solid var(--accent);
+      border-radius: 4px; padding: 1px 5px; margin-left: 6px; vertical-align: 2px; }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site-head">
+    <a class="home" href="/">
+      <img src="../../studio-tile.svg" alt="" width="28" height="28">
+      <span>Scattered Pearls</span>
+    </a>
+  </header>
+</div>
+
+<main class="wrap">
+  <h1>Blitzfingers — guide</h1>
+  <p class="lede">How the app works, screen by screen. Each section here has a fixed address, so the
+    app can open the part you are looking at.</p>
+  <p><a href="../">← Back to Blitzfingers</a></p>
+
+  <ul class="toc">
+    <li><a href="#board">The board</a></li>
+    <li><a href="#banks">Banks</a></li>
+    <li><a href="#edit">Editing a pad</a></li>
+    <li><a href="#trim">Trim</a></li>
+    <li><a href="#effects">Effects</a></li>
+    <li><a href="#transform">Speed, pitch, reverse</a></li>
+    <li><a href="#recording">Recording &amp; importing</a></li>
+    <li><a href="#overdub">Overdub</a></li>
+    <li><a href="#midi">MIDI</a></li>
+    <li><a href="#appearance">Appearance</a></li>
+  </ul>
+
+  <section id="board">
+    <h2>The board</h2>
+    <p>The board holds two kinds of sound. <strong>One-shots</strong> fire and finish — a kick, a clap,
+      a word — and several can overlap. <strong>Loops</strong> run until you stop them, and starting a
+      second loop crossfades out of the first, so a set never collides with itself.</p>
+    <p>Tap a pad to play it. <strong>Stop all</strong> appears in the header while anything is
+      sounding, and the Escape key does the same on a keyboard.</p>
+    <h3>Hold and latch</h3>
+    <p>A one-shot can be set to <strong>hold</strong>: it plays only while your finger is down. A loop
+      can be set to <strong>latch</strong>: it keeps running independently instead of being replaced by
+      the next loop you start. Both live in the pad's Playback settings.</p>
+  </section>
+
+  <section id="banks">
+    <h2>Banks</h2>
+    <p>A bank is one board. Use them to keep sets apart — a drum kit, a party set, a show. The bank
+      name in the header opens the list; you can rename, add and delete there.</p>
+    <p>Each bank holds up to 16 one-shots and 16 loops. Sounds are not shared between banks, but a
+      <strong>MIDI mapping is</strong>: it belongs to a grid position, so the same controller pad plays
+      position 3 in whichever bank is open.</p>
+  </section>
+
+  <section id="edit">
+    <h2>Editing a pad</h2>
+    <p>The pencil in the header turns on edit mode — the pads lift and wobble. Tap one to open its
+      settings; drag one to reorder; tap an empty slot to add a sound there.</p>
+    <p>A pad's settings screen holds its name and colour, and leads into Playback, Trim, Effects,
+      Shape&nbsp;&amp;&nbsp;Transform, Overdub and MIDI. <strong>Everything you change is kept as you
+      change it</strong> — there is nothing to save. Delete is the exception and asks first.</p>
+    <h3>Colour</h3>
+    <p><strong>Auto</strong> gives the pad a colour derived from its name, so two neighbours never
+      look alike; pick a swatch to override it.</p>
+  </section>
+
+  <section id="trim">
+    <h2>Trim</h2>
+    <p>Trim sets where a sound starts and ends without touching the file. Drag the two handles on the
+      waveform, or use <strong>Auto</strong> to cut leading and trailing silence. <strong>Full
+      length</strong> puts it back.</p>
+    <p class="note">A loop repeats the trimmed region, so trimming is also how you make a loop line up.</p>
+  </section>
+
+  <section id="effects">
+    <h2>Effects <span class="pro">Pro</span></h2>
+    <p>Each pad has its own effects: Filter, Delay, Reverb, Chorus, Phaser, Distortion, Lo-fi, Pan and
+      Bitcrush. Switch one on and its controls appear underneath. Changes are audible while the pad
+      plays, so you can dial them in by ear.</p>
+    <p><strong>Filter</strong> is one knob: left of centre muffles (a low-pass sweeping down), right of
+      centre thins (a high-pass sweeping up), and the middle is off.</p>
+  </section>
+
+  <section id="transform">
+    <h2>Speed, pitch and reverse <span class="pro">Pro</span></h2>
+    <p>Shape&nbsp;&amp;&nbsp;Transform changes the sound itself rather than adding to it.</p>
+    <ul>
+      <li><strong>Speed</strong> plays faster or slower, and the pitch follows — like a record. Normal
+        speed sits in the middle of the control, an octave down at a quarter, an octave up at three
+        quarters.</li>
+      <li><strong>Pitch</strong> shifts by semitones and <em>keeps the tempo</em>. Up to an octave
+        either way.</li>
+      <li><strong>Reverse</strong> plays the sound backwards.</li>
+    </ul>
+  </section>
+
+  <section id="recording">
+    <h2>Recording and importing <span class="pro">Pro</span></h2>
+    <p>Tap an empty slot to add a sound there. You can <strong>record</strong> with the microphone,
+      <strong>import</strong> an audio file, or pick one from the built-in library.</p>
+    <p>A recording lands on the slot you tapped, with its date kept, and can be trimmed, renamed and
+      coloured like any other pad.</p>
+  </section>
+
+  <section id="overdub">
+    <h2>Overdub <span class="pro">Pro</span></h2>
+    <p>Overdub records a new pass <em>over</em> an existing sound and mixes the two — layering a
+      harmony onto a loop, or a second clap onto a clap.</p>
+    <p><strong>Headphones are required</strong>, and the app checks: without them the microphone would
+      record the loop playing out of the speaker along with you. The first Start measures the
+      round-trip delay of your headphones automatically; <strong>Sync</strong> nudges it by ear if a
+      layer lands early or late, and <strong>Recalibrate</strong> re-measures after you switch
+      headphones.</p>
+    <p>Undo and Redo step through the layers. Save it as a new sound or overwrite the original — and
+      if the bank is full, the app offers the banks that still have room.</p>
+  </section>
+
+  <section id="midi">
+    <h2>MIDI <span class="pro">Pro</span></h2>
+    <p>Connect a controller by cable (a USB adapter) or over Bluetooth, and Blitzfingers shows it in
+      Settings ▸ MIDI. You can also reach a single pad's mapping from that pad's own settings.</p>
+    <h3>Learning a control</h3>
+    <p>Tap a pad in the MIDI screen to open it, then <strong>Learn</strong> on the row you want —
+      Trigger, Volume, or one of the effects — and move the control on your device. Learning again
+      replaces the old assignment. The trash icon removes one.</p>
+    <p>Mappings belong to the <strong>grid position</strong>, not to the sound, so they survive
+      switching banks. Set them up on your fullest bank.</p>
+    <h3 id="knob-mode">Knob mode: Absolute or Relative</h3>
+    <p>Controllers report their knobs in one of two ways, and Blitzfingers needs to know which.</p>
+    <ul>
+      <li><strong>Absolute</strong> — the control reports <em>where it is</em>, from one end of its
+        travel to the other. Normal for faders and for knobs with a start and an end. This is the
+        default.</li>
+      <li><strong>Relative</strong> — the control reports <em>that it moved</em>, a step at a time.
+        Used by endless encoders, which spin forever with no end stop.</li>
+    </ul>
+    <p>If a knob spins endlessly and mapping a volume behaves oddly — jumping to one end, or only
+      reacting at the extremes — switch to Relative. The setting is in Settings ▸ MIDI.</p>
+    <p class="note">Some endless knobs still report absolute positions. If Relative makes things worse,
+      switch back: your device is one of those.</p>
+  </section>
+
+  <section id="appearance">
+    <h2>Appearance</h2>
+    <p>Settings ▸ Appearance hides pad chrome you no longer need once you know your board: the MIDI
+      marks, the keyboard shortcuts, the sound names, and the category explanations. Everything is
+      shown by default, and names come back while you are editing — you cannot rename what you cannot
+      identify.</p>
+  </section>
+</main>
+
+<div class="wrap">
+  <footer class="site-foot">
+    <a class="home" href="/">
+      <img src="../../studio-tile.svg" alt="" width="24" height="24">
+      <span>A Scattered Pearls app</span>
+    </a>
+    <span>© 2026 Scattered Pearls · <a href="/">scatteredpearls.studio</a></span>
+  </footer>
+</div>
+
+</body>
+</html>
