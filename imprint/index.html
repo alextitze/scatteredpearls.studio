@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-surface="brand">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,109 +8,79 @@
   <meta name="description" content="Imprint (Impressum) of Scattered Pearls: who runs this website and the apps, and how to reach them.">
   <link rel="canonical" href="https://scatteredpearls.studio/imprint/">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#17151b">
+  <meta name="theme-color" content="#46203a">
 
-  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="../studio-tile.svg">
+  <link rel="apple-touch-icon" href="../studio-tile-180.png">
+
+  <!-- Shared design system (vendored from the hub) + the studio text-page frame -->
   <link rel="stylesheet" href="../tokens.css">
   <link rel="stylesheet" href="../base.css">
-
-  <style>
-    /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
-    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/hanken-400.woff2") format("woff2"); }
-    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/hanken-600.woff2") format("woff2"); }
-    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/hanken-700.woff2") format("woff2"); }
-    @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/bricolage-700.woff2") format("woff2"); }
-
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--surface-0); color: var(--text);
-      font-family: var(--font-body); font-size: var(--sp-text-md); line-height: var(--sp-leading-normal);
-      -webkit-font-smoothing: antialiased; }
-
-    .wrap { width: min(760px, 100% - 2.5rem); margin-inline: auto; }
-
-    .site-head, .site-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-      padding-block: 18px; }
-    .site-foot { justify-content: space-between; border-top: 1px solid var(--border);
-      margin-top: 56px; color: var(--text-muted); font-size: var(--sp-text-sm); }
-    .home { display: inline-flex; align-items: center; gap: 8px; color: var(--text);
-      text-decoration: none; font-weight: 600; }
-    a { color: var(--accent-text); }
-
-    h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem); margin: 8px 0 6px; }
-    .lede { color: var(--text-soft); font-size: var(--sp-text-lg); margin: 0 0 8px; max-width: 46rem; }
-    .updated { color: var(--text-muted); font-size: var(--sp-text-sm); }
-
-    section { padding-block: 26px; border-top: 1px solid var(--border); }
-    section h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 10px; }
-    section h3 { font-size: 1rem; margin: 18px 0 4px; }
-    p, li { max-width: 46rem; }
-    ul { padding-left: 1.1rem; }
-    li { margin-bottom: 6px; }
-    address { font-style: normal; }
-
-    .note { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--text-soft); }
-  </style>
+  <link rel="stylesheet" href="../studio-page.css">
 </head>
 <body>
 
-<div class="wrap">
-  <header class="site-head">
-    <a class="home" href="/">
-      <img src="../studio-tile.svg" alt="" width="28" height="28">
-      <span>Scattered Pearls</span>
-    </a>
-  </header>
-</div>
+  <div class="page">
 
-<main class="wrap">
-  <h1>Imprint</h1>
-  <p class="lede">Who is behind Scattered Pearls, as German law requires every business website to
-    say (Impressum).</p>
+    <header class="site-head">
+      <a class="brand" href="/">
+        <img src="../studio-tile.svg" alt="" width="36" height="36">
+        <span>Scattered Pearls</span>
+      </a>
+    </header>
 
-  <section id="provider">
-    <h2>Provider</h2>
-    <p>Information pursuant to § 5 DDG (German Digital Services Act):</p>
-    <address>
-      Alex Titze — Scattered Pearls<br>
-      Novalisstraße 15<br>
-      10115 Berlin<br>
-      Germany
-    </address>
-  </section>
+    <main>
+      <div class="intro">
+        <span class="eyebrow">Impressum</span>
+        <h1>Imprint</h1>
+        <p class="lede">Who is behind Scattered Pearls, as German law requires every business website to
+          say (Impressum).</p>
+      </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hello@scatteredpearls.studio">hello@scatteredpearls.studio</a></p>
-  </section>
+      <article class="sheet">
+        <section id="provider">
+          <h2>Provider</h2>
+          <p>Information pursuant to § 5 DDG (German Digital Services Act):</p>
+          <address>
+            Alex Titze — Scattered Pearls<br>
+            Novalisstraße 15<br>
+            10115 Berlin<br>
+            Germany
+          </address>
+        </section>
 
-  <section id="responsible">
-    <h2>Responsible for the content</h2>
-    <p>Pursuant to § 18(2) MStV (German Interstate Media Treaty):</p>
-    <address>
-      Alex Titze<br>
-      Novalisstraße 15<br>
-      10115 Berlin<br>
-      Germany
-    </address>
-  </section>
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:hello@scatteredpearls.studio">hello@scatteredpearls.studio</a></p>
+        </section>
 
-  <section id="disputes">
-    <h2>Consumer dispute resolution</h2>
-    <p>I am neither willing nor obliged to take part in dispute resolution proceedings before a
-      consumer arbitration board. Purchases in the apps are made through Apple; see
-      <a href="../support/#purchases">Support</a> for refunds.</p>
-  </section>
-</main>
+        <section id="responsible">
+          <h2>Responsible for the content</h2>
+          <p>Pursuant to § 18(2) MStV (German Interstate Media Treaty):</p>
+          <address>
+            Alex Titze<br>
+            Novalisstraße 15<br>
+            10115 Berlin<br>
+            Germany
+          </address>
+        </section>
 
-<div class="wrap">
-  <footer class="site-foot">
-    <a class="home" href="/">
-      <img src="../studio-tile.svg" alt="" width="24" height="24">
-      <span>Scattered Pearls</span>
-    </a>
-    <span>© 2026 Scattered Pearls · <a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint</a></span>
-  </footer>
-</div>
+        <section id="disputes">
+          <h2>Consumer dispute resolution</h2>
+          <p>I am neither willing nor obliged to take part in dispute resolution proceedings before a
+            consumer arbitration board. Purchases in the apps are made through Apple; see
+            <a href="../support/#purchases">Support</a> for refunds.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <span>© 2026 Scattered Pearls · Made with care, by one pair of hands.</span>
+      <nav aria-label="Legal"><a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/" aria-current="page">Imprint</a></nav>
+    </footer>
+
+  </div>
 
 </body>
 </html>

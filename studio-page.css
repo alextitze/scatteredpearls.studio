@@ -1,0 +1,105 @@
+/* Studio text pages (privacy, support, imprint) — the home page's brand surface and frame,
+   with the reading text on a cream sheet. Pages opt in with data-surface="brand" on <html>;
+   tokens.css supplies the plum ground, the cream card and the type/space/radius scales. */
+
+/* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/hanken-400.woff2") format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/hanken-600.woff2") format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/hanken-700.woff2") format("woff2"); }
+@font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/bricolage-700.woff2") format("woff2"); }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background:
+    radial-gradient(70vw 62vh at 86% 8%, var(--sp-ground-rose) 0%, rgba(138, 47, 86, 0) 62%),
+    radial-gradient(68vw 58vh at 10% 92%, var(--sp-ground-warm) 0%, rgba(154, 68, 51, 0) 60%),
+    var(--sp-ground);
+  background-attachment: fixed;
+  color: var(--sp-on-ground);
+  font-family: var(--sp-font-body);
+  font-size: var(--sp-text-md);
+  line-height: var(--sp-leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Same frame as the home page: 1120px, same gutters and safe areas. */
+.page {
+  display: flex; flex-direction: column;
+  gap: var(--sp-space-6);
+  min-height: 100svh;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--sp-space-5) var(--sp-space-5) var(--sp-space-6);
+  padding-left: max(var(--sp-space-5), env(safe-area-inset-left));
+  padding-right: max(var(--sp-space-5), env(safe-area-inset-right));
+}
+
+:focus-visible { outline: 3px solid rgba(255, 201, 141, .9); outline-offset: 3px; border-radius: 6px; }
+
+.site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); }
+.brand { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--sp-on-ground); }
+.brand img { width: 36px; height: 36px; display: block; }
+.brand span { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
+
+main { flex-grow: 1; display: flex; flex-direction: column; gap: var(--sp-space-5); }
+
+.intro { display: flex; flex-direction: column; gap: var(--sp-space-3); max-width: 62ch; }
+.eyebrow { font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: var(--sp-eyebrow); }
+h1 { margin: 0; font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 0.98; letter-spacing: -0.03em; }
+.lede { margin: 0; font-size: clamp(1.0625rem, 1.6vw, 1.25rem); line-height: 1.62; color: var(--sp-on-ground-2); max-width: 52ch; }
+
+/* The reading sheet: the home page's cream card, full frame width, text kept to a measure. */
+.sheet {
+  background: var(--sp-card); color: var(--sp-card-ink);
+  border-radius: var(--sp-radius-xl);
+  padding: var(--sp-space-6);
+  box-shadow: 0 24px 54px rgba(28, 6, 20, .44);
+}
+.sheet > * { max-width: 68ch; }
+.sheet a { color: var(--sp-ground-rose); }
+.sheet a:hover { color: var(--sp-ground); }
+.updated { margin: 0 0 var(--sp-space-4); font-size: var(--sp-text-sm); color: var(--sp-card-muted); }
+
+.sheet section { padding-block: var(--sp-space-5); border-top: 1px solid rgba(42, 36, 32, .14); }
+.sheet section:first-of-type { border-top: 0; padding-top: 0; }
+.sheet section:last-child { padding-bottom: 0; }
+.sheet h2 { margin: 0 0 10px; font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-xl); letter-spacing: -0.02em; }
+.sheet h3 { margin: 18px 0 4px; font-size: var(--sp-text-md); }
+.sheet p { margin: 0 0 12px; color: var(--sp-card-ink-2); }
+.sheet p:last-child { margin-bottom: 0; }
+.sheet strong { color: var(--sp-card-ink); }
+.sheet ul { padding-left: 1.1rem; color: var(--sp-card-ink-2); }
+.sheet li { margin-bottom: 6px; }
+address { font-style: normal; color: var(--sp-card-ink); }
+
+.mail { display: inline-block; padding: 10px 16px; border: 1px solid rgba(42, 36, 32, .26); border-radius: var(--sp-radius-pill); text-decoration: none; font-weight: var(--sp-weight-semibold); }
+.sheet a.mail { color: var(--sp-card-ink); }
+.sheet a.mail:hover { border-color: rgba(42, 36, 32, .5); }
+
+footer { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); font-size: var(--sp-text-sm); color: var(--sp-on-ground-3); }
+footer a { color: var(--sp-on-ground-2); }
+footer a:hover, footer a[aria-current="page"] { color: var(--sp-on-ground); }
+
+@media (max-width: 720px) {
+  .page { gap: var(--sp-space-5); padding: var(--sp-space-4) var(--sp-space-4) var(--sp-space-5); }
+  .brand img { width: 32px; height: 32px; }
+  .brand span { font-size: var(--sp-text-md); }
+  .sheet { padding: var(--sp-space-5) var(--sp-space-4); border-radius: var(--sp-radius-lg); }
+  footer { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* Printed (people do print an imprint or a privacy policy): plain black on white, no ground,
+   no card, and the email address spelled out. */
+@media print {
+  body { background: #fff; color: #000; }
+  .page { min-height: 0; max-width: none; padding: 0; gap: 16px; }
+  .brand, .eyebrow, .lede, h1, footer, footer a { color: #000; }
+  .sheet { background: none; box-shadow: none; padding: 0; border-radius: 0; color: #000; }
+  .sheet > * { max-width: none; }
+  .sheet p, .sheet ul, .updated, address, .sheet a, .sheet a.mail { color: #000; }
+  .mail { border: 0; padding: 0; }
+  footer nav { display: none; }
+}
