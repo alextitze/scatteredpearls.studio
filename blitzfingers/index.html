@@ -134,6 +134,8 @@
     .site-head .home img { width: 28px; height: 28px; display: block; }
     .site-head .home span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
     .site-head .home:hover { color: var(--text); }
+    .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); color: var(--text-soft); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); }
+    .site-nav a:hover { color: var(--text); }
 
     /* ── Type ────────────────────────────────────────────────────────────── */
     .kicker { display: block; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: #e0b455; }
@@ -440,7 +442,7 @@
         <img src="../studio-tile.svg" alt="" width="28" height="28">
         <span>Scattered Pearls</span>
       </a>
-      <!-- The language selector lands here, matching the studio home. -->
+      <nav class="site-nav" aria-label="Blitzfingers"><a href="guide/">Guide</a></nav>
     </header>
   </div>
 
@@ -896,7 +898,7 @@
       <img src="../studio-tile.svg" alt="" width="24" height="24">
       <span>A Scattered Pearls app</span>
     </a>
-    <span><a href="guide/">Guide</a> · © 2026 Scattered Pearls · <a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint</a></span>
+    <span><a href="guide/">Guide</a> · © 2026 Scattered Pearls · <a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint/Impressum</a></span>
   </footer>
 </div>
 

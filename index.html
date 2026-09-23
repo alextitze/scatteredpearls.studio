@@ -113,6 +113,12 @@
     .brand { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--sp-on-ground); }
     .brand img { width: 36px; height: 36px; display: block; }
     .brand span { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
+    /* One link per app for now; becomes an "Apps" entry once there is a second. */
+    .site-nav { display: flex; align-items: center; gap: var(--sp-space-2); }
+    .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid rgba(253, 246, 238, .28); border-radius: var(--sp-radius-pill); color: var(--sp-on-ground); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); }
+    /* A dark glass so the label reads over a pearl as well as over the plain ground. */
+    .site-nav a { background: rgba(38, 12, 30, .38); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    .site-nav a:hover { border-color: rgba(253, 246, 238, .6); }
 
     .hero { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--sp-space-5); max-width: 62ch; }
     .eyebrow { font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: var(--sp-eyebrow); }
@@ -214,6 +220,7 @@
         <img src="studio-tile.svg" alt="" width="36" height="36">
         <span>Scattered Pearls</span>
       </a>
+      <nav class="site-nav" aria-label="Apps"><a href="/blitzfingers/">Blitzfingers</a></nav>
     </header>
 
     <main class="hero">
@@ -252,7 +259,7 @@
 
     <footer>
       <span>© 2026 Scattered Pearls · Made with care, by one pair of hands.</span>
-      <nav class="legal" aria-label="Legal"><a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint</a></nav>
+      <nav class="legal" aria-label="Legal"><a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint/Impressum</a></nav>
     </footer>
 
   </div>
