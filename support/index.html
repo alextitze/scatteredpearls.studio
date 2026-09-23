@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Support — Scattered Pearls</title>
+  <meta name="description" content="Help with Scattered Pearls apps: how to get in touch, restoring a purchase, refunds, and answers to common questions.">
+  <link rel="canonical" href="https://scatteredpearls.studio/support/">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#17151b">
+
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="../base.css">
+
+  <style>
+    /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/hanken-400.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/hanken-600.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/hanken-700.woff2") format("woff2"); }
+    @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/bricolage-700.woff2") format("woff2"); }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--surface-0); color: var(--text);
+      font-family: var(--font-body); font-size: var(--sp-text-md); line-height: var(--sp-leading-normal);
+      -webkit-font-smoothing: antialiased; }
+
+    .wrap { width: min(760px, 100% - 2.5rem); margin-inline: auto; }
+
+    .site-head, .site-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding-block: 18px; }
+    .site-foot { justify-content: space-between; border-top: 1px solid var(--border);
+      margin-top: 56px; color: var(--text-muted); font-size: var(--sp-text-sm); }
+    .home { display: inline-flex; align-items: center; gap: 8px; color: var(--text);
+      text-decoration: none; font-weight: 600; }
+    a { color: var(--accent-text); }
+
+    h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem); margin: 8px 0 6px; }
+    .lede { color: var(--text-soft); font-size: var(--sp-text-lg); margin: 0 0 8px; max-width: 46rem; }
+
+    section { padding-block: 26px; border-top: 1px solid var(--border); }
+    section h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 10px; }
+    section h3 { font-size: 1rem; margin: 18px 0 4px; }
+    p, li { max-width: 46rem; }
+    ul { padding-left: 1.1rem; }
+    li { margin-bottom: 6px; }
+
+    .mail { display: inline-block; margin-top: 4px; padding: 10px 16px; border: 1px solid var(--border-strong);
+      border-radius: var(--sp-radius-pill); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site-head">
+    <a class="home" href="/">
+      <img src="../studio-tile.svg" alt="" width="28" height="28">
+      <span>Scattered Pearls</span>
+    </a>
+  </header>
+</div>
+
+<main class="wrap">
+  <h1>Support</h1>
+  <p class="lede">Something not working, or a question the guide does not answer? Write to me — every
+    message is read by the person who made the app.</p>
+
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p><a class="mail" href="mailto:[email]">[email]</a></p>
+    <p>I usually answer within a few days. If something is broken, it helps to include:</p>
+    <ul>
+      <li>the app and its version (in the app under Settings ▸ About),</li>
+      <li>your device and its iOS or macOS version,</li>
+      <li>what you did, what you expected, and what happened instead.</li>
+    </ul>
+  </section>
+
+  <section id="blitzfingers">
+    <h2>Blitzfingers</h2>
+    <p>The <a href="../blitzfingers/guide/">Blitzfingers guide</a> explains every screen. The questions
+      below are the ones it does not cover.</p>
+
+    <h3>I don't hear anything</h3>
+    <p>Check the volume and where the sound is going — a connected Bluetooth speaker or headphones take
+      it over. Blitzfingers plays even with the silent switch on; it is an instrument, and an
+      instrument that goes quiet on stage is no use.</p>
+
+    <h3>Recording doesn't work</h3>
+    <p>The app needs microphone access. If you declined it once, allow it again in your device's
+      Settings ▸ Blitzfingers ▸ Microphone.</p>
+
+    <h3>My MIDI controller doesn't show up</h3>
+    <p>See <a href="../blitzfingers/guide/#midi">MIDI in the guide</a>. A wireless controller has to be
+      paired first; a wired one needs a USB adapter that your device supports.</p>
+  </section>
+
+  <section id="purchases">
+    <h2>Purchases</h2>
+
+    <h3>New device, or reinstalled the app</h3>
+    <p>A purchase belongs to your Apple ID, not to the device. Sign in with the same Apple ID and use
+      <strong>Restore purchase</strong> in the app's settings — you never pay twice.</p>
+
+    <h3>Refunds</h3>
+    <p>Purchases are processed by Apple, so refunds are too. Request one at
+      <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</p>
+
+    <h3>Your sounds and your data</h3>
+    <p>Everything you make stays on your device — there is no account and no cloud copy on our side.
+      That also means we cannot recover it for you: keep your device backed up. See
+      <a href="../privacy/">Privacy</a>.</p>
+  </section>
+</main>
+
+<div class="wrap">
+  <footer class="site-foot">
+    <a class="home" href="/">
+      <img src="../studio-tile.svg" alt="" width="24" height="24">
+      <span>Scattered Pearls</span>
+    </a>
+    <span>© 2026 Scattered Pearls · <a href="./">Support</a> · <a href="../privacy/">Privacy</a></span>
+  </footer>
+</div>
+
+</body>
+</html>
