@@ -168,6 +168,8 @@
     .soon .tag { margin-left: auto; flex: 0 0 auto; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: var(--sp-card-muted); border: 1px solid rgba(42, 36, 32, .26); border-radius: var(--sp-radius-pill); padding: 9px 15px; }
 
     footer { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); font-size: var(--sp-text-sm); color: var(--sp-on-ground-3); }
+    footer a { color: var(--sp-on-ground-2); }
+    footer a:hover { color: var(--sp-on-ground); }
 
     /* ── Phone ── */
     @media (max-width: 720px) {
@@ -249,8 +251,8 @@
     </div>
 
     <footer>
-      <span>© 2026 Scattered Pearls</span>
-      <span>Made with care, by one pair of hands.</span>
+      <span>© 2026 Scattered Pearls · Made with care, by one pair of hands.</span>
+      <nav class="legal" aria-label="Legal"><a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint</a></nav>
     </footer>
 
   </div>
