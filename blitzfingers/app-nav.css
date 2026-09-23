@@ -1,0 +1,38 @@
+/* Blitzfingers page chrome — the frame, the header and its menu, shared by the landing page and
+   the guide so the two cannot drift apart. The frame is the studio's: 1120px with the same gutters,
+   so the logo and the footer stay put when you move between any two pages of the site. */
+
+:root { --gutter: var(--sp-space-5); }
+@media (max-width: 720px) { :root { --gutter: var(--sp-space-4); } }
+
+.wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: var(--gutter); }
+
+.site-head { position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); padding-block: var(--sp-space-5); }
+.site-head .home { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--text-soft); }
+.site-head .home img { width: 28px; height: 28px; display: block; }
+.site-head .home span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
+.site-head .home:hover { color: var(--text); }
+
+/* The menu: the landing page's sections as anchors, plus the guide, which is its own page (hence
+   the arrow). Inline on wide screens; below 860px the same links fold into a "Menu" disclosure. The
+   list is written twice in the markup because a closed <details> hides its content on every width. */
+.site-nav ul { list-style: none; margin: 0; padding: 0; }
+.site-nav li { margin: 0; max-width: none; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--text-soft); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text); }
+.site-nav .to-page::after { content: "→"; margin-left: 6px; }
+
+.nav-inline { display: flex; align-items: center; gap: var(--sp-space-5); }
+.nav-menu { display: none; }
+
+@media (max-width: 860px) {
+  .nav-inline { display: none; }
+  .nav-menu { display: block; }
+  .nav-menu summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); color: var(--text); font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); cursor: pointer; list-style: none; }
+  .nav-menu summary::-webkit-details-marker { display: none; }
+  .nav-menu summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform var(--sp-dur-fast) var(--sp-ease); }
+  .nav-menu[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+  .nav-menu ul { position: absolute; right: 0; top: calc(100% - var(--sp-space-3)); z-index: 20; min-width: 220px; padding: var(--sp-space-2) var(--sp-space-4); background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--sp-radius-lg); box-shadow: 0 22px 50px rgba(0, 0, 0, .5); }
+  .nav-menu li + li { border-top: 1px solid var(--border); }
+  .nav-menu a { display: flex; min-height: 48px; font-size: var(--sp-text-md); }
+}

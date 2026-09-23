@@ -34,6 +34,7 @@
   <!-- Shared design system (vendored at repo root) -->
   <link rel="stylesheet" href="../tokens.css">
   <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="app-nav.css">
 
   <!-- Structured data: the app -->
   <script type="application/ld+json">
@@ -126,16 +127,7 @@
     a { color: #9e8ae0; }
     a:hover { color: #b3a1ea; }
 
-    .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding-inline: var(--sp-space-5); }
-
-    /* ── Site chrome ─────────────────────────────────────────────────────── */
-    .site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); padding-block: var(--sp-space-5); }
-    .site-head .home { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--text-soft); }
-    .site-head .home img { width: 28px; height: 28px; display: block; }
-    .site-head .home span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
-    .site-head .home:hover { color: var(--text); }
-    .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); color: var(--text-soft); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); }
-    .site-nav a:hover { color: var(--text); }
+    /* ── Site chrome: frame, header and menu live in app-nav.css (shared with the guide). ── */
 
     /* ── Type ────────────────────────────────────────────────────────────── */
     .kicker { display: block; font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: #e0b455; }
@@ -410,9 +402,9 @@
     @media (max-width: 1079px) {
       .shots {
         justify-content: flex-start; overflow-x: auto; scroll-snap-type: x mandatory;
-        margin-inline: calc(var(--sp-space-5) * -1);
-        padding-inline: var(--sp-space-5); padding-bottom: var(--sp-space-3);
-        scroll-padding-inline: var(--sp-space-5);
+        margin-inline: calc(var(--gutter) * -1);
+        padding-inline: var(--gutter); padding-bottom: var(--sp-space-3);
+        scroll-padding-inline: var(--gutter);
       }
       .shot { scroll-snap-align: center; }
       .shot .frame { height: 320px; }
@@ -442,7 +434,27 @@
         <img src="../studio-tile.svg" alt="" width="28" height="28">
         <span>Scattered Pearls</span>
       </a>
-      <nav class="site-nav" aria-label="Blitzfingers"><a href="guide/">Guide</a></nav>
+      <nav class="site-nav" aria-label="Blitzfingers">
+        <ul class="nav-inline">
+          <li><a href="#areas">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pro">Pro</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="to-page" href="guide/">Guide</a></li>
+        </ul>
+        <details class="nav-menu">
+          <summary>Menu</summary>
+          <ul>
+            <li><a href="#areas">How it works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pro">Pro</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a class="to-page" href="guide/">Guide</a></li>
+          </ul>
+        </details>
+      </nav>
     </header>
   </div>
 
@@ -903,6 +915,9 @@
 </div>
 
 <script>
+  /* The fold-out menu closes once a section is chosen, so it is not left covering the page. */
+  document.querySelectorAll('.nav-menu a').forEach(a => a.addEventListener('click', () => a.closest('details').removeAttribute('open')));
+
   /* Progressive enhancement. In the two feature sections the stage follows the
      list item the pointer is on, or the one you tap — so it works with a mouse,
      with a finger, and it degrades to a still picture with the script off (the

@@ -19,6 +19,7 @@
   <link rel="icon" href="../../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../../tokens.css">
   <link rel="stylesheet" href="../../base.css">
+  <link rel="stylesheet" href="../app-nav.css">
 
   <style>
     /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
@@ -33,17 +34,12 @@
       font-family: var(--font-body); font-size: var(--sp-text-md); line-height: var(--sp-leading-normal);
       -webkit-font-smoothing: antialiased; }
 
-    .wrap { width: min(760px, 100% - 2.5rem); margin-inline: auto; }
-
-    .site-head, .site-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-      padding-block: 18px; }
-    .site-head { justify-content: space-between; }
-    .site-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--border-strong);
-      border-radius: var(--sp-radius-pill); color: var(--text-soft); text-decoration: none; font-size: var(--sp-text-sm); font-weight: 600; }
-    .site-nav a:hover { color: var(--text); }
-    .site-foot { justify-content: space-between; border-top: 1px solid var(--border);
+    /* Frame, header and menu: app-nav.css (shared with the landing page). The reading text keeps
+       its own measure below, so the wider frame does not mean longer lines. */
+    .site-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-block: 18px;
+      justify-content: space-between; border-top: 1px solid var(--border);
       margin-top: 56px; color: var(--text-muted); font-size: var(--sp-text-sm); }
-    .home { display: inline-flex; align-items: center; gap: 8px; color: var(--text);
+    .site-foot .home { display: inline-flex; align-items: center; gap: 8px; color: var(--text);
       text-decoration: none; font-weight: 600; }
     a { color: var(--accent-text); }
 
@@ -78,7 +74,27 @@
       <img src="../../studio-tile.svg" alt="" width="28" height="28">
       <span>Scattered Pearls</span>
     </a>
-    <nav class="site-nav" aria-label="Blitzfingers"><a href="../">Blitzfingers</a></nav>
+    <nav class="site-nav" aria-label="Blitzfingers">
+      <ul class="nav-inline">
+        <li><a href="../#areas">How it works</a></li>
+        <li><a href="../#features">Features</a></li>
+        <li><a href="../#pro">Pro</a></li>
+        <li><a href="../#pricing">Pricing</a></li>
+        <li><a href="../#faq">FAQ</a></li>
+        <li><a class="to-page" href="./" aria-current="page">Guide</a></li>
+      </ul>
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <ul>
+          <li><a href="../#areas">How it works</a></li>
+          <li><a href="../#features">Features</a></li>
+          <li><a href="../#pro">Pro</a></li>
+          <li><a href="../#pricing">Pricing</a></li>
+          <li><a href="../#faq">FAQ</a></li>
+          <li><a class="to-page" href="./" aria-current="page">Guide</a></li>
+        </ul>
+      </details>
+    </nav>
   </header>
 </div>
 
