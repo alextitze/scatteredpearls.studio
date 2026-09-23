@@ -34,8 +34,9 @@
       font-family: var(--font-body); font-size: var(--sp-text-md); line-height: var(--sp-leading-normal);
       -webkit-font-smoothing: antialiased; }
 
-    /* Frame, header and menu: app-nav.css (shared with the landing page). The reading text keeps
-       its own measure below, so the wider frame does not mean longer lines. */
+    /* Frame, header and menu: app-nav.css (shared with the landing page). On wide screens the
+       frame holds two columns — the contents on the left, the text on the right — so the width is
+       used without stretching lines past what reads comfortably. */
     .site-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-block: 18px;
       justify-content: space-between; border-top: 1px solid var(--border);
       margin-top: 56px; color: var(--text-muted); font-size: var(--sp-text-sm); }
@@ -44,7 +45,7 @@
     a { color: var(--accent-text); }
 
     h1 { font-family: var(--font-display); font-size: clamp(2rem, 1.3rem + 2.6vw, 3rem); margin: 8px 0 6px; }
-    .lede { color: var(--text-soft); font-size: var(--sp-text-lg); margin: 0 0 8px; max-width: 46rem; }
+    .lede { color: var(--text-soft); font-size: var(--sp-text-lg); margin: 0 0 8px; max-width: 52rem; }
 
     /* The deep-link contract: every section the app can open is an id below, and the app links to
        these names. Renaming one breaks an in-app link that is already shipped, so treat them as an
@@ -52,13 +53,26 @@
     section { scroll-margin-top: 16px; padding-block: 26px; border-top: 1px solid var(--border); }
     section h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 10px; }
     section h3 { font-size: 1rem; margin: 18px 0 4px; }
-    p, li { max-width: 46rem; }
     ul { padding-left: 1.1rem; }
     li { margin-bottom: 6px; }
 
     .toc { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 18px 0 0; list-style: none; }
     .toc a { display: inline-block; padding: 6px 11px; border: 1px solid var(--border-strong);
       border-radius: var(--sp-radius-pill); text-decoration: none; font-size: var(--sp-text-sm); }
+
+    /* Wide: the contents become a sticky side list that marks the section you are reading. */
+    @media (min-width: 861px) {
+      .guide-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 56px;
+        align-items: start; margin-top: 32px; }
+      .toc-side { position: sticky; top: 24px; }
+      .toc { flex-direction: column; gap: 0; margin: 0; }
+      .toc li { margin: 0; }
+      .toc a { display: block; padding: 7px 0 7px 14px; border: 0; border-left: 2px solid var(--border);
+        border-radius: 0; color: var(--text-soft); }
+      .toc a:hover { color: var(--text); }
+      .toc a.here { color: var(--text); border-left-color: var(--accent); }
+      .guide-text > section:first-child { border-top: 0; padding-top: 0; }
+    }
 
     .note { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--text-soft); }
     .pro { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: 1px;
@@ -104,6 +118,8 @@
     app can open the part you are looking at.</p>
   <p><a href="../">← Back to Blitzfingers</a></p>
 
+  <div class="guide-layout">
+  <nav class="toc-side" aria-label="Guide contents">
   <ul class="toc">
     <li><a href="#board">The board</a></li>
     <li><a href="#banks">Banks</a></li>
@@ -116,6 +132,8 @@
     <li><a href="#midi">MIDI</a></li>
     <li><a href="#appearance">Appearance</a></li>
   </ul>
+  </nav>
+  <div class="guide-text">
 
   <section id="board">
     <h2>The board</h2>
@@ -234,6 +252,8 @@
       shown by default, and names come back while you are editing — you cannot rename what you cannot
       identify.</p>
   </section>
+  </div>
+  </div>
 </main>
 
 <div class="wrap">
@@ -245,6 +265,18 @@
     <span>© 2026 Scattered Pearls · <a href="/support/">Support</a> · <a href="/privacy/">Privacy</a> · <a href="/imprint/">Imprint/Impressum</a></span>
   </footer>
 </div>
+
+<script>
+  /* Mark the section being read in the side list. Wide screens only; the list is pills otherwise. */
+  const links = new Map([...document.querySelectorAll('.toc a')].map(a => [a.getAttribute('href').slice(1), a]));
+  const seen = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) {
+      links.forEach(a => a.classList.remove('here'));
+      const a = links.get(e.target.id); if (a) a.classList.add('here');
+    }
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  document.querySelectorAll('.guide-text > section').forEach(sec => seen.observe(sec));
+</script>
 
 </body>
 </html>
