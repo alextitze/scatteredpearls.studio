@@ -140,9 +140,22 @@
     <p>The board holds two kinds of sound. <strong>One-shots</strong> fire and finish — a kick, a clap,
       a word — and several can overlap. <strong>Loops</strong> run until you stop them, and starting a
       second loop crossfades out of the first, so a set never collides with itself.</p>
-    <p>A loop you start while another is playing <strong>waits for the next bar</strong> — or, if the
-      running loop has no known tempo, for its next start — and comes in exactly there, so loops stay in
-      time without tapping to the millisecond. It pulses while it waits; tap it again to cancel.</p>
+    <h3>Loops start on the beat</h3>
+    <p>When a loop is already playing, a loop you tap does not start that instant — it <strong>waits for
+      the next beat</strong> and comes in exactly there. Tap a little late or a little early and it still
+      lands in time: no flam, no loop drifting a fraction behind the other one for as long as they play.</p>
+    <ul>
+      <li><strong>Which beat:</strong> if the playing loop was recorded to the metronome, its tempo is
+        known and the next loop waits for the <strong>next bar</strong>. Otherwise it waits until the playing
+        loop <strong>comes round to its start</strong> again — which can take as long as that loop is.</li>
+      <li><strong>While it waits</strong> its pad pulses. Tap it again to cancel; <strong>Stop all</strong>
+        and switching banks cancel too.</li>
+      <li><strong>Switching</strong> from one loop to another crossfades on that beat as well, so the groove
+        does not stumble. <strong>Keep playing</strong> loops layer on it.</li>
+      <li><strong>Nothing playing?</strong> A loop starts at once. <strong>Stopping</strong> is always
+        immediate — and if you stop the loop the others were lining up to, a waiting one starts at once.</li>
+      <li>Speed changes are followed: the beat moves with the loop.</li>
+    </ul>
     <p>Tap a pad to play it. <strong>Stop all</strong> appears in the header while anything is
       sounding, and the Escape key does the same on a keyboard.</p>
     <p>Turn the phone and the board goes edge to edge — <strong>Performance Mode</strong>: no header,
