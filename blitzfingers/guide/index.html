@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Blitzfingers — guide</title>
-  <meta name="description" content="How Blitzfingers works: the board, banks, editing a pad, trimming, effects, recording, overdubbing and mapping a MIDI controller.">
+  <meta name="description" content="How Blitzfingers works: the board, banks, editing a pad, trimming, effects, recording, overdubbing, MIDI, the keyboard and the trial.">
   <link rel="canonical" href="https://scatteredpearls.studio/blitzfingers/guide/">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#17151b">
@@ -127,6 +127,8 @@
     <li><a href="#recording">Recording &amp; importing</a></li>
     <li><a href="#overdub">Overdub</a></li>
     <li><a href="#midi">MIDI</a></li>
+    <li><a href="#keyboard">Keyboard</a></li>
+    <li><a href="#sound">Sound &amp; levels</a></li>
     <li><a href="#appearance">Appearance</a></li>
     <li><a href="#trial">Trying and buying</a></li>
   </ul>
@@ -135,179 +137,228 @@
 
   <section id="board">
     <h2>The board</h2>
-    <p>The board holds two kinds of sound. <strong>One-shots</strong> fire and finish — a kick, a clap,
-      a word — and several can overlap. <strong>Loops</strong> run until you stop them, and starting a
-      second loop crossfades out of the first, so a set never collides with itself.</p>
+    <p>The board holds two kinds of sound, one section each. <strong>One-shots</strong> (top) fire and finish —
+      a kick, a clap, a word — and several can sound at once, so you can drum them. <strong>Loops</strong>
+      (bottom) run until you stop them. Tap a pad to play it; tap a playing loop again to stop it. The small
+      line under each section's name says how it behaves.</p>
+    <p><strong>Stop all</strong> appears in the header while anything is sounding and silences everything at
+      once — loops, one-shots, and a loop still fading out. It cuts, it does not fade.</p>
+
+    <h3>Loops take turns</h3>
+    <p>Only one loop plays at a time. Start another and the two crossfade: the old one fades out while the new
+      one fades in, so a set never collides with itself. The fade takes two seconds unless you change it
+      (<a href="#sound">Sound &amp; levels</a>); the loops' line on the board shows the time.</p>
+    <p>A loop set to <strong>keep playing</strong> steps out of that: it stays on when you start another one,
+      so you can layer a beat, a bass line and a pad. It stops when you tap it again, or with Stop all. The pad
+      shows a <strong>pin</strong>.</p>
+
     <h3>Loops start on the beat</h3>
-    <p>When a loop recorded to the metronome is playing, a loop you tap does not start that instant — it <strong>waits for
-      the next beat</strong> and comes in exactly there. Tap a little late or a little early and it still
-      lands in time: no flam, no loop drifting a fraction behind the other one for as long as they play.</p>
+    <p>When a loop recorded to the metronome is playing, a loop you tap does not start that instant — it
+      <strong>waits for the next bar</strong> and comes in exactly there. Tap a little late or a little early
+      and it still lands in time: no flam, and no loop drifting a fraction behind the other for as long as they
+      play.</p>
     <ul>
-      <li><strong>Which beat:</strong> a take recorded to the metronome knows its tempo, so the next loop
-        waits for the <strong>next bar</strong> — never longer. An imported loop has no known tempo: then a
-        loop you tap starts <strong>at once</strong>, as a plain crossfade.</li>
-      <li><strong>While it waits</strong> its pad pulses (VoiceOver says so, too). Tap it again to cancel; <strong>Stop all</strong>
-        and switching banks cancel too.</li>
-      <li><strong>Switching</strong> from one loop to another crossfades on that beat as well, so the groove
-        does not stumble. <strong>Keep playing</strong> loops layer on it.</li>
+      <li><strong>Only a known tempo is waited for.</strong> A take recorded to the metronome knows its tempo,
+        so the wait is never longer than one bar. An imported loop has no known tempo: a loop you tap then
+        starts at once, as a plain crossfade.</li>
+      <li><strong>While it waits</strong> its pad pulses (VoiceOver says so, too). Tap it again to cancel;
+        Stop all and switching banks cancel as well.</li>
+      <li><strong>Switching</strong> crossfades on that bar; <strong>keep playing</strong> loops layer on it.</li>
       <li><strong>Nothing playing?</strong> A loop starts at once. <strong>Stopping</strong> is always
         immediate — and if you stop the loop the others were lining up to, a waiting one starts at once.</li>
-      <li>Speed changes are followed: the beat moves with the loop.</li>
+      <li>Speed changes are followed: the bar moves with the loop.</li>
     </ul>
-    <p>Tap a pad to play it. <strong>Stop all</strong> appears in the header while anything is
-      sounding, and the Escape key does the same on a keyboard.</p>
-    <p>Turn the phone and the board goes edge to edge — <strong>Performance Mode</strong>: no header,
-      nothing but pads. Turning into it ends edit mode and closes any open screen, so the pads play;
-      a recording or an overdub in progress stays open.</p>
-    <h3>Hold, restart and keep playing</h3>
-    <p>A one-shot can be set to <strong>hold to repeat</strong>: it repeats while your finger is down
-      and stops when you let go — the pad shows a finger. Or to <strong>restart on tap</strong>: a new
-      tap stops the one still playing and starts it over, so a longer sound never piles up on itself —
-      the pad shows ⏮.</p>
-    <p>A loop can be set to <strong>keep playing</strong>: it stays on when you start another loop
-      instead of crossfading out, and stops when you tap it again — the pad shows a pin. All three
-      live in the pad's Playback settings.</p>
+
+    <h3>Hold and restart</h3>
+    <p>A one-shot can be set to <strong>hold to repeat</strong>: it repeats while your finger is down and stops
+      when you let go — the pad shows a finger. Or to <strong>restart on tap</strong>: a new tap stops the
+      one still sounding and starts it over, so a longer sound — a word, a jingle — never piles up on itself.
+      The pad shows ⏮. Both, and keep playing, are in the pad's <strong>Playback</strong> settings.</p>
+
+    <h3>Performance Mode</h3>
+    <p>Turn the phone sideways and the board goes edge to edge: no header, nothing but pads. Turning into it
+      ends edit mode and closes any open screen, so the pads play; a recording or an overdub in progress stays
+      open. Turn back to leave it.</p>
   </section>
 
   <section id="banks">
     <h2>Banks</h2>
-    <p>A bank is one board. Use them to keep sets apart — a drum kit, a party set, a show. The bank
-      name in the header opens the list; you can rename, add and delete there.</p>
-    <p>Each bank holds up to 16 one-shots and 16 loops. Sounds are not shared between banks, but a
-      <strong>MIDI mapping is</strong>: it belongs to a grid position, so the same controller pad plays
-      position 3 in whichever bank is open.</p>
+    <p>A bank is one board — sixteen one-shots and sixteen loops. Use banks to keep sets apart: a drum kit, a
+      party set, one board per song or show. The bank name in the header opens the list: tap a bank to switch
+      to it, <strong>+ New bank</strong> to add one, and the pencil beside a bank to rename or delete it.</p>
+    <p>Switching banks keeps a playing loop running, so you can change the pads under a groove without a gap.
+      Sounds belong to their bank; a <strong>MIDI mapping</strong> does not — it belongs to a grid position, so
+      the same controller pad plays position 3 in whichever bank is open.</p>
+    <p class="note">To back up or share a bank, see <a href="#sound">Sound &amp; levels</a> ▸ Bank backup.</p>
   </section>
 
   <section id="edit">
     <h2>Editing a pad</h2>
-    <p>The pencil in the header turns on edit mode — the pads lift and wobble. Tap one to open its
-      settings; drag one to reorder — onto another pad to slot it in there, into an empty slot to move
-      it there without shifting anything else; tap an empty slot to add a sound there. On a touch
-      screen, hold the pad a moment until it lifts, then drag: moving straight away scrolls the board
-      instead, so you can scroll in edit mode without rearranging anything.</p>
+    <p>The pencil in the header turns on edit mode: the pads lift and wobble, and the pencil becomes a check to
+      finish. While editing, pads do not play — tap one to open its settings instead.</p>
+
+    <h3>Arranging</h3>
+    <p>Drag a pad to move it. Dropped onto another pad, it slots in there and the pads after it make room;
+      dropped into an empty slot, it goes there and nothing else moves. On a touch screen, hold the pad a moment
+      until it lifts, then drag — moving straight away scrolls the board instead, so you can scroll in edit mode
+      without rearranging anything.</p>
     <p>Drag a pad into the other section to move it between <strong>one-shots</strong> and
-      <strong>loops</strong> — it works just like reordering: the pads there make room while you hold it
-      over them, and an empty slot lights up to take it. Or use <strong>Move to …</strong> in its settings.
-      A full section (16 pads) does not take it. Whatever only makes sense in
-      one of them (hold, restart on tap, keep playing) is dropped, and the message that says so has an
-      <strong>Undo</strong>.</p>
-    <p>A pad's settings screen holds its name and colour, and leads into Playback, Trim, Effects,
-      Shape&nbsp;&amp;&nbsp;Transform, Overdub and MIDI. <strong>Everything you change is kept as you
-      change it</strong> — there is nothing to save. Delete is the exception and asks first.</p>
+      <strong>loops</strong>. It works exactly like arranging: the pads there make room while you hold it over
+      them, and an empty slot lights up to take it. A full section (16 pads) does not take it. Or use
+      <strong>Move to …</strong> at the bottom of the pad's settings, which puts it in the first free slot.
+      Whatever only makes sense in one section — hold, restart on tap, keep playing — is dropped, and the message
+      that says so has an <strong>Undo</strong>.</p>
+
+    <h3>The pad's settings</h3>
+    <p>They open with the pad's <strong>name</strong> and <strong>colour</strong>, then lead into Playback,
+      Trim, Effects, Shape&nbsp;&amp;&nbsp;Transform, Overdub and MIDI. <strong>Everything you change is kept
+      as you change it</strong> — there is nothing to save. <strong>Playback</strong> holds the pad's volume and
+      its switches (hold, restart on tap, keep playing). <strong>Delete</strong>, for sounds you recorded or
+      imported, asks first.</p>
     <h3>Colour</h3>
-    <p><strong>Auto</strong> gives the pad a colour derived from its name, so two neighbours never
-      look alike; pick a swatch to override it.</p>
+    <p><strong>Auto</strong> gives the pad a colour derived from its name, so two neighbours never look alike;
+      pick a swatch to choose one yourself. The colour sits in the pad's lower edge, so you find a pad without
+      reading it.</p>
   </section>
 
   <section id="trim">
     <h2>Trim</h2>
-    <p>Trim sets where a sound starts and ends without touching the file. Drag the two handles on the
-      waveform, or use <strong>Auto</strong> to cut leading and trailing silence. <strong>Full
-      length</strong> puts it back.</p>
-    <p>Beside Play you read the cut and its length, to the hundredth of a second. Switch on
-      <strong>Loop</strong> and the preview repeats the cut until you pause it — move a handle while it
-      plays and you hear the new cut on the next pass. The recording screen works the same way.</p>
-    <p class="note">A loop repeats the trimmed region, so trimming is also how you make a loop line up.</p>
+    <p>Trim sets where a sound starts and ends without touching the file — you can always go back.
+      <strong>Auto-trim</strong> cuts the quiet start and end; <strong>Full length</strong> keeps all of it; or
+      drag the two handles on the waveform yourself.</p>
+    <p>For a precise cut, zoom in: pinch the waveform (or use + / − and <strong>Fit</strong>), drag the wave
+      with one finger to move along it, and the strip underneath shows where you are in the whole sound. A handle
+      dragged past the edge takes the view with it.</p>
+    <p>Beside Play you read the cut and its length to the hundredth of a second. Switch on
+      <strong>Loop</strong> and the preview repeats the cut until you pause it — move a handle while it plays and
+      you hear the new cut on the next pass. The recording screen works the same way.</p>
+    <p class="note">A loop repeats exactly the trimmed part, so trimming is also how you make a loop line up.</p>
   </section>
 
   <section id="effects">
     <h2>Effects</h2>
     <p>Each pad has its own effects: Filter, Delay, Reverb, Chorus, Phaser, Distortion, Lo-fi, Pan and
-      Bitcrush. Switch one on and its controls appear underneath. Changes are audible while the pad
-      plays, so you can dial them in by ear.</p>
-    <p><strong>Filter</strong> is one knob: left of centre muffles (a low-pass sweeping down), right of
-      centre thins (a high-pass sweeping up), and the middle is off.</p>
+      Bitcrush. Switch one on and its controls appear underneath. Changes are heard while the pad plays — play it
+      from the Effects screen and dial them in by ear. <strong>Reset effects</strong> turns them all off again.</p>
+    <p><strong>Filter</strong> is one knob: left of centre muffles (a low-pass sweeping down), right of centre
+      thins (a high-pass sweeping up), and the middle is off. A pad with effects on shows <strong>FX</strong>.</p>
   </section>
 
   <section id="transform">
     <h2>Speed, pitch and reverse</h2>
     <p>Shape&nbsp;&amp;&nbsp;Transform changes the sound itself rather than adding to it.</p>
     <ul>
-      <li><strong>Speed</strong> plays faster or slower, and the pitch follows — like a record. Normal
-        speed sits in the middle of the control, an octave down at a quarter, an octave up at three
-        quarters.</li>
-      <li><strong>Pitch</strong> shifts by semitones and <em>keeps the tempo</em>. Up to an octave
-        either way.</li>
+      <li><strong>Speed</strong> plays faster or slower, and the pitch follows — like a record. Normal speed sits
+        in the middle of the control, an octave down at a quarter, an octave up at three quarters.</li>
+      <li><strong>Pitch</strong> shifts by semitones and <em>keeps the tempo</em> — up to an octave either way.</li>
       <li><strong>Reverse</strong> plays the sound backwards.</li>
     </ul>
+    <p>They combine: a sound can be sped up, pitched back down and played backwards at once.</p>
   </section>
 
   <section id="recording">
     <h2>Recording and importing</h2>
-    <p>Tap an empty slot to add a sound there. You can <strong>record</strong> with the microphone,
-      <strong>import</strong> an audio file, or pick one from the built-in library.</p>
-    <p>A recording lands on the slot you tapped, with its date kept, and can be trimmed, renamed and
-      coloured like any other pad. New takes are numbered — Recording, Recording 2, Recording 3 — so
-      they never share a name.</p>
+    <p>Tap an empty slot (the <strong>+</strong>) to add a sound there. <strong>Record…</strong> uses the
+      microphone; <strong>Choose file…</strong> imports an audio file; <strong>Add from library…</strong> picks
+      from the sounds that come with the app and from your own recordings in other banks.</p>
+    <p>A recording lands on the slot you tapped, keeps the date it was made, and can be trimmed, renamed and
+      coloured like any other pad. New takes are numbered — Recording, Recording 2, Recording 3 — so they never
+      share a name. Before saving you can trim the take on its waveform, and <strong>Normalize</strong> lifts a
+      quiet take to a healthy level.</p>
+
     <h3>Recording to a metronome</h3>
-    <p>Switch on the <strong>Metronome</strong> before you record, set the tempo (40–240 BPM) and the
-      length in bars (1, 2, 4, 8 or 16). Record counts in one bar, records exactly the bars you set and
-      stops by itself — cut to start on beat one. Every take at one tempo is the same length, so takes
-      recorded one after another layer as loops. Tempo and length are remembered for the next take.</p>
-    <p>With headphones you hear the click throughout. Without them the count-in clicks and taps, and
-      during the take the beat only flashes — so nothing but you ends up in the recording.</p>
+    <p>Switch on the <strong>Metronome</strong> before you record, set the tempo (40–240 BPM) and the length in
+      bars (1, 2, 4, 8 or 16). Record counts in one bar, records exactly the bars you set and stops by itself —
+      cut to start on beat one. Every take at one tempo is the same length, so takes recorded one after another
+      layer as loops, and they <a href="#board">start on the beat</a>. The pad's settings show the take's tempo
+      under its name. Tempo and length are remembered for the next take.</p>
+    <p>With headphones you hear the click throughout. Without them the count-in clicks and taps, and during the
+      take the beat only flashes — so nothing but you ends up in the recording.</p>
   </section>
 
   <section id="overdub">
     <h2>Overdub</h2>
-    <p>Overdub records a new pass <em>over</em> an existing sound and mixes the two — layering a
-      harmony onto a loop, or a second clap onto a clap.</p>
-    <p><strong>Headphones are required</strong>, and the app checks: without them the microphone would
-      record the loop playing out of the speaker along with you. The first Start measures the
-      round-trip delay of your headphones automatically; <strong>Sync</strong> nudges it by ear if a
-      layer lands early or late, and <strong>Recalibrate</strong> re-measures after you switch
-      headphones.</p>
-    <p>Undo and Redo step through the layers. Save it as a new sound or overwrite the original — and
-      if the bank is full, the app offers the banks that still have room.</p>
+    <p>Overdub records a new pass <em>over</em> an existing sound and mixes the two — a harmony onto a loop, a
+      second clap onto a clap. Open it from the pad's settings; the loop plays while you record along.</p>
+    <p><strong>Headphones are required</strong>, wired or Bluetooth, and the app checks: without them the
+      microphone would record the loop from the speaker along with you. The first Start measures the round-trip
+      delay of your headphones; <strong>Sync</strong> nudges it by ear if a layer lands early or late, and
+      <strong>Recalibrate</strong> measures again after you switch headphones.</p>
+    <p>Undo and Redo step through the layers. <strong>Save as New</strong> keeps the original, <strong>Overwrite</strong>
+      replaces it — and if the bank is full, the app offers the banks that still have room.</p>
   </section>
 
   <section id="midi">
     <h2>MIDI</h2>
-    <p>Connect a controller by cable (a USB adapter) or over Bluetooth, and Blitzfingers shows it in
-      Settings ▸ MIDI. You can also reach a single pad's mapping from that pad's own settings.</p>
+    <p>Connect a controller by cable (a USB adapter) or over Bluetooth — Settings ▸ MIDI has the Bluetooth
+      pairing — and Blitzfingers picks it up, also when you plug it in while the app runs. A pad's own settings
+      lead to its mapping too.</p>
     <h3>Learning a control</h3>
-    <p>Tap a pad in the MIDI screen to open it, then <strong>Learn</strong> on the row you want —
-      Trigger, Volume, or one of the effects — and move the control on your device. Learning again
-      replaces the old assignment. The trash icon removes one.</p>
-    <p>Mappings belong to the <strong>grid position</strong>, not to the sound, so they survive
-      switching banks. Set them up on your fullest bank.</p>
+    <p>In Settings ▸ MIDI, tap a pad on the small board to open it, then <strong>Learn</strong> on the row you
+      want — Trigger, Volume, or one of the effect amounts — and move the control on your device. Learning again
+      replaces the old assignment; the trash icon removes one. Beside the pads there are rows for
+      <strong>Stop all</strong> and for the two section volumes. A mapped pad shows <strong>M</strong>.</p>
+    <p>Mappings belong to the <strong>grid position</strong>, not to the sound, so they survive switching
+      banks. Set them up on your fullest bank.</p>
     <h3 id="knob-mode">Knob mode: Absolute or Relative</h3>
     <p>Controllers report their knobs in one of two ways, and Blitzfingers needs to know which.</p>
     <ul>
-      <li><strong>Absolute</strong> — the control reports <em>where it is</em>, from one end of its
-        travel to the other. Normal for faders and for knobs with a start and an end. This is the
-        default.</li>
-      <li><strong>Relative</strong> — the control reports <em>that it moved</em>, a step at a time.
-        Used by endless encoders, which spin forever with no end stop.</li>
+      <li><strong>Absolute</strong> — the control reports <em>where it is</em>, from one end of its travel to the
+        other. Normal for faders and for knobs with a start and an end. This is the default.</li>
+      <li><strong>Relative</strong> — the control reports <em>that it moved</em>, a step at a time. Used by
+        endless encoders, which spin forever with no end stop.</li>
     </ul>
-    <p>If a knob spins endlessly and mapping a volume behaves oddly — jumping to one end, or only
-      reacting at the extremes — switch to Relative. The setting is in Settings ▸ MIDI.</p>
-    <p class="note">Some endless knobs still report absolute positions. If Relative makes things worse,
-      switch back: your device is one of those.</p>
+    <p>If a knob spins endlessly and a mapped volume behaves oddly — jumping to one end, or only reacting at
+      the extremes — switch to Relative. The setting is in Settings ▸ MIDI.</p>
+    <p class="note">Some endless knobs still report absolute positions. If Relative makes things worse, switch
+      back: your device is one of those.</p>
+  </section>
+
+  <section id="keyboard">
+    <h2>Keyboard</h2>
+    <p>With a hardware keyboard — an iPad keyboard, or on a Mac — keys play pads. The <strong>number row</strong>
+      fires one-shots 1–10 and <strong>⇧ + 1–6</strong> the rest; the <strong>letters</strong> Q to P and A to H
+      play the sixteen loops. The keys follow the physical layout, so they sit in the same place on QWERTY and
+      QWERTZ; each pad shows its key. A held key holds a hold-to-repeat pad. <strong>Escape</strong> is Stop all.</p>
+  </section>
+
+  <section id="sound">
+    <h2>Sound &amp; levels</h2>
+    <p>Settings ▸ <strong>Sound</strong> sets the overall volume of the one-shots and of the loops, so you can
+      balance the two sections for a room; the <strong>loop crossfade</strong> time (0 is a hard cut); and
+      <strong>normalize loudness</strong>, which plays every sound at a similar level — the files stay as they
+      are, so you can switch it off again. Each pad also has its own volume, in its Playback settings.</p>
+    <h3>Bank backup</h3>
+    <p>Settings ▸ <strong>Bank backup</strong> exports the bank you are in as one file — its sounds, every pad's
+      settings, the layout and the dates the takes were made — to keep, or to send to someone. Import adds a
+      saved bank next to your others; nothing is overwritten. MIDI mappings and app settings are not part of a
+      bank and stay as they are.</p>
   </section>
 
   <section id="appearance">
     <h2>Appearance</h2>
     <p>Settings ▸ Appearance hides what you no longer need once you know your board. <strong>On the
-      pads</strong>: the names, and the symbols — MIDI marks, keyboard shortcuts, and the playback
-      and effect symbols (hold, restart, keep playing, FX, reverse), each on its own switch under one
-      <strong>Symbols</strong> switch that hides them all at once. <strong>On the board</strong>: the
-      category explanations. Everything is shown by default, and names come back while you are editing
-      — you cannot rename what you cannot identify.</p>
-    <p>When a small pad has more symbols than fit, the last ones fold into <strong>+2</strong> (or
-      however many) — the settings are all still there.</p>
+      pads</strong>: the names, and the symbols — MIDI marks, keyboard shortcuts, and the playback and effect
+      symbols (hold, restart, keep playing, FX, reverse), each on its own switch under one
+      <strong>Symbols</strong> switch that hides them all at once. <strong>On the board</strong>: the section
+      explanations. Everything is shown by default, and names come back while you are editing — you cannot
+      rename what you cannot identify.</p>
+    <p>When a small pad has more symbols than fit, the last ones fold into <strong>+2</strong> (or however
+      many) — the settings are all still there.</p>
   </section>
 
   <section id="trial">
     <h2>Trying and buying</h2>
-    <p>Blitzfingers is free to download, and for <strong>14 days everything is yours</strong> — nothing is
-      held back while you try it. The first time you open it, it says so and asks you to start the trial.</p>
-    <p>When the 14 days are up, <strong>your board keeps playing exactly as you built it</strong>: pads,
-      loops, banks, the keyboard and MIDI all still work, and so does exporting a bank. What stops is
-      changing it — editing, adding or recording sounds, new banks, MIDI Learn — until you unlock
-      Blitzfingers once, for 14,99&nbsp;€. The trial never turns into a charge by itself.</p>
-    <p>A purchase belongs to your Apple ID. On a new device, use <strong>Restore purchase</strong> — in
-      Settings, at the top.</p>
+    <p>Blitzfingers is free to download, and for <strong>14 days everything is yours</strong> — nothing is held
+      back while you try it. The first time you open it, it says so and asks you to start the trial; the top row
+      of Settings always shows how many days are left.</p>
+    <p>When the 14 days are up, <strong>your board keeps playing exactly as you built it</strong>: pads, loops,
+      banks, the keyboard and MIDI still work, and so do the section volumes and exporting a bank. What stops is
+      changing it — editing, adding or recording sounds, banks, importing a board, MIDI Learn, Appearance — until
+      you unlock Blitzfingers once, for 14,99&nbsp;€. The trial never turns into a charge by itself, and there is
+      no subscription.</p>
+    <p>A purchase belongs to your Apple ID and usually comes back by itself on a new device. If it does not,
+      use <strong>Restore purchase</strong> — in Settings, at the top.</p>
   </section>
   </div>
   </div>
