@@ -300,18 +300,23 @@
       <strong>Stop all</strong> and for the two section volumes. A mapped pad shows <strong>M</strong>.</p>
     <p>Mappings belong to the <strong>grid position</strong>, not to the sound, so they survive switching
       banks. Set them up on your fullest bank.</p>
-    <h3 id="knob-mode">Knob mode: Absolute or Relative</h3>
-    <p>Controllers report their knobs in one of two ways, and Blitzfingers needs to know which.</p>
+    <h3 id="knob-mode">Knobs, faders and endless encoders</h3>
+    <p>Controllers report a knob in one of two ways, and each mapping remembers which — Blitzfingers finds out
+      when you learn it, and shows it in the mapping's row:</p>
     <ul>
-      <li><strong>Absolute</strong> — the control reports <em>where it is</em>, from one end of its travel to the
-        other. Normal for faders and for knobs with a start and an end. This is the default.</li>
-      <li><strong>Relative</strong> — the control reports <em>that it moved</em>, a step at a time. Used by
-        endless encoders, which spin forever with no end stop.</li>
+      <li><strong>Abs</strong> (absolute) — the control reports <em>where it is</em>, from one end of its travel
+        to the other. Faders, and knobs with a start and an end.</li>
+      <li><strong>Rel</strong> (relative) — the control reports <em>that it moved</em>, a step at a time. Endless
+        encoders and jog wheels, which spin forever with no end stop.</li>
     </ul>
-    <p>If a knob spins endlessly and a mapped volume behaves oddly — jumping to one end, or only reacting at
-      the extremes — switch to Relative. The setting is in Settings ▸ MIDI.</p>
-    <p class="note">Some endless knobs still report absolute positions. If Relative makes things worse, switch
-      back: your device is one of those.</p>
+    <p>If a mapping got it wrong — the value only flips between off and full, or runs backwards — tap
+      <strong>Abs</strong> / <strong>Rel</strong> in its row to switch. <strong>⇅</strong> beside it turns a control
+      upside down, for a fader that is louder at the bottom (a DJ controller's pitch fader, say).</p>
+    <h3>First touch: Jump or Pick up</h3>
+    <p>When a knob sits somewhere else than the value it controls, the first touch has to decide.
+      <strong>Jump</strong> (the default) moves the value straight to the knob — always a reaction, sometimes an
+      audible jump. <strong>Pick up</strong> waits until the knob reaches the value, then follows — no jump, and a
+      short note tells you where to turn. Endless encoders never jump either way. Set it in Settings ▸ MIDI.</p>
   </section>
 
   <section id="keyboard">
