@@ -383,42 +383,60 @@
 
   <section id="banks">
     <h2>Banks</h2>
-    <p>A bank is one board — sixteen one-shots and sixteen loops. Use banks to keep sets apart: a drum kit, a
-      party set, one board per song or show. The bank name in the header opens the list: tap a bank to switch
-      to it, <strong>+ New bank</strong> to add one, and the pencil beside a bank to rename or delete it.</p>
-    <p>Switching banks keeps a playing loop running, so you can change the pads under a groove without a gap.
-      Sounds belong to their bank; a <strong>MIDI mapping</strong> does not — it belongs to a grid position, so
-      the same controller pad plays position 3 in whichever bank is open.</p>
-    <p class="note">To back up or share a bank, see <a href="#sound">Sound &amp; levels</a> ▸ Bank backup.</p>
+    <p>A bank is one board: up to sixteen one-shots and sixteen loops. Make as many as you like and keep sets
+      apart — a drum kit, a party set, one board per song or per show.</p>
+    <ul>
+      <li><strong>Switch:</strong> tap the bank name in the header and pick a bank from the list.</li>
+      <li><strong>Add:</strong> <strong>+ New bank</strong> in that list. It starts empty, ready for your sounds.</li>
+      <li><strong>Rename or delete:</strong> the pencil beside a bank. Deleting asks first, and takes the bank's
+        sounds with it. The first bank, the one the app came with, stays.</li>
+    </ul>
+    <p><strong>Switching keeps the music going.</strong> A playing loop runs on while you change banks, so you can
+      swap the pads under a groove without a gap; loops waiting for the next bar are cancelled.</p>
+    <p class="note">Sounds belong to their bank. <a href="#midi">MIDI mappings</a> and keyboard keys belong to the
+      grid position, so the same control plays position 3 in whichever bank is open. To back up or share a bank,
+      see <a href="#sound">Sound &amp; levels ▸ Bank backup</a>.</p>
   </section>
 
   <section id="edit">
     <h2>Editing a pad</h2>
-    <p>The pencil in the header turns on edit mode: the pads lift and wobble, and the pencil becomes a check to
-      finish. While editing, pads do not play — tap one to open its settings instead.</p>
+    <p>The <strong>pencil</strong> in the header turns on edit mode: the pads wobble, the marks make room for the
+      names, and the pencil becomes a check to finish. While editing, pads do not play — a tap opens their
+      settings instead — and a stray MIDI hit does not play either.</p>
 
     <h3>Arranging</h3>
-    <p>Drag a pad to move it. Dropped onto another pad, it slots in there and the pads after it make room;
-      dropped into an empty slot, it goes there and nothing else moves. On a touch screen, hold the pad a moment
-      until it lifts, then drag — moving straight away scrolls the board instead, so you can scroll in edit mode
-      without rearranging anything.</p>
-    <p>Drag a pad into the other section to move it between <strong>one-shots</strong> and
-      <strong>loops</strong>. It works exactly like arranging: the pads there make room while you hold it over
-      them, and an empty slot lights up to take it. A full section (16 pads) does not take it. Or use
-      <strong>Move pad to …</strong> at the bottom of the pad's settings, which puts it in the first free slot.
-      Whatever only makes sense in one section — hold, restart on tap, keep playing — is dropped, and the message
-      that says so has an <strong>Undo</strong>.</p>
+    <ul>
+      <li><strong>Move a pad:</strong> drag it. Dropped onto another pad, it slots in there and the pads after it
+        make room; dropped into an empty slot, it goes there and nothing else moves.</li>
+      <li><strong>On a touch screen,</strong> hold the pad a moment until it lifts, then drag. Moving straight away
+        scrolls the board instead — so you can scroll in edit mode without rearranging anything.</li>
+      <li><strong>To the other section:</strong> drag it across, between one-shots and loops. The pads there make
+        room while you hold it over them, and an empty slot lights up to take it; a full section (16 pads) does
+        not. Or use <strong>Move pad to …</strong> at the bottom of the pad's settings, which puts it in the first
+        free slot.</li>
+      <li>What only makes sense in one section — hold, restart on tap, keep playing — is dropped on the way, and
+        the message that says so has an <strong>Undo</strong>.</li>
+    </ul>
 
     <h3>The pad's settings</h3>
-    <p>They open with the pad's <strong>name</strong> and <strong>colour</strong>, then lead into Playback,
-      Trim, Effects, Shape&nbsp;&amp;&nbsp;Transform, Overdub and MIDI. <strong>Everything you change is kept
-      as you change it</strong> — there is nothing to save. <strong>Playback</strong> holds the pad's volume and
-      its switches (hold, restart on tap, keep playing). <strong>Delete</strong>, for sounds you recorded or
-      imported, asks first.</p>
+    <p>They open with the pad's <strong>name</strong> and <strong>colour</strong>; under the name, where the sound
+      came from — "Recorded on 1 Oct 2026, 14:20 · 120 BPM · 4 bars". Below, one row per area:</p>
+    <ul>
+      <li><strong>Playback</strong> — the pad's volume, and its switches: <strong>hold to repeat</strong> and
+        <strong>restart on tap</strong> for one-shots, <strong>keep playing</strong> for loops.</li>
+      <li><a href="#trim"><strong>Trim</strong></a> — where it starts and ends.</li>
+      <li><a href="#effects"><strong>Effects</strong></a> — the rack, with what is on in the row's badge.</li>
+      <li><a href="#transform"><strong>Shape &amp; Transform</strong></a> — speed, pitch and reverse.</li>
+      <li><a href="#overdub"><strong>Overdub</strong></a> — record layers over it (headphones).</li>
+      <li><a href="#midi"><strong>MIDI</strong></a> — its controller mapping.</li>
+    </ul>
+    <p><strong>Everything you change is kept as you change it</strong> — there is nothing to save, and closing
+      the screen is enough. <strong>Delete</strong>, for sounds you recorded or imported, asks first.</p>
+
     <h3>Colour</h3>
-    <p><strong>Auto</strong> gives the pad a colour derived from its name, so two neighbours never look alike;
-      pick a swatch to choose one yourself. The colour sits in the pad's lower edge, so you find a pad without
-      reading it.</p>
+    <p><strong>Auto</strong> gives the pad a colour derived from its name, so two neighbours rarely look alike;
+      pick a swatch to choose one yourself. The colour sits in the pad's lower edge and fills it while it plays,
+      so you find a pad without reading it.</p>
   </section>
 
   <section id="trim">
@@ -458,23 +476,88 @@
 
   <section id="effects">
     <h2>Effects</h2>
-    <p>Each pad has its own effects: Filter, Delay, Reverb, Chorus, Phaser, Distortion, Lo-fi, Pan and
-      Bitcrush. Switch one on and its controls appear underneath. Changes are heard while the pad plays — play it
-      from the Effects screen and dial them in by ear. <strong>Reset effects</strong> turns them all off again.</p>
-    <p><strong>Filter</strong> is one knob: left of centre muffles (a low-pass sweeping down), right of centre
-      thins (a high-pass sweeping up), and the middle is off. A pad with effects on shows <strong>FX</strong>.</p>
+    <p>Each pad has its own effect rack. Switch an effect on and its controls appear underneath; changes are heard
+      while the pad plays, so play it from the Effects screen and dial it in by ear. A pad with effects on shows
+      <strong>FX</strong>; the Effects row in its settings lists which. <strong>Reset effects</strong> turns them
+      all off again.</p>
+    <h3>Filter — one knob, two directions</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 640 150" role="img" aria-labelledby="figFiltT">
+        <title id="figFiltT">The filter's one knob: left of centre the sound gets darker, right of centre thinner, the middle is off.</title>
+        <rect x="40" y="62" width="560" height="10" rx="5" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
+        <line x1="320" y1="50" x2="320" y2="84" style="stroke: var(--text-soft)" stroke-width="2"/>
+        <circle cx="200" cy="67" r="12" style="fill: var(--accent)"/>
+        <text x="200" y="106" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">LP 43%</text>
+        <g font-size="12" style="fill: var(--text-soft)">
+          <text x="40" y="40">← darker (low-pass)</text>
+          <text x="600" y="40" text-anchor="end">thinner (high-pass) →</text>
+          <text x="320" y="106" text-anchor="middle">center = off</text>
+        </g>
+        <path d="M50 122 H120 C 145 122, 160 130, 178 140" style="fill: none; stroke: var(--text-muted)" stroke-width="2"/>
+        <path d="M40 140 H600" style="stroke: var(--border)" stroke-width="1"/>
+        <path d="M462 140 C 480 130, 495 122, 520 122 H590" style="fill: none; stroke: var(--text-muted)" stroke-width="2"/>
+        <text x="115" y="148" font-size="10" text-anchor="middle" style="fill: var(--text-muted)">keeps the lows</text>
+        <text x="525" y="148" font-size="10" text-anchor="middle" style="fill: var(--text-muted)">keeps the highs</text>
+      </svg>
+    </figure>
+    <p>The <strong>Sweep</strong> knob reads "LP" or "HP" with how far it is turned. It is the DJ trick: sweep a loop
+      down to a muffle and back up for a drop.</p>
+    <h3>The rest of the rack</h3>
+    <ul>
+      <li><strong>Delay</strong> — echoes. <em>Time</em> between echoes, <em>Feedback</em> for how many, <em>Mix</em>
+        for how loud.</li>
+      <li><strong>Reverb</strong> — a space around the sound: <em>Room</em>, <em>Hall</em> or <em>Plate</em>, and
+        <em>Mix</em>.</li>
+      <li><strong>Chorus</strong> — thickens and shimmers: <em>Rate</em>, <em>Intensity</em>, <em>Mix</em>.</li>
+      <li><strong>Phaser</strong> — a sweeping swoosh: <em>Rate</em>, <em>Intensity</em>, <em>Mix</em>.</li>
+      <li><strong>Distortion</strong> — grit and drive, <em>Smooth</em> or <em>Fuzz</em>: <em>Drive</em>,
+        <em>Mix</em>.</li>
+      <li><strong>Lo-fi</strong> — an old tape: <em>Wobble</em> (warble), <em>Interference</em> (a dull, crackly
+        cassette), <em>Broken</em> (dropouts) and <em>Mix</em>.</li>
+      <li><strong>Pan</strong> — where it sits, left to right: <em>Manual</em> with a <em>Position</em>, or
+        <em>Auto</em>, swinging side to side at a <em>Rate</em> and <em>Intensity</em>.</li>
+      <li><strong>Bitcrush</strong> — crushed, digital: fewer <em>Bits</em>, a lower sample <em>Rate</em>, and
+        <em>Mix</em>.</li>
+    </ul>
+    <p class="note">Every effect's main amount can sit on a knob of your controller — see
+      <a href="#midi-learn">Learning a control</a>. Turning that knob switches the effect on, and FX blinks while
+      it turns.</p>
   </section>
 
   <section id="transform">
     <h2>Speed, pitch and reverse</h2>
-    <p>Shape&nbsp;&amp;&nbsp;Transform changes the sound itself rather than adding to it.</p>
-    <ul>
-      <li><strong>Speed</strong> plays faster or slower, and the pitch follows — like a record. Normal speed sits
-        in the middle of the control, an octave down at a quarter, an octave up at three quarters.</li>
-      <li><strong>Pitch</strong> shifts by semitones and <em>keeps the tempo</em> — up to an octave either way.</li>
-      <li><strong>Reverse</strong> plays the sound backwards.</li>
-    </ul>
-    <p>They combine: a sound can be sped up, pitched back down and played backwards at once.</p>
+    <p><strong>Shape &amp; Transform</strong> changes the sound itself rather than adding to it.</p>
+    <h3>Speed</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 640 120" role="img" aria-labelledby="figSpeedT">
+        <title id="figSpeedT">The speed control: normal speed in the middle; a quarter of the way is an octave down at half speed; three quarters is an octave up at double speed; the ends are a quarter and four times.</title>
+        <rect x="40" y="46" width="560" height="10" rx="5" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
+        <g style="stroke: var(--text-soft)" stroke-width="2">
+          <line x1="40" y1="38" x2="40" y2="64"/><line x1="180" y1="38" x2="180" y2="64"/><line x1="320" y1="34" x2="320" y2="68"/><line x1="460" y1="38" x2="460" y2="64"/><line x1="600" y1="38" x2="600" y2="64"/>
+        </g>
+        <circle cx="320" cy="51" r="12" style="fill: var(--accent)"/>
+        <g font-size="12" text-anchor="middle">
+          <text x="40" y="26" style="fill: var(--text-muted)">×0.25</text>
+          <text x="180" y="26" style="fill: var(--text-soft)">×0.5</text>
+          <text x="320" y="22" font-weight="700" style="fill: var(--text)">×1 normal</text>
+          <text x="460" y="26" style="fill: var(--text-soft)">×2</text>
+          <text x="600" y="26" style="fill: var(--text-muted)">×4</text>
+          <text x="180" y="88" style="fill: var(--text-soft)">an octave down</text>
+          <text x="460" y="88" style="fill: var(--text-soft)">an octave up</text>
+          <text x="320" y="112" font-size="11" style="fill: var(--text-muted)">slower is lower, faster is higher — like a record</text>
+        </g>
+      </svg>
+    </figure>
+    <p>Speed plays faster or slower, and the pitch follows — a sped-up voice gets high and quick. A loop played
+      faster also gets shorter, and <a href="#board">loops on the bar</a> follow its new length.</p>
+    <h3>Pitch</h3>
+    <p>Pitch shifts by semitones — up to an octave either way — and <em>keeps the tempo</em>: a loop pitched up
+      stays exactly as long. Use it to fit a loop to a song's key.</p>
+    <h3>Reverse</h3>
+    <p>Reverse plays the sound backwards — a cymbal that swells instead of fading, a word turned into a rising
+      swoosh. The pad shows <strong>←</strong>.</p>
+    <p class="note">They combine: a sound can be sped up, pitched back down and played backwards at once. Speed and
+      Pitch can sit on controller knobs too.</p>
   </section>
 
   <section id="recording">
@@ -801,28 +884,43 @@
 
   <section id="sound">
     <h2>Sound &amp; levels</h2>
-    <p>Settings ▸ <strong>Sound</strong> sets the overall volume of the one-shots and of the loops, so you can
-      balance the two sections for a room; the <strong>loop crossfade</strong> time (0 is a hard cut); and
-      <strong>normalize loudness</strong>, which plays every sound at a similar level — the files stay as they
-      are, so you can switch it off again. Each pad also has its own volume, in its Playback settings.</p>
-    <h3>Bank backup</h3>
+    <p>Settings ▸ <strong>Sound</strong> is what you reach for in a new room:</p>
+    <ul>
+      <li><strong>Overall one-shots volume</strong> and <strong>overall loops volume</strong> — balance the two
+        sections against each other: loops under the hits, or the other way round.</li>
+      <li><strong>Loop crossfade / fade</strong> — how long loops take to cross over when you switch, 0 to 5
+        seconds; 0 is a hard cut. The loops' line on the board shows the time.</li>
+      <li><strong>Normalize loudness</strong> — plays every sound at a similar level, so a quiet recording and a
+        loud sample sit together. The files stay as they are; switch it off to hear them as recorded. With it off,
+        a pad below full volume shows a thin bar at its top.</li>
+    </ul>
+    <p>Each pad also has its own volume, in its Playback settings. The section volumes stay open after the trial —
+      balancing a room is playing, not building.</p>
+
+    <h3 id="backup">Bank backup</h3>
     <p>Settings ▸ <strong>Bank backup</strong> exports the bank you are in as one file — its sounds, every pad's
-      settings, the layout and the dates the takes were made — to keep, or to send to someone. Import adds a
-      saved bank next to your others; nothing is overwritten. MIDI mappings and app settings are not part of a
-      bank and stay as they are.</p>
+      settings, the layout and the dates the takes were made. Keep it, or send it to someone with Blitzfingers.
+      <strong>Import</strong> adds a saved bank next to your others; nothing is overwritten. MIDI mappings and app
+      settings are not part of a bank and stay as they are. Exporting always works, also after the trial — your
+      sounds are yours.</p>
   </section>
 
   <section id="appearance">
     <h2>Appearance</h2>
-    <p>Settings ▸ Appearance hides what you no longer need once you know your board. <strong>On the
-      pads</strong>: the names, and the symbols — MIDI marks, keyboard shortcuts, and the playback and effect
-      symbols (hold, restart, keep playing, FX, reverse), each on its own switch under one
-      <strong>Symbols</strong> switch that hides them all at once. <strong>On the board</strong>: the section
-      explanations. Everything is shown by default, and names come back while you are editing — you cannot
-      rename what you cannot identify.</p>
-    <p>When a small pad has more symbols than fit, the last ones fold into <strong>+2</strong> (or however
-      many) — the settings are all still there. Turn an effect knob on your controller and <strong>FX</strong> blinks
-      — or the <strong>+2</strong>, when FX is folded into it.</p>
+    <p>Settings ▸ <strong>Appearance</strong> hides what you no longer need once you know your board by heart. A
+      pad behaves exactly the same; only what it shows changes. Everything is shown by default.</p>
+    <ul>
+      <li><strong>On the pads — Names.</strong> Without them the board reads by colour and position. Names come
+        back while you edit (you cannot rename what you cannot identify), and screen readers always announce
+        them.</li>
+      <li><strong>On the pads — Symbols,</strong> one switch for all <a href="#pad-marks">marks</a>, or each on its
+        own: <strong>MIDI</strong>, <strong>Keyboard shortcuts</strong> (on a device with a keyboard), and
+        <strong>Playback &amp; effects</strong> — hold, restart, keep playing, FX, reverse.</li>
+      <li><strong>On the board — Category explanations,</strong> the small line under "One-shots" and "Loops".</li>
+    </ul>
+    <p>When a small pad has more marks than fit, the last ones fold into <strong>+2</strong> (or however many) —
+      the settings are all still there. Turn an effect knob on your controller and <strong>FX</strong> blinks — or
+      the <strong>+2</strong>, when FX is folded into it.</p>
   </section>
 
   <section id="trial">
