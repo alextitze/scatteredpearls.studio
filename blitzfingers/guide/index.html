@@ -391,6 +391,37 @@
       <li><strong>Rename or delete:</strong> the pencil beside a bank. Deleting asks first, and takes the bank's
         sounds with it. The first bank, the one the app came with, stays.</li>
     </ul>
+    <figure class="fig">
+      <svg viewBox="0 0 640 250" role="img" aria-labelledby="figBanksT">
+        <title id="figBanksT">The bank list opened from the header: the current bank is marked, each bank has a pencil to rename or delete it, and New bank adds one. Picking another bank swaps the whole board, while a playing loop runs on.</title>
+        <rect x="0" y="0" width="300" height="250" rx="16" style="fill: var(--surface-2)"/>
+        <text x="20" y="30" font-size="13" font-weight="700" style="fill: var(--text)">Banks</text>
+        <g font-size="13">
+          <rect x="14" y="44" width="272" height="40" rx="10" style="fill: rgba(224,180,85,.14); stroke: rgba(224,180,85,.5)"/>
+          <text x="30" y="69" font-weight="700" style="fill: var(--text)">Party</text><text x="230" y="69" style="fill: #e0b455">✓</text>
+          <rect x="14" y="90" width="272" height="40" rx="10" style="fill: var(--surface-1)"/><text x="30" y="115" style="fill: var(--text)">Drum Kit</text>
+          <rect x="14" y="136" width="272" height="40" rx="10" style="fill: var(--surface-1)"/><text x="30" y="161" style="fill: var(--text)">Podcast</text>
+          <g style="fill: none; stroke: var(--text-soft)" stroke-width="1.8" stroke-linejoin="round"><path d="M256 122 l2-6 8-8 4 4 -8 8z"/><path d="M256 168 l2-6 8-8 4 4 -8 8z"/><path d="M256 76 l2-6 8-8 4 4 -8 8z"/></g>
+          <rect x="14" y="190" width="272" height="40" rx="10" style="fill: none; stroke: var(--border-strong)" stroke-dasharray="5 4"/><text x="150" y="215" text-anchor="middle" font-weight="700" style="fill: var(--accent)">+ New bank</text>
+        </g>
+        <path d="M312 110 H346" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M340 105 l6 5 -6 5" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/>
+        <rect x="356" y="0" width="284" height="250" rx="16" style="fill: var(--surface-1); stroke: var(--border)"/>
+        <rect x="370" y="12" width="96" height="26" rx="13" style="fill: none; stroke: var(--border-strong)"/><text x="384" y="30" font-size="12" font-weight="700" style="fill: var(--text)">Drum Kit ▾</text>
+        <text x="370" y="58" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">ONE-SHOTS</text>
+        <rect x="370" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="370" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><text x="399.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Kick</text><rect x="436" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-amber))"/><text x="465.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Snare</text><rect x="502" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><text x="531.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Hat</text><rect x="568" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-blue))"/><text x="597.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Tom</text>
+        <text x="370" y="142" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">LOOPS</text>
+        <rect x="370" y="150" width="58" height="52" rx="12" style="fill: rgba(127,194,118,.22); stroke: rgb(var(--p-green))" stroke-width="2"/><text x="399" y="180" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Groove</text>
+        <rect x="436" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/><text x="465.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Break</text><rect x="502" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-purple))"/><text x="531.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Fill</text><rect x="568" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-rose))"/><text x="597.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Shaker</text>
+        <text x="498" y="232" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">a new board — the groove plays on</text>
+        <circle cx="286" cy="48" r="10" style="fill: var(--accent)"/><text x="286" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">1</text><circle cx="236" cy="96" r="10" style="fill: var(--accent)"/><text x="236" y="100" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">2</text><circle cx="286" cy="194" r="10" style="fill: var(--accent)"/><text x="286" y="198" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">3</text><circle cx="378" cy="150" r="10" style="fill: var(--accent)"/><text x="378" y="154" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">4</text>
+      </svg>
+      <ol class="keys">
+        <li><b>1</b><span>The bank you are in.</span></li>
+        <li><b>2</b><span>The pencil — rename or delete a bank.</span></li>
+        <li><b>3</b><span>New bank — starts empty.</span></li>
+        <li><b>4</b><span>A loop that was playing keeps playing.</span></li>
+      </ol>
+    </figure>
     <p><strong>Switching keeps the music going.</strong> A playing loop runs on while you change banks, so you can
       swap the pads under a groove without a gap; loops waiting for the next bar are cancelled.</p>
     <p class="note">Sounds belong to their bank. <a href="#midi">MIDI mappings</a> and keyboard keys belong to the
@@ -405,6 +436,44 @@
       settings instead — and a stray MIDI hit does not play either.</p>
 
     <h3>Arranging</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 640 310" role="img" aria-labelledby="figEditT">
+        <title id="figEditT">Edit mode: the pencil has become a check; a lifted pad is dragged between two others, which make room; another goes into an empty slot; and one is dragged across from the one-shots to the loops.</title>
+        <rect x="0" y="0" width="640" height="44" rx="12" style="fill: var(--surface-2)"/>
+        <rect x="54" y="9" width="90" height="26" rx="13" style="fill: none; stroke: var(--border-strong)"/><text x="68" y="27" font-size="12" font-weight="700" style="fill: var(--text)">Party ▾</text>
+        <circle cx="603" cy="22" r="14" style="fill: var(--accent)"/><path d="M596 22 l5 5 9-10" style="fill: none; stroke: var(--on-accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(0 30)">
+        <text x="16" y="70" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">ONE-SHOTS</text>
+        <g transform="rotate(-2 70 115)"><rect x="16" y="80" width="110" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="16" y="145" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><text x="71.0" y="119.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Kick</text></g>
+        <rect x="176" y="80" width="110" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="176" y="145" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-blue))"/><text x="231.0" y="119.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Clap</text>
+        <rect x="134" y="84" width="34" height="62" rx="10" style="fill: none; stroke: var(--accent)" stroke-width="2" stroke-dasharray="4 3"/>
+        <g transform="rotate(2 350 115)"><rect x="296" y="80" width="110" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="296" y="145" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-amber))"/><text x="351.0" y="119.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Hey!</text></g>
+        <rect x="416" y="80" width="110" height="70" rx="12" style="fill: rgba(127,194,118,.08); stroke: rgb(var(--p-green))" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="471" y="120" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">empty slot</text>
+
+        <text x="16" y="186" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">LOOPS</text>
+        <rect x="16" y="196" width="110" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="16" y="261" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><text x="71.0" y="235.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Groove</text><rect x="136" y="196" width="110" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="136" y="261" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/><text x="191.0" y="235.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Bass</text>
+        <rect x="256" y="196" width="110" height="70" rx="12" style="fill: none; stroke: var(--border-strong)" stroke-dasharray="5 4"/>
+        <path d="M560 156 C 560 200, 420 232, 372 232" style="fill: none; stroke: var(--text-soft)" stroke-width="1.8" stroke-dasharray="5 4"/><path d="M380 226 l-8 6 8 6" style="fill: none; stroke: var(--text-soft)" stroke-width="1.8"/>
+        <rect x="536" y="80" width="90" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="536" y="145" width="90" height="5" rx="2.5" style="fill: rgb(var(--p-purple))"/><text x="581.0" y="119.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Chant</text>
+        <text x="500" y="262" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">across: one-shot → loop</text>
+        <circle cx="152" cy="166" r="10" style="fill: var(--accent)"/><text x="152" y="170" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">2</text><circle cx="471" cy="74" r="10" style="fill: var(--accent)"/><text x="471" y="78" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">3</text><circle cx="580" cy="170" r="10" style="fill: var(--accent)"/><text x="580" y="174" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">4</text>
+      </g>
+        <g transform="translate(226 4) rotate(-6 100 100)" opacity=".96">
+          <rect x="40" y="18" width="110" height="70" rx="12" style="fill: var(--surface-2); stroke: var(--accent)" stroke-width="2"/><rect x="40" y="83" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-rose))"/><text x="95" y="57" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Zap</text>
+        </g>
+        <path d="M300 66 C 250 60, 190 80, 156 108" style="fill: none; stroke: var(--accent)" stroke-width="2"/><path d="M161 100 l-5 9 10 0" style="fill: none; stroke: var(--accent)" stroke-width="2"/>
+        <circle cx="603" cy="48" r="10" style="fill: var(--accent)"/><text x="603" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">1</text>
+      </svg>
+      <ol class="keys">
+        <li><b>1</b><span>The check ends edit mode.</span></li>
+        <li><b>2</b><span>Dropped between two pads, it slots in; the pads after it make room.</span></li>
+        <li><b>3</b><span>Dropped into an empty slot, it goes there and nothing moves.</span></li>
+        <li><b>4</b><span>Dragged into the other section, it becomes a loop (or a one-shot).</span></li>
+      </ol>
+      <figcaption>On a touch screen, hold a pad until it lifts, then drag — a quick swipe scrolls the board instead.
+        Tap a pad (without dragging) to open its settings.</figcaption>
+    </figure>
     <ul>
       <li><strong>Move a pad:</strong> drag it. Dropped onto another pad, it slots in there and the pads after it
         make room; dropped into an empty slot, it goes there and nothing else moves.</li>
@@ -885,6 +954,34 @@
   <section id="sound">
     <h2>Sound &amp; levels</h2>
     <p>Settings ▸ <strong>Sound</strong> is what you reach for in a new room:</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 260" role="img" aria-labelledby="figSoundT">
+        <title id="figSoundT">Settings, Sound: a volume for the one-shots and one for the loops, the loop crossfade time, and the normalize loudness switch.</title>
+        <rect x="0" y="0" width="320" height="260" rx="16" style="fill: var(--surface-2)"/>
+        <text x="20" y="30" font-size="13" font-weight="700" style="fill: var(--text)">Sound</text>
+        <text x="20" y="62" font-size="12" style="fill: var(--text-soft)">Overall one-shots volume</text><text x="300" y="62" font-size="12" font-weight="700" text-anchor="end" style="fill: var(--text)">85 %</text>
+        <rect x="20" y="72" width="280" height="6" rx="3" style="fill: rgba(255,255,255,.1)"/><rect x="20" y="72" width="238" height="6" rx="3" style="fill: var(--accent)"/><circle cx="258" cy="75" r="8" style="fill: #fff"/>
+        <text x="20" y="112" font-size="12" style="fill: var(--text-soft)">Overall loops volume</text><text x="300" y="112" font-size="12" font-weight="700" text-anchor="end" style="fill: var(--text)">60 %</text>
+        <rect x="20" y="122" width="280" height="6" rx="3" style="fill: rgba(255,255,255,.1)"/><rect x="20" y="122" width="168" height="6" rx="3" style="fill: var(--accent)"/><circle cx="188" cy="125" r="8" style="fill: #fff"/>
+        <text x="20" y="162" font-size="12" style="fill: var(--text-soft)">Loop crossfade / fade</text><text x="300" y="162" font-size="12" font-weight="700" text-anchor="end" style="fill: var(--text)">2.0 s</text>
+        <rect x="20" y="172" width="280" height="6" rx="3" style="fill: rgba(255,255,255,.1)"/><rect x="20" y="172" width="112" height="6" rx="3" style="fill: var(--accent)"/><circle cx="132" cy="175" r="8" style="fill: #fff"/>
+        <text x="20" y="222" font-size="12" style="fill: var(--text-soft)">Normalize loudness</text>
+        <rect x="256" y="206" width="44" height="26" rx="13" style="fill: var(--accent)"/><circle cx="287" cy="219" r="10" style="fill: #fff"/>
+        <circle cx="312" cy="70" r="10" style="fill: var(--accent)"/><text x="312" y="74" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">1</text><circle cx="312" cy="120" r="10" style="fill: var(--accent)"/><text x="312" y="124" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">2</text><circle cx="312" cy="170" r="10" style="fill: var(--accent)"/><text x="312" y="174" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">3</text><circle cx="312" cy="219" r="10" style="fill: var(--accent)"/><text x="312" y="223" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">4</text>
+        <g font-size="12">
+          <text x="352" y="44" font-weight="700" style="fill: var(--text)">The two sections, balanced</text>
+          <rect x="352" y="56" width="40" height="64" rx="6" style="fill: rgba(239,128,121,.25)"/><rect x="352" y="66" width="40" height="54" rx="6" style="fill: rgb(239,128,121)" opacity=".85"/>
+          <rect x="402" y="56" width="40" height="64" rx="6" style="fill: rgba(127,194,118,.25)"/><rect x="402" y="82" width="40" height="38" rx="6" style="fill: rgb(127,194,118)" opacity=".85"/>
+          <text x="372" y="136" font-size="10" text-anchor="middle" style="fill: var(--text-muted)">hits</text><text x="422" y="136" font-size="10" text-anchor="middle" style="fill: var(--text-muted)">loops</text>
+          <text x="458" y="80" font-size="11" style="fill: var(--text-soft)">the hits over</text><text x="458" y="95" font-size="11" style="fill: var(--text-soft)">the groove — or</text><text x="458" y="110" font-size="11" style="fill: var(--text-soft)">the other way round</text>
+          <text x="352" y="176" font-weight="700" style="fill: var(--text)">Crossfade</text>
+          <text x="352" y="194" font-size="11" style="fill: var(--text-soft)">0 = a hard cut · up to 5 s</text>
+          <text x="352" y="222" font-weight="700" style="fill: var(--text)">Normalize</text>
+          <text x="352" y="240" font-size="11" style="fill: var(--text-soft)">every pad at a similar level; the files stay</text>
+        </g>
+      </svg>
+    </figure>
+
     <ul>
       <li><strong>Overall one-shots volume</strong> and <strong>overall loops volume</strong> — balance the two
         sections against each other: loops under the hits, or the other way round.</li>
@@ -909,6 +1006,19 @@
     <h2>Appearance</h2>
     <p>Settings ▸ <strong>Appearance</strong> hides what you no longer need once you know your board by heart. A
       pad behaves exactly the same; only what it shows changes. Everything is shown by default.</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 250" role="img" aria-labelledby="figAppT">
+        <title id="figAppT">The same four pads twice: on the left with names, marks and keys — everything shown, the default; on the right with all of it hidden, so the board reads by colour and position.</title>
+        <text x="0" y="16" font-size="12" font-weight="700" style="fill: var(--text)">Everything shown (the default)</text>
+        <text x="340" y="16" font-size="12" font-weight="700" style="fill: var(--text)">Names and symbols off</text>
+        <rect x="0" y="30" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="0" y="109" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><text x="60" y="70" font-size="13" font-weight="600" text-anchor="middle" style="fill: var(--text)">Kick</text><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="8" y="86" width="16" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="16" y="96">M</text><rect x="28" y="86" width="22" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="39" y="96">FX</text></g><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="98" y="86" width="14" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="105" y="96">1</text></g><rect x="130" y="30" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="130" y="109" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-blue))"/><text x="190" y="70" font-size="13" font-weight="600" text-anchor="middle" style="fill: var(--text)">Clap</text><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="138" y="86" width="16" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="146" y="96">M</text><rect x="158" y="86" width="22" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="169" y="96">FX</text></g><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="228" y="86" width="14" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="235" y="96">2</text></g><rect x="0" y="124" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="0" y="203" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><text x="60" y="164" font-size="13" font-weight="600" text-anchor="middle" style="fill: var(--text)">Groove</text><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="8" y="180" width="16" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="16" y="190">M</text><rect x="28" y="180" width="22" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="39" y="190">FX</text></g><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="98" y="180" width="14" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="105" y="190">Q</text></g><rect x="130" y="124" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="130" y="203" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/><text x="190" y="164" font-size="13" font-weight="600" text-anchor="middle" style="fill: var(--text)">Bass</text><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="138" y="180" width="16" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="146" y="190">M</text><rect x="158" y="180" width="22" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="169" y="190">FX</text></g><g font-size="9" font-weight="700" text-anchor="middle" style="fill: var(--text-soft)"><rect x="228" y="180" width="14" height="14" rx="3" style="fill: none; stroke: var(--text-muted)"/><text x="235" y="190">W</text></g>
+        <rect x="340" y="30" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="340" y="109" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><rect x="470" y="30" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="470" y="109" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-blue))"/><rect x="340" y="124" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="340" y="203" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><rect x="470" y="124" width="120" height="84" rx="14" style="fill: var(--surface-2)"/><rect x="470" y="203" width="120" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/>
+        <path d="M268 120 H322" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M316 115 l6 5 -6 5" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/>
+        <text x="470" y="236" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">plays the same, found by colour and place; names return to edit</text>
+        <text x="130" y="236" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">names, marks and keys</text>
+      </svg>
+    </figure>
+
     <ul>
       <li><strong>On the pads — Names.</strong> Without them the board reads by colour and position. Names come
         back while you edit (you cannot rename what you cannot identify), and screen readers always announce
