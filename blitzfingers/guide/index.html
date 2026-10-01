@@ -210,7 +210,7 @@
         <g font-size="10" font-weight="700">
           <rect x="182" y="176" width="30" height="16" rx="4" style="fill: none; stroke: var(--text-muted)"/><text x="197" y="188" text-anchor="middle" style="fill: var(--text-soft)">MIDI</text>
           <rect x="286" y="176" width="16" height="16" rx="4" style="fill: none; stroke: var(--text-muted)"/><text x="294" y="188" text-anchor="middle" style="fill: var(--text-soft)">2</text>
-          <text x="294" y="122" text-anchor="middle" style="fill: var(--text-soft)">FX</text>
+          <rect x="216" y="176" width="24" height="16" rx="4" style="fill: none; stroke: var(--text-muted)"/><text x="228" y="188" text-anchor="middle" style="fill: var(--text-soft)">FX</text>
         </g>
         <!-- loops -->
         <text x="16" y="244" font-size="11" font-weight="700" letter-spacing="2" style="fill: var(--text-soft)">LOOPS</text>
@@ -243,7 +243,7 @@
         <li><b>2</b><span>Stop all — appears while anything sounds.</span></li>
         <li><b>3</b><span>The pencil — edit mode, to arrange and set up pads.</span></li>
         <li><b>4</b><span>Settings — sound, appearance, MIDI, backup, the guide.</span></li>
-        <li><b>5</b><span>A pad's marks: a MIDI mapping, its key, FX for effects.</span></li>
+        <li><b>5</b><span>A pad's marks — what each one means is just below.</span></li>
         <li><b>6</b><span>An empty slot — tap the + to add a sound there.</span></li>
         <li><b>7</b><span>A playing loop glows in its colour.</span></li>
         <li><b>8</b><span>A pin: this loop keeps playing when another starts.</span></li>
@@ -252,6 +252,44 @@
     <p><strong>Stop all</strong> appears in the header while anything is sounding and silences everything at
       once — loops, one-shots, and a loop still fading out. It cuts, it does not fade.</p>
 
+    <h3 id="pad-marks">The marks on a pad</h3>
+    <p>Small marks on a pad tell you how it behaves without opening it. They sit in a row along the bottom; the
+      keyboard key sits in the corner on the right.</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 210" role="img" aria-labelledby="figMarksT">
+        <title id="figMarksT">One large pad with every mark it can show: a volume bar at the top, and along the bottom a MIDI mark, a finger, a restart symbol, FX, a pin, a reverse arrow and plus two; the keyboard key in the bottom right corner.</title>
+        <rect x="150" y="10" width="340" height="190" rx="26" style="fill: var(--surface-2)"/>
+        <rect x="150" y="192" width="340" height="8" rx="4" style="fill: rgb(var(--p-teal))"/>
+        <rect x="190" y="26" width="260" height="5" rx="2.5" style="fill: rgba(255,255,255,.12)"/><rect x="190" y="26" width="170" height="5" rx="2.5" style="fill: var(--text-soft)"/>
+        <text x="320" y="104" font-size="22" font-weight="600" text-anchor="middle" style="fill: var(--text)">Groove</text>
+        <g font-size="11" font-weight="600" text-anchor="middle" style="fill: var(--text-soft)">
+          <rect x="166" y="152" width="40" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="186" y="167">MIDI</text>
+          <g transform="translate(212 152)"><rect width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><g transform="translate(6 3) scale(.67)" style="fill: none; stroke: var(--text-soft)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></g></g>
+          <g transform="translate(246 152)"><rect width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><g transform="translate(6 3) scale(.67)" style="fill: none; stroke: var(--text-soft)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" x2="5" y1="19" y2="5"/></g></g>
+          <rect x="280" y="152" width="30" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="295" y="167">FX</text>
+          <g transform="translate(316 152)"><rect width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><g transform="translate(6 3) scale(.67)" style="fill: none; stroke: var(--text-soft)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></g></g>
+          <rect x="350" y="152" width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="364" y="168" font-size="13">←</text>
+          <rect x="384" y="152" width="30" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="399" y="167">+2</text>
+          <rect x="446" y="152" width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="460" y="167">Q</text>
+        </g>
+        <g font-size="11" font-weight="700" text-anchor="middle">
+          <circle cx="186" cy="140" r="10" style="fill: var(--accent)"/><text x="186" y="144" style="fill: var(--on-accent)">1</text><circle cx="226" cy="140" r="10" style="fill: var(--accent)"/><text x="226" y="144" style="fill: var(--on-accent)">2</text><circle cx="260" cy="140" r="10" style="fill: var(--accent)"/><text x="260" y="144" style="fill: var(--on-accent)">3</text><circle cx="295" cy="140" r="10" style="fill: var(--accent)"/><text x="295" y="144" style="fill: var(--on-accent)">4</text><circle cx="330" cy="140" r="10" style="fill: var(--accent)"/><text x="330" y="144" style="fill: var(--on-accent)">5</text><circle cx="364" cy="140" r="10" style="fill: var(--accent)"/><text x="364" y="144" style="fill: var(--on-accent)">6</text><circle cx="399" cy="140" r="10" style="fill: var(--accent)"/><text x="399" y="144" style="fill: var(--on-accent)">7</text><circle cx="460" cy="140" r="10" style="fill: var(--accent)"/><text x="460" y="144" style="fill: var(--on-accent)">8</text><circle cx="462" cy="26" r="10" style="fill: var(--accent)"/><text x="462" y="30" style="fill: var(--on-accent)">9</text>
+        </g>
+      </svg>
+      <ol class="keys">
+        <li><b>1</b><span><strong>MIDI</strong> (or <strong>M</strong> on a small pad) — mapped to a controller.</span></li>
+        <li><b>2</b><span>A finger — <strong>hold to repeat</strong>: plays while held (one-shots).</span></li>
+        <li><b>3</b><span>⏮ — <strong>restart on tap</strong>: a new tap starts it over (one-shots).</span></li>
+        <li><b>4</b><span><strong>FX</strong> — effects are on. It blinks while you turn a mapped effect knob.</span></li>
+        <li><b>5</b><span>A pin — <strong>keep playing</strong>: stays on when another loop starts (loops).</span></li>
+        <li><b>6</b><span>← — plays in <strong>reverse</strong>.</span></li>
+        <li><b>7</b><span><strong>+2</strong> — more marks than fit on a small pad; nothing is lost.</span></li>
+        <li><b>8</b><span>The <strong>key</strong> that plays it — shown once a keyboard is used.</span></li>
+        <li><b>9</b><span>A thin bar at the top — the pad plays below full volume (with normalize loudness off).</span></li>
+      </ol>
+      <figcaption>Every mark can be hidden in Settings ▸ Appearance, one by one or all at once; in edit mode they
+        make room for the name.</figcaption>
+    </figure>
     <h3>Loops take turns</h3>
     <p>Only one loop plays at a time. Start another and the two crossfade: the old one fades out while the new
       one fades in, so a set never collides with itself. The fade takes two seconds unless you change it
@@ -441,69 +479,297 @@
 
   <section id="recording">
     <h2>Recording and importing</h2>
-    <p>Tap an empty slot (the <strong>+</strong>) to add a sound there. <strong>Record…</strong> uses the
+    <p>Tap an empty slot — the <strong>+</strong> — to add a sound there. <strong>Record…</strong> uses the
       microphone; <strong>Choose file…</strong> imports an audio file; <strong>Add from library…</strong> picks
-      from the sounds that come with the app and from your own recordings in other banks.</p>
-    <p>A recording lands on the slot you tapped, keeps the date it was made, and can be trimmed, renamed and
-      coloured like any other pad. New takes are numbered — Recording, Recording 2, Recording 3 — so they never
-      share a name. Before saving you can trim the take on its waveform, and <strong>Normalize</strong> lifts a
-      quiet take to a healthy level.</p>
+      from the sounds that come with the app and from your own recordings in other banks. Whatever you add lands
+      on the slot you tapped, in that section.</p>
 
-    <h3>Recording to a metronome</h3>
-    <p>Switch on the <strong>Metronome</strong> before you record, set the tempo (40–240 BPM) and the length in
-      bars (1, 2, 4, 8 or 16). Record counts in one bar — big numbers on the screen, 4 3 2 1, then Go — records exactly the bars you set and stops by itself —
-      cut to start on beat one. Every take at one tempo is the same length, so takes recorded one after another
-      layer as loops, and they <a href="#board">start on the beat</a>. The pad's settings show the take's tempo
-      under its name. Tempo and length are remembered for the next take.</p>
-    <p>With headphones you hear the click throughout. Without them the count-in clicks and taps, and during the
-      take the beat only flashes — so nothing but you ends up in the recording.</p>
-    <p>With Bluetooth headphones the app records from the built-in mic — the headset's own mic would sound like
-      a phone call.</p>
+    <h3>A recording, step by step</h3>
+    <figure class="fig">
+      <svg viewBox="0 0 640 60" role="img" aria-labelledby="figRecFlowT">
+        <title id="figRecFlowT">The recording screen in four steps: listening, recording, checking the take, saving it.</title>
+        <rect x="0" y="14" width="120" height="30" rx="15" style="fill: var(--surface-2); stroke: var(--border-strong)"/><text x="60.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">Listening…</text><path d="M122 29 H154" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M152 25 l6 4 -6 4" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/><rect x="160" y="14" width="130" height="30" rx="15" style="fill: rgba(217,45,32,.9)"/><text x="225.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: #fff">● Start recording</text><path d="M292 29 H324" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M322 25 l6 4 -6 4" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/><rect x="330" y="14" width="160" height="30" rx="15" style="fill: var(--surface-2); stroke: var(--border-strong)"/><text x="410.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">check: play, trim, name</text><path d="M492 29 H524" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M522 25 l6 4 -6 4" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/><rect x="530" y="14" width="110" height="30" rx="15" style="fill: var(--accent)"/><text x="585.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">Save</text>
+      </svg>
+    </figure>
+    <ol class="steps">
+      <li><strong>Listening.</strong> The screen opens with the microphone live — the waveform moves with what it
+        hears, so you can check the level before you start. Anything playing on the board stops first, so it
+        does not end up in your take.</li>
+      <li><strong>Start recording</strong>, play or sing, and <strong>Stop recording</strong>. A timer runs while
+        you record. (With the metronome on, the take stops by itself — see below.)</li>
+      <li><strong>Check the take.</strong> Play it, switch on <strong>Loop</strong> to hear it repeat, and set the
+        cut: <strong>Auto-trim</strong> cuts the quiet start and end, <strong>Full length</strong> keeps all of
+        it, or drag the handles yourself — exactly as in <a href="#trim">Trim</a>. <strong>Normalize</strong>
+        (on by default) lifts the take to a good, even level; the preview already plays it that way.</li>
+      <li><strong>Name it and Save.</strong> New takes are numbered — Recording, Recording 2, Recording 3 — so
+        they never share a name; type over it if you like, and Return saves. <strong>Discard</strong> throws the
+        take away and goes back to listening.</li>
+    </ol>
+    <p>The trim is a setting, not a cut in the file — you can change it later in the pad's Trim. The pad
+      remembers when it was recorded; its settings show the date.</p>
+
+    <h3 id="metronome">Recording to a metronome</h3>
+    <p>For loops that fit together, switch on the <strong>Metronome</strong> before you start, set the tempo with
+      <strong>−</strong> and <strong>+</strong> (40–240 BPM; hold a button to run) and the length:
+      <strong>1, 2, 4, 8 or 16 bars</strong>. Then Start:</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 218" role="img" aria-labelledby="figMetroT">
+        <title id="figMetroT">A metronome take at 2 bars: one count-in bar with the big 4 3 2 1, then bar 1 and bar 2 are recorded and the take stops by itself. With headphones the click runs throughout; without, only the count-in clicks and the take flashes.</title>
+        <g font-size="11" style="fill: var(--text-muted)"><text x="20" y="16">count-in</text><text x="220" y="16">bar 1</text><text x="420" y="16">bar 2</text></g>
+        <rect x="20" y="24" width="196" height="40" rx="8" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
+        <g font-size="18" font-weight="800" text-anchor="middle" style="fill: var(--text)"><text x="45" y="51">4</text><text x="94" y="51">3</text><text x="143" y="51">2</text><text x="192" y="51">1</text></g>
+        <rect x="220" y="24" width="400" height="40" rx="8" style="fill: var(--accent)" opacity=".85"/>
+        <text x="232" y="49" font-size="13" font-weight="800" style="fill: var(--on-accent)">Go — recording</text>
+        <text x="608" y="49" font-size="12" font-weight="700" text-anchor="end" style="fill: var(--on-accent)">stops by itself</text>
+        <line x1="420" y1="24" x2="420" y2="64" style="stroke: var(--on-accent)" opacity=".5"/>
+        <path d="M220 74 v6 h400 v-6" style="fill: none; stroke: var(--text-soft)" stroke-width="1.2"/>
+        <text x="420" y="96" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">what is kept: exactly 2 bars, from beat one</text>
+        <text x="20" y="128" font-size="12" font-weight="700" style="fill: var(--text)">With headphones</text>
+        <text x="20" y="168" font-size="12" font-weight="700" style="fill: var(--text)">Without</text>
+        <g style="fill: var(--text-soft)">
+          <rect x="28" y="136" width="6" height="14" rx="2" transform="translate(0 0)"/><rect x="77" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="126" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="175" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="224" y="136" width="6" height="14" rx="2" transform="translate(0 0)"/><rect x="273" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="322" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="371" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="420" y="136" width="6" height="14" rx="2" transform="translate(0 0)"/><rect x="469" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="518" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="567" y="136" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="616" y="136" width="6" height="14" rx="2" transform="translate(0 0)"/>
+          <rect x="28" y="176" width="6" height="14" rx="2" transform="translate(0 0)"/><rect x="77" y="176" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="126" y="176" width="4" height="9" rx="2" transform="translate(0 5)"/><rect x="175" y="176" width="4" height="9" rx="2" transform="translate(0 5)"/>
+        </g>
+        <g style="fill: var(--accent)" opacity=".7">
+          <circle cx="227" cy="183" r="6"/><circle cx="276" cy="183" r="4"/><circle cx="325" cy="183" r="4"/><circle cx="374" cy="183" r="4"/><circle cx="423" cy="183" r="6"/><circle cx="472" cy="183" r="4"/><circle cx="521" cy="183" r="4"/><circle cx="570" cy="183" r="4"/><circle cx="619" cy="183" r="6"/>
+        </g>
+        <text x="420" y="128" font-size="11" text-anchor="middle" style="fill: var(--text-muted)">click on every beat</text>
+        <text x="20" y="212" font-size="10" style="fill: var(--text-muted)">clicks + taps</text>
+        <text x="420" y="212" font-size="10" text-anchor="middle" style="fill: var(--text-muted)">the beat only flashes — the mic hears nothing but you</text>
+      </svg>
+      <figcaption>Start records nothing yet: first one bar is counted in — big numbers, 4 3 2 1 — and on
+        <strong>Go</strong> the take begins. It stops by itself after the bars you set.</figcaption>
+    </figure>
+    <ul>
+      <li><strong>It is exact.</strong> The take is cut to exactly the bars you set, starting on beat one — so
+        every take at one tempo has the same length, to the sample. Takes recorded one after another layer as
+        loops, and they <a href="#board">start on the beat</a> together.</li>
+      <li><strong>It is kept on time.</strong> Headphones add a delay between the click and your ear, and the
+        microphone adds one too. Blitzfingers measures it on the first take ("Measuring latency…") and cuts the
+        take where you really played, not where the click was sent.</li>
+      <li><strong>The screen shows where you are:</strong> "Count-in", then "Bar 1 of 4", with a dot per beat.
+        Stop during a take cancels it — nothing half-finished is kept.</li>
+      <li><strong>It remembers.</strong> Metronome on or off, the tempo and the length stay set for the next take.
+        The pad's settings show the tempo under its name — "120 BPM · 4 bars".</li>
+      <li>A metronome take opens with <strong>Full length</strong> selected — its length is the point. You can
+        still trim it, but then it no longer lines up bar for bar.</li>
+    </ul>
+
+    <h3>With headphones, without, and over Bluetooth</h3>
+    <ul>
+      <li><strong>With headphones</strong> you hear the click on every beat — accented on beat one — through the
+        count-in and the take.</li>
+      <li><strong>Without headphones</strong> the count-in clicks and the phone taps, and during the take the beat
+        only <strong>flashes</strong>. The microphone would otherwise hear the click (or the vibration), and it
+        would end up in your recording.</li>
+      <li><strong>Unplugging headphones</strong> during a take stops it ("Headphones unplugged — take stopped").</li>
+      <li><strong>Bluetooth headphones</strong> work, with one difference: Blitzfingers records from the built-in
+        microphone, and the headphones stay just for listening. A headset's own microphone records in phone-call
+        quality and adds a delay its device under-reports.</li>
+    </ul>
+    <p class="note">The first time, the system asks for the microphone. If you said no, allow it again in
+      Settings ▸ Blitzfingers ▸ Microphone.</p>
   </section>
 
   <section id="overdub">
     <h2>Overdub</h2>
-    <p>Overdub records a new pass <em>over</em> an existing sound and mixes the two — a harmony onto a loop, a
-      second clap onto a clap. Open it from the pad's settings and tap <strong>Record</strong>: a big 4–3–2–1
-      counts you in, then the loop plays and records along with you each round, until you tap it again.
-      <strong>Play</strong> just listens.</p>
-    <p><strong>Headphones are required</strong>, wired or Bluetooth, and the app checks: without them the
-      microphone would record the loop from the speaker along with you. The first Play or Record measures the round-trip
-      delay of your headphones; <strong>Sync</strong> nudges it by ear if a layer lands early or late, and
-      <strong>Recalibrate</strong> measures again after you switch headphones.</p>
-    <p>Undo and Redo step through the layers. <strong>Save as New</strong> keeps the original, <strong>Overwrite</strong>
-      replaces it — and if the bank is full, the app offers the banks that still have room.</p>
+    <p>Overdub records new passes <em>over</em> a sound while it loops, and mixes them in — a harmony onto a
+      loop, a second clap onto a clap, a beat built up round by round, like a loop pedal. Open it from the pad's
+      settings: <strong>Overdub</strong>.</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 230" role="img" aria-labelledby="figOdT">
+        <title id="figOdT">The loop as a circle that goes round and round; each round you record adds a layer onto it. Next to it, the steps: open, measure, Record, count-in, recording, tap to stop.</title>
+        <circle cx="120" cy="115" r="92" style="fill: none; stroke: rgb(127,194,118)" stroke-width="14" opacity=".85"/>
+        <circle cx="120" cy="115" r="72" style="fill: none; stroke: rgb(168,148,230)" stroke-width="10" opacity=".85" stroke-dasharray="300 200"/>
+        <circle cx="120" cy="115" r="56" style="fill: none; stroke: rgb(224,121,159)" stroke-width="8" opacity=".85" stroke-dasharray="120 300"/>
+        <text x="120" y="111" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">the loop</text>
+        <text x="120" y="127" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">+ your layers</text>
+        <path d="M120 14 a101 101 0 0 1 70 28" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/>
+        <path d="M184 34 l8 9 -11 2" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/>
+        <g font-size="12">
+          <circle cx="290" cy="30" r="5" style="fill: var(--text-muted)"/><text x="304" y="34" style="fill: var(--text-soft)">Opening the microphone…</text>
+          <circle cx="290" cy="64" r="5" style="fill: var(--text-muted)"/><text x="304" y="68" style="fill: var(--text-soft)">Measuring latency of your headphones…</text>
+          <circle cx="290" cy="98" r="6" fill="#d92d20"/><text x="304" y="102" font-weight="700" style="fill: var(--text)">tap Record</text>
+          <circle cx="290" cy="132" r="5" style="fill: var(--accent)"/><text x="304" y="136" style="fill: var(--text-soft)">4 3 2 1 Go — the loop starts</text>
+          <circle cx="290" cy="166" r="6" fill="#d92d20"/><text x="304" y="170" font-weight="700" style="fill: var(--text)">Recording — every round adds a layer</text>
+          <circle cx="290" cy="200" r="5" style="fill: var(--text-muted)"/><text x="304" y="204" style="fill: var(--text-soft)">tap Record again — the loop plays on</text>
+        </g>
+        <path d="M290 36 V194" style="stroke: var(--border-strong)" stroke-width="1"/>
+      </svg>
+    </figure>
+
+    <h3>Recording a layer</h3>
+    <ol class="steps">
+      <li><strong>Put on headphones</strong> — wired or Bluetooth. Without them Overdub is greyed out ("Headphones
+        required"): the microphone would record the loop from the speaker along with you.</li>
+      <li><strong>Wait a moment.</strong> The screen opens the microphone and measures the delay of your
+        headphones by itself; Play shows "Measuring…" meanwhile.</li>
+      <li><strong>Tap Record.</strong> A big 4 3 2 1 counts you in, and on <strong>Go</strong> the loop starts and
+        records along with you. Each time round, what you play is added to the loop — you hear your last round
+        while you play the next.</li>
+      <li><strong>Tap Record again</strong> to stop recording. The loop plays on, so you can listen — and tap
+        Record once more for another layer, straight away, without a count-in.</li>
+    </ol>
+    <ul>
+      <li><strong>Play / Pause</strong> just listens. Pause holds the loop where it is, and Play goes on from
+        there; pausing also stops recording.</li>
+      <li>The count-in follows the loop's tempo when it was recorded to the metronome; otherwise it counts at
+        120 BPM.</li>
+      <li>The loop is the pad's <a href="#trim">trimmed</a> part. Your layers come in a little quieter than a
+        fresh recording, so they sit with the loop rather than on top of it.</li>
+      <li>The red <strong>Recording</strong> button pulses while it records.</li>
+    </ul>
+
+    <h3>Undo, Redo and Clear</h3>
+    <ul>
+      <li><strong>Undo</strong> takes back the last round you recorded; <strong>Redo</strong> brings it back.</li>
+      <li><strong>Clear</strong> takes the loop back to the original sound, all layers gone. It is available as
+        soon as anything was overdubbed.</li>
+    </ul>
+
+    <h3>Timing &amp; sync</h3>
+    <p>The measured delay is what keeps your layers in time. If one lands a hair early or late anyway, open
+      <strong>Timing &amp; sync</strong>: the <strong>Sync</strong> slider moves the layers up to 80 ms either
+      way, by ear. <strong>Recalibrate</strong> measures again — after you switch headphones, say. The status line
+      says what was measured ("Calibrated · 42 ms round-trip"). Bluetooth headphones leak no sound to measure,
+      so there the delay the system reports is used, and Sync is your fine-tuning.</p>
+
+    <h3>Keeping it</h3>
+    <ul>
+      <li><strong>Save as New</strong> keeps the original and adds the overdub as a new pad — "Groove (dub)" — in the
+        same section. If the bank is full, Blitzfingers offers the banks that still have room, or a new bank; you
+        stay where you are.</li>
+      <li><strong>Overwrite</strong> — only for sounds you recorded or imported — replaces the original, after
+        asking.</li>
+      <li><strong>Discard</strong> leaves without keeping anything. Unplugging the headphones closes Overdub too.</li>
+    </ul>
   </section>
 
   <section id="midi">
     <h2>MIDI</h2>
-    <p>Connect a controller by cable (a USB adapter) or over Bluetooth — Settings ▸ MIDI has the Bluetooth
-      pairing — and Blitzfingers picks it up, also when you plug it in while the app runs. A pad's own settings
-      lead to its mapping too.</p>
-    <h3>Learning a control</h3>
-    <p>In Settings ▸ MIDI, tap a pad on the small board to open it, then <strong>Learn</strong> on the row you
-      want — Trigger, Volume, or one of the effect amounts — and move the control on your device. Learning again
-      replaces the old assignment; the trash icon removes one. Beside the pads there are rows for
-      <strong>Stop all</strong> and for the two section volumes. A mapped pad shows <strong>M</strong>.</p>
-    <p>Mappings belong to the <strong>grid position</strong>, not to the sound, so they survive switching
-      banks. Set them up on your fullest bank.</p>
-    <h3 id="knob-mode">Knobs, faders and endless encoders</h3>
-    <p>Controllers report a knob in one of two ways, and each mapping remembers which — Blitzfingers finds out
-      when you learn it, and shows it in the mapping's row:</p>
+    <p>A MIDI controller turns Blitzfingers into an instrument with real buttons: pads you hit, faders for the
+      section volumes, knobs for the effects. Any class-compliant controller works — over a cable (a USB
+      adapter where needed) or Bluetooth.</p>
+
+    <h3 id="midi-connect">Connecting a controller</h3>
     <ul>
-      <li><strong>Abs</strong> (absolute) — the control reports <em>where it is</em>, from one end of its travel
-        to the other. Faders, and knobs with a start and an end.</li>
-      <li><strong>Rel</strong> (relative) — the control reports <em>that it moved</em>, a step at a time. Endless
-        encoders and jog wheels, which spin forever with no end stop.</li>
+      <li><strong>By cable:</strong> plug it in. Blitzfingers finds it by itself, also while the app is running.</li>
+      <li><strong>Over Bluetooth:</strong> Settings ▸ <strong>MIDI</strong> ▸ the Bluetooth button at the top opens
+        the system's pairing screen; pick your device there.</li>
+      <li>The line under the title says what is connected — "Connected: DJ2GO2", or "No MIDI device found".
+        Press anything on the controller and it shows what arrived ("last: noteon …"), so you can see that
+        the device talks.</li>
     </ul>
-    <p>If a mapping got it wrong — the value only flips between off and full, or runs backwards — tap
-      <strong>Abs</strong> / <strong>Rel</strong> in its row to switch. <strong>⇅</strong> beside it turns a control
-      upside down, for a fader that is louder at the bottom (a DJ controller's pitch fader, say).</p>
-    <h3>First touch: Jump or Pick up</h3>
-    <p>When a knob sits somewhere else than the value it controls, the first touch has to decide.
-      <strong>Jump</strong> (the default) moves the value straight to the knob — always a reaction, sometimes an
-      audible jump. <strong>Pick up</strong> waits until the knob reaches the value, then follows — no jump, and a
-      short note tells you where to turn. Endless encoders never jump either way. Set it in Settings ▸ MIDI.</p>
+
+    <h3 id="midi-learn">Learning a control</h3>
+    <p>You do not type note numbers — you show Blitzfingers which control you mean:</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 60" role="img" aria-labelledby="figLearnT">
+        <title id="figLearnT">Learning in three steps: open the pad on the small board, tap Learn on a row, move the control on your device.</title>
+        <rect x="0" y="14" width="190" height="30" rx="15" style="fill: var(--surface-2); stroke: var(--border-strong)"/><text x="95.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">1 · tap a pad on the grid</text><path d="M192 29 H220" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M218 25 l6 4 -6 4" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/><rect x="226" y="14" width="170" height="30" rx="15" style="fill: var(--accent)"/><text x="311.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">2 · Learn on a row</text><path d="M398 29 H426" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M424 25 l6 4 -6 4" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/><rect x="432" y="14" width="208" height="30" rx="15" style="fill: var(--surface-2); stroke: var(--border-strong)"/><text x="536.0" y="34" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">3 · move the control</text>
+      </svg>
+    </figure>
+    <ol class="steps">
+      <li>In Settings ▸ <strong>MIDI</strong>, tap a pad on the small board. Its mapping card opens. (A pad's own
+        settings lead there too, under MIDI.)</li>
+      <li>Tap <strong>Learn</strong> on the row you want. It pulses, and the status line says "Listening… press a
+        control".</li>
+      <li>Hit the pad or move the knob on your controller. The row shows what it learned — "Note 36", "CC 7".
+        Learn keeps listening: move a different control and that one replaces it. Tap Learn again to finish.</li>
+    </ol>
+    <p><strong>What can be learned</strong></p>
+    <ul>
+      <li><strong>Trigger</strong> — a pad or key on the controller plays the pad. A one-shot fires; a loop
+        starts or stops; a hold-to-repeat pad plays while the key is down. Triggers learn from pads and keys
+        (notes); how hard you hit does not matter.</li>
+      <li><strong>Volume</strong> — a knob or fader sets the pad's volume.</li>
+      <li><strong>Effects</strong> — one knob per effect for its amount: Filter, Delay, Reverb, Chorus, Phaser,
+        Distortion, Lo-fi and Bitcrush, Pan, and also <strong>Speed</strong> and <strong>Pitch</strong>. Turning
+        a mapped effect knob switches the effect on.</li>
+      <li><strong>Global</strong> — <strong>Stop all</strong> (a pad or key), and the <strong>one-shots</strong>
+        and <strong>loops</strong> volume (knobs or faders).</li>
+    </ul>
+    <p>The <strong>trash</strong> icon removes a mapping, after asking. A mapped pad shows <strong>M</strong>
+      (Settings ▸ Appearance can hide it); on the small MIDI board, dots show what each pad has mapped.</p>
+    <p class="note">Mappings belong to the <strong>grid position</strong>, not to the sound: the controller's
+      third pad plays position 3 in whichever bank is open. Set them up once, on your fullest bank — they work
+      in all of them.</p>
+
+    <h3 id="knob-mode">Knobs, faders and endless encoders: Abs and Rel</h3>
+    <p>Controllers send a knob in one of two ways, and each mapping remembers which:</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 180" role="img" aria-labelledby="figAbsRelT">
+        <title id="figAbsRelT">Left, a fader: its position is the value, from the bottom end to the top end. Right, an endless encoder: it reports only that it turned, one step at a time, up or down, and never runs out.</title>
+        <text x="20" y="18" font-size="13" font-weight="700" style="fill: var(--text)">Abs — the position is the value</text>
+        <rect x="60" y="34" width="14" height="128" rx="7" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
+        <rect x="46" y="76" width="42" height="18" rx="5" style="fill: var(--accent)"/>
+        <text x="100" y="40" font-size="11" style="fill: var(--text-muted)">top = 100 %</text>
+        <text x="100" y="89" font-size="11" style="fill: var(--text)">here = 70 %</text>
+        <text x="100" y="162" font-size="11" style="fill: var(--text-muted)">bottom = 0</text>
+        <text x="100" y="122" font-size="11" style="fill: var(--text-soft)">faders, and knobs</text>
+        <text x="100" y="137" font-size="11" style="fill: var(--text-soft)">with an end stop</text>
+        <text x="340" y="18" font-size="13" font-weight="700" style="fill: var(--text)">Rel — it says "a step up, a step down"</text>
+        <circle cx="410" cy="100" r="50" style="fill: var(--surface-2); stroke: var(--border-strong)" stroke-width="2"/>
+        <line x1="410" y1="100" x2="410" y2="58" style="stroke: var(--accent)" stroke-width="4" stroke-linecap="round"/>
+        <path d="M468 70 a64 64 0 0 1 0 60" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/><path d="M462 128 l6 4 3-7" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/>
+        <path d="M352 130 a64 64 0 0 1 0-60" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/><path d="M358 72 l-6-4 -3 7" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/>
+        <text x="484" y="104" font-size="11" style="fill: var(--text)">+1 +1 +1 …</text>
+        <text x="300" y="104" font-size="11" text-anchor="end" style="fill: var(--text)">… −1 −1</text>
+        <text x="410" y="174" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">endless encoders, jog wheels — no end stop</text>
+      </svg>
+    </figure>
+    <ul>
+      <li><strong>Abs</strong> (absolute) — the control reports <em>where it is</em>, from one end of its travel to
+        the other. Faders and knobs with an end stop.</li>
+      <li><strong>Rel</strong> (relative) — the control reports <em>that it moved</em>, one step at a time. Endless
+        encoders and jog wheels, which spin forever. Each step moves the value by a fine amount, so a full turn
+        is a sweep, not a leap.</li>
+    </ul>
+    <p>You do not have to know which you have: Learn tells them apart by how the control moves. If it guessed
+      wrong — the value only flips between off and full, or does not move — tap <strong>Abs</strong> /
+      <strong>Rel</strong> in the row to switch.</p>
+
+    <h3 id="midi-invert">Upside down: ⇅</h3>
+    <p>The <strong>⇅</strong> button in a knob's row turns the control around: up becomes down. For a fader that
+      is built the other way — a DJ controller's pitch fader, louder towards you — or a knob you would rather turn
+      left to open.</p>
+
+    <h3 id="first-touch">First touch: Jump or Pick up</h3>
+    <p>A knob on your controller and the value it controls can disagree — you changed the volume on the screen,
+      or switched banks. The first touch has to decide what happens:</p>
+    <figure class="fig">
+      <svg viewBox="0 0 640 190" role="img" aria-labelledby="figTouchT">
+        <title id="figTouchT">Two graphs of the value over time as the knob turns from low to high while the value sits at 60 percent. Jump: the value drops at once to the knob, then follows it. Pick up: the value stays at 60 percent until the knob reaches it, then follows.</title>
+        <g font-size="13" font-weight="700" style="fill: var(--text)"><text x="20" y="18">Jump (the default)</text><text x="340" y="18">Pick up</text></g>
+        <g style="stroke: var(--border-strong)" stroke-width="1">
+          <path d="M20 160 H300 M20 30 V160"/><path d="M340 160 H620 M340 30 V160"/>
+        </g>
+        <path d="M20 135 L300 45" style="fill: none; stroke: var(--text-muted)" stroke-width="2" stroke-dasharray="5 4"/>
+        <path d="M340 135 L620 45" style="fill: none; stroke: var(--text-muted)" stroke-width="2" stroke-dasharray="5 4"/>
+        <path d="M20 82 H60 V122 L300 45" style="fill: none; stroke: var(--accent)" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M340 82 H504 L620 45" style="fill: none; stroke: var(--accent)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="60" cy="122" r="5" style="fill: var(--accent)"/><text x="70" y="140" font-size="11" style="fill: var(--text-soft)">first touch: the value jumps to the knob</text>
+        <circle cx="504" cy="82" r="5" style="fill: var(--accent)"/><text x="512" y="104" font-size="11" style="fill: var(--text-soft)">caught up —</text><text x="512" y="118" font-size="11" style="fill: var(--text-soft)">from here it follows</text>
+        <g font-size="10" style="fill: var(--text-muted)"><text x="24" y="178">— — the knob</text><text x="110" y="178" style="fill: var(--accent)">—— the value</text><text x="344" y="178">— — the knob</text><text x="430" y="178" style="fill: var(--accent)">—— the value</text></g>
+      </svg>
+      <figcaption>The value sits at 60 % and the knob starts low. <strong>Jump</strong> drops the value to the
+        knob at the first touch; <strong>Pick up</strong> leaves it alone until the knob reaches it — the app shows
+        "Pick up: move the control to 60 %".</figcaption>
+    </figure>
+    <ul>
+      <li><strong>Jump</strong> (the default) — the value goes straight to where the knob is. You always get a
+        reaction, sometimes an audible step.</li>
+      <li><strong>Pick up</strong> — the value waits until the knob reaches it, then follows. Nothing jumps; a
+        short note tells you which way to turn.</li>
+      <li>Endless encoders (<strong>Rel</strong>) never jump either way — they only ever move the value from
+        where it is.</li>
+    </ul>
+    <p>Choose it in Settings ▸ MIDI ▸ <strong>First touch</strong>; it applies to every mapping.</p>
+
+    <h3>While you edit, and after the trial</h3>
+    <p>In edit mode the pads ignore MIDI triggers, so a stray hit does not play while you arrange; Stop all and the
+      section volumes keep working. After the trial, mappings keep playing — only learning and changing them waits
+      for the unlock.</p>
   </section>
 
   <section id="keyboard">
