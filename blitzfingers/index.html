@@ -277,6 +277,13 @@
     /* ── Figure parts ────────────────────────────────────────────────────── */
     .fig-cap { margin: var(--sp-space-3) 0 0; text-align: center; font-size: var(--sp-text-sm); color: var(--text-muted); }
     .fig .panel { gap: var(--sp-space-4); }
+    .write-me { max-width: 46rem; margin: var(--sp-space-7) auto 0; padding: var(--sp-space-5) var(--sp-space-6);
+      background: var(--surface-1); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+      border-radius: var(--sp-radius-lg); }
+    .write-me h3 { margin: 0 0 var(--sp-space-2); font-size: var(--sp-text-lg); }
+    .write-me p { margin: 0 0 var(--sp-space-2); color: var(--text-soft); }
+    .write-me p:last-child { margin-bottom: 0; }
+    .write-me a { color: var(--accent-text); }
     .row-b { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-3); }
     .dname { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-md); }
 
@@ -556,11 +563,12 @@
         <h2>Make it yours</h2>
         <p class="lede">The board that ships is a starting point. Everything on it can be replaced, renamed and rearranged until it is your board.</p>
         <ul class="items">
-          <li style="--c: var(--p-rose);"><span class="mk"></span><div><h3>Record your own</h3><p>Capture anything with the mic and it becomes a pad — your voice, an instrument, the dog. Switch on the metronome and every take at one tempo comes out the same length, ready to layer.</p></div></li>
-          <li style="--c: var(--p-green);"><span class="mk"></span><div><h3>Trim and normalize</h3><p>Cut the silence off the start and end on a waveform, or set it by hand — with the cut looping while you listen. Even out levels so one pad does not shout.</p></div></li>
+          <li style="--c: var(--p-rose);"><span class="mk"></span><div><h3>Record your own — or bring it</h3><p>Capture anything with the mic and it becomes a pad — your voice, an instrument, the dog. Switch on the metronome, a big 4-3-2-1 counts you in, and every take at one tempo comes out the same length, ready to layer. Or import any audio file you already have.</p></div></li>
+          <li style="--c: var(--p-green);"><span class="mk"></span><div><h3>Trim and normalize</h3><p>Cut the silence off the start and end on a waveform, or set it by hand — pinch to zoom in, with the cut looping while you listen. Even out levels so one pad does not shout.</p></div></li>
           <li style="--c: var(--p-coral);"><span class="mk"></span><div><h3>Name it, colour it, move it</h3><p>Drag a pad where your hand expects it — into a gap, between two others, or across from the one-shots to the loops. Give it a name and a hue — the colour sits in the pad's lip, so you find it without reading.</p></div></li>
-          <li style="--c: var(--p-blue);"><span class="mk"></span><div><h3>Banks</h3><p>Group sounds into named sets and switch between them — one for the gig, one for the running joke.</p></div></li>
-          <li style="--c: var(--p-slate);"><span class="mk"></span><div><h3>Keyboard, and one key for silence</h3><p>On a keyboard the number row fires one-shots and letters fire loops. One key stops everything at once.</p></div></li>
+          <li style="--c: var(--p-blue);"><span class="mk"></span><div><h3>Banks</h3><p>Group sounds into named sets and switch between them — one for the gig, one for the running joke. A loop keeps playing while you switch.</p></div></li>
+          <li style="--c: var(--p-amber);"><span class="mk"></span><div><h3>Balanced for the room</h3><p>One volume for the hits and one for the loops, a crossfade as long or short as you like, and every pad at an even loudness. Once you know your board, hide the names and marks and play by colour.</p></div></li>
+          <li style="--c: var(--p-slate);"><span class="mk"></span><div><h3>Keyboard, and one key for silence</h3><p>On a keyboard — an iPad's, or a Mac's — the number row fires one-shots and letters fire loops, and each pad shows its key. Space stops everything at once.</p></div></li>
         </ul>
       </div>
 
@@ -646,8 +654,30 @@
           <p class="fig-cap">One for the gig, one for the running joke.</p>
         </div>
 
-        <!-- 5 · Keyboard -->
+        <!-- 5 · Balanced for the room -->
         <div class="fig" data-i="5">
+          <div class="panel">
+            <span class="label">Sound</span>
+            <div style="display: grid; gap: 6px;">
+              <div class="row-b"><span style="font-size: var(--sp-text-sm); color: var(--text-soft);">Overall one-shots volume</span><span style="font-size: var(--sp-text-sm); color: var(--text);">85 %</span></div>
+              <div style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.1);"><div style="height: 100%; width: 85%; border-radius: 4px; background: var(--accent);"></div></div>
+            </div>
+            <div style="display: grid; gap: 6px;">
+              <div class="row-b"><span style="font-size: var(--sp-text-sm); color: var(--text-soft);">Overall loops volume</span><span style="font-size: var(--sp-text-sm); color: var(--text);">60 %</span></div>
+              <div style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.1);"><div style="height: 100%; width: 60%; border-radius: 4px; background: var(--accent);"></div></div>
+            </div>
+            <div style="display: grid; gap: 6px;">
+              <div class="row-b"><span style="font-size: var(--sp-text-sm); color: var(--text-soft);">Loop crossfade</span><span style="font-size: var(--sp-text-sm); color: var(--text);">2.0 s</span></div>
+              <div style="height: 8px; border-radius: 4px; background: rgba(255,255,255,.1);"><div style="height: 100%; width: 40%; border-radius: 4px; background: var(--accent);"></div></div>
+            </div>
+            <div class="row-b"><span style="font-size: var(--sp-text-sm); color: var(--text-soft);">Normalize loudness</span><span style="display: inline-block; width: 40px; height: 24px; border-radius: 12px; background: var(--accent); position: relative;"><i style="position: absolute; right: 3px; top: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff;"></i></span></div>
+            <p class="panel-note" style="margin: 0;">Hits over the groove, or the groove under the hits.</p>
+          </div>
+          <p class="fig-cap">Set the room once; every pad follows.</p>
+        </div>
+
+        <!-- 6 · Keyboard -->
+        <div class="fig" data-i="6">
           <div class="panel">
             <span class="label">Keyboard</span>
             <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-space-2); text-align: center;">
@@ -777,8 +807,8 @@
         <ul class="items">
           <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Effects rack</h3><p>Filter, delay, reverb, chorus, phaser, distortion, lo-fi, pan and bitcrush — per pad, live, without a click.</p></div></li>
           <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Pitch, speed and reverse</h3><p>Shift twelve semitones either way without changing tempo, stretch a sound out, or play it backwards.</p></div></li>
-          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Overdub</h3><p>Sing or play along and stack takes on each loop pass. Latency calibrates itself; bring headphones.</p></div></li>
-          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>MIDI controller</h3><p>Map pads to a controller, over cable or Bluetooth, and put one "how much" knob on each effect.</p></div></li>
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Overdub</h3><p>Tap Record, get counted in, and sing or play along — every pass round the loop stacks a layer, like a loop pedal. Undo the last pass, or clear back to the original. Latency calibrates itself; bring headphones.</p></div></li>
+          <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>MIDI controller</h3><p>Over cable or Bluetooth: tap Learn, hit a pad or turn a knob, done. Pads, volumes, every effect, speed and pitch, Stop all. Faders and endless encoders are told apart by themselves, a knob can be flipped, and on the first touch the value jumps or waits to be picked up — your choice.</p></div></li>
           <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Export and import boards</h3><p>A whole bank as one file you can see in Files and send to someone. It comes back intact.</p></div></li>
         </ul>
       </div>
@@ -814,7 +844,7 @@
     <div class="sec-head">
       <span class="kicker">See it</span>
       <h2>The same board, shaped for the screen you are on</h2>
-      <p class="lede">iPhone, iPad and Mac. Portrait stacks one-shots over loops; on a bigger screen the pads grow into the room they have. Turn the phone and the board goes edge to edge, nothing but pads — that is Performance Mode.</p>
+      <p class="lede">iPhone, iPad and Mac. On a phone one-shots sit over loops; on an iPad or a Mac they sit side by side and every screen opens as a window in the middle, and the board adapts in Split View. Turn the phone and the board goes edge to edge, nothing but pads — that is Performance Mode.</p>
     </div>
 
     <div class="shots">
@@ -823,7 +853,7 @@
         <span class="cap">iPhone</span>
       </div>
       <div class="shot">
-        <div class="frame" style="--w: 272px; border-radius: 20px;">iPad, portrait<br>one-shots over loops, pads scaled up<br><br>[ simulator capture ]</div>
+        <div class="frame" style="--w: 272px; border-radius: 20px;">iPad<br>one-shots and loops side by side<br><br>[ simulator capture ]</div>
         <span class="cap">iPad</span>
       </div>
       <div class="shot">
@@ -892,6 +922,15 @@
       <div><b>Can I use my own sounds?</b><p>That is the point. Record them, import them, trim them, keep them.</p></div>
       <div id="faq-backup"><b>Can I back up or share a board?</b><p>Yes. Export a bank as one file — its sounds, every pad's settings and the layout — and import it again on another iPhone, iPad or Mac, or send it to someone. Importing adds it next to your banks; nothing is overwritten. Exporting always works, also after the trial.</p></div>
       <div><b>Can I get a refund?</b><p>Purchases go through Apple, so refunds do too — ask Apple through <a href="https://reportaproblem.apple.com/" rel="noopener">Report a Problem</a>.</p></div>
+    </div>
+
+    <div class="write-me">
+      <h3>Something not right? Write to me.</h3>
+      <p>Blitzfingers is made by one person — me. If something breaks, sounds wrong or does not do what you
+        expected, that is not a bother: write to
+        <a href="mailto:hello@scatteredpearls.studio">hello@scatteredpearls.studio</a>, tell me what you did and on
+        which device, and I will look at it as soon as I can and fix it.</p>
+      <p>Missing something? Tell me that too. I read every idea, and the ones that fit the app go on the list.</p>
     </div>
 
     <p class="faq-more">Want the detail? The <a href="guide/">full guide</a> walks through every
