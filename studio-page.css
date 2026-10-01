@@ -86,6 +86,9 @@ address { font-style: normal; color: var(--sp-card-ink); }
 
 footer { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); font-size: var(--sp-text-sm); color: var(--sp-on-ground-3); }
 footer a { color: var(--sp-on-ground-2); }
+.social { display: inline-flex; gap: 14px; align-items: center; }
+.social a { display: inline-flex; padding: 4px; border-radius: 8px; }
+.social a:hover { opacity: .85; }
 footer a:hover, footer a[aria-current="page"] { color: var(--sp-on-ground); }
 
 @media (max-width: 720px) {

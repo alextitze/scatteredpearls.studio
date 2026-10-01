@@ -37,3 +37,8 @@
   .nav-menu li + li { border-top: 1px solid var(--border); }
   .nav-menu a { display: flex; min-height: 48px; font-size: var(--sp-text-md); }
 }
+
+/* The studio's channels, in the footer (2026-10-01). */
+.site-foot .social { display: inline-flex; gap: 14px; align-items: center; }
+.site-foot .social a { display: inline-flex; padding: 4px; border-radius: 8px; color: var(--text-soft); }
+.site-foot .social a:hover { color: var(--text); }
