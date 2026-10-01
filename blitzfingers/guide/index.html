@@ -75,6 +75,27 @@
     }
 
     .note { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--text-soft); }
+
+    /* Figures: drawn diagrams (inline SVG, the site's tokens), not screenshots — they explain a flow or a
+       layout and do not go stale when the sounds change. Numbered marks in a drawing are explained in
+       the list under it, so the words stay real text. */
+    .fig { margin: 18px 0 20px; padding: 18px; background: var(--surface-1); border: 1px solid var(--border);
+      border-radius: 18px; }
+    .fig svg { display: block; width: 100%; height: auto; font-family: var(--font-body); }
+    .fig figcaption { margin-top: 12px; color: var(--text-soft); font-size: var(--sp-text-sm); }
+    .fig ol.keys { margin: 12px 0 0; padding: 0; list-style: none; display: grid; gap: 6px 18px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); font-size: var(--sp-text-sm); color: var(--text-soft); }
+    .fig ol.keys li { margin: 0; display: flex; gap: 8px; align-items: baseline; }
+    .fig ol.keys b { flex: none; display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%;
+      background: var(--accent); color: var(--on-accent); font-size: 11px; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li { counter-increment: step; position: relative; padding-left: 38px; margin-bottom: 12px; }
+    .steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 26px; height: 26px;
+      border-radius: 50%; border: 1px solid var(--border-strong); display: grid; place-items: center;
+      font-size: var(--sp-text-sm); font-weight: 700; color: var(--text); }
+    /* Pad colours, as on the landing page (rgb triples). */
+    .fig { --p-coral: 239,128,121; --p-amber: 224,180,85; --p-green: 127,194,118; --p-teal: 79,196,178;
+      --p-blue: 138,162,234; --p-purple: 168,148,230; --p-rose: 224,121,159; --p-slate: 154,166,186; }
   </style>
 </head>
 <body>
@@ -118,6 +139,7 @@
   <div class="guide-layout">
   <nav class="toc-side" aria-label="Guide contents">
   <ul class="toc">
+    <li><a href="#start">Quick start</a></li>
     <li><a href="#board">The board</a></li>
     <li><a href="#banks">Banks</a></li>
     <li><a href="#edit">Editing a pad</a></li>
