@@ -3,6 +3,18 @@
    so the logo and the footer stay put when you move between any two pages of the site. */
 
 :root { --gutter: var(--sp-space-5); }
+
+/* Numbered markers in the drawn figures (the circles and the matching badges in their legends) — an
+   experiment (2026-10-02): the figures draw sliders, switches and buttons in the accent purple, and a
+   purple marker blends in with them. Only the markers read these two properties; every other use of
+   the accent stays as it is. Without them the markers fall back to the accent, so deleting this one
+   line reverts the experiment.
+   Option 1 (set): the bolt's yellow (--sp-highlight, #ffd23f), softened to a sand yellow — the full
+   yellow was too loud next to the drawings — with dark numerals: 10.3:1.
+   Option 2: the secondary teal with white numerals — 5.2:1:
+     --marker: var(--sp-accent-2); --on-marker: #ffffff; */
+:root { --marker: #dcc173; --on-marker: #17151b; }
+
 @media (max-width: 720px) { :root { --gutter: var(--sp-space-4); } }
 
 .wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: var(--gutter); }
@@ -28,7 +40,12 @@ section[id], [id].anchor { scroll-margin-top: calc(var(--head-h) + 16px); }
 .site-nav ul { list-style: none; margin: 0; padding: 0; }
 .site-nav li { margin: 0; max-width: none; }
 .site-nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--text-soft); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); }
-.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text); }
+.site-nav a:hover { color: var(--text); }
+/* Where you are (maker, 2026-10-02): the page you are on (the guide) or, on the landing page, the
+   section you are reading — head-bar.js marks that link aria-current="location" as you scroll. Brighter
+   text and an accent underline, in the inline menu and in the fold-out one alike. */
+.site-nav a[aria-current] { color: var(--text);
+  background: linear-gradient(var(--accent), var(--accent)) left calc(50% + 14px) / 100% 2px no-repeat; }
 .site-nav .to-page::after { content: "→"; margin-left: 6px; }
 
 .nav-inline { display: flex; align-items: center; gap: var(--sp-space-5); }
