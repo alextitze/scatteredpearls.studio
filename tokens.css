@@ -99,6 +99,7 @@
   --border-strong: var(--sp-line-strong);
 
   --accent:        var(--sp-accent);
+  --accent-text:   #6d4fc0;   /* accent AS ink (light) — 5.86 / 5.29 / 4.89 on paper/surface/surface-2 */
   --accent-2:      var(--sp-accent-2);
   --on-accent:     #ffffff;
   --accent-soft:   var(--sp-accent-soft);
@@ -156,6 +157,7 @@
     --sp-vol-track:    rgba(255, 255, 255, .12);
     --sp-vol-fill:     rgba(255, 255, 255, .50);
     --sp-sheet-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
+    --accent-text:     #9e8ae0;   /* accent AS ink (dark) — 6.18 / 5.66 / 5.09; = focus-ring rgba(158,138,224,.95) */
   }
 }
 [data-theme="dark"] {
@@ -176,6 +178,7 @@
   --sp-vol-track:    rgba(255, 255, 255, .12);
   --sp-vol-fill:     rgba(255, 255, 255, .50);
   --sp-sheet-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
+  --accent-text:     #9e8ae0;   /* accent AS ink (dark) — 6.18 / 5.66 / 5.09; = focus-ring rgba(158,138,224,.95) */
 }
 
 /* ── Increase Contrast (maps to iOS "Increase Contrast" / Android high contrast) ──────
