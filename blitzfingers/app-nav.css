@@ -7,7 +7,15 @@
 
 .wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: var(--gutter); }
 
-.site-head { position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); padding-block: var(--sp-space-5); }
+.site-head { position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); padding-block: var(--sp-space-4); }
+
+/* The header stays on screen (maker, 2026-10-02: the guide is long, and so is the landing page). It sits
+   on the page's own background at the top; once the page scrolls (head-bar.js sets .scrolled) it gets a
+   dark, blurred ground so text never runs through it. --head-h is its height: anchors land below it. */
+:root { --head-h: 76px; }
+.head-bar { position: sticky; top: 0; z-index: 30; transition: background-color var(--sp-dur-fast) var(--sp-ease), box-shadow var(--sp-dur-fast) var(--sp-ease); }
+.head-bar.scrolled { background-color: rgba(23, 21, 27, .96); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
+section[id], [id].anchor { scroll-margin-top: calc(var(--head-h) + 16px); }
 .site-head .home { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--text-soft); }
 /* The studio mark at the same size as on the studio pages (index, imprint, privacy, support): 36 px, text-lg. */
 .site-head .home img { width: 36px; height: 36px; display: block; }

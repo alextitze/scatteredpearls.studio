@@ -50,7 +50,7 @@
     /* The deep-link contract: every section the app can open is an id below, and the app links to
        these names. Renaming one breaks an in-app link that is already shipped, so treat them as an
        interface rather than as markup. */
-    section { scroll-margin-top: 16px; padding-block: 26px; border-top: 1px solid var(--border); }
+    section { scroll-margin-top: calc(var(--head-h) + 16px); padding-block: 26px; border-top: 1px solid var(--border); }
     section h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 10px; }
     section h3 { font-size: 1rem; margin: 18px 0 4px; }
     ul { padding-left: 1.1rem; }
@@ -64,7 +64,7 @@
     @media (min-width: 861px) {
       .guide-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 56px;
         align-items: start; margin-top: 32px; }
-      .toc-side { position: sticky; top: 24px; }
+      .toc-side { position: sticky; top: calc(var(--head-h) + 24px); }
       .toc { flex-direction: column; gap: 0; margin: 0; }
       .toc li { margin: 0; }
       .toc a { display: block; padding: 7px 0 7px 14px; border: 0; border-left: 2px solid var(--border);
@@ -100,7 +100,7 @@
 </head>
 <body>
 
-<div class="wrap">
+<div class="head-bar"><div class="wrap">
   <header class="site-head">
     <a class="home" href="/">
       <img src="../../studio-tile.svg" alt="" width="36" height="36">
@@ -128,7 +128,7 @@
       </details>
     </nav>
   </header>
-</div>
+</div></div>
 
 <main class="wrap">
   <h1>Blitzfingers — guide</h1>
@@ -391,7 +391,7 @@
       <li><strong>Rename or delete:</strong> the pencil beside a bank. Deleting asks first, and takes the bank's
         sounds with it. Your last bank stays — the board is never empty.</li>
     </ul>
-    <p>Blitzfingers comes with two banks ready to play: <strong>Groove</strong> — a beat, three basslines, two
+    <p id="bundled-banks" class="anchor">Blitzfingers comes with two banks ready to play: <strong>Groove</strong> — a beat, three basslines, two
       pads and a scale to play on top, all at one tempo and in one key — and <strong>Party</strong>. They are
       ordinary banks: change them, rearrange them, delete them. Deleting one is safe:
       <strong>Settings → Bank backup → Restore bundled banks</strong> brings back the missing ones as they
@@ -412,20 +412,20 @@
         </g>
         <path d="M312 110 H346" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M340 105 l6 5 -6 5" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/>
         <rect x="356" y="0" width="284" height="250" rx="16" style="fill: var(--surface-1); stroke: var(--border)"/>
-        <rect x="370" y="12" width="96" height="26" rx="13" style="fill: none; stroke: var(--border-strong)"/><text x="384" y="30" font-size="12" font-weight="700" style="fill: var(--text)">Party ▾</text>
+        <rect x="370" y="12" width="96" height="26" rx="13" style="fill: none; stroke: var(--border-strong)"/><text x="384" y="30" font-size="12" font-weight="700" style="fill: var(--text)">Groove ▾</text>
         <text x="370" y="58" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">ONE-SHOTS</text>
-        <rect x="370" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="370" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><text x="399.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Siren</text><rect x="436" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-amber))"/><text x="465.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Laser</text><rect x="502" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><text x="531.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Impact</text><rect x="568" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-blue))"/><text x="597.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Ta-da</text>
+        <rect x="370" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="370" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><text x="399.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Kick</text><rect x="436" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-amber))"/><text x="465.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Snare</text><rect x="502" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><text x="531.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Clap</text><rect x="568" y="66" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="113" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-blue))"/><text x="597.0" y="96.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Hat</text>
         <text x="370" y="142" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">LOOPS</text>
-        <rect x="370" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="370" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-green))"/><text x="399" y="180" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Floor</text>
-        <rect x="436" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/><text x="465.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Bass</text><rect x="502" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-purple))"/><text x="531.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Crowd</text><rect x="568" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-rose))"/><text x="597.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Build</text>
-        <text x="498" y="232" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">Groove’s beat plays on</text>
-        <circle cx="286" cy="48" r="10" style="fill: var(--accent)"/><text x="286" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">1</text><circle cx="236" cy="96" r="10" style="fill: var(--accent)"/><text x="236" y="100" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">2</text><circle cx="286" cy="194" r="10" style="fill: var(--accent)"/><text x="286" y="198" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">3</text><circle cx="420" cy="228" r="10" style="fill: var(--accent)"/><text x="420" y="232" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">4</text>
+        <rect x="370" y="150" width="58" height="52" rx="12" style="fill: rgba(127,194,118,.22); stroke: rgb(var(--p-green))" stroke-width="2"/><text x="399" y="180" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Beat</text>
+        <rect x="436" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/><text x="465.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Bass 1</text><rect x="502" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-purple))"/><text x="531.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Pad</text><rect x="568" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-rose))"/><text x="597.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Topper</text>
+        <text x="498" y="232" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">the board of the bank you picked</text>
+        <circle cx="286" cy="48" r="10" style="fill: var(--accent)"/><text x="286" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">1</text><circle cx="236" cy="96" r="10" style="fill: var(--accent)"/><text x="236" y="100" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">2</text><circle cx="286" cy="194" r="10" style="fill: var(--accent)"/><text x="286" y="198" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">3</text><circle cx="378" cy="150" r="10" style="fill: var(--accent)"/><text x="378" y="154" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-accent)">4</text>
       </svg>
       <ol class="keys">
         <li><b>1</b><span>The bank you are in.</span></li>
         <li><b>2</b><span>The pencil — rename or delete a bank.</span></li>
         <li><b>3</b><span>New bank — starts empty.</span></li>
-        <li><b>4</b><span>A loop that was playing keeps playing.</span></li>
+        <li><b>4</b><span>A loop that was playing keeps playing when you switch.</span></li>
       </ol>
     </figure>
     <p><strong>Switching keeps the music going.</strong> A playing loop runs on while you change banks, so you can
@@ -1131,5 +1131,6 @@
 </script>
 
 <script src="../scroll-anchor.js" defer></script>
+<script src="../head-bar.js" defer></script>
 </body>
 </html>

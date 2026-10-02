@@ -190,6 +190,7 @@
        included, is whole. */
     .hero {
       min-height: 100svh; display: flex; flex-direction: column;
+      margin-top: calc(-1 * var(--head-h)); padding-top: var(--head-h);   /* runs up under the sticky header */
       background:
         radial-gradient(940px 560px at 50% -12%, rgba(109, 79, 192, .22), rgba(23, 21, 27, 0) 62%),
         radial-gradient(800px 420px at 50% 112%, rgba(224, 70, 58, .16), rgba(23, 21, 27, 0) 60%);
@@ -207,6 +208,13 @@
     .board { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--sp-space-3); }
     .board .pad { aspect-ratio: 1; border-radius: var(--sp-radius-xl); align-items: flex-end; justify-content: flex-start; padding: 0 0 var(--sp-space-4) var(--sp-space-4); font-size: var(--sp-text-md); box-shadow: inset 0 -20px 26px -20px rgba(var(--c), .85), 0 3px 0 var(--pad-foot), 0 7px 16px rgba(0, 0, 0, .45); }
     .board .pad::after { height: 3.5px; }
+    .board .pad { --cs: var(--c); cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    .board .pad:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+    /* A loop waiting for the next bar pulses, as in the app; with reduced motion it just shows the outline. */
+    .board .pad.queued { outline: 2px solid rgba(var(--c), .9); outline-offset: 2px; animation: pad-queued .5s ease-in-out infinite alternate; }
+    @keyframes pad-queued { from { outline-color: rgba(var(--c), .25); } to { outline-color: rgba(var(--c), .95); } }
+    @media (prefers-reduced-motion: reduce) { .board .pad.queued { animation: none; } }
+    .board-hint { margin: var(--sp-space-4) 0 0; text-align: center; font-size: var(--sp-text-sm); color: var(--text-muted); }
     .board .kind { position: absolute; top: 14px; left: var(--sp-space-4); font-size: 9.5px; font-weight: var(--sp-weight-bold); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; color: var(--text-muted); }
 
     /* ── Section 2 · loops and one-shots ─────────────────────────────────── */
@@ -433,7 +441,7 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
-<div class="hero">
+<div class="head-bar">
   <div class="wrap">
     <header class="site-head">
       <a class="home" href="/">
@@ -463,6 +471,8 @@
       </nav>
     </header>
   </div>
+</div>
+<div class="hero">
 
   <main id="main" class="hero-main">
     <div class="wrap">
@@ -485,19 +495,21 @@
       </div>
     </div>
 
-    <!-- The board. Not interactive on the web — it is a picture of the
-         instrument, so it is marked up as a list, not as buttons. -->
+    <!-- The board plays (board-play.js): tap a one-shot and it fires; tap a loop and it starts on the
+         next bar of whatever is already playing, as in the app. 120 BPM. The sounds are placeholders
+         from the app's Groove bank until the maker's own replace them; they load on the first tap. -->
     <div class="wrap">
-      <ul class="board">
-        <li class="pad"     style="--c: var(--p-coral);"><span class="kind"><span class="long">One-</span>shot</span>Kick</li>
-        <li class="pad lit" style="--c: var(--p-amber);  --cs: 143, 100, 18;"><span class="kind"><span class="long">One-</span>shot</span>Snare</li>
-        <li class="pad"     style="--c: var(--p-green);"><span class="kind"><span class="long">One-</span>shot</span>Hat</li>
-        <li class="pad"     style="--c: var(--p-blue);"><span class="kind"><span class="long">One-</span>shot</span>Clap</li>
-        <li class="pad lit" style="--c: var(--p-teal);   --cs: 31, 132, 119;"><span class="kind">Loop</span>Bass</li>
-        <li class="pad"     style="--c: var(--p-rose);"><span class="kind">Loop</span>Chord</li>
-        <li class="pad"     style="--c: var(--p-purple);"><span class="kind">Loop</span>Vox</li>
-        <li class="pad"     style="--c: var(--p-slate);"><span class="kind">Loop</span>Air</li>
-      </ul>
+      <div class="board" role="group" aria-label="Try the pads" data-play>
+        <button type="button" class="pad" data-kind="shot" data-src="sounds/kick.wav"  style="--c: var(--p-coral);"><span class="kind"><span class="long">One-</span>shot</span>Kick</button>
+        <button type="button" class="pad" data-kind="shot" data-src="sounds/snare.wav" style="--c: var(--p-amber);"><span class="kind"><span class="long">One-</span>shot</span>Snare</button>
+        <button type="button" class="pad" data-kind="shot" data-src="sounds/hat.wav"   style="--c: var(--p-green);"><span class="kind"><span class="long">One-</span>shot</span>Hat</button>
+        <button type="button" class="pad" data-kind="shot" data-src="sounds/clap.wav"  style="--c: var(--p-blue);"><span class="kind"><span class="long">One-</span>shot</span>Clap</button>
+        <button type="button" class="pad" data-kind="loop" data-src="sounds/beat.wav" data-vol=".9"  aria-pressed="false" style="--c: var(--p-coral);"><span class="kind">Loop</span>Beat</button>
+        <button type="button" class="pad" data-kind="loop" data-src="sounds/bass.wav" data-vol=".85" aria-pressed="false" style="--c: var(--p-teal);"><span class="kind">Loop</span>Bass</button>
+        <button type="button" class="pad" data-kind="loop" data-src="sounds/pad.wav"  data-vol=".5"  aria-pressed="false" style="--c: var(--p-rose);"><span class="kind">Loop</span>Pad</button>
+        <button type="button" class="pad" data-kind="loop" data-src="sounds/arp.wav"  data-vol=".6"  aria-pressed="false" style="--c: var(--p-purple);"><span class="kind">Loop</span>Arp</button>
+      </div>
+      <p class="board-hint">Tap the pads. A loop waits for the next bar, then joins in.</p>
     </div>
   </main>
 </div>
@@ -991,5 +1003,7 @@
   }
 </script>
 <script src="scroll-anchor.js" defer></script>
+<script src="head-bar.js" defer></script>
+<script src="board-play.js" defer></script>
 </body>
 </html>
