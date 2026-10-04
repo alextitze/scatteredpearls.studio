@@ -1055,6 +1055,9 @@
         microphone, and the headphones stay just for listening. A headset's own microphone records in phone-call
         quality and adds a delay its device under-reports.</li>
     </ul>
+    <p class="note"><strong>Wired headphones give the best timing.</strong> Bluetooth headphones add a delay of
+      their own — often well over a tenth of a second — that the system reports only roughly and that Blitzfingers
+      cannot measure, because no sound leaks from them to the microphone. Your take can then land a little late.</p>
     <p class="note">The first time, the system asks for the microphone. If you said no, allow it again in
       Settings ▸ Blitzfingers ▸ Microphone.</p>
   </section>
@@ -1088,8 +1091,9 @@
 
     <h3>Recording a layer</h3>
     <ol class="steps">
-      <li><strong>Put on headphones</strong> — wired or Bluetooth. Without them Overdub is greyed out ("Headphones
-        required"): the microphone would record the loop from the speaker along with you.</li>
+      <li><strong>Put on headphones</strong> — wired ones if you can (see <a href="#overdub-timing">Timing &amp;
+        sync</a>), Bluetooth works too. Without them Overdub is greyed out ("Headphones required"): the microphone
+        would record the loop from the speaker along with you.</li>
       <li><strong>Wait a moment.</strong> The screen opens the microphone and measures the delay of your
         headphones by itself; Play shows "Measuring…" meanwhile.</li>
       <li><strong>Tap Record.</strong> A big 4 3 2 1 counts you in, and on <strong>Go</strong> the loop starts and
@@ -1115,12 +1119,14 @@
         soon as anything was overdubbed.</li>
     </ul>
 
-    <h3>Timing &amp; sync</h3>
+    <h3 id="overdub-timing">Timing &amp; sync</h3>
     <p>The measured delay is what keeps your layers in time. If one lands a hair early or late anyway, open
       <strong>Timing &amp; sync</strong>: the <strong>Sync</strong> slider moves the layers up to 80 ms either
       way, by ear. <strong>Recalibrate</strong> measures again — after you switch headphones, say. The status line
       says what was measured ("Calibrated · 42 ms round-trip"). Bluetooth headphones leak no sound to measure,
       so there the delay the system reports is used, and Sync is your fine-tuning.</p>
+    <p class="note"><strong>Wired headphones give the best timing.</strong> Their delay is measured exactly; a
+      Bluetooth headphone's delay is larger and only estimated, so layers recorded over Bluetooth may need Sync.</p>
 
     <h3>Keeping it</h3>
     <ul>
