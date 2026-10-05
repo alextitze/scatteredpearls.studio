@@ -77,6 +77,15 @@
     }
 
     .note { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; color: var(--text-soft); }
+    /* A small comparison table (recording with and without headphones): scrolls sideways on a phone rather than
+       squeezing its columns. */
+    .table-wrap { overflow-x: auto; margin: 0 0 1em; }
+    .table-wrap table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: .95em; }
+    .table-wrap th, .table-wrap td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+    .table-wrap thead th { color: var(--text); font-weight: 700; }
+    .table-wrap tbody th { color: var(--text); font-weight: 600; white-space: nowrap; }
+    .table-wrap td { color: var(--text-soft); }
+    .table-wrap .muted { color: var(--text-muted); font-weight: 400; font-size: .9em; }
 
     /* Figures: drawn diagrams (inline SVG, the site's tokens), not screenshots — they explain a flow or a
        layout and do not go stale when the sounds change. Numbered marks in a drawing are explained in
@@ -176,6 +185,9 @@
       <li><strong>Shape it:</strong> the pencil in the header turns on edit mode — tap the new pad to trim it,
         name it, colour it and add effects.</li>
     </ol>
+    <p class="note">The first time you open Blitzfingers, a short tour on the <strong>Intro</strong> bank walks you
+      through these steps — you do each one yourself, and the next one shows up. Skip it any time; Help ▸
+      <strong>Take the tour again</strong> brings it back.</p>
     <p class="note">Everything you change is kept as you change it — there is no Save. Your sounds stay on your
       device.</p>
   </section>
@@ -1032,9 +1044,11 @@
       <li><strong>It is exact.</strong> The take is cut to exactly the bars you set, starting on beat one — so
         every take at one tempo has the same length, to the sample. Takes recorded one after another layer as
         loops, and they <a href="#board">start on the beat</a> together.</li>
-      <li><strong>It is kept on time.</strong> Headphones add a delay between the click and your ear, and the
-        microphone adds one too. Blitzfingers measures it on the first take ("Measuring latency…") and cuts the
-        take where you really played, not where the click was sent.</li>
+      <li><strong>It is kept on time.</strong> The speaker or headphones add a delay between the click and your ear,
+        and the microphone adds one too. Blitzfingers allows for both and cuts the take where you really played, not
+        where the click was sent. Without headphones it measures the delay from the count-in itself — the mic hears
+        those clicks. With headphones it tries a short measurement first ("Measuring latency…"), and where nothing
+        reaches the mic it uses what it learnt from your last take without headphones.</li>
       <li><strong>The screen shows where you are:</strong> "Count-in", then "Bar 1 of 4", with a dot per beat.
         Stop during a take cancels it — nothing half-finished is kept.</li>
       <li><strong>It remembers.</strong> Metronome on or off, the tempo and the length stay set for the next take.
@@ -1043,21 +1057,36 @@
         still trim it, but then it no longer lines up bar for bar.</li>
     </ul>
 
-    <h3>With headphones, without, and over Bluetooth</h3>
+    <h3 id="recording-headphones">With headphones, without, and over Bluetooth</h3>
+    <p>How you listen decides what you can record in time:</p>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>No headphones<br><span class="muted">speaker and built-in mic</span></th>
+        <th>Wired headphones<br><span class="muted">or an audio interface</span></th><th>Bluetooth headphones</th></tr></thead>
+      <tbody>
+        <tr><th>Free recording<br><span class="muted">metronome off</span></th><td>yes</td><td>yes</td>
+          <td>yes — the built-in mic records, the headphones are just for listening</td></tr>
+        <tr><th>Metronome take</th><td>yes — the count-in clicks, then the beat only flashes</td>
+          <td>yes — the click runs throughout</td><td><strong>no</strong></td></tr>
+        <tr><th><a href="#overdub">Overdub</a></th><td>no — the mic would record the loop</td><td>yes</td>
+          <td><strong>no</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
     <ul>
       <li><strong>With headphones</strong> you hear the click on every beat — accented on beat one — through the
         count-in and the take.</li>
-      <li><strong>Without headphones</strong> the count-in clicks and the phone taps, and during the take the beat
-        only <strong>flashes</strong>. The microphone would otherwise hear the click (or the vibration), and it
-        would end up in your recording.</li>
+      <li><strong>Without headphones</strong> the count-in clicks (and the phone taps), and during the take the
+        beat only <strong>flashes</strong>. The microphone would otherwise hear the click, and it would end up in
+        your recording.</li>
       <li><strong>Unplugging headphones</strong> during a take stops it ("Headphones unplugged — take stopped").</li>
-      <li><strong>Bluetooth headphones</strong> work, with one difference: Blitzfingers records from the built-in
-        microphone, and the headphones stay just for listening. A headset's own microphone records in phone-call
-        quality and adds a delay its device under-reports.</li>
+      <li><strong>Bluetooth headphones</strong> are too late to record in time: they add a delay of their own —
+        often a third of a second — that the system reports only roughly and that changes with the headphones and
+        how they connect. Apple's own Logic Pro says the same: Bluetooth is for listening. So with Bluetooth
+        headphones the recorder shows <em>Metronome takes need wired headphones</em> in place of Start, and
+        <strong>Record without metronome</strong> switches to a free recording. Connecting Bluetooth headphones
+        during a metronome take stops it ("Bluetooth headphones — take stopped").</li>
     </ul>
-    <p class="note"><strong>Wired headphones give the best timing.</strong> Bluetooth headphones add a delay of
-      their own — often well over a tenth of a second — that the system reports only roughly and that Blitzfingers
-      cannot measure, because no sound leaks from them to the microphone. Your take can then land a little late.</p>
     <p class="note">The first time, the system asks for the microphone. If you said no, allow it again in
       Settings ▸ Blitzfingers ▸ Microphone.</p>
   </section>
@@ -1091,9 +1120,10 @@
 
     <h3>Recording a layer</h3>
     <ol class="steps">
-      <li><strong>Put on headphones</strong> — wired ones if you can (see <a href="#overdub-timing">Timing &amp;
-        sync</a>), Bluetooth works too. Without them Overdub is greyed out ("Headphones required"): the microphone
-        would record the loop from the speaker along with you.</li>
+      <li><strong>Put on wired headphones</strong> (or use an audio interface). Without headphones Overdub is greyed
+        out ("Headphones required"): the microphone would record the loop from the speaker along with you. With
+        Bluetooth headphones it is greyed out too ("Wired headphones required") — they are too late to record in
+        time (see <a href="#recording-headphones">above</a>).</li>
       <li><strong>Wait a moment.</strong> The screen opens the microphone and measures the delay of your
         headphones by itself; Play shows "Measuring…" meanwhile.</li>
       <li><strong>Tap Record.</strong> A big 4 3 2 1 counts you in, and on <strong>Go</strong> the loop starts and
@@ -1121,12 +1151,11 @@
 
     <h3 id="overdub-timing">Timing &amp; sync</h3>
     <p>The measured delay is what keeps your layers in time. If one lands a hair early or late anyway, open
-      <strong>Timing &amp; sync</strong>: the <strong>Sync</strong> slider moves the layers up to 80 ms either
-      way, by ear. <strong>Recalibrate</strong> measures again — after you switch headphones, say. The status line
-      says what was measured ("Calibrated · 42 ms round-trip"). Bluetooth headphones leak no sound to measure,
-      so there the delay the system reports is used, and Sync is your fine-tuning.</p>
-    <p class="note"><strong>Wired headphones give the best timing.</strong> Their delay is measured exactly; a
-      Bluetooth headphone's delay is larger and only estimated, so layers recorded over Bluetooth may need Sync.</p>
+      <strong>Timing &amp; sync</strong>: the <strong>Sync</strong> slider moves the layers up to 150 ms either
+      way, by ear, and is remembered for these headphones. <strong>Recalibrate</strong> measures again — after you
+      switch headphones, say. The status line says what was measured ("Calibrated · 42 ms round-trip"). Closed
+      headphones leak no sound to measure; then the delay the system reports is used, and Sync is your
+      fine-tuning.</p>
 
     <h3>Keeping it</h3>
     <ul>
@@ -1149,7 +1178,8 @@
     <ul>
       <li><strong>By cable:</strong> plug it in. Blitzfingers finds it by itself, also while the app is running.</li>
       <li><strong>Over Bluetooth:</strong> Settings ▸ <strong>MIDI</strong> ▸ the Bluetooth button at the top opens
-        the system's pairing screen; pick your device there.</li>
+        the system's pairing screen; pick your device there. On a Mac it opens <strong>Audio MIDI Setup</strong>:
+        Window ▸ Show MIDI Studio, then the Bluetooth button in its toolbar.</li>
       <li>The line under the title says what is connected — "Connected: DJ2GO2", or "No MIDI device found".
         Press anything on the controller and it shows what arrived ("last: noteon …"), so you can see that
         the device talks.</li>
@@ -1423,8 +1453,11 @@
     <ul>
       <li><strong>Bluetooth headphones and speakers</strong> add a delay of their own, often a fifth of a second
         or more. For playing live, wired headphones or the built-in speaker answer at once.</li>
-      <li>If every tap suddenly sounds late, close Blitzfingers completely (swipe it away in the app switcher)
-        and open it again.</li>
+      <li>If every tap suddenly sounds late — it can happen after headphones or an audio interface come or go —
+        press <strong>Reset audio</strong>: Settings ▸ Sound, or Help ▸ <em>Sound comes late?</em>, or on a Mac
+        Play ▸ Reset Audio. It rebuilds the sound engine in a moment; loops that were playing come back on the bar.
+        Blitzfingers also does this by itself whenever the output changes. If it is still late, close Blitzfingers
+        completely and open it again.</li>
     </ul>
     <h3>A Bluetooth MIDI controller does not show up</h3>
     <ul>
@@ -1435,8 +1468,8 @@
       <li>On a device with Screen Time limits, <em>Bluetooth Sharing</em> must be allowed.</li>
     </ul>
     <h3>Overdub is greyed out</h3>
-    <p>Overdub needs headphones, so the microphone does not record the loop from the speaker. Connect wired or
-      Bluetooth headphones and it becomes available.</p>
+    <p>Overdub needs wired headphones (or an audio interface), so the microphone does not record the loop from the
+      speaker. Bluetooth headphones are too late to record in time, so with them it stays greyed out too.</p>
     <h3>A purchase is missing on a new device</h3>
     <p>Settings ▸ the top row ▸ <strong>Restore purchase</strong>. It needs the same Apple ID as the purchase.</p>
     <h3>Still stuck — or missing something?</h3>
