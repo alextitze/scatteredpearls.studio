@@ -998,15 +998,25 @@
       <li><strong>Start recording</strong>, play or sing, and <strong>Stop recording</strong>. A timer runs while
         you record. (With the metronome on, the take stops by itself — see below.)</li>
       <li><strong>Check the take.</strong> Play it, switch on <strong>Loop</strong> to hear it repeat, and set the
-        cut: <strong>Auto-trim</strong> cuts the quiet start and end, <strong>Full length</strong> keeps all of
-        it, or drag the handles yourself — exactly as in <a href="#trim">Trim</a>. <strong>Normalize</strong>
-        (on by default) lifts the take to a good, even level; the preview already plays it that way.</li>
+        cut on the same waveform as in <a href="#trim">Trim</a>: <strong>Auto-trim</strong> cuts the quiet start
+        and end — on a free take it also leaves out the tap that stopped it — <strong>Full length</strong> keeps
+        all of it, or drag the handles yourself.</li>
       <li><strong>Name it and Save.</strong> New takes are numbered — Recording, Recording 2, Recording 3 — so
         they never share a name; type over it if you like, and Return saves. <strong>Discard</strong> throws the
         take away and goes back to listening.</li>
     </ol>
     <p>The trim is a setting, not a cut in the file — you can change it later in the pad's Trim. The pad
       remembers when it was recorded; its settings show the date.</p>
+
+    <h3 id="normalize">Normalize and Quiet pauses</h3>
+    <p>Two switches under the take, both on by default. The preview plays the take as it will be saved, and
+      switching one while it plays is heard at once.</p>
+    <ul>
+      <li><strong>Normalize</strong> lifts the take to a good, even level and shows by how much — "+6 dB". It
+        goes by what the take mostly holds, so one loud clap does not make your voice come out quieter.</li>
+      <li><strong>Quiet pauses</strong> turns the room's hiss between phrases down by 15 dB — not to silence, so
+        a pause never sounds like a hole. Your voice, its first syllable and its fading end stay as they are.</li>
+    </ul>
 
     <h3 id="metronome">Recording to a metronome</h3>
     <p>For loops that fit together, switch on the <strong>Metronome</strong> before you start, set the tempo with
@@ -1084,7 +1094,8 @@
         often a third of a second — that the system reports only roughly and that changes with the headphones and
         how they connect. Apple's own Logic Pro says the same: Bluetooth is for listening. So with Bluetooth
         headphones the recorder shows <em>Metronome takes need wired headphones</em> in place of Start, and
-        <strong>Record without metronome</strong> switches to a free recording. Connecting Bluetooth headphones
+        <strong>Record without metronome</strong> switches to a free recording; tempo and bars step aside
+        meanwhile. Connecting Bluetooth headphones
         during a metronome take stops it ("Bluetooth headphones — take stopped").</li>
     </ul>
     <p class="note">The first time, the system asks for the microphone. If you said no, allow it again in
