@@ -402,8 +402,9 @@
     <ul>
       <li><strong>Switch:</strong> tap the bank name in the header and pick a bank from the list.</li>
       <li><strong>Add:</strong> <strong>+ New bank</strong> in that list. It starts empty, ready for your sounds.</li>
-      <li><strong>Rename or delete:</strong> the pencil beside a bank. Deleting asks first, and takes the bank's
-        sounds with it. Your last bank stays — the board is never empty.</li>
+      <li><strong>Rename, set up or delete:</strong> the pencil beside a bank, or <strong>Settings ▸ This
+        bank</strong> for the one you are in. Deleting asks first, and takes the bank's sounds with it. Your last bank
+        stays — the board is never empty.</li>
     </ul>
     <p id="bundled-banks" class="anchor">Blitzfingers comes with two banks ready to play: <strong>Groove</strong> — a beat, three basslines, two
       pads and a scale to play on top, all at one tempo and in one key — and <strong>Party</strong>. They are
@@ -444,6 +445,14 @@
     </figure>
     <p><strong>Switching keeps the music going.</strong> A playing loop runs on while you change banks, so you can
       swap the pads under a groove without a gap; loops waiting for the next bar are cancelled.</p>
+    <h3 id="bank-settings">How a bank shows</h3>
+    <p>Each bank decides how it sits on the board. Open <strong>Settings ▸ This bank</strong> (or the pencil in the
+      bank list) and pick one under <strong>On the board</strong>: <strong>One-Shots, then Loops</strong> (the
+      usual), <strong>Loops, then One-Shots</strong>, <strong>One-Shots only</strong> or <strong>Loops only</strong>.
+      In landscape, the first one sits on the left; a single one gets the whole width.</p>
+    <p>Hiding a category only hides it: its sounds, their settings, MIDI controls and keys all stay, and showing it
+      again brings everything back as it was. Move a sound into a hidden category and Blitzfingers says so — with
+      <strong>Show</strong> to bring the category back. An exported bank keeps its choice.</p>
     <p class="note">Sounds belong to their bank. <a href="#midi">MIDI mappings</a> and keyboard keys belong to the
       grid position, so the same control plays position 3 in whichever bank is open. To back up or share a bank,
       see <a href="#sound">Sound &amp; levels ▸ Bank backup</a>.</p>
@@ -1231,6 +1240,9 @@
     <p class="note">Mappings belong to the <strong>grid position</strong>, not to the sound: the controller's
       third pad plays position 3 in whichever bank is open. Set them up once, on your fullest bank — they work
       in all of them.</p>
+
+    <p class="note">A category hidden in the open bank (<a href="#bank-settings">How a bank shows</a>) keeps its
+      MIDI controls — its pads still play, you just don't see them. The MIDI screen tells you when that is the case.</p>
 
     <h3 id="knob-mode">Knobs, faders and endless encoders: Abs and Rel</h3>
     <p>Controllers send a knob in one of two ways, and each mapping remembers which:</p>
