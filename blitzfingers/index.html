@@ -363,6 +363,13 @@
     .shot .cap { font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
     .footnote { margin: var(--sp-space-6) 0 0; text-align: center; font-size: var(--sp-text-sm); color: var(--text-muted); }
 
+    /* ── The guide, as a section of its own: its chapters as chips that jump straight in ── */
+    .chapters { display: grid; grid-template-columns: repeat(4, auto); justify-content: center; gap: var(--sp-space-2); margin: var(--sp-space-6) auto 0; padding: 0; list-style: none; }   /* always two rows of four */
+    @media (max-width: 359px) { .chapters { grid-template-columns: repeat(2, auto); } }
+    .chapters a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 var(--sp-space-4); border: 1px solid var(--border-strong); border-radius: 999px; color: var(--text); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold, 600); }
+    .chapters a:hover { border-color: var(--accent); }
+    .guide-cta { display: flex; justify-content: center; margin-top: var(--sp-space-6); }
+
     /* ── Price ───────────────────────────────────────────────────────────── */
     .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-space-5); margin-top: var(--sp-space-6); }
     .plan { display: flex; flex-direction: column; gap: var(--sp-space-3); background: rgba(255, 255, 255, .028); border: 1px solid var(--border); border-radius: var(--sp-radius-xl); padding: var(--sp-space-5); }
@@ -879,6 +886,28 @@
     </div>
 
     <p class="footnote">Android is a maybe, not a promise. · Placeholders — real captures come from the simulator before launch.</p>
+  </div>
+</section>
+
+<!-- ── The guide ────────────────────────────────────────────────────────── -->
+<section id="learn">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">The guide</span>
+      <h2>Learn it in ten minutes</h2>
+      <p class="lede">Every screen, explained — with pictures. Jump straight to the part you want, or read it top to bottom.</p>
+    </div>
+    <ul class="chapters">
+      <li><a href="guide/#board">The board</a></li>
+      <li><a href="guide/#banks">Banks</a></li>
+      <li><a href="guide/#trim">Trim</a></li>
+      <li><a href="guide/#effects">Effects</a></li>
+      <li><a href="guide/#recording">Recording</a></li>
+      <li><a href="guide/#overdub">Overdub</a></li>
+      <li><a href="guide/#midi">MIDI</a></li>
+      <li><a href="guide/#keyboard">Keyboard</a></li>
+    </ul>
+    <div class="guide-cta"><a class="btn btn-primary" href="guide/">Open the guide</a></div>
   </div>
 </section>
 
