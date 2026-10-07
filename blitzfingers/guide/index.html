@@ -415,16 +415,20 @@
       <strong>Reset to original</strong>. Sounds you added to a bundled bank go with it when you delete or reset it.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 250" role="img" aria-labelledby="figBanksT">
-        <title id="figBanksT">The bank list opened from the header: the current bank is marked, each bank has a pencil to rename or delete it, and New bank adds one. Picking another bank swaps the whole board, while a playing loop runs on.</title>
+        <title id="figBanksT">The bank list opened from the header: the current bank is marked, each bank has a pencil to rename, set up or delete it and a handle to move it, and New bank adds one. Picking another bank swaps the whole board, while a playing loop runs on.</title>
         <rect x="0" y="0" width="300" height="250" rx="16" style="fill: var(--surface-2)"/>
         <text x="20" y="30" font-size="13" font-weight="700" style="fill: var(--text)">Banks</text>
         <g font-size="13">
-          <rect x="14" y="44" width="272" height="40" rx="10" style="fill: rgba(224,180,85,.14); stroke: rgba(224,180,85,.5)"/>
-          <text x="30" y="69" font-weight="700" style="fill: var(--text)">Groove</text><text x="230" y="69" style="fill: #e0b455">✓</text>
-          <rect x="14" y="90" width="272" height="40" rx="10" style="fill: var(--surface-1)"/><text x="30" y="115" style="fill: var(--text)">Party</text>
-          <rect x="14" y="136" width="272" height="40" rx="10" style="fill: var(--surface-1)"/><text x="30" y="161" style="fill: var(--text)">My set</text>
-          <g style="fill: none; stroke: var(--text-soft)" stroke-width="1.8" stroke-linejoin="round"><path d="M256 122 l2-6 8-8 4 4 -8 8z"/><path d="M256 168 l2-6 8-8 4 4 -8 8z"/><path d="M256 76 l2-6 8-8 4 4 -8 8z"/></g>
-          <rect x="14" y="190" width="272" height="40" rx="10" style="fill: none; stroke: var(--border-strong)" stroke-dasharray="5 4"/><text x="150" y="215" text-anchor="middle" font-weight="700" style="fill: var(--accent)">+ New bank</text>
+          <!-- One grouped list (app, 2026-10-07): one frame, hairlines between rows, a frameless pencil, the handle at the right. -->
+          <rect x="14" y="44" width="272" height="138" rx="10" style="fill: var(--surface-1); stroke: var(--border-strong)"/>
+          <path d="M15 90 V54 a9 9 0 0 1 9 -9 H276 a9 9 0 0 1 9 9 V90 Z" style="fill: rgba(224,180,85,.14)"/>
+          <path d="M14 90 H286 M14 136 H286" style="stroke: var(--border)" stroke-width="1"/>
+          <text x="28" y="72" style="fill: #e0b455">✓</text><text x="48" y="72" font-weight="700" style="fill: var(--text)">Groove</text>
+          <text x="48" y="118" style="fill: var(--text)">Party</text>
+          <text x="48" y="164" style="fill: var(--text)">My set</text>
+          <g style="fill: none; stroke: var(--text-soft)" stroke-width="1.8" stroke-linejoin="round"><path d="M226 76 l2-6 8-8 4 4 -8 8z"/><path d="M226 122 l2-6 8-8 4 4 -8 8z"/><path d="M226 168 l2-6 8-8 4 4 -8 8z"/></g>
+          <g style="stroke: var(--text-soft)" stroke-width="1.8" stroke-linecap="round"><path d="M258 62 h14 M258 67 h14 M258 72 h14"/><path d="M258 108 h14 M258 113 h14 M258 118 h14"/><path d="M258 154 h14 M258 159 h14 M258 164 h14"/></g>
+          <rect x="14" y="194" width="272" height="40" rx="10" style="fill: none; stroke: var(--border-strong)" stroke-dasharray="5 4"/><text x="150" y="219" text-anchor="middle" font-weight="700" style="fill: var(--accent)">+ New bank</text>
         </g>
         <path d="M312 110 H346" style="stroke: var(--text-muted)" stroke-width="1.5"/><path d="M340 105 l6 5 -6 5" style="fill: none; stroke: var(--text-muted)" stroke-width="1.5"/>
         <rect x="356" y="0" width="284" height="250" rx="16" style="fill: var(--surface-1); stroke: var(--border)"/>
@@ -435,11 +439,11 @@
         <rect x="370" y="150" width="58" height="52" rx="12" style="fill: rgba(127,194,118,.22); stroke: rgb(var(--p-green))" stroke-width="2"/><text x="399" y="180" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Beat</text>
         <rect x="436" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="436" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-teal))"/><text x="465.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Bass 1</text><rect x="502" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="502" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-purple))"/><text x="531.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Pad</text><rect x="568" y="150" width="58" height="52" rx="12" style="fill: var(--surface-2)" /><rect x="568" y="197" width="58" height="5" rx="2.5" style="fill: rgb(var(--p-rose))"/><text x="597.0" y="180.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Topper</text>
         <text x="498" y="232" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">the board of the bank you picked</text>
-        <circle cx="286" cy="48" r="10" style="fill: var(--marker, var(--accent))"/><text x="286" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">1</text><circle cx="236" cy="96" r="10" style="fill: var(--marker, var(--accent))"/><text x="236" y="100" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">2</text><circle cx="286" cy="194" r="10" style="fill: var(--marker, var(--accent))"/><text x="286" y="198" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">3</text><circle cx="378" cy="150" r="10" style="fill: var(--marker, var(--accent))"/><text x="378" y="154" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">4</text>
+        <circle cx="286" cy="48" r="10" style="fill: var(--marker, var(--accent))"/><text x="286" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">1</text><circle cx="208" cy="98" r="10" style="fill: var(--marker, var(--accent))"/><text x="208" y="102" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">2</text><circle cx="286" cy="198" r="10" style="fill: var(--marker, var(--accent))"/><text x="286" y="202" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">3</text><circle cx="378" cy="150" r="10" style="fill: var(--marker, var(--accent))"/><text x="378" y="154" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">4</text>
       </svg>
       <ol class="keys">
         <li><b>1</b><span>The bank you are in.</span></li>
-        <li><b>2</b><span>The pencil — rename or delete a bank.</span></li>
+        <li><b>2</b><span>The pencil — rename, set up or delete a bank; drag the handle (≡) to move it.</span></li>
         <li><b>3</b><span>New bank — starts empty.</span></li>
         <li><b>4</b><span>A loop that was playing keeps playing when you switch.</span></li>
       </ol>
