@@ -182,8 +182,8 @@
       <li><strong>Record your own:</strong> tap an empty slot (<strong>+</strong>), choose
         <strong>Record…</strong>, switch on the <strong>Metronome</strong>, and tap Start. A big 4–3–2–1 counts
         you in; the take stops by itself and lands on the slot.</li>
-      <li><strong>Shape it:</strong> the pencil in the header turns on edit mode — tap the new pad to trim it,
-        name it, colour it and add effects.</li>
+      <li><strong>Shape it:</strong> <strong>Edit pads</strong> (the pencil in the header) turns on edit mode —
+        tap the new pad to trim it, name it, colour it and add effects. <strong>✓ Done</strong> ends it.</li>
     </ol>
     <p class="note">The first time you open Blitzfingers, a short tour on the <strong>Intro</strong> bank walks you
       through these steps — you do each one yourself, and the next one shows up. Skip it any time; Help ▸
@@ -200,16 +200,24 @@
       line under each section's name says how it behaves.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 430" role="img" aria-labelledby="figBoardT">
-        <title id="figBoardT">The board: a header with the bank, the Stop button, edit and settings; one-shots above, loops below.</title>
+        <title id="figBoardT">The board: a header with the bank tabs, Stop all, Edit pads and settings; one-shots above, loops below.</title>
         <!-- header -->
         <rect x="0" y="0" width="640" height="56" rx="14" style="fill: var(--surface-2)"/>
         <rect x="16" y="14" width="28" height="28" rx="8" style="fill: rgb(var(--p-coral))" opacity=".9"/>
-        <rect x="54" y="13" width="104" height="30" rx="15" style="fill: none; stroke: var(--border-strong)"/>
-        <text x="72" y="33" font-size="14" font-weight="700" style="fill: var(--text)">Groove ▾</text>
-        <rect x="436" y="13" width="84" height="30" rx="15" style="fill: rgba(255,255,255,.12)"/>
-        <rect x="448" y="22" width="12" height="12" rx="2.5" style="fill: #fff"/>
-        <text x="467" y="33" font-size="14" font-weight="600" style="fill: #fff">Stop</text>
-        <path d="M540 38 l3-9 11-11 6 6 -11 11z" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linejoin="round"/>
+        <!-- bank tabs, centred, ≡ for the list -->
+        <rect x="128" y="12" width="250" height="32" rx="16" style="fill: var(--surface-1); stroke: var(--border)"/>
+        <rect x="190" y="15" width="78" height="26" rx="13" style="fill: var(--accent-soft)"/>
+        <g font-size="13" font-weight="600" text-anchor="middle">
+          <text x="160" y="33" style="fill: var(--text-muted)">Intro</text>
+          <text x="229" y="33" style="fill: var(--text)">Groove</text>
+          <text x="302" y="33" style="fill: var(--text-muted)">Party</text>
+        </g>
+        <path d="M346 23 h14 M346 28 h14 M346 33 h14" style="stroke: var(--text-muted)" stroke-width="2" stroke-linecap="round"/>
+        <rect x="392" y="13" width="92" height="30" rx="15" style="fill: rgba(255,255,255,.12)"/>
+        <rect x="403" y="22" width="12" height="12" rx="2.5" style="fill: #fff"/>
+        <text x="422" y="33" font-size="13" font-weight="600" style="fill: #fff">Stop all</text>
+        <path d="M498 38 l3-9 11-11 6 6 -11 11z" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linejoin="round"/>
+        <text x="522" y="33" font-size="13" font-weight="600" style="fill: var(--text-soft)">Edit pads</text>
         <path d="M614.0 28.0 L610.4 31.1 L610.8 35.8 L606.1 35.4 L603.0 39.0 L599.9 35.4 L595.2 35.8 L595.6 31.1 L592.0 28.0 L595.6 24.9 L595.2 20.2 L599.9 20.6 L603.0 17.0 L606.1 20.6 L610.8 20.2 L610.4 24.9Z" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linejoin="round"/>
         <circle cx="603" cy="28" r="3.5" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/>
         <!-- one-shots -->
@@ -242,9 +250,9 @@
         </g>
         <!-- markers -->
         <g font-size="11" font-weight="700" text-anchor="middle">
-          <circle cx="106" cy="12" r="10" style="fill: var(--marker, var(--accent))"/><text x="106" y="16" style="fill: var(--on-marker, var(--on-accent))">1</text>
-          <circle cx="478" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="478" y="62" style="fill: var(--on-marker, var(--on-accent))">2</text>
-          <circle cx="548" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="548" y="62" style="fill: var(--on-marker, var(--on-accent))">3</text>
+          <circle cx="128" cy="12" r="10" style="fill: var(--marker, var(--accent))"/><text x="128" y="16" style="fill: var(--on-marker, var(--on-accent))">1</text>
+          <circle cx="438" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="438" y="62" style="fill: var(--on-marker, var(--on-accent))">2</text>
+          <circle cx="540" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="540" y="62" style="fill: var(--on-marker, var(--on-accent))">3</text>
           <circle cx="603" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="603" y="62" style="fill: var(--on-marker, var(--on-accent))">4</text>
           <circle cx="172" cy="170" r="10" style="fill: var(--marker, var(--accent))"/><text x="172" y="174" style="fill: var(--on-marker, var(--on-accent))">5</text>
           <circle cx="620" cy="104" r="10" style="fill: var(--marker, var(--accent))"/><text x="620" y="108" style="fill: var(--on-marker, var(--on-accent))">6</text>
@@ -254,9 +262,9 @@
         <text x="320" y="400" font-size="12" text-anchor="middle" style="fill: var(--text-muted)">The colour sits in each pad's lower edge, so you find a pad without reading it.</text>
       </svg>
       <ol class="keys">
-        <li><b>1</b><span>The bank — tap to switch, add or rename one.</span></li>
-        <li><b>2</b><span><strong>■ Stop</strong> — stops everything; appears while anything sounds.</span></li>
-        <li><b>3</b><span>The pencil — edit mode, to arrange and set up pads.</span></li>
+        <li><b>1</b><span>The banks — tap one to switch; <strong>≡</strong> lists them all, to add, rename, export or sort one. On a phone: the bank's name with ▾.</span></li>
+        <li><b>2</b><span><strong>■ Stop all</strong> — stops everything; lit while anything sounds.</span></li>
+        <li><b>3</b><span><strong>Edit pads</strong> — edit mode, to arrange and set up pads; <strong>✓ Done</strong> ends it.</span></li>
         <li><b>4</b><span>Settings — sound, appearance, MIDI, backup, the guide.</span></li>
         <li><b>5</b><span>A pad's marks — what each one means is just below.</span></li>
         <li><b>6</b><span>An empty slot — tap the + to add a sound there.</span></li>
@@ -264,9 +272,10 @@
         <li><b>8</b><span>A pin: this loop keeps playing when another starts.</span></li>
       </ol>
     </figure>
-    <p><strong>■ Stop</strong> (Stop all) keeps its place in the header: dimmed while nothing sounds, lit while anything
-      is sounding. It silences everything at once — loops, one-shots, and a loop still fading out. It cuts, it does not
-      fade. On a phone it is the square alone; on a larger screen it says Stop.</p>
+    <p><strong>■ Stop all</strong> keeps its place in the header: unlit while nothing sounds, lit while anything is
+      sounding. It silences everything at once — loops, one-shots, and a loop still fading out. It cuts, it does not
+      fade. On a phone and on an iPad held upright, Stop all and Edit pads are their icons alone; wider, they say their
+      names.</p>
 
     <h3 id="pad-marks">The marks on a pad</h3>
     <p>Small marks on a pad tell you how it behaves without opening it. They sit in a row along the bottom; the
@@ -310,11 +319,12 @@
     <p>Only one loop plays at a time. Start another and it takes over. A loop with a tempo — every loop of the
       banks that come with the app, or a take recorded to the metronome — switches right on the bar: the old one
       stops, the new one starts at full level, no overlap and no fade. A loop without a tempo (an imported song,
-      an atmosphere) crossfades instead: the old one fades out while the new one fades in, over two seconds
-      unless you change it (<a href="#sound">Sound &amp; levels</a>).</p>
+      an atmosphere, a take recorded without the metronome) starts and stops at once. Set a fade for these in
+      <a href="#sound">Sound &amp; levels</a> and they crossfade instead: the old one fades out while the new one
+      fades in.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 322" role="img" aria-labelledby="figTurnsT">
-        <title id="figTurnsT">Three timelines. With a tempo: the new loop takes over on the bar and the old one stops there, with no fade. Without a tempo: the old loop fades out while the new one fades in, over the fade time set in Settings, Sound. Keep playing: the first loop stays on and the second joins it.</title>
+        <title id="figTurnsT">Three timelines. With a tempo: the new loop takes over on the bar and the old one stops there, with no fade. Without a tempo and with a fade set in Settings, Sound: the old loop fades out while the new one fades in. Keep playing: the first loop stays on and the second joins it.</title>
         <defs>
           <linearGradient id="turnFadeOut" x1="0" x2="1" y1="0" y2="0"><stop offset=".758" stop-color="rgb(224,180,85)" stop-opacity=".85"/><stop offset="1" stop-color="rgb(224,180,85)" stop-opacity="0"/></linearGradient>
           <linearGradient id="turnFadeIn" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="rgb(168,148,230)" stop-opacity="0"/><stop offset=".205" stop-color="rgb(168,148,230)" stop-opacity=".85"/></linearGradient>
@@ -324,11 +334,11 @@
         <rect x="250" y="56" width="390" height="24" rx="6" fill="rgb(79,196,178)" opacity=".85"/><text x="260" y="73" font-size="12" font-weight="700" fill="#16131a">Bass</text>
         <line x1="250" y1="20" x2="250" y2="90" style="stroke: var(--accent)" stroke-width="2"/>
         <text x="258" y="102" font-size="11" style="fill: var(--text-soft)">Bass takes over on the bar — no overlap</text>
-        <text x="0" y="134" font-size="12" font-weight="700" style="fill: var(--text)">Without a tempo <tspan font-weight="400" style="fill: var(--text-soft)">— crossfade</tspan></text>
+        <text x="0" y="134" font-size="12" font-weight="700" style="fill: var(--text)">Without a tempo, with a fade <tspan font-weight="400" style="fill: var(--text-soft)">— crossfade</tspan></text>
         <rect x="0" y="144" width="330" height="24" rx="6" fill="url(#turnFadeOut)"/><text x="10" y="161" font-size="12" font-weight="700" fill="#16131a">Song</text>
         <rect x="250" y="174" width="390" height="24" rx="6" fill="url(#turnFadeIn)"/><text x="344" y="191" font-size="12" font-weight="700" fill="#16131a">Atmosphere</text>
         <path d="M250 208 H330 M250 203 V213 M330 203 V213" style="stroke: var(--text-soft)" stroke-width="1.5"/>
-        <text x="340" y="212" font-size="11" style="fill: var(--text-soft)">the fade · 2 s unless you change it</text>
+        <text x="340" y="212" font-size="11" style="fill: var(--text-soft)">the fade · none until you set one</text>
         <text x="0" y="228" font-size="11" style="fill: var(--text-muted)">crossfade — Settings ▸ Sound ▸ Fade for loops without a tempo</text>
         <text x="0" y="260" font-size="12" font-weight="700" style="fill: var(--text)">Keep playing</text>
         <rect x="0" y="270" width="640" height="24" rx="6" fill="rgb(127,194,118)" opacity=".85"/><text x="10" y="287" font-size="12" font-weight="700" fill="#16131a">Beat · pinned</text>
@@ -401,14 +411,19 @@
     <p>A bank is one board: up to sixteen one-shots and sixteen loops. Make as many as you like and keep sets
       apart — a drum kit, a party set, one board per song or per show.</p>
     <ul>
-      <li><strong>Switch:</strong> tap the bank name in the header and pick a bank from the list.</li>
-      <li><strong>Add:</strong> <strong>+ New bank</strong> in that list. It starts empty, ready for your sounds.</li>
+      <li><strong>Switch:</strong> on an iPad or a Mac, tap the bank's tab in the header. On a phone, tap the bank's
+        name and pick a bank from the list.</li>
+      <li><strong>Add:</strong> <strong>+ New bank</strong> in the bank list — <strong>≡</strong> at the end of the
+        tabs, or the bank's name on a phone. It starts empty, ready for your sounds.</li>
       <li><strong>Rename, set up or delete:</strong> the pencil beside a bank, or <strong>Settings ▸ This
         bank</strong> for the one you are in. Deleting asks first, and takes the bank's sounds with it. Your last bank
         stays — the board is never empty.</li>
+      <li><strong>Export:</strong> the pencil ▸ <strong>Export bank</strong> — that bank with its sounds and settings
+        as a <code>.zip</code>, to share or keep. All banks at once: <a href="#backup">Bank backup</a>.</li>
     </ul>
-    <p id="bundled-banks" class="anchor">Blitzfingers comes with two banks ready to play: <strong>Groove</strong> — a beat, three basslines, two
-      pads and a scale to play on top, all at one tempo and in one key — and <strong>Party</strong>. They are
+    <p id="bundled-banks" class="anchor">Blitzfingers comes with banks ready to play: <strong>Intro</strong>, which the first-run tour walks you
+      through; <strong>Groove</strong> — a beat, three basslines, two pads and a scale to play on top, all at one tempo
+      and in one key — and <strong>Party</strong>. They are
       ordinary banks: change them, rearrange them, delete them. Deleting one is safe:
       <strong>Settings → Bank backup → Restore bundled banks</strong> brings back the missing ones as they
       shipped, and leaves the others alone. To undo your changes to one, open its pencil and choose
@@ -1022,14 +1037,18 @@
     <p>The trim is a setting, not a cut in the file — you can change it later in the pad's Trim. The pad
       remembers when it was recorded; its settings show the date.</p>
 
-    <h3 id="normalize">Normalize and Quiet pauses</h3>
-    <p>Two switches under the take, both on by default. The preview plays the take as it will be saved, and
-      switching one while it plays is heard at once.</p>
+    <h3 id="normalize">Normalize and Reduce noise</h3>
+    <p>Two settings under the take, each on a row of its own. The preview plays the take as it will be saved, and
+      changing one while it plays is heard at once.</p>
     <ul>
-      <li><strong>Normalize</strong> lifts the take to a good, even level and shows by how much — "+6 dB". It
-        goes by what the take mostly holds, so one loud clap does not make your voice come out quieter.</li>
-      <li><strong>Quiet pauses</strong> turns the room's hiss between phrases down by 15 dB — not to silence, so
-        a pause never sounds like a hole. Your voice, its first syllable and its fading end stay as they are.</li>
+      <li><strong>Normalize</strong> (on by default) lifts the take to a good, even level and shows by how much —
+        "+6 dB". It goes by what the take mostly holds, so one loud clap does not make your voice come out
+        quieter.</li>
+      <li><strong>Reduce noise</strong> — <strong>Off</strong>, <strong>Light</strong>, <strong>Medium</strong> or
+        <strong>Strong</strong> — turns the microphone's hiss down, in the pauses and under the sound alike: a held
+        note keeps its tone, the hiss around it goes. Light is the default and changes the sound least; Strong takes
+        the most away and may start to sound watery on a very noisy take. The level you pick is kept for the next
+        take. It works before Normalize, so Normalize never lifts the hiss first.</li>
     </ul>
 
     <h3 id="metronome">Recording to a metronome</h3>
@@ -1221,8 +1240,8 @@
       </svg>
     </figure>
     <ol class="steps">
-      <li>In Settings ▸ <strong>MIDI</strong>, tap a pad on the small board. Its mapping card opens. (A pad's own
-        settings lead there too, under MIDI.)</li>
+      <li>In Settings ▸ <strong>MIDI</strong>, tap a pad on the small board — an empty slot too, ready for the
+        sounds of another bank. Its mapping card opens. (A pad's own settings lead there too, under MIDI.)</li>
       <li>Tap <strong>Learn</strong> on the row you want. It pulses, and the status line says "Listening… press a
         control".</li>
       <li>Hit the pad or move the knob on your controller. The row shows what it learned — "Note 36", "CC 7".
@@ -1245,6 +1264,13 @@
     <p class="note">Mappings belong to the <strong>grid position</strong>, not to the sound: the controller's
       third pad plays position 3 in whichever bank is open. Set them up once, on your fullest bank — they work
       in all of them.</p>
+    <p id="two-controllers" class="anchor"><strong>Two controllers at once.</strong> Connect two — even two of the
+      same model, on the same channel — and map one to the one-shots and the other to the loops: sixteen pads each
+      make one whole bank. Blitzfingers knows which controller you pressed, so the same pad on each plays its own
+      sound; nothing needs setting on the controllers. Under a learned control the row shows the controller's name,
+      numbered when two share one ("STARRYPAD MINI" <strong>1</strong> and <strong>2</strong>). A mapping made before
+      you connected the second one answers both and says <strong>any device</strong> — learn it again to tie it to
+      one.</p>
 
     <p class="note">A category hidden in the open bank (<a href="#bank-settings">How a bank shows</a>) keeps its
       MIDI controls — its pads still play, you just don't see them. The MIDI screen tells you when that is the case.</p>
@@ -1385,7 +1411,7 @@
       <ol class="keys">
         <li><b>1</b><span><strong>Overall one-shots volume</strong> — all the one-shots together.</span></li>
         <li><b>2</b><span><strong>Overall loops volume</strong> — all the loops together.</span></li>
-        <li><b>3</b><span><strong>Fade for loops without a tempo</strong> — 0 to 5 s; 0 is a cut.</span></li>
+        <li><b>3</b><span><strong>Fade for loops without a tempo</strong> — 0 to 5 s; 0, the default, is a cut.</span></li>
         <li><b>4</b><span><strong>Normalize loudness</strong> — every pad at a similar level.</span></li>
       </ol>
     </figure>
@@ -1394,21 +1420,26 @@
       <li><strong>Overall one-shots volume</strong> and <strong>overall loops volume</strong> — balance the two
         sections against each other: loops under the hits, or the other way round.</li>
       <li><strong>Fade for loops without a tempo</strong> — how long such a loop (an imported song, an
-        atmosphere) takes to fade in, out and into the next, 0 to 5 seconds; 0 is a hard cut. Loops with a tempo
-        start, switch and stop on the bar without a fade.</li>
+        atmosphere, a take recorded without the metronome) takes to fade in, out and into the next, 0 to 5 seconds;
+        0, the default, is a hard cut. Loops with a tempo start, switch and stop on the bar without a fade.</li>
       <li><strong>Normalize loudness</strong> — plays every sound at a similar level, so a quiet recording and a
         loud sample sit together. The files stay as they are; switch it off to hear them as recorded. With it off,
         a pad below full volume shows a thin bar at its top.</li>
+      <li><strong>Reset audio</strong> — when the sound lags behind your taps (see
+        <a href="#troubleshooting-late">The sound comes late</a>).</li>
     </ul>
     <p>Each pad also has its own volume, in its Playback settings. The section volumes stay open after the trial —
       balancing a room is playing, not building.</p>
 
     <h3 id="backup">Bank backup</h3>
-    <p>Settings ▸ <strong>Bank backup</strong> exports the bank you are in as one file — its sounds, every pad's
-      settings, the layout and the dates the takes were made. Keep it, or send it to someone with Blitzfingers.
-      <strong>Import</strong> adds a saved bank next to your others; nothing is overwritten. MIDI mappings and app
-      settings are not part of a bank and stay as they are. Exporting always works, also after the trial — your
-      sounds are yours.</p>
+    <p>Settings ▸ <strong>Bank backup</strong> ▸ <strong>Export all banks</strong> saves every bank in one
+      <code>.zip</code>, one folder each — its sounds, every pad's settings, the layout and the dates the takes were
+      made. Keep it as a backup, or take it to another device. To share a single bank, open its pencil in the bank
+      list and choose <strong>Export bank</strong>.</p>
+    <p><strong>Import</strong> takes either — one bank or a whole backup — and adds the banks next to your others;
+      nothing is overwritten. A bank whose name is taken gets a number: a second <strong>Groove</strong> comes in as
+      <strong>Groove (2)</strong>. MIDI mappings and app settings are not part of a bank and stay as they are.
+      Export all banks always works, also after the trial — your sounds are yours.</p>
   </section>
 
   <section id="appearance">
@@ -1479,15 +1510,15 @@
         loops, and each pad has its own in its Playback settings.</li>
       <li>With headphones or a speaker connected, the sound goes there — check where Control Centre sends it.</li>
     </ul>
-    <h3>The sound comes late</h3>
+    <h3 id="troubleshooting-late">The sound comes late</h3>
     <ul>
       <li><strong>Bluetooth headphones and speakers</strong> add a delay of their own, often a fifth of a second
         or more. For playing live, wired headphones or the built-in speaker answer at once.</li>
       <li>If every tap suddenly sounds late — it can happen after headphones or an audio interface come or go —
-        press <strong>Reset audio</strong>: Settings ▸ Sound, or Help ▸ <em>Sound comes late?</em>, or on a Mac
-        Play ▸ Reset Audio. It rebuilds the sound engine in a moment; loops that were playing come back on the bar.
-        Blitzfingers also does this by itself whenever the output changes. If it is still late, close Blitzfingers
-        completely and open it again.</li>
+        press <strong>Reset audio</strong>: Settings ▸ Sound, or on a Mac Play ▸ Reset Audio. It rebuilds the sound
+        engine in a moment; loops that were playing come back on the bar. Blitzfingers also does this by itself
+        whenever the output changes. If it is still late, close Blitzfingers completely and open it again — on a Mac,
+        View ▸ Reload Page (⌘R) is worth a try first.</li>
     </ul>
     <h3>A Bluetooth MIDI controller does not show up</h3>
     <ul>
