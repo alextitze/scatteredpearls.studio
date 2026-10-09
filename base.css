@@ -11,6 +11,10 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
    root stays 16px. Brand fonts are preserved: only the SIZE comes from the system here —
    body/components set their own font-family, which descendants inherit. */
 :root { font: -apple-system-body; }
+/* …but on the Mac it is a fixed 13px (macOS has no Dynamic Type), and a rem scale drawn for 16–17px read a fifth too
+   small there (maker, 2026-10-09). A mouse or trackpad as the main pointer is a desktop: 16px, the web default. An
+   iPad with a trackpad keeps a coarse main pointer, so it keeps Dynamic Type. */
+@media (pointer: fine) { :root { font-size: 16px; } }
 
 /* No grey tap flash — apps provide their own :active press state instead. */
 * { -webkit-tap-highlight-color: transparent; }
