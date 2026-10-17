@@ -1442,10 +1442,76 @@
     </ul>
     <p>Choose it in Settings ▸ MIDI ▸ <strong>First touch</strong>; it applies to every mapping.</p>
 
+    <h3 id="midi-out">MIDI out — pads that play other things</h3>
+    <p>A pad can also <strong>send</strong> MIDI when you play it. MIDI is a set of simple commands — "note 36 on",
+      "control 7 to 127", "program 5" — and what the receiver does with one is its own business. So a pad can:</p>
+    <ul>
+      <li><strong>Play a synth or a drum machine</strong> — the pad's note plays on the hardware, with or without the
+        pad's own sound.</li>
+      <li><strong>Switch the lights</strong> — lighting software and many light desks start a scene or an effect on a
+        MIDI note.</li>
+      <li><strong>Start a video or a scene</strong> — VJ and show software (Resolume, VDMX, QLab, ProPresenter; OBS
+        with a plugin) take MIDI notes as cues.</li>
+    </ul>
+    <figure class="fig">
+      <svg viewBox="0 0 640 300" role="img" aria-labelledby="figMidiOutT">
+        <title id="figMidiOutT">A pad's MIDI out screen: Send — Off, Note, CC, Program, with Note chosen; Channel 10, Note 36 · C2, Velocity 100; a Test button; and the switch Play the pad's sound, on.</title>
+        <rect x="0" y="0" width="420" height="300" rx="16" style="fill: var(--surface-2)"/>
+        <text x="210" y="32" font-size="14" font-weight="700" text-anchor="middle" style="fill: var(--text)">MIDI out</text>
+        <rect x="20" y="52" width="380" height="36" rx="10" style="fill: var(--surface-1); stroke: var(--border-strong)"/>
+        <rect x="115" y="52" width="95" height="36" style="fill: var(--accent)"/>
+        <g font-size="12" font-weight="600" text-anchor="middle">
+          <text x="67" y="75" style="fill: var(--text-soft)">Off</text><text x="162" y="75" style="fill: var(--on-accent)">Note</text>
+          <text x="257" y="75" style="fill: var(--text-soft)">CC</text><text x="352" y="75" style="fill: var(--text-soft)">Program</text>
+        </g>
+        <g font-size="12">
+          <text x="20" y="116" style="fill: var(--text-soft)">Channel</text><text x="150" y="116" style="fill: var(--text-soft)">Note <tspan style="fill: var(--text-muted)">C2</tspan></text><text x="280" y="116" style="fill: var(--text-soft)">Velocity</text>
+          <rect x="20" y="124" width="110" height="34" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="32" y="146" style="fill: var(--text)">10</text>
+          <rect x="150" y="124" width="110" height="34" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="162" y="146" style="fill: var(--text)">36</text>
+          <rect x="280" y="124" width="120" height="34" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="292" y="146" style="fill: var(--text)">100</text>
+          <rect x="20" y="172" width="80" height="36" rx="8" style="fill: none; stroke: var(--border-strong)"/><text x="60" y="195" text-anchor="middle" style="fill: var(--text)">Test</text>
+          <rect x="20" y="232" width="44" height="26" rx="13" style="fill: var(--accent)"/><circle cx="51" cy="245" r="10" style="fill: #fff"/>
+          <text x="76" y="244" font-weight="600" style="fill: var(--text)">Play the pad's sound</text>
+          <text x="76" y="262" font-size="11" style="fill: var(--text-muted)">Off: the pad only sends MIDI.</text>
+        </g>
+        <g font-size="11" font-weight="700" text-anchor="middle">
+          <circle cx="410" cy="70" r="10" style="fill: var(--marker, var(--accent))"/><text x="410" y="74" style="fill: var(--on-marker, var(--on-accent))">1</text>
+          <circle cx="410" cy="141" r="10" style="fill: var(--marker, var(--accent))"/><text x="410" y="145" style="fill: var(--on-marker, var(--on-accent))">2</text>
+          <circle cx="110" cy="190" r="10" style="fill: var(--marker, var(--accent))"/><text x="110" y="194" style="fill: var(--on-marker, var(--on-accent))">3</text>
+          <circle cx="10" cy="245" r="10" style="fill: var(--marker, var(--accent))"/><text x="10" y="249" style="fill: var(--on-marker, var(--on-accent))">4</text>
+        </g>
+        <g font-size="12">
+          <text x="448" y="60" font-weight="700" style="fill: var(--text)">On the board</text>
+          <rect x="448" y="74" width="120" height="96" rx="16" style="fill: var(--surface-2)"/><rect x="448" y="164" width="120" height="6" rx="3" style="fill: rgb(var(--p-coral))"/>
+          <text x="508" y="120" text-anchor="middle" font-weight="600" style="fill: var(--text)">Kick</text>
+          <rect x="458" y="142" width="20" height="16" rx="4" style="fill: none; stroke: var(--text-muted)"/><text x="468" y="154" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">→</text>
+          <text x="448" y="196" font-size="11" style="fill: var(--text-soft)">→ the pad sends MIDI</text>
+        </g>
+      </svg>
+      <ol class="keys">
+        <li><b>1</b><span><strong>Send</strong> — a note (most synths, lights and video software), a controller (CC: effects, dimmers, switches) or a program change (another preset or scene).</span></li>
+        <li><b>2</b><span>The <strong>channel</strong> (1–16), the <strong>number</strong> — for a note with its name, C4 = 60 — and how hard: the velocity, or a CC's value.</span></li>
+        <li><b>3</b><span><strong>Test</strong> — sends it once, without playing the pad.</span></li>
+        <li><b>4</b><span><strong>Play the pad's sound</strong> — on by default. Off, the pad is a silent remote that still lights and sends.</span></li>
+      </ol>
+    </figure>
+    <ul>
+      <li><strong>When:</strong> a one-shot sends as you hit it and releases the note as you let go. A loop sends when it
+        really starts — on the bar, if it waited — and releases when it stops; a loop taking over in its group releases
+        the old note first. Every way of playing counts: a tap, the keyboard, a controller.</li>
+      <li><strong>Where:</strong> Settings ▸ MIDI ▸ <strong>Pads send to</strong> — all outputs, or one device. A device
+        that is unplugged gets nothing until it is back.</li>
+      <li><strong>Over the Wi-Fi:</strong> switch on <strong>Network (Wi-Fi)</strong> there, and a Mac on the same
+        network sees the iPhone or iPad in Audio MIDI Setup ▸ MIDI Network Setup — no cable to the software you drive.</li>
+      <li><strong>Nothing hangs:</strong> Stop all — and another app taking the audio — releases every note still on.</li>
+      <li>A first note is set for you by the pad's place: one-shots from C2 = 36 upward, the drum range most drum
+        machines answer to; loops from E3 = 52.</li>
+    </ul>
+
     <h3>While you edit, and after the trial</h3>
     <p>In edit mode the pads ignore MIDI triggers, so a stray hit does not play while you arrange; Stop all and the
-      section volumes keep working. After the trial, mappings keep playing — only learning and changing them waits
-      for the unlock.</p>
+      section volumes keep working. After the trial, mappings and MIDI out keep playing — only learning and changing
+      them waits for the unlock.</p>
   </section>
 
   <section id="keyboard">
