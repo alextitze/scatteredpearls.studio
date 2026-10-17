@@ -14,8 +14,8 @@ body {
   margin: 0;
   min-height: 100svh;
   background:
-    radial-gradient(70vw 62vh at 86% 8%, var(--sp-ground-rose) 0%, rgba(138, 47, 86, 0) 62%),
-    radial-gradient(68vw 58vh at 10% 92%, var(--sp-ground-warm) 0%, rgba(154, 68, 51, 0) 60%),
+    radial-gradient(70vw 62vh at 86% 8%, var(--sp-ground-rose) 0%, transparent 62%),
+    radial-gradient(68vw 58vh at 10% 92%, var(--sp-ground-warm) 0%, transparent 60%),
     var(--sp-ground);
   background-attachment: fixed;
   color: var(--sp-on-ground);
@@ -32,12 +32,12 @@ body {
   min-height: 100svh;
   max-width: 1120px;
   margin: 0 auto;
-  padding: var(--sp-space-5) var(--sp-space-5) var(--sp-space-6);
+  padding: var(--sp-space-4) var(--sp-space-5) var(--sp-space-6);   /* top: the header sits where it does on the app pages (app-nav.css) */
   padding-left: max(var(--sp-space-5), env(safe-area-inset-left));
   padding-right: max(var(--sp-space-5), env(safe-area-inset-right));
 }
 
-:focus-visible { outline: 3px solid rgba(255, 201, 141, .9); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 3px solid rgba(232, 196, 138, .9); outline-offset: 3px; border-radius: 6px; }
 
 .site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); }
 .brand { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--sp-on-ground); }
@@ -45,8 +45,7 @@ body {
 .brand span { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
 
 /* One link per app for now; becomes an "Apps" entry once there is a second. */
-.site-nav a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--sp-on-ground); text-decoration: none; font-size: var(--sp-text-md); font-weight: var(--sp-weight-semibold); text-shadow: 0 1px 14px rgba(38, 12, 30, .75); }
-.site-nav a img { width: 26px; height: 26px; display: block; filter: drop-shadow(0 3px 8px rgba(28, 6, 20, .35)); }
+.site-nav a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--sp-on-ground); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); text-shadow: 0 1px 14px rgba(21, 15, 25, .75); }
 .site-nav a:hover span { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 
 main { flex-grow: 1; display: flex; flex-direction: column; gap: var(--sp-space-5); }
@@ -61,11 +60,11 @@ h1 { margin: 0; font-family: var(--sp-font-display); font-weight: var(--sp-weigh
   background: var(--sp-card); color: var(--sp-card-ink);
   border-radius: var(--sp-radius-xl);
   padding: var(--sp-space-6);
-  box-shadow: 0 24px 54px rgba(28, 6, 20, .44);
+  box-shadow: 0 24px 54px rgba(8, 5, 11, .44);
 }
 .sheet > * { max-width: 68ch; }
-.sheet a { color: var(--sp-ground-rose); }
-.sheet a:hover { color: var(--sp-ground); }
+.sheet a { color: var(--sp-card-link); }
+.sheet a:hover { color: var(--sp-card-ink); }
 .updated { margin: 0 0 var(--sp-space-4); font-size: var(--sp-text-sm); color: var(--sp-card-muted); }
 
 .sheet section { padding-block: var(--sp-space-5); border-top: 1px solid rgba(42, 36, 32, .14); }

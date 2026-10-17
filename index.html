@@ -8,7 +8,7 @@
   <meta name="description" content="A tiny studio for lean, ad-free apps that are yours to keep. No accounts, no subscriptions, no tracking. First app: Blitzfingers, a soundboard.">
   <link rel="canonical" href="https://scatteredpearls.studio/">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#46203a">
+  <meta name="theme-color" content="#150f19">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Scattered Pearls">
@@ -45,8 +45,8 @@
       position: relative;
       overflow-x: hidden;
       background:
-        radial-gradient(70vw 62vh at 86% 8%, var(--sp-ground-rose) 0%, rgba(138, 47, 86, 0) 62%),
-        radial-gradient(68vw 58vh at 10% 92%, var(--sp-ground-warm) 0%, rgba(154, 68, 51, 0) 60%),
+        radial-gradient(70vw 62vh at 86% 8%, var(--sp-ground-rose) 0%, transparent 62%),
+        radial-gradient(68vw 58vh at 10% 92%, var(--sp-ground-warm) 0%, transparent 60%),
         var(--sp-ground);
       background-attachment: fixed;
       color: var(--sp-on-ground);
@@ -60,6 +60,7 @@
        Each pearl is one element. --s is its diameter; the highlight, the
        nacre sheen, the core shadow and the cast shadow all scale from it, so
        a pearl stays a pearl at any size. */
+    /* The pearls stay below the header band, so its link is never set over one (maker, 2026-10-17). */
     .pearls { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
 
     .pearl {
@@ -75,10 +76,10 @@
         radial-gradient(circle at 36% 30%, #fffefb 0%, #f6f0e6 32%, #e3d8c9 64%, #b7a693 100%);
       box-shadow:
         inset calc(var(--s) * -0.034) calc(var(--s) * -0.040) calc(var(--s) * 0.087) rgba(88, 62, 52, .30),
-        0 calc(var(--s) * 0.063) calc(var(--s) * 0.127) rgba(28, 6, 20, .48);
+        0 calc(var(--s) * 0.063) calc(var(--s) * 0.127) rgba(8, 5, 11, .48);
     }
 
-    .p1 { --s: clamp(300px, 47vw, 640px); right: -13%; top: -13%;  animation: sp-drift-1 19s cubic-bezier(.45,.05,.55,.95) infinite; }
+    .p1 { --s: clamp(300px, 47vw, 640px); right: -13%; top: 112px; animation: sp-drift-1 19s cubic-bezier(.45,.05,.55,.95) infinite; }
     .p2 { --s: clamp(190px, 31vw, 440px); right:  1%;  top:  31%;  animation: sp-drift-2 24s cubic-bezier(.45,.05,.55,.95) infinite; filter: blur(8px); }
     .p3 { --s: clamp(130px, 19vw, 275px); right: 23%;  top:  65%;  animation: sp-drift-3 31s cubic-bezier(.45,.05,.55,.95) infinite; filter: blur(5px); }
     .p4 { --s: clamp(88px,  11vw, 158px); left:  51%;  top:   7%;  animation: sp-drift-2 24s cubic-bezier(.45,.05,.55,.95) infinite; filter: blur(4px); }
@@ -91,7 +92,7 @@
     /* Seats the text on the colour without flattening it. */
     .scrim {
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(100deg, rgba(38, 12, 30, .48) 0%, rgba(38, 12, 30, .26) 46%, rgba(38, 12, 30, .04) 100%);
+      background: linear-gradient(100deg, rgba(21, 15, 25, .48) 0%, rgba(21, 15, 25, .26) 46%, rgba(21, 15, 25, .04) 100%);
     }
 
     /* ── Layout ── */
@@ -102,20 +103,19 @@
       min-height: 100svh;
       max-width: 1120px;
       margin: 0 auto;
-      padding: var(--sp-space-5) var(--sp-space-5) var(--sp-space-6);
+      padding: var(--sp-space-4) var(--sp-space-5) var(--sp-space-6);   /* top: the header sits where it does on the app pages (app-nav.css) */
       padding-left: max(var(--sp-space-5), env(safe-area-inset-left));
       padding-right: max(var(--sp-space-5), env(safe-area-inset-right));
     }
 
-    :focus-visible { outline: 3px solid rgba(255, 201, 141, .9); outline-offset: 3px; border-radius: 6px; }
+    :focus-visible { outline: 3px solid rgba(232, 196, 138, .9); outline-offset: 3px; border-radius: 6px; }
 
     .site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); }
     .brand { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--sp-on-ground); }
     .brand img { width: 36px; height: 36px; display: block; }
     .brand span { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
-    /* One link per app for now; becomes an "Apps" entry once there is a second. */
-    .site-nav a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--sp-on-ground); text-decoration: none; font-size: var(--sp-text-md); font-weight: var(--sp-weight-semibold); text-shadow: 0 1px 14px rgba(38, 12, 30, .75); }
-    .site-nav a img { width: 26px; height: 26px; display: block; filter: drop-shadow(0 3px 8px rgba(28, 6, 20, .35)); }
+    /* One link per app for now, as text — the app's tile shows once, on its card (maker, 2026-10-17); becomes an "Apps" entry once there is a second. */
+    .site-nav a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--sp-on-ground); text-decoration: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); text-shadow: 0 1px 14px rgba(21, 15, 25, .75); }
     .site-nav a:hover span { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 
     .hero { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--sp-space-5); max-width: 62ch; }
@@ -145,14 +145,14 @@
       background: var(--sp-card); color: var(--sp-card-ink);
       border-radius: var(--sp-radius-xl);
       padding: var(--sp-space-5);
-      box-shadow: 0 24px 54px rgba(28, 6, 20, .44);
+      box-shadow: 0 24px 54px rgba(8, 5, 11, .44);
     }
 
     /* Live app link */
     .app { text-decoration: none; transition: transform var(--sp-dur-base) var(--sp-ease), box-shadow var(--sp-dur-base) var(--sp-ease); }
-    .app:hover { transform: translateY(-2px); box-shadow: 0 32px 64px rgba(28, 6, 20, .52); }
+    .app:hover { transform: translateY(-2px); box-shadow: 0 32px 64px rgba(8, 5, 11, .52); }
     .app .icon { flex: 0 0 auto; width: 56px; height: 56px; }
-    .app .icon img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 14px rgba(28, 6, 20, .32)); }
+    .app .icon img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 14px rgba(8, 5, 11, .32)); }
     .app .meta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
     .app .name { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-xl); letter-spacing: -0.02em; }
     .app .desc { font-size: var(--sp-text-md); color: var(--sp-card-ink-2); }
@@ -185,12 +185,12 @@
       .brand img { width: 32px; height: 32px; }
       .brand span { font-size: var(--sp-text-md); }
 
-      .p1 { --s: 320px; right: -33%; top: -15%; }
+      .p1 { --s: 320px; right: -33%; top: 84px; }
       .p2 { --s: 150px; left: -14%; right: auto; top: 8%; }
       .p3 { --s: 210px; right: -22%; top: auto; bottom: 4%; }
       .p4, .p5 { display: none; }
 
-      .scrim { background: linear-gradient(180deg, rgba(38, 12, 30, .30) 0%, rgba(38, 12, 30, .14) 38%, rgba(38, 12, 30, .34) 100%); }
+      .scrim { background: linear-gradient(180deg, rgba(21, 15, 25, .30) 0%, rgba(21, 15, 25, .14) 38%, rgba(21, 15, 25, .34) 100%); }
 
       .soon, .app { flex-wrap: wrap; gap: var(--sp-space-4); padding: var(--sp-space-4); border-radius: var(--sp-radius-lg); }
       .soon .tag, .app .tag { margin-left: 0; }
@@ -221,7 +221,7 @@
         <img src="studio-tile.svg" alt="" width="36" height="36">
         <span>Scattered Pearls</span>
       </a>
-      <nav class="site-nav" aria-label="Apps"><a href="/blitzfingers/"><img src="blitzfingers-icon.svg" alt="" width="26" height="26"><span>Blitzfingers</span></a></nav>
+      <nav class="site-nav" aria-label="Apps"><a href="/blitzfingers/"><span>Blitzfingers</span></a></nav>
     </header>
 
     <main class="hero">

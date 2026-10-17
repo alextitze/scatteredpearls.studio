@@ -33,6 +33,8 @@ section[id], [id].anchor { scroll-margin-top: calc(var(--head-h) + 16px); }
 .site-head .home img { width: 36px; height: 36px; display: block; }
 .site-head .home span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
 .site-head .home:hover { color: var(--text); }
+/* On a phone the studio pages show the mark at 32 px with text-md — the same here, so it does not jump between them. */
+@media (max-width: 720px) { .site-head .home img { width: 32px; height: 32px; } .site-head .home span { font-size: var(--sp-text-md); } }
 
 /* The menu: the landing page's sections as anchors, plus the guide, which is its own page (hence
    the arrow). Inline on wide screens; below 860px the same links fold into a "Menu" disclosure. The
