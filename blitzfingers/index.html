@@ -182,6 +182,8 @@
     }
     .pad .chip { position: absolute; left: 8px; bottom: 9px; display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 15px; border-radius: 5px; background: var(--key-bg); color: var(--text-soft); font-weight: var(--sp-weight-bold); letter-spacing: .06em; padding-inline: 5px; font-size: 9px; line-height: 1; }
     .pad .chip.glyph { font-size: 13px; letter-spacing: 0; }
+    /* A group, as in the app: a round letter in the top-left corner. */
+    .pad .chip.grp { top: 8px; bottom: auto; min-width: 0; width: 17px; height: 17px; padding: 0; border-radius: 50%; letter-spacing: 0; }
 
     /* ── Hero ──────────────────────────────────────────────────────────────
        One screen tall, with the board last: on a normal viewport the fold cuts
@@ -555,15 +557,15 @@
           <span class="note">your bed — a groove, a drone, a backing</span>
         </div>
         <ul class="row">
-          <li class="pad lit" style="--c: var(--p-teal);  --cs: 31, 132, 119;">Bass</li>
-          <li class="pad lit" style="--c: var(--p-amber); --cs: 143, 100, 18;">Drone<span class="chip glyph"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg></span></li>
-          <li class="pad"     style="--c: var(--p-rose);">Chord</li>
+          <li class="pad lit" style="--c: var(--p-teal);  --cs: 31, 132, 119;">Bass<span class="chip grp">A</span></li>
+          <li class="pad lit" style="--c: var(--p-amber); --cs: 143, 100, 18;">Drone</li>
+          <li class="pad"     style="--c: var(--p-rose);">Chord<span class="chip grp">A</span></li>
           <li class="pad"     style="--c: var(--p-purple);">Air</li>
         </ul>
         <ul class="rules">
           <li style="--c: var(--p-teal);"><span class="dot"></span><span>Tap it and it runs, and keeps running.</span></li>
-          <li style="--c: var(--p-rose);"><span class="dot"></span><span><strong>One at a time</strong> — tap another and it takes over, right on the bar, so the groove never stumbles.</span></li>
-          <li style="--c: var(--p-amber);"><span class="dot"></span><span>Set one to <strong>keep playing</strong> and it stays on under the next. That is the pin above.</span></li>
+          <li style="--c: var(--p-rose);"><span class="dot"></span><span><strong>Groups take turns</strong> — tap another loop with the same letter and it takes over, right on the bar, so the groove never stumbles.</span></li>
+          <li style="--c: var(--p-amber);"><span class="dot"></span><span>A loop <strong>without a letter</strong> stays on under the rest — the Drone above. One-shots can share a letter too: then they cut each other off, as a closed hat cuts the open one.</span></li>
           <li style="--c: var(--p-purple);"><span class="dot"></span><span>Recorded to the metronome, the next loop <strong>waits for the bar</strong> — tap a little late and it still lands in time.</span></li>
         </ul>
       </div>
