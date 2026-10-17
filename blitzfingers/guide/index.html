@@ -175,8 +175,8 @@
     <ol class="steps">
       <li><strong>Tap a one-shot</strong> in the top section. It plays at once, and you can tap the next while
         it still sounds — drum on them.</li>
-      <li><strong>Tap a loop</strong> in the bottom section. It runs until you stop it. Tap another loop and it
-        takes over; tap the playing one to stop it.</li>
+      <li><strong>Tap a loop</strong> in the bottom section. It runs until you stop it. Tap another loop of the
+        same <a href="#groups">group</a> and it takes over; tap the playing one to stop it.</li>
       <li><strong>Stop everything</strong> with the square in the header — it lights up while something sounds
         (on a keyboard: Space or Esc).</li>
       <li><strong>Record your own:</strong> tap an empty slot (<strong>+</strong>), choose
@@ -237,16 +237,17 @@
         </g>
         <!-- loops -->
         <text x="16" y="244" font-size="11" font-weight="700" letter-spacing="2" style="fill: var(--text-soft)">LOOPS</text>
-        <text x="70" y="244" font-size="11" style="fill: var(--text-muted)">one at a time or keep playing</text>
+        <text x="70" y="244" font-size="11" style="fill: var(--text-muted)">groups take over, the rest play on</text>
         <g font-size="13" font-weight="600" text-anchor="middle">
           <rect x="16" y="256" width="140" height="104" rx="16" style="fill: rgba(127,194,118,.22); stroke: rgb(var(--p-green))" stroke-width="2"/><rect x="16" y="354" width="140" height="6" rx="3" style="fill: rgb(var(--p-green))"/><text x="86" y="312" style="fill: var(--text)">Beat</text>
           <rect x="172" y="256" width="140" height="104" rx="16" style="fill: var(--surface-2)"/><rect x="172" y="354" width="140" height="6" rx="3" style="fill: rgb(var(--p-teal))"/><text x="242" y="312" style="fill: var(--text)">Bass</text>
           <rect x="328" y="256" width="140" height="104" rx="16" style="fill: var(--surface-2)"/><rect x="328" y="354" width="140" height="6" rx="3" style="fill: rgb(var(--p-purple))"/><text x="398" y="312" style="fill: var(--text)">Pad</text>
           <rect x="484" y="256" width="140" height="104" rx="16" style="fill: var(--surface-2)"/><rect x="484" y="354" width="140" height="6" rx="3" style="fill: rgb(var(--p-rose))"/><text x="554" y="312" style="fill: var(--text)">Chords</text>
         </g>
-        <!-- pin on the pad loop -->
-        <g transform="translate(440 266)" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 1 h8 M8 1 v6 l-3 4 h10 l-3-4 v-6 M10 11 v8"/>
+        <!-- group letters on the beat and bass loops -->
+        <g font-size="10" font-weight="700" text-anchor="middle">
+          <rect x="124" y="330" width="18" height="16" rx="4" style="fill: none; stroke: var(--text-muted)"/><text x="133" y="342" style="fill: var(--text-soft)">A</text>
+          <rect x="280" y="330" width="18" height="16" rx="4" style="fill: none; stroke: var(--text-muted)"/><text x="289" y="342" style="fill: var(--text-soft)">B</text>
         </g>
         <!-- markers -->
         <g font-size="11" font-weight="700" text-anchor="middle">
@@ -257,7 +258,7 @@
           <circle cx="172" cy="170" r="10" style="fill: var(--marker, var(--accent))"/><text x="172" y="174" style="fill: var(--on-marker, var(--on-accent))">5</text>
           <circle cx="620" cy="104" r="10" style="fill: var(--marker, var(--accent))"/><text x="620" y="108" style="fill: var(--on-marker, var(--on-accent))">6</text>
           <circle cx="16" cy="256" r="10" style="fill: var(--marker, var(--accent))"/><text x="16" y="260" style="fill: var(--on-marker, var(--on-accent))">7</text>
-          <circle cx="468" cy="256" r="10" style="fill: var(--marker, var(--accent))"/><text x="468" y="260" style="fill: var(--on-marker, var(--on-accent))">8</text>
+          <circle cx="312" cy="326" r="10" style="fill: var(--marker, var(--accent))"/><text x="312" y="330" style="fill: var(--on-marker, var(--on-accent))">8</text>
         </g>
         <text x="320" y="400" font-size="12" text-anchor="middle" style="fill: var(--text-muted)">The colour sits in each pad's lower edge, so you find a pad without reading it.</text>
       </svg>
@@ -269,7 +270,7 @@
         <li><b>5</b><span>A pad's marks — what each one means is just below.</span></li>
         <li><b>6</b><span>An empty slot — tap the + to add a sound there.</span></li>
         <li><b>7</b><span>A playing loop glows in its colour.</span></li>
-        <li><b>8</b><span>A pin: this loop keeps playing when another starts.</span></li>
+        <li><b>8</b><span>A letter: the loop's <a href="#groups">group</a>. Loops of one group take over from each other; a loop with no letter keeps playing.</span></li>
       </ol>
     </figure>
     <p><strong>■ Stop all</strong> keeps its place in the header: unlit while nothing sounds, lit while anything is
@@ -282,7 +283,7 @@
       keyboard key sits in the corner on the right.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 210" role="img" aria-labelledby="figMarksT">
-        <title id="figMarksT">One large pad with every mark it can show: a volume bar at the top, and along the bottom a MIDI mark, a finger, a restart symbol, FX, a pin, a reverse arrow and plus two; the keyboard key in the bottom right corner.</title>
+        <title id="figMarksT">One large pad with every mark it can show: a volume bar at the top, and along the bottom a MIDI mark, a finger, a restart symbol, FX, a group letter, a reverse arrow and plus two; the keyboard key in the bottom right corner.</title>
         <rect x="150" y="10" width="340" height="190" rx="26" style="fill: var(--surface-2)"/>
         <rect x="150" y="192" width="340" height="8" rx="4" style="fill: rgb(var(--p-teal))"/>
         <rect x="190" y="26" width="260" height="5" rx="2.5" style="fill: rgba(255,255,255,.12)"/><rect x="190" y="26" width="170" height="5" rx="2.5" style="fill: var(--text-soft)"/>
@@ -292,7 +293,7 @@
           <g transform="translate(212 152)"><rect width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><g transform="translate(6 3) scale(.67)" style="fill: none; stroke: var(--text-soft)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></g></g>
           <g transform="translate(246 152)"><rect width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><g transform="translate(6 3) scale(.67)" style="fill: none; stroke: var(--text-soft)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" x2="5" y1="19" y2="5"/></g></g>
           <rect x="280" y="152" width="30" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="295" y="167">FX</text>
-          <g transform="translate(316 152)"><rect width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><g transform="translate(6 3) scale(.67)" style="fill: none; stroke: var(--text-soft)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></g></g>
+          <rect x="316" y="152" width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="330" y="167">A</text>
           <rect x="350" y="152" width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="364" y="168" font-size="13">←</text>
           <rect x="384" y="152" width="30" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="399" y="167">+2</text>
           <rect x="446" y="152" width="28" height="22" rx="5" style="fill: none; stroke: var(--text-soft)"/><text x="460" y="167">Q</text>
@@ -306,7 +307,7 @@
         <li><b>2</b><span>A finger — <strong>hold to repeat</strong>: plays while held (one-shots).</span></li>
         <li><b>3</b><span>⏮ — <strong>restart on tap</strong>: a new tap starts it over (one-shots).</span></li>
         <li><b>4</b><span><strong>FX</strong> — effects are on. It blinks while you turn a mapped effect knob.</span></li>
-        <li><b>5</b><span>A pin — <strong>keep playing</strong>: stays on when another loop starts (loops).</span></li>
+        <li><b>5</b><span>A letter — the pad's <strong><a href="#groups">group</a></strong>: pads with the same letter take over from each other.</span></li>
         <li><b>6</b><span>← — plays in <strong>reverse</strong>.</span></li>
         <li><b>7</b><span><strong>+2</strong> — more marks than fit on a small pad; nothing is lost.</span></li>
         <li><b>8</b><span>The <strong>key</strong> that plays it — shown once a keyboard is used.</span></li>
@@ -315,43 +316,135 @@
       <figcaption>Every mark can be hidden in Settings ▸ Appearance, one by one or all at once; in edit mode they
         make room for the name.</figcaption>
     </figure>
-    <h3>Loops take turns</h3>
-    <p>Only one loop plays at a time. Start another and it takes over. A loop with a tempo — every loop of the
-      banks that come with the app, or a take recorded to the metronome — switches right on the bar: the old one
-      stops, the new one starts at full level, no overlap and no fade. A loop without a tempo (an imported song,
-      an atmosphere, a take recorded without the metronome) starts and stops at once. Set a fade for these in
+    <h3 id="groups">Groups — what takes over from what</h3>
+    <p>Every pad can be in a <strong>group</strong>: A, B, C or D — or in none. Pads in the same group take over
+      from each other: start one, and the one of its group still sounding stops. Pads in another group, or in
+      none, are left alone. That is the whole rule; what it is good for depends on the section.</p>
+    <ul>
+      <li><strong>Swap a beat, keep the bass.</strong> Beat 1 and Beat 2 in group A, the basslines in group B:
+        tap Beat 2 and it replaces Beat 1 on the bar, while the bass plays on.</li>
+      <li><strong>Song parts.</strong> Four basslines in one group are four parts of a song — tap the next and it
+        comes in on the bar, the last one goes.</li>
+      <li><strong>Layers.</strong> Strings, a pad, a vocal in no group stay on whatever else you start, until you tap
+        them again.</li>
+      <li><strong>A real hi-hat.</strong> Closed and open hat in one group: the closed hat cuts the open one short,
+        as on a drum machine.</li>
+      <li><strong>A mono synth.</strong> Bass notes in one group: each new note ends the last, so two never blur
+        into each other.</li>
+    </ul>
+    <figure class="fig">
+      <svg viewBox="0 0 640 250" role="img" aria-labelledby="figGroupLoopsT">
+        <title id="figGroupLoopsT">Four bars. Beat 1 in group A plays bars 1 and 2; Beat 2, also in group A, is tapped in bar 2 and takes over on bar 3. Bass 1 in group B plays all four bars, untouched. Hats, in no group, join in bar 2 and play on.</title>
+        <g font-size="11" style="fill: var(--text-muted)">
+          <text x="128" y="16">bar 1</text><text x="256" y="16">bar 2</text><text x="384" y="16">bar 3</text><text x="512" y="16">bar 4</text>
+        </g>
+        <g style="stroke: var(--border-strong)" stroke-width="1">
+          <line x1="120" y1="24" x2="120" y2="206"/><line x1="248" y1="24" x2="248" y2="206"/><line x1="376" y1="24" x2="376" y2="206"/><line x1="504" y1="24" x2="504" y2="206"/><line x1="632" y1="24" x2="632" y2="206"/>
+        </g>
+        <g font-size="12" font-weight="700">
+          <text x="0" y="48" style="fill: var(--text)">Beat 1 <tspan font-weight="400" style="fill: var(--text-soft)">· A</tspan></text>
+          <text x="0" y="88" style="fill: var(--text)">Beat 2 <tspan font-weight="400" style="fill: var(--text-soft)">· A</tspan></text>
+          <text x="0" y="138" style="fill: var(--text)">Bass 1 <tspan font-weight="400" style="fill: var(--text-soft)">· B</tspan></text>
+          <text x="0" y="188" style="fill: var(--text)">Hats <tspan font-weight="400" style="fill: var(--text-soft)">· none</tspan></text>
+        </g>
+        <rect x="120" y="32" width="256" height="24" rx="6" fill="rgb(232,120,104)" opacity=".85"/>
+        <rect x="376" y="72" width="256" height="24" rx="6" fill="rgb(232,120,104)" opacity=".85"/>
+        <rect x="334" y="72" width="40" height="24" rx="6" style="fill: none; stroke: rgb(232,120,104)" stroke-dasharray="4 3"/>
+        <line x1="334" y1="64" x2="334" y2="104" style="stroke: var(--accent)" stroke-width="2"/><circle cx="334" cy="106" r="4" style="fill: var(--accent)"/>
+        <text x="326" y="120" font-size="11" text-anchor="end" style="fill: var(--text-soft)">tap Beat 2</text>
+        <rect x="120" y="122" width="512" height="24" rx="6" fill="rgb(120,150,232)" opacity=".85"/>
+        <text x="130" y="139" font-size="11" font-weight="700" fill="#16131a">plays on — another group</text>
+        <rect x="248" y="172" width="384" height="24" rx="6" fill="rgb(127,194,118)" opacity=".85"/>
+        <text x="258" y="189" font-size="11" font-weight="700" fill="#16131a">plays on — in no group</text>
+        <line x1="376" y1="24" x2="376" y2="210" style="stroke: var(--accent)" stroke-width="2"/>
+        <text x="376" y="232" font-size="12" font-weight="700" text-anchor="middle" style="fill: var(--text)">Beat 2 takes over from Beat 1 on the bar</text>
+      </svg>
+      <figcaption>Only Beat 1 gives way: it is the one in Beat 2's group. The bass, in group B, and the hats, in no
+        group, do not notice.</figcaption>
+    </figure>
+    <figure class="fig">
+      <svg viewBox="0 0 640 200" role="img" aria-labelledby="figGroupShotsT">
+        <title id="figGroupShotsT">Two one-shot examples. Top: an open hat rings out; a closed hat in the same group is tapped and the open hat stops right there. Bottom: bass note A1 rings; bass note E2, same group, is tapped and A1 stops while E2 rings.</title>
+        <text x="0" y="16" font-size="12" font-weight="700" style="fill: var(--text)">Closed hat cuts the open hat <tspan font-weight="400" style="fill: var(--text-soft)">— both in group A</tspan></text>
+        <path d="M20 30 L30 64 L620 64 Z" fill="rgb(127,194,118)" opacity=".25"/>
+        <path d="M20 30 L30 64 L250 64 L250 52 Z" fill="rgb(127,194,118)" opacity=".85"/>
+        <text x="40" y="58" font-size="11" font-weight="700" fill="#16131a">Open hat</text>
+        <path d="M250 30 L256 64 L300 64 Z" fill="rgb(79,196,178)" opacity=".9"/>
+        <line x1="250" y1="24" x2="250" y2="80" style="stroke: var(--accent)" stroke-width="2"/>
+        <text x="258" y="94" font-size="11" style="fill: var(--text-soft)">Closed hat — the open hat stops here; faint: what it would have rung</text>
+        <text x="0" y="124" font-size="12" font-weight="700" style="fill: var(--text)">Bass notes play like a mono synth <tspan font-weight="400" style="fill: var(--text-soft)">— both in group B</tspan></text>
+        <path d="M20 138 L26 172 L420 172 Z" fill="rgb(120,150,232)" opacity=".25"/>
+        <path d="M20 138 L26 172 L200 172 L200 154 Z" fill="rgb(120,150,232)" opacity=".85"/>
+        <text x="34" y="166" font-size="11" font-weight="700" fill="#16131a">Bass A1</text>
+        <path d="M200 138 L206 172 L600 172 Z" fill="rgb(120,150,232)" opacity=".85"/>
+        <text x="214" y="166" font-size="11" font-weight="700" fill="#16131a">Bass E2</text>
+        <line x1="200" y1="132" x2="200" y2="188" style="stroke: var(--accent)" stroke-width="2"/>
+      </svg>
+      <figcaption>A one-shot cuts at once, with a few milliseconds' fade so it does not click — its own last hit
+        too. Pads in no group overlap, as before.</figcaption>
+    </figure>
+    <figure class="fig">
+      <svg viewBox="0 0 640 120" role="img" aria-labelledby="figGroupSetT">
+        <title id="figGroupSetT">The Group setting in a pad's Playback settings: five buttons, None, A, B, C and D, with B selected, and a line below saying what it does.</title>
+        <text x="80" y="18" font-size="12" font-weight="700" letter-spacing="1" style="fill: var(--text-soft)">GROUP</text>
+        <rect x="80" y="28" width="480" height="40" rx="10" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
+        <rect x="272" y="28" width="96" height="40" style="fill: var(--accent)"/>
+        <g style="stroke: var(--border-strong)"><line x1="176" y1="28" x2="176" y2="68"/><line x1="272" y1="28" x2="272" y2="68"/><line x1="368" y1="28" x2="368" y2="68"/><line x1="464" y1="28" x2="464" y2="68"/></g>
+        <g font-size="14" font-weight="600" text-anchor="middle">
+          <text x="128" y="53" style="fill: var(--text-soft)">None</text><text x="224" y="53" style="fill: var(--text-soft)">A</text>
+          <text x="320" y="53" style="fill: var(--on-accent)">B</text><text x="416" y="53" style="fill: var(--text-soft)">C</text><text x="512" y="53" style="fill: var(--text-soft)">D</text>
+        </g>
+        <text x="80" y="92" font-size="12" style="fill: var(--text-muted)">Loops in group B take over from each other, on the bar; the others play on.</text>
+      </svg>
+      <figcaption>In edit mode, tap a pad ▸ <strong>Playback</strong> ▸ <strong>Group</strong>. The line below says
+        what the choice does for this pad.</figcaption>
+    </figure>
+    <ul>
+      <li><strong>Loops:</strong> a new loop starts in group A — so, as before, one plays at a time until you
+        give some another group or none. Tap a playing loop to stop it; Stop all stops every one.</li>
+      <li><strong>One-shots:</strong> a new one-shot is in no group — they overlap, as drums should, until you put
+        some together. With a group, <strong>restart on tap</strong> is not needed (a group cuts the pad's own last
+        hit too), so the switch steps aside.</li>
+      <li><strong>Two separate sets:</strong> group A among the loops has nothing to do with group A among the
+        one-shots. Moving a sound to the other section leaves its group behind.</li>
+      <li><strong>Groove</strong> shows it off: Beat 1 and 2 are group A, the four basslines B, the three
+        arpeggios C; among the one-shots the two hi-hats are A and the two bass notes B.</li>
+    </ul>
+
+    <h3>Taking over: on the bar, or with a fade</h3>
+    <p>How a loop takes over depends on whether it knows its tempo. A loop with a tempo — every loop of the banks
+      that come with the app, or a take recorded to the metronome — switches right on the bar: the old one stops,
+      the new one starts at full level, no overlap and no fade. A loop without a tempo (an imported song, an
+      atmosphere, a take recorded without the metronome) starts and stops at once. Set a fade for these in
       <a href="#sound">Sound &amp; levels</a> and they crossfade instead: the old one fades out while the new one
       fades in.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 322" role="img" aria-labelledby="figTurnsT">
-        <title id="figTurnsT">Three timelines. With a tempo: the new loop takes over on the bar and the old one stops there, with no fade. Without a tempo and with a fade set in Settings, Sound: the old loop fades out while the new one fades in. Keep playing: the first loop stays on and the second joins it.</title>
+        <title id="figTurnsT">Three timelines. With a tempo: the new loop of the group takes over on the bar and the old one stops there, with no fade. Without a tempo and with a fade set in Settings, Sound: the old loop fades out while the new one fades in. In another group or none: the first loop stays on and the second joins it.</title>
         <defs>
           <linearGradient id="turnFadeOut" x1="0" x2="1" y1="0" y2="0"><stop offset=".758" stop-color="rgb(224,180,85)" stop-opacity=".85"/><stop offset="1" stop-color="rgb(224,180,85)" stop-opacity="0"/></linearGradient>
           <linearGradient id="turnFadeIn" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="rgb(168,148,230)" stop-opacity="0"/><stop offset=".205" stop-color="rgb(168,148,230)" stop-opacity=".85"/></linearGradient>
         </defs>
-        <text x="0" y="16" font-size="12" font-weight="700" style="fill: var(--text)">With a tempo <tspan font-weight="400" style="fill: var(--text-soft)">— on the bar, no fade</tspan></text>
-        <rect x="0" y="26" width="250" height="24" rx="6" fill="rgb(127,194,118)" opacity=".85"/><text x="10" y="43" font-size="12" font-weight="700" fill="#16131a">Beat</text>
-        <rect x="250" y="56" width="390" height="24" rx="6" fill="rgb(79,196,178)" opacity=".85"/><text x="260" y="73" font-size="12" font-weight="700" fill="#16131a">Bass</text>
+        <text x="0" y="16" font-size="12" font-weight="700" style="fill: var(--text)">Same group, with a tempo <tspan font-weight="400" style="fill: var(--text-soft)">— on the bar, no fade</tspan></text>
+        <rect x="0" y="26" width="250" height="24" rx="6" fill="rgb(120,150,232)" opacity=".85"/><text x="10" y="43" font-size="12" font-weight="700" fill="#16131a">Bass 1 · B</text>
+        <rect x="250" y="56" width="390" height="24" rx="6" fill="rgb(120,150,232)" opacity=".85"/><text x="260" y="73" font-size="12" font-weight="700" fill="#16131a">Bass 2 · B</text>
         <line x1="250" y1="20" x2="250" y2="90" style="stroke: var(--accent)" stroke-width="2"/>
-        <text x="258" y="102" font-size="11" style="fill: var(--text-soft)">Bass takes over on the bar — no overlap</text>
-        <text x="0" y="134" font-size="12" font-weight="700" style="fill: var(--text)">Without a tempo, with a fade <tspan font-weight="400" style="fill: var(--text-soft)">— crossfade</tspan></text>
+        <text x="258" y="102" font-size="11" style="fill: var(--text-soft)">Bass 2 takes over on the bar — no overlap</text>
+        <text x="0" y="134" font-size="12" font-weight="700" style="fill: var(--text)">Same group, without a tempo, with a fade <tspan font-weight="400" style="fill: var(--text-soft)">— crossfade</tspan></text>
         <rect x="0" y="144" width="330" height="24" rx="6" fill="url(#turnFadeOut)"/><text x="10" y="161" font-size="12" font-weight="700" fill="#16131a">Song</text>
         <rect x="250" y="174" width="390" height="24" rx="6" fill="url(#turnFadeIn)"/><text x="344" y="191" font-size="12" font-weight="700" fill="#16131a">Atmosphere</text>
         <path d="M250 208 H330 M250 203 V213 M330 203 V213" style="stroke: var(--text-soft)" stroke-width="1.5"/>
         <text x="340" y="212" font-size="11" style="fill: var(--text-soft)">the fade · none until you set one</text>
         <text x="0" y="228" font-size="11" style="fill: var(--text-muted)">crossfade — Settings ▸ Sound ▸ Fade for loops without a tempo</text>
-        <text x="0" y="260" font-size="12" font-weight="700" style="fill: var(--text)">Keep playing</text>
-        <rect x="0" y="270" width="640" height="24" rx="6" fill="rgb(127,194,118)" opacity=".85"/><text x="10" y="287" font-size="12" font-weight="700" fill="#16131a">Beat · pinned</text>
-        <rect x="250" y="298" width="390" height="24" rx="6" fill="rgb(79,196,178)" opacity=".85"/><text x="260" y="315" font-size="12" font-weight="700" fill="#16131a">Bass</text>
+        <text x="0" y="260" font-size="12" font-weight="700" style="fill: var(--text)">Another group, or none</text>
+        <rect x="0" y="270" width="640" height="24" rx="6" fill="rgb(127,194,118)" opacity=".85"/><text x="10" y="287" font-size="12" font-weight="700" fill="#16131a">Strings · none</text>
+        <rect x="250" y="298" width="390" height="24" rx="6" fill="rgb(120,150,232)" opacity=".85"/><text x="260" y="315" font-size="12" font-weight="700" fill="#16131a">Bass 1 · B</text>
         <line x1="250" y1="264" x2="250" y2="322" style="stroke: var(--accent)" stroke-width="2"/>
       </svg>
-      <figcaption>A loop with a tempo takes over right on the bar; one without a tempo crossfades, over the time set in
-        Settings ▸ Sound (two seconds unless you change it). A loop set to <strong>keep playing</strong> stays on,
-        and the next one joins it.</figcaption>
+      <figcaption>Within a group, a loop with a tempo takes over right on the bar; one without a tempo crossfades,
+        over the time set in Settings ▸ Sound (two seconds unless you change it). A loop in another group, or in
+        none, stays on, and the next one joins it.</figcaption>
     </figure>
-    <p>A loop set to <strong>keep playing</strong> steps out of that: it stays on when you start another one,
-      so you can layer a beat, a bass line and a pad. It stops when you tap it again, or with Stop all. The pad
-      shows a <strong>pin</strong>.</p>
 
     <h3>Loops start on the beat</h3>
     <p>When a loop recorded to the metronome is playing, a loop you tap does not start that instant — it
@@ -380,7 +473,7 @@
         <text x="380" y="156" font-size="12" text-anchor="middle" style="fill: var(--text-soft)">takes over on the bar</text>
       </svg>
       <figcaption>Tapped a little late in bar 2, the second loop waits — its pad pulses — and starts exactly on
-        bar 3, where it takes over — no overlap. With <strong>keep playing</strong> it would layer on bar 3 instead.</figcaption>
+        bar 3, where it takes over from the loop of its group — no overlap. In another group, or none, it would layer on bar 3 instead.</figcaption>
     </figure>
     <ul>
       <li><strong>Only a known tempo is waited for.</strong> A take recorded to the metronome knows its tempo,
@@ -388,7 +481,7 @@
         starts at once and crossfades in.</li>
       <li><strong>While it waits</strong> its pad pulses (VoiceOver says so, too). Tap it again to cancel;
         Stop all and switching banks cancel as well.</li>
-      <li><strong>Switching</strong> happens on that bar, without a fade; <strong>keep playing</strong> loops layer on it.</li>
+      <li><strong>Switching</strong> within a group happens on that bar, without a fade; loops of other groups, or none, layer on it.</li>
       <li><strong>Nothing playing?</strong> A loop starts at once. <strong>Stopping</strong> is always
         immediate — and if you stop the loop the others were lining up to, a waiting one starts at once.</li>
       <li>Speed changes are followed: the bar moves with the loop.</li>
@@ -398,7 +491,7 @@
     <p>A one-shot can be set to <strong>hold to repeat</strong>: it repeats while your finger is down and stops
       when you let go — the pad shows a finger. Or to <strong>restart on tap</strong>: a new tap stops the
       one still sounding and starts it over, so a longer sound — a word, a jingle — never piles up on itself.
-      The pad shows ⏮. Both, and keep playing, are in the pad's <strong>Playback</strong> settings.</p>
+      The pad shows ⏮. Both, and the <a href="#groups">group</a>, are in the pad's <strong>Playback</strong> settings.</p>
 
     <h3>Performance Mode</h3>
     <p>Turn the phone sideways and the board goes edge to edge: no header, nothing but pads. Turning into it
@@ -534,7 +627,7 @@
         room while you hold it over them, and an empty slot lights up to take it; a full section (16 pads) does
         not. Or use <strong>Move pad to …</strong> at the bottom of the pad's settings, which puts it in the first
         free slot.</li>
-      <li>What only makes sense in one section — hold, restart on tap, keep playing — is dropped on the way, and
+      <li>What only makes sense in one section — hold, restart on tap, the group — is dropped on the way, and
         the message that says so has an <strong>Undo</strong>.</li>
     </ul>
 
@@ -543,7 +636,7 @@
       came from — "Recorded on 1 Oct 2026, 14:20 · 120 BPM · 4 bars". Below, one row per area:</p>
     <ul>
       <li><strong>Playback</strong> — the pad's volume, and its switches: <strong>hold to repeat</strong> and
-        <strong>restart on tap</strong> for one-shots, <strong>keep playing</strong> for loops. The volume goes past
+        <strong>restart on tap</strong> for one-shots, and the <a href="#groups"><strong>group</strong></a> for both. The volume goes past
         100 % (the sound as it is) up to 150 %, so a quiet sound can be lifted; it never distorts.
         <strong>Match level</strong> sets the volume for you, so the sound sits as loud as the drums.</li>
       <li><a href="#trim"><strong>Trim</strong></a> — where it starts and ends.</li>
@@ -1468,7 +1561,7 @@
         them.</li>
       <li><strong>On the pads — Symbols,</strong> one switch for all <a href="#pad-marks">marks</a>, or each on its
         own: <strong>MIDI</strong>, <strong>Keyboard shortcuts</strong> (on a device with a keyboard), and
-        <strong>Playback &amp; effects</strong> — hold, restart, keep playing, FX, reverse.</li>
+        <strong>Playback &amp; effects</strong> — hold, restart, group, FX, reverse.</li>
       <li><strong>On the board — Category explanations,</strong> the small line under "One-shots" and "Loops".</li>
     </ul>
     <p>When a small pad has more marks than fit, the last ones fold into <strong>+2</strong> (or however many) —
