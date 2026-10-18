@@ -53,6 +53,7 @@
        these names. Renaming one breaks an in-app link that is already shipped, so treat them as an
        interface rather than as markup. */
     section { scroll-margin-top: calc(var(--head-h) + 16px); padding-block: 26px; border-top: 1px solid var(--border); }
+    h2[id], h3[id] { scroll-margin-top: calc(var(--head-h) + 16px); }   /* a sub-heading anchor (#midi-out, #groups…) clears the sticky header too */
     section h2 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 10px; }
     section h3 { font-size: 1rem; margin: 18px 0 4px; }
     ul { padding-left: 1.1rem; }
