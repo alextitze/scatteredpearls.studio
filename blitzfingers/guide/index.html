@@ -643,8 +643,9 @@
       <li><a href="#effects"><strong>Effects</strong></a> — the rack, with what is on in the row's badge.</li>
       <li><a href="#transform"><strong>Shape &amp; Transform</strong></a> — speed, pitch and reverse.</li>
       <li><a href="#overdub"><strong>Overdub</strong></a> — record layers over it (headphones).</li>
-      <li><a href="#midi"><strong>MIDI</strong></a> — its controller mapping.</li>
-      <li><a href="#midi-out"><strong>MIDI Out</strong></a> — what the pad sends to a synth, the lights or video software.</li>
+      <li><a href="#midi"><strong>MIDI</strong></a> — two tabs, as in Settings ▸ MIDI: <strong>In</strong>, the controller
+        that plays the pad; <strong>Out</strong>, what the pad <a href="#midi-out">sends</a> to a synth, the lights or
+        video software. The row sums up both — "In: Pad · Out: Note C2".</li>
     </ul>
     <p><strong>Everything you change is kept as you change it</strong> — there is nothing to save, and closing
       the screen is enough. <strong>Delete</strong>, for sounds you recorded or imported, asks first.</p>
@@ -1459,7 +1460,8 @@
 
     <h3 id="midi-out">MIDI Out — pads that play other things</h3>
     <p>A pad can also <strong>send</strong> MIDI when you play it. MIDI is a set of simple commands — "note 36 on",
-      "control 7 to 127", "program 5" — and what the receiver does with one is its own business. So a pad can:</p>
+      "control 7 to 127", "program 5" — and what the receiver does with one is its own business. You set it in the pad's
+      settings ▸ <strong>MIDI</strong> ▸ <strong>Out</strong>. So a pad can:</p>
     <ul>
       <li><strong>Play a synth or a drum machine</strong> — the pad's note plays on the hardware, with or without the
         pad's own sound.</li>
@@ -1470,7 +1472,7 @@
     </ul>
     <figure class="fig">
       <svg viewBox="0 0 640 300" role="img" aria-labelledby="figMidiOutT">
-        <title id="figMidiOutT">A pad's MIDI Out screen: Send — Off, Note, CC, Program, with Note chosen; Channel 10, Note 36 · C2, Velocity 100; a Test button; and the switch Play the pad's sound, on.</title>
+        <title id="figMidiOutT">A pad's MIDI screen, the Out tab: Send — Off, Note, CC, Program, with Note chosen; Channel 10, Note 36 · C2, Velocity 100; a Test button; and the switch Play the pad's sound, on.</title>
         <rect x="0" y="0" width="420" height="300" rx="16" style="fill: var(--surface-2)"/>
         <text x="210" y="32" font-size="14" font-weight="700" text-anchor="middle" style="fill: var(--text)">MIDI Out</text>
         <rect x="20" y="52" width="380" height="36" rx="10" style="fill: var(--surface-1); stroke: var(--border-strong)"/>
