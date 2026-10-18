@@ -644,9 +644,14 @@
       <li><a href="#transform"><strong>Shape &amp; Transform</strong></a> — speed, pitch and reverse.</li>
       <li><a href="#overdub"><strong>Overdub</strong></a> — record layers over it (headphones).</li>
       <li><a href="#midi"><strong>MIDI</strong></a> — its controller mapping.</li>
+      <li><a href="#midi-out"><strong>MIDI Out</strong></a> — what the pad sends to a synth, the lights or video software.</li>
     </ul>
     <p><strong>Everything you change is kept as you change it</strong> — there is nothing to save, and closing
       the screen is enough. <strong>Delete</strong>, for sounds you recorded or imported, asks first.</p>
+    <p><strong>Reset to original</strong>, at the bottom, takes a pad you have changed a lot back to its sound as it
+      came: the volume, the effects, speed, pitch and reverse, the trim, hold and restart. Its name, colour, group and
+      MIDI Out stay. A sound that came with the app goes back to how it shipped; one you recorded or imported goes back
+      to plain — no effects, 100 %, the whole sound. It asks first, and is greyed out while there is nothing to reset.</p>
 
     <h3>Colour</h3>
     <p><strong>Auto</strong> gives the pad a colour derived from its name, so two neighbours rarely look alike;
@@ -1500,7 +1505,8 @@
         really starts — on the bar, if it waited — and releases when it stops; a loop taking over in its group releases
         the old note first. Every way of playing counts: a tap, the keyboard, a controller.</li>
       <li><strong>Where:</strong> Settings ▸ MIDI ▸ <strong>Pads send to</strong> — all outputs, or one device. A device
-        that is unplugged gets nothing until it is back.</li>
+        that is unplugged gets nothing until it is back. Below it, <strong>Last sent</strong> shows the last message
+        that went out ("Note C2 off · ch 10") — the quick way to see that a pad really sends.</li>
       <li><strong>Over the Wi-Fi:</strong> switch on <strong>Network (Wi-Fi)</strong> there, and a Mac on the same
         network sees the iPhone or iPad in Audio MIDI Setup ▸ MIDI Network Setup — no cable to the software you drive.</li>
       <li><strong>Nothing hangs:</strong> Stop all — and another app taking the audio — releases every note still on.</li>
