@@ -1324,9 +1324,12 @@
     <h3 id="midi-connect">Connecting a controller</h3>
     <ul>
       <li><strong>By cable:</strong> plug it in. Blitzfingers finds it by itself, also while the app is running.</li>
-      <li><strong>Over Bluetooth:</strong> Settings ▸ <strong>MIDI</strong> ▸ the Bluetooth button at the top opens
-        the system's pairing screen; pick your device there. On a Mac it opens <strong>Audio MIDI Setup</strong>:
+      <li><strong>Over Bluetooth:</strong> Settings ▸ <strong>MIDI</strong> ▸ <strong>Bluetooth MIDI…</strong>, under
+        Connections at the top, opens the system's pairing screen; pick your device there. On a Mac it opens <strong>Audio MIDI Setup</strong>:
         Window ▸ Show MIDI Studio, then the Bluetooth button in its toolbar.</li>
+      <li>The screen has two tabs: <strong>In</strong> — a controller plays the pads (everything below) — and
+        <strong>Out</strong> — where the pads send (see <a href="#midi-out">MIDI Out</a>). The connections above them,
+        Bluetooth and the Wi-Fi, carry both directions.</li>
       <li>The line under the title says what is connected — "Connected: DJ2GO2", or "No MIDI device found".
         Press anything on the controller and it shows what arrived ("last: noteon …"), so you can see that
         the device talks.</li>
@@ -1445,7 +1448,7 @@
       <li>Endless encoders (<strong>Rel</strong>) never jump either way — they only ever move the value from
         where it is.</li>
     </ul>
-    <p>Choose it in Settings ▸ MIDI ▸ <strong>First touch</strong>; it applies to every mapping.</p>
+    <p>Choose it in Settings ▸ MIDI ▸ In ▸ <strong>First touch</strong>; it applies to every mapping.</p>
 
     <h3 id="midi-out">MIDI Out — pads that play other things</h3>
     <p>A pad can also <strong>send</strong> MIDI when you play it. MIDI is a set of simple commands — "note 36 on",
@@ -1504,10 +1507,11 @@
       <li><strong>When:</strong> a one-shot sends as you hit it and releases the note as you let go. A loop sends when it
         really starts — on the bar, if it waited — and releases when it stops; a loop taking over in its group releases
         the old note first. Every way of playing counts: a tap, the keyboard, a controller.</li>
-      <li><strong>Where:</strong> Settings ▸ MIDI ▸ <strong>Pads send to</strong> — all outputs, or one device. A device
+      <li><strong>Where:</strong> Settings ▸ MIDI ▸ Out ▸ <strong>Send to</strong> — all outputs, or one device. A device
         that is unplugged gets nothing until it is back. Below it, <strong>Last sent</strong> shows the last message
         that went out ("Note C2 off · ch 10") — the quick way to see that a pad really sends.</li>
-      <li><strong>Over the Wi-Fi:</strong> switch on <strong>Network (Wi-Fi)</strong> there (the first time, allow
+      <li><strong>Over the Wi-Fi:</strong> switch on <strong>Network (Wi-Fi)</strong> under Connections at the top of
+        Settings ▸ MIDI (the first time, allow
         Blitzfingers on the local network). On a Mac on the same network, open Audio MIDI Setup ▸ MIDI Network Setup,
         create an <strong>RTP</strong> session (a "Network MIDI 2" session does not list the iPhone), switch it on, pick
         the iPhone or iPad under Sessions and Directories and <strong>Connect</strong> — no cable to the software you drive.</li>
