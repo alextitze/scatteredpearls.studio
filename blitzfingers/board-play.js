@@ -2,7 +2,8 @@
    once and overlap. A loop starts on the next bar of whatever is already playing, the way the app lines
    loops up, and every loop here layers on the others; tap a playing loop to stop it. Everything is at
    120 BPM, so a bar is 2 seconds, and the first loop you start sets where the bars fall.
-   The sounds are placeholders from the app's Groove bank until the maker's own replace them. They load
+   The sounds are the app's Groove bank (2026-10-21): the maker's own recordings, and — marked " *", as in the app —
+   stand-ins until his replace them. They load
    on the first tap, not with the page, so the page stays light. */
 (() => {
   const board = document.querySelector('.board[data-play]');
