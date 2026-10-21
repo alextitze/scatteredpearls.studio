@@ -155,6 +155,24 @@
     @keyframes snd-a { 0% { opacity: 1; } 25% { opacity: 0; } 75% { opacity: 1; } }
     @keyframes snd-b { 0% { opacity: 0; } 25% { opacity: 1; } 75% { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) { .sndfig [class^="snd-"] { animation: none; } }
+    /* Speed (maker, 2026-10-21): the knob is taken, dragged, let go a little short of a mark — and snaps onto it: ×2, ×0.5,
+       back to ×1. A halo while the finger holds it. The still picture is ×1. */
+    .spdfig .spd-knob { animation: spd-knob 10s infinite; }
+    .spdfig .spd-halo { animation: spd-halo 10s infinite; }
+    .spdfig .spd-dot { transform-box: fill-box; transform-origin: center; animation: spd-dot 10s infinite; }
+    @keyframes spd-knob {
+      0%, 10% { transform: translateX(0); animation-timing-function: ease-in-out; }
+      28% { transform: translateX(128px); animation-timing-function: cubic-bezier(.3, 1.6, .5, 1); }
+      31%, 45% { transform: translateX(140px); animation-timing-function: ease-in-out; }
+      63% { transform: translateX(-128px); animation-timing-function: cubic-bezier(.3, 1.6, .5, 1); }
+      66%, 78% { transform: translateX(-140px); animation-timing-function: ease-in-out; }
+      92% { transform: translateX(12px); animation-timing-function: cubic-bezier(.3, 1.6, .5, 1); }
+      95%, 100% { transform: translateX(0); } }
+    @keyframes spd-halo { 0%, 9% { opacity: 0; } 11%, 27% { opacity: .25; } 29%, 44% { opacity: 0; } 46%, 62% { opacity: .25; }
+      64%, 77% { opacity: 0; } 79%, 91% { opacity: .25; } 93%, 100% { opacity: 0; } }
+    @keyframes spd-dot { 0%, 9% { transform: scale(1); } 11%, 27% { transform: scale(1.15); } 29%, 44% { transform: scale(1); }
+      46%, 62% { transform: scale(1.15); } 64%, 77% { transform: scale(1); } 79%, 91% { transform: scale(1.15); } 93%, 100% { transform: scale(1); } }
+    @media (prefers-reduced-motion: reduce) { .spdfig .spd-knob, .spdfig .spd-halo, .spdfig .spd-dot { animation: none; } }
     /* Pad colours, as on the landing page (rgb triples). */
     .fig { --p-coral: 239,128,121; --p-amber: 224,180,85; --p-green: 127,194,118; --p-teal: 79,196,178;
       --p-blue: 138,162,234; --p-purple: 168,148,230; --p-rose: 224,121,159; --p-slate: 154,166,186; }
@@ -1081,13 +1099,13 @@
     <p><strong>Shape &amp; Transform</strong> changes the sound itself rather than adding to it.</p>
     <h3>Speed</h3>
     <figure class="fig">
-      <svg viewBox="0 0 640 150" role="img" aria-labelledby="figSpeedT">
+      <svg class="spdfig" viewBox="0 0 640 150" role="img" aria-labelledby="figSpeedT">
         <title id="figSpeedT">The speed control: normal speed in the middle; a quarter of the way is half as fast and an octave lower; three quarters is twice as fast and an octave higher; the ends are a quarter and four times. Speed and pitch move together, like a record; Pitch changes only the pitch.</title>
         <rect x="40" y="46" width="560" height="10" rx="5" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
         <g style="stroke: var(--text-soft)" stroke-width="2">
           <line x1="40" y1="38" x2="40" y2="64"/><line x1="180" y1="38" x2="180" y2="64"/><line x1="320" y1="34" x2="320" y2="68"/><line x1="460" y1="38" x2="460" y2="64"/><line x1="600" y1="38" x2="600" y2="64"/>
         </g>
-        <circle cx="320" cy="51" r="12" style="fill: var(--accent)"/>
+        <g class="spd-knob"><circle class="spd-halo" cx="320" cy="51" r="20" style="fill: var(--accent)" opacity="0"/><circle class="spd-dot" cx="320" cy="51" r="12" style="fill: var(--accent)"/></g>
         <g font-size="12" text-anchor="middle">
           <text x="40" y="26" style="fill: var(--text-muted)">×0.25</text>
           <text x="180" y="26" style="fill: var(--text-soft)">×0.5</text>
