@@ -181,7 +181,7 @@
     .panfig .pan-dot { transform-box: fill-box; transform-origin: center; animation: pan-dot 9s infinite; }
     .panfig .pan-ml, .panfig .pan-mr { transform-box: fill-box; transform-origin: center bottom; }
     .panfig .pan-ml { animation: pan-ml 9s infinite; } .panfig .pan-mr { animation: pan-mr 9s infinite; }
-    .panfig .pan-auto { animation: pan-auto 2.4s ease-in-out infinite alternate; }
+    .panfig .pan-auto { animation: pan-auto .5s cubic-bezier(.37, 0, .63, 1) infinite alternate; }   /* as the app: a sine LFO, Rate 1 Hz = once a second, ±Intensity 0.80 */
     @keyframes pan-knob {
       0%, 12% { transform: translateX(105px); animation-timing-function: ease-in-out; }
       35% { transform: translateX(7px); animation-timing-function: cubic-bezier(.3, 1.6, .5, 1); }
