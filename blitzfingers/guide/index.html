@@ -290,7 +290,8 @@
     <p>The board holds two kinds of sound, one section each. <strong>One-shots</strong> (top) fire and finish —
       a kick, a clap, a word — and several can sound at once, so you can drum them. <strong>Loops</strong>
       (bottom) run until you stop them. Tap a pad to play it; tap a playing loop again to stop it. The small
-      line under each section's name says how it behaves.</p>
+      line under each section's name says how it behaves. A tap while the board still glides from a swipe only
+      stops it there — nothing plays.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 430" role="img" aria-labelledby="figBoardT">
         <title id="figBoardT">The board: a header with the bank tabs, Stop all, Edit pads and settings; one-shots above, loops below.</title>
@@ -613,17 +614,18 @@
       <li><strong>Rename, set up or delete:</strong> the pencil beside a bank, or <strong>Settings ▸ This
         bank</strong> for the one you are in. Deleting asks first, and takes the bank's sounds with it. Your last bank
         stays — the board is never empty.</li>
-      <li><strong>Export:</strong> the pencil ▸ <strong>Export bank</strong> — that bank with its sounds and settings
+      <li><strong>Export:</strong> the pencil ▸ <strong>Export</strong> — that bank with its sounds and settings
         as a <code>.zip</code>, to share or keep. All banks at once: <a href="#backup">Bank backup</a>.</li>
     </ul>
     <p id="bundled-banks" class="anchor">Blitzfingers comes with banks ready to play: <strong>Intro</strong>, which the first-run tour walks you
-      through; <strong>Groove</strong> — beats, basslines, strings, keys, arpeggios and a voice to layer, drums and a scale to
+      through, where each pad shows one thing a pad can do — hold, restart, a group, echo, reverse, pitch, speed —
+      on the Groove recordings; <strong>Groove</strong> — beats, basslines, strings, keys, arpeggios and a voice to layer, drums and a scale to
       play on top, all at one tempo
       and in one key — and <strong>Party</strong>. They are
       ordinary banks: change them, rearrange them, delete them. Deleting one is safe:
-      <strong>Settings → Bank backup → Restore bundled banks</strong> brings back the missing ones as they
-      shipped, and leaves the others alone. To undo your changes to one, open its pencil and choose
-      <strong>Reset to original</strong>. Sounds you added to a bundled bank go with it when you delete or reset it.</p>
+      <strong>Restore</strong> in Settings → Bank backup brings back the missing ones as they
+      shipped, and leaves the others alone. To undo your changes to one, open its pencil and tap
+      <strong>Reset</strong>. Sounds you added to a bundled bank go with it when you delete or reset it.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 250" role="img" aria-labelledby="figBanksT">
         <title id="figBanksT">The bank list opened from the header: the current bank is marked, each bank has a pencil to rename, set up or delete it and a handle to move it, and New bank adds one. Picking another bank swaps the whole board, while a playing loop runs on.</title>
@@ -727,8 +729,8 @@
         scrolls the board instead — so you can scroll in edit mode without rearranging anything.</li>
       <li><strong>To the other section:</strong> drag it across, between one-shots and loops. The pads there make
         room while you hold it over them, and an empty slot lights up to take it; a full section (16 pads) does
-        not. Or use <strong>Move pad to …</strong> at the bottom of the pad's settings, which puts it in the first
-        free slot.</li>
+        not. Or tap <strong>To Loops</strong> (or <strong>To One-Shots</strong>) at the bottom of the pad's settings,
+        which puts it in the first free slot.</li>
       <li>What only makes sense in one section — hold, restart on tap, the group — is dropped on the way, and
         the message that says so has an <strong>Undo</strong>.</li>
       <li><strong>The pad's menu:</strong> keep holding a pad without moving — after about a second a small menu opens,
@@ -755,7 +757,7 @@
     </ul>
     <p><strong>Everything you change is kept as you change it</strong> — there is nothing to save, and closing
       the screen is enough. <strong>Delete</strong>, for sounds you recorded or imported, asks first.</p>
-    <p><strong>Reset to original</strong>, at the bottom, takes a pad you have changed a lot back to its sound as it
+    <p><strong>Reset</strong>, at the bottom, takes a pad you have changed a lot back to its sound as it
       came: the volume, the effects, speed, pitch and reverse, the trim, hold and restart — and a sound switched off
       plays again. Its name, colour, group, what it sends by MIDI Out and its MIDI mappings stay. A sound that came with the app goes back to how it shipped; one you recorded or imported goes back
       to plain — no effects, 100 %, the whole sound. It asks first, and is greyed out while there is nothing to reset.</p>
@@ -792,7 +794,8 @@
         zoom; the strip underneath shows where you are.</figcaption>
     </figure>
     <p>For a precise cut, zoom in: pinch the waveform (or use + / − and <strong>Fit</strong>), drag the wave
-      with one finger to move along it, and the strip underneath shows where you are in the whole sound. A handle
+      with one finger to move along it — on a trackpad, swipe sideways with two fingers; up and down still scrolls
+      the screen — and the strip underneath shows where you are in the whole sound. A handle
       dragged past the edge takes the view with it.</p>
     <p>Beside Play you read the cut and its length to the hundredth of a second. Switch on
       <strong>Loop</strong> and the preview repeats the cut until you pause it — move a handle while it plays and
@@ -803,7 +806,8 @@
   <section id="effects">
     <h2>Effects</h2>
     <p>Each pad has its own effect rack. Switch an effect on and its controls appear underneath; changes are heard
-      while the pad plays, so play it from the Effects screen and dial it in by ear. A pad with effects on shows
+      while the pad plays, so play it from the Effects screen — Play there plays the trimmed part, as the pad does — and dial it in
+      by ear. A pad with effects on shows
       <strong>FX</strong>; the Effects row in its settings lists which. <strong>Reset effects</strong> turns them
       all off again.</p>
     <h3>Filter — one knob, two directions</h3>
@@ -1870,6 +1874,8 @@
       <li><strong>Fade for loops without a tempo</strong> — how long such a loop (an imported song, an
         atmosphere, a take recorded without the metronome) takes to fade in, out and into the next, 0 to 5 seconds;
         0, the default, is a hard cut. Loops with a tempo start, switch and stop on the bar without a fade.</li>
+      <li><strong>Start sound</strong> — the short drum fill that plays the name in as Blitzfingers opens. On by
+        default; switch it off for a silent start. It stays quiet with the ringer switch on silent.</li>
       <li><strong>Reset audio</strong> — when the sound lags behind your taps (see
         <a href="#troubleshooting-late">The sound comes late</a>).</li>
     </ul>
@@ -1879,14 +1885,14 @@
       balancing a room is playing, not building.</p>
 
     <h3 id="backup">Bank backup</h3>
-    <p>Settings ▸ <strong>Bank backup</strong> ▸ <strong>Export all banks</strong> saves every bank in one
+    <p><strong>Export all</strong> in Settings ▸ <strong>Bank backup</strong> saves every bank in one
       <code>.zip</code>, one folder each — its sounds, every pad's settings, the layout and the dates the takes were
       made. Keep it as a backup, or take it to another device. To share a single bank, open its pencil in the bank
-      list and choose <strong>Export bank</strong>.</p>
+      list and tap <strong>Export</strong>.</p>
     <p><strong>Import</strong> takes either — one bank or a whole backup — and adds the banks next to your others;
       nothing is overwritten. A bank whose name is taken gets a number: a second <strong>Groove</strong> comes in as
       <strong>Groove (2)</strong>. MIDI mappings and app settings are not part of a bank and stay as they are.
-      Export all banks always works, also after the trial — your sounds are yours.</p>
+      <strong>Export all</strong> always works, also after the trial — your sounds are yours.</p>
   </section>
 
   <section id="appearance">
@@ -1953,7 +1959,8 @@
     <h2>When something does not work</h2>
     <h3>No sound</h3>
     <ul>
-      <li>Turn the device up with its volume buttons. Blitzfingers plays even with the ringer switch on silent.</li>
+      <li>Turn the device up with its volume buttons. Blitzfingers plays even with the ringer switch on silent
+        — only its start sound keeps quiet then.</li>
       <li>Check the levels: Settings ▸ <strong>Sound</strong> has one volume for the one-shots and one for the
         loops, and each pad has its own in its Playback settings.</li>
       <li>With headphones or a speaker connected, the sound goes there — check where Control Centre sends it.</li>
