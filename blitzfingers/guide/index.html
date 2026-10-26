@@ -620,11 +620,11 @@
         name (with ≡) and pick a bank from the list.</li>
       <li><strong>Add:</strong> <strong>+ New bank</strong> in the bank list — <strong>≡</strong> at the end of the
         tabs, or the bank's name on a phone. It starts empty, ready for your sounds.</li>
-      <li><strong>Rename, set up or delete:</strong> the pencil beside a bank, or <strong>Settings ▸ This
+      <li><strong>Rename, set up or delete:</strong> the pencil beside a bank, or <strong>Settings ▸ Banks ▸ This
         bank</strong> for the one you are in. Deleting asks first, and takes the bank's sounds with it. Your last bank
         stays — the board is never empty.</li>
       <li><strong>Export:</strong> the pencil ▸ <strong>Export</strong> — that bank with its sounds and settings
-        as a <code>.zip</code>, to share or keep. All banks at once: <a href="#backup">Bank backup</a>.</li>
+        as a <code>.zip</code>, to share or keep. All banks at once: <a href="#backup">Settings ▸ Banks ▸ All banks</a>.</li>
     </ul>
     <p id="bundled-banks" class="anchor">Blitzfingers comes with banks ready to play: <strong>Intro</strong>, which the first-run tour walks you
       through, where each pad shows one thing a pad can do — hold, restart, a group, echo, reverse, pitch, speed —
@@ -632,7 +632,7 @@
       play on top, all at one tempo
       and in one key — and <strong>Party</strong>. They are
       ordinary banks: change them, rearrange them, delete them. Deleting one is safe:
-      <strong>Restore</strong> in Settings → Bank backup brings back the missing ones as they
+      <strong>Restore</strong> in Settings → Banks → All banks brings back the missing ones as they
       shipped, and leaves the others alone. To undo your changes to one, open its pencil and tap
       <strong>Reset</strong>. Sounds you added to a bundled bank go with it when you delete or reset it.</p>
     <figure class="fig">
@@ -673,7 +673,7 @@
     <p><strong>Switching keeps the music going.</strong> A playing loop runs on while you change banks, so you can
       swap the pads under a groove without a gap; loops waiting for the next bar are cancelled.</p>
     <h3 id="bank-settings">How a bank shows</h3>
-    <p>Each bank decides how it sits on the board. Open <strong>Settings ▸ This bank</strong> (or the pencil in the
+    <p>Each bank decides how it sits on the board. Open <strong>Settings ▸ Banks ▸ This bank</strong> (or the pencil in the
       bank list) and pick one under <strong>On the board</strong>: <strong>One-Shots, then Loops</strong> (the
       usual), <strong>Loops, then One-Shots</strong>, <strong>One-Shots only</strong> or <strong>Loops only</strong>.
       In landscape, the first one sits on the left; a single one gets the whole width.</p>
@@ -682,7 +682,7 @@
       <strong>Show</strong> to bring the category back. An exported bank keeps its choice.</p>
     <p class="note">Sounds belong to their bank. <a href="#midi">MIDI mappings</a> and keyboard keys belong to the
       grid position, so the same control plays position 3 in whichever bank is open. To back up or share a bank,
-      see <a href="#sound">Sound &amp; levels ▸ Bank backup</a>.</p>
+      see <a href="#backup">All banks</a>.</p>
   </section>
 
   <section id="edit">
@@ -753,14 +753,16 @@
       came from — "Recorded on 1 Oct 2026, 14:20 · 120 BPM · 4 bars". Below, one row per area:</p>
     <ul>
       <li><strong>Playback</strong> — the pad's volume, and its switches: <strong>hold to repeat</strong> and
-        <strong>restart on tap</strong> for one-shots, and the <a href="#groups"><strong>group</strong></a> for both. The volume goes past
+        <strong>restart on tap</strong> for one-shots, the <a href="#groups"><strong>group</strong></a> for both, and
+        <strong>Play the pad's sound</strong> — off, the pad is a silent remote that only sends (<a href="#midi-out">MIDI Out</a>,
+        <a href="#network">Network</a>). The volume goes past
         100 % (the sound as it is) up to 150 %, so a quiet sound can be lifted; it never distorts.
         <strong>Match level</strong> sets the volume for you, so the sound sits as loud as the drums.</li>
       <li><a href="#trim"><strong>Trim</strong></a> — where it starts and ends.</li>
       <li><a href="#effects"><strong>Effects</strong></a> — the rack, with what is on in the row's badge.</li>
       <li><a href="#transform"><strong>Shape &amp; Transform</strong></a> — speed, pitch and reverse.</li>
       <li><a href="#overdub"><strong>Overdub</strong></a> — record layers over it (headphones).</li>
-      <li><a href="#midi"><strong>MIDI</strong></a> — two tabs, as in Settings ▸ MIDI: <strong>In</strong>, the controller
+      <li><a href="#midi"><strong>MIDI</strong></a> — two tabs, as in Settings ▸ Connections ▸ MIDI: <strong>In</strong>, the controller
         that plays the pad; <strong>Out</strong>, what the pad <a href="#midi-out">sends</a> to a synth, the lights or
         video software. The row sums up both — "In: Pad · Out: Note C2".</li>
       <li><a href="#network"><strong>Network</strong></a> — what the pad sends over the network: an OSC message, a web
@@ -1487,7 +1489,7 @@
       the one-shots, one for the loops — learn each into its own section: Blitzfingers tells them apart.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 312" role="img" aria-labelledby="figLioT" class="lio">
-      <title id="figLioT">Learn in order: the controller's pads are hit one after another, and each lands on the next one-shot in Settings ▸ MIDI ▸ In — Kick, Closed hat, Open hat and on to Lead E5 — while the bar counts from 1 to 16.</title>
+      <title id="figLioT">Learn in order: the controller's pads are hit one after another, and each lands on the next one-shot in Settings ▸ Connections ▸ MIDI ▸ In — Kick, Closed hat, Open hat and on to Lead E5 — while the bar counts from 1 to 16.</title>
       <style>@keyframes lf0 { 0% { opacity: 0; } 5.71% { opacity: 0; } 5.81% { opacity: 1; } 9.05% { opacity: 1; } 9.14% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh0 { 0% { opacity: 0; } 5.71% { opacity: 0; } 5.81% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln0 { 0% { opacity: 0; } 0% { opacity: 1; } 5.71% { opacity: 1; } 5.81% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld0 { 0% { opacity: 0; } 5.71% { opacity: 0; } 5.81% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt0 { 0% { opacity: 0; } 0% { opacity: 1; } 5.71% { opacity: 1; } 5.81% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf1 { 0% { opacity: 0; } 10.48% { opacity: 0; } 10.57% { opacity: 1; } 13.81% { opacity: 1; } 13.90% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh1 { 0% { opacity: 0; } 10.48% { opacity: 0; } 10.57% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln1 { 0% { opacity: 0; } 5.71% { opacity: 0; } 5.81% { opacity: 1; } 10.48% { opacity: 1; } 10.57% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld1 { 0% { opacity: 0; } 10.48% { opacity: 0; } 10.57% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt1 { 0% { opacity: 0; } 5.71% { opacity: 0; } 5.81% { opacity: 1; } 10.48% { opacity: 1; } 10.57% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf2 { 0% { opacity: 0; } 15.24% { opacity: 0; } 15.33% { opacity: 1; } 18.57% { opacity: 1; } 18.67% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh2 { 0% { opacity: 0; } 15.24% { opacity: 0; } 15.33% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln2 { 0% { opacity: 0; } 10.48% { opacity: 0; } 10.57% { opacity: 1; } 15.24% { opacity: 1; } 15.33% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld2 { 0% { opacity: 0; } 15.24% { opacity: 0; } 15.33% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt2 { 0% { opacity: 0; } 10.48% { opacity: 0; } 10.57% { opacity: 1; } 15.24% { opacity: 1; } 15.33% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf3 { 0% { opacity: 0; } 20.00% { opacity: 0; } 20.10% { opacity: 1; } 23.33% { opacity: 1; } 23.43% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh3 { 0% { opacity: 0; } 20.00% { opacity: 0; } 20.10% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln3 { 0% { opacity: 0; } 15.24% { opacity: 0; } 15.33% { opacity: 1; } 20.00% { opacity: 1; } 20.10% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld3 { 0% { opacity: 0; } 20.00% { opacity: 0; } 20.10% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt3 { 0% { opacity: 0; } 15.24% { opacity: 0; } 15.33% { opacity: 1; } 20.00% { opacity: 1; } 20.10% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf4 { 0% { opacity: 0; } 24.76% { opacity: 0; } 24.86% { opacity: 1; } 28.10% { opacity: 1; } 28.19% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh4 { 0% { opacity: 0; } 24.76% { opacity: 0; } 24.86% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln4 { 0% { opacity: 0; } 20.00% { opacity: 0; } 20.10% { opacity: 1; } 24.76% { opacity: 1; } 24.86% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld4 { 0% { opacity: 0; } 24.76% { opacity: 0; } 24.86% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt4 { 0% { opacity: 0; } 20.00% { opacity: 0; } 20.10% { opacity: 1; } 24.76% { opacity: 1; } 24.86% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf5 { 0% { opacity: 0; } 29.52% { opacity: 0; } 29.62% { opacity: 1; } 32.86% { opacity: 1; } 32.95% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh5 { 0% { opacity: 0; } 29.52% { opacity: 0; } 29.62% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln5 { 0% { opacity: 0; } 24.76% { opacity: 0; } 24.86% { opacity: 1; } 29.52% { opacity: 1; } 29.62% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld5 { 0% { opacity: 0; } 29.52% { opacity: 0; } 29.62% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt5 { 0% { opacity: 0; } 24.76% { opacity: 0; } 24.86% { opacity: 1; } 29.52% { opacity: 1; } 29.62% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf6 { 0% { opacity: 0; } 34.29% { opacity: 0; } 34.38% { opacity: 1; } 37.62% { opacity: 1; } 37.71% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh6 { 0% { opacity: 0; } 34.29% { opacity: 0; } 34.38% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln6 { 0% { opacity: 0; } 29.52% { opacity: 0; } 29.62% { opacity: 1; } 34.29% { opacity: 1; } 34.38% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld6 { 0% { opacity: 0; } 34.29% { opacity: 0; } 34.38% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt6 { 0% { opacity: 0; } 29.52% { opacity: 0; } 29.62% { opacity: 1; } 34.29% { opacity: 1; } 34.38% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf7 { 0% { opacity: 0; } 39.05% { opacity: 0; } 39.14% { opacity: 1; } 42.38% { opacity: 1; } 42.48% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh7 { 0% { opacity: 0; } 39.05% { opacity: 0; } 39.14% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln7 { 0% { opacity: 0; } 34.29% { opacity: 0; } 34.38% { opacity: 1; } 39.05% { opacity: 1; } 39.14% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld7 { 0% { opacity: 0; } 39.05% { opacity: 0; } 39.14% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt7 { 0% { opacity: 0; } 34.29% { opacity: 0; } 34.38% { opacity: 1; } 39.05% { opacity: 1; } 39.14% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf8 { 0% { opacity: 0; } 43.81% { opacity: 0; } 43.90% { opacity: 1; } 47.14% { opacity: 1; } 47.24% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh8 { 0% { opacity: 0; } 43.81% { opacity: 0; } 43.90% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln8 { 0% { opacity: 0; } 39.05% { opacity: 0; } 39.14% { opacity: 1; } 43.81% { opacity: 1; } 43.90% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld8 { 0% { opacity: 0; } 43.81% { opacity: 0; } 43.90% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt8 { 0% { opacity: 0; } 39.05% { opacity: 0; } 39.14% { opacity: 1; } 43.81% { opacity: 1; } 43.90% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf9 { 0% { opacity: 0; } 48.57% { opacity: 0; } 48.67% { opacity: 1; } 51.90% { opacity: 1; } 52.00% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh9 { 0% { opacity: 0; } 48.57% { opacity: 0; } 48.67% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln9 { 0% { opacity: 0; } 43.81% { opacity: 0; } 43.90% { opacity: 1; } 48.57% { opacity: 1; } 48.67% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld9 { 0% { opacity: 0; } 48.57% { opacity: 0; } 48.67% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt9 { 0% { opacity: 0; } 43.81% { opacity: 0; } 43.90% { opacity: 1; } 48.57% { opacity: 1; } 48.67% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf10 { 0% { opacity: 0; } 53.33% { opacity: 0; } 53.43% { opacity: 1; } 56.67% { opacity: 1; } 56.76% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh10 { 0% { opacity: 0; } 53.33% { opacity: 0; } 53.43% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln10 { 0% { opacity: 0; } 48.57% { opacity: 0; } 48.67% { opacity: 1; } 53.33% { opacity: 1; } 53.43% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld10 { 0% { opacity: 0; } 53.33% { opacity: 0; } 53.43% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt10 { 0% { opacity: 0; } 48.57% { opacity: 0; } 48.67% { opacity: 1; } 53.33% { opacity: 1; } 53.43% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf11 { 0% { opacity: 0; } 58.10% { opacity: 0; } 58.19% { opacity: 1; } 61.43% { opacity: 1; } 61.52% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh11 { 0% { opacity: 0; } 58.10% { opacity: 0; } 58.19% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln11 { 0% { opacity: 0; } 53.33% { opacity: 0; } 53.43% { opacity: 1; } 58.10% { opacity: 1; } 58.19% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld11 { 0% { opacity: 0; } 58.10% { opacity: 0; } 58.19% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt11 { 0% { opacity: 0; } 53.33% { opacity: 0; } 53.43% { opacity: 1; } 58.10% { opacity: 1; } 58.19% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf12 { 0% { opacity: 0; } 62.86% { opacity: 0; } 62.95% { opacity: 1; } 66.19% { opacity: 1; } 66.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh12 { 0% { opacity: 0; } 62.86% { opacity: 0; } 62.95% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln12 { 0% { opacity: 0; } 58.10% { opacity: 0; } 58.19% { opacity: 1; } 62.86% { opacity: 1; } 62.95% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld12 { 0% { opacity: 0; } 62.86% { opacity: 0; } 62.95% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt12 { 0% { opacity: 0; } 58.10% { opacity: 0; } 58.19% { opacity: 1; } 62.86% { opacity: 1; } 62.95% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf13 { 0% { opacity: 0; } 67.62% { opacity: 0; } 67.71% { opacity: 1; } 70.95% { opacity: 1; } 71.05% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh13 { 0% { opacity: 0; } 67.62% { opacity: 0; } 67.71% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln13 { 0% { opacity: 0; } 62.86% { opacity: 0; } 62.95% { opacity: 1; } 67.62% { opacity: 1; } 67.71% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld13 { 0% { opacity: 0; } 67.62% { opacity: 0; } 67.71% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt13 { 0% { opacity: 0; } 62.86% { opacity: 0; } 62.95% { opacity: 1; } 67.62% { opacity: 1; } 67.71% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf14 { 0% { opacity: 0; } 72.38% { opacity: 0; } 72.48% { opacity: 1; } 75.71% { opacity: 1; } 75.81% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh14 { 0% { opacity: 0; } 72.38% { opacity: 0; } 72.48% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln14 { 0% { opacity: 0; } 67.62% { opacity: 0; } 67.71% { opacity: 1; } 72.38% { opacity: 1; } 72.48% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld14 { 0% { opacity: 0; } 72.38% { opacity: 0; } 72.48% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt14 { 0% { opacity: 0; } 67.62% { opacity: 0; } 67.71% { opacity: 1; } 72.38% { opacity: 1; } 72.48% { opacity: 0; } 100% { opacity: 0; } } @keyframes lf15 { 0% { opacity: 0; } 77.14% { opacity: 0; } 77.24% { opacity: 1; } 80.48% { opacity: 1; } 80.57% { opacity: 0; } 100% { opacity: 0; } } @keyframes lh15 { 0% { opacity: 0; } 77.14% { opacity: 0; } 77.24% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes ln15 { 0% { opacity: 0; } 72.38% { opacity: 0; } 72.48% { opacity: 1; } 77.14% { opacity: 1; } 77.24% { opacity: 0; } 100% { opacity: 0; } } @keyframes ld15 { 0% { opacity: 0; } 77.14% { opacity: 0; } 77.24% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } @keyframes lt15 { 0% { opacity: 0; } 72.38% { opacity: 0; } 72.48% { opacity: 1; } 77.14% { opacity: 1; } 77.24% { opacity: 0; } 100% { opacity: 0; } } @keyframes lfin { 0% { opacity: 0; } 77.14% { opacity: 0; } 77.24% { opacity: 1; } 96.19% { opacity: 1; } 96.29% { opacity: 0; } 100% { opacity: 0; } } .lio .lf0 { opacity: 0; animation: lf0 10.5s linear infinite; } .lio .lh0 { opacity: 1; animation: lh0 10.5s linear infinite; } .lio .ln0 { opacity: 0; animation: ln0 10.5s linear infinite; } .lio .ld0 { opacity: 1; animation: ld0 10.5s linear infinite; } .lio .lt0 { opacity: 0; animation: lt0 10.5s linear infinite; } .lio .lf1 { opacity: 0; animation: lf1 10.5s linear infinite; } .lio .lh1 { opacity: 1; animation: lh1 10.5s linear infinite; } .lio .ln1 { opacity: 0; animation: ln1 10.5s linear infinite; } .lio .ld1 { opacity: 1; animation: ld1 10.5s linear infinite; } .lio .lt1 { opacity: 0; animation: lt1 10.5s linear infinite; } .lio .lf2 { opacity: 0; animation: lf2 10.5s linear infinite; } .lio .lh2 { opacity: 1; animation: lh2 10.5s linear infinite; } .lio .ln2 { opacity: 0; animation: ln2 10.5s linear infinite; } .lio .ld2 { opacity: 1; animation: ld2 10.5s linear infinite; } .lio .lt2 { opacity: 0; animation: lt2 10.5s linear infinite; } .lio .lf3 { opacity: 0; animation: lf3 10.5s linear infinite; } .lio .lh3 { opacity: 1; animation: lh3 10.5s linear infinite; } .lio .ln3 { opacity: 0; animation: ln3 10.5s linear infinite; } .lio .ld3 { opacity: 1; animation: ld3 10.5s linear infinite; } .lio .lt3 { opacity: 0; animation: lt3 10.5s linear infinite; } .lio .lf4 { opacity: 0; animation: lf4 10.5s linear infinite; } .lio .lh4 { opacity: 1; animation: lh4 10.5s linear infinite; } .lio .ln4 { opacity: 0; animation: ln4 10.5s linear infinite; } .lio .ld4 { opacity: 1; animation: ld4 10.5s linear infinite; } .lio .lt4 { opacity: 0; animation: lt4 10.5s linear infinite; } .lio .lf5 { opacity: 0; animation: lf5 10.5s linear infinite; } .lio .lh5 { opacity: 1; animation: lh5 10.5s linear infinite; } .lio .ln5 { opacity: 0; animation: ln5 10.5s linear infinite; } .lio .ld5 { opacity: 1; animation: ld5 10.5s linear infinite; } .lio .lt5 { opacity: 0; animation: lt5 10.5s linear infinite; } .lio .lf6 { opacity: 0; animation: lf6 10.5s linear infinite; } .lio .lh6 { opacity: 1; animation: lh6 10.5s linear infinite; } .lio .ln6 { opacity: 0; animation: ln6 10.5s linear infinite; } .lio .ld6 { opacity: 1; animation: ld6 10.5s linear infinite; } .lio .lt6 { opacity: 0; animation: lt6 10.5s linear infinite; } .lio .lf7 { opacity: 0; animation: lf7 10.5s linear infinite; } .lio .lh7 { opacity: 1; animation: lh7 10.5s linear infinite; } .lio .ln7 { opacity: 0; animation: ln7 10.5s linear infinite; } .lio .ld7 { opacity: 1; animation: ld7 10.5s linear infinite; } .lio .lt7 { opacity: 0; animation: lt7 10.5s linear infinite; } .lio .lf8 { opacity: 0; animation: lf8 10.5s linear infinite; } .lio .lh8 { opacity: 1; animation: lh8 10.5s linear infinite; } .lio .ln8 { opacity: 0; animation: ln8 10.5s linear infinite; } .lio .ld8 { opacity: 1; animation: ld8 10.5s linear infinite; } .lio .lt8 { opacity: 0; animation: lt8 10.5s linear infinite; } .lio .lf9 { opacity: 0; animation: lf9 10.5s linear infinite; } .lio .lh9 { opacity: 1; animation: lh9 10.5s linear infinite; } .lio .ln9 { opacity: 0; animation: ln9 10.5s linear infinite; } .lio .ld9 { opacity: 1; animation: ld9 10.5s linear infinite; } .lio .lt9 { opacity: 0; animation: lt9 10.5s linear infinite; } .lio .lf10 { opacity: 0; animation: lf10 10.5s linear infinite; } .lio .lh10 { opacity: 1; animation: lh10 10.5s linear infinite; } .lio .ln10 { opacity: 0; animation: ln10 10.5s linear infinite; } .lio .ld10 { opacity: 1; animation: ld10 10.5s linear infinite; } .lio .lt10 { opacity: 0; animation: lt10 10.5s linear infinite; } .lio .lf11 { opacity: 0; animation: lf11 10.5s linear infinite; } .lio .lh11 { opacity: 1; animation: lh11 10.5s linear infinite; } .lio .ln11 { opacity: 0; animation: ln11 10.5s linear infinite; } .lio .ld11 { opacity: 1; animation: ld11 10.5s linear infinite; } .lio .lt11 { opacity: 0; animation: lt11 10.5s linear infinite; } .lio .lf12 { opacity: 0; animation: lf12 10.5s linear infinite; } .lio .lh12 { opacity: 1; animation: lh12 10.5s linear infinite; } .lio .ln12 { opacity: 0; animation: ln12 10.5s linear infinite; } .lio .ld12 { opacity: 1; animation: ld12 10.5s linear infinite; } .lio .lt12 { opacity: 0; animation: lt12 10.5s linear infinite; } .lio .lf13 { opacity: 0; animation: lf13 10.5s linear infinite; } .lio .lh13 { opacity: 1; animation: lh13 10.5s linear infinite; } .lio .ln13 { opacity: 0; animation: ln13 10.5s linear infinite; } .lio .ld13 { opacity: 1; animation: ld13 10.5s linear infinite; } .lio .lt13 { opacity: 0; animation: lt13 10.5s linear infinite; } .lio .lf14 { opacity: 0; animation: lf14 10.5s linear infinite; } .lio .lh14 { opacity: 1; animation: lh14 10.5s linear infinite; } .lio .ln14 { opacity: 0; animation: ln14 10.5s linear infinite; } .lio .ld14 { opacity: 1; animation: ld14 10.5s linear infinite; } .lio .lt14 { opacity: 0; animation: lt14 10.5s linear infinite; } .lio .lf15 { opacity: 0; animation: lf15 10.5s linear infinite; } .lio .lh15 { opacity: 1; animation: lh15 10.5s linear infinite; } .lio .ln15 { opacity: 0; animation: ln15 10.5s linear infinite; } .lio .ld15 { opacity: 1; animation: ld15 10.5s linear infinite; } .lio .lt15 { opacity: 0; animation: lt15 10.5s linear infinite; } .lio .lfin { opacity: 1; animation: lfin 10.5s linear infinite; } @media (prefers-reduced-motion: reduce) { .lio * { animation: none !important; } }</style>
       <text x="115" y="34" font-size="13" font-weight="700" text-anchor="middle" style="fill: var(--text)">Your controller</text>
       <rect x="20" y="60" width="40" height="40" rx="9" style="fill: var(--surface-2); stroke: var(--border-strong)"/>
@@ -1540,7 +1542,7 @@
       <rect class="lf15" x="170" y="210" width="40" height="40" rx="9" style="fill: var(--accent)"/>
       <text x="115" y="282" font-size="11" text-anchor="middle" style="fill: var(--text-soft)">hit its pads in turn</text>
       <path d="M226 160 H266" style="stroke: var(--text-muted)" stroke-width="2"/><path d="M262 154 l7 6 -7 6" style="fill: none; stroke: var(--text-muted)" stroke-width="2"/>
-      <text x="462" y="34" font-size="13" font-weight="700" text-anchor="middle" style="fill: var(--text)">Settings ▸ MIDI ▸ In · One-shots</text>
+      <text x="462" y="34" font-size="13" font-weight="700" text-anchor="middle" style="fill: var(--text)">Settings ▸ Connections ▸ MIDI ▸ In · One-shots</text>
       <rect x="284" y="48" width="356" height="34" rx="9" style="fill: var(--surface-2)"/>
       <text class="lt0" x="296" y="70" font-size="12" style="fill: var(--text)">Hit a pad for <tspan font-weight="700">Kick</tspan> · 1 of 16</text>
       <text class="lt1" x="296" y="70" font-size="12" style="fill: var(--text)">Hit a pad for <tspan font-weight="700">Closed hat</tspan> · 2 of 16</text>
@@ -1743,7 +1745,7 @@
       <li>Endless encoders (<strong>Rel</strong>) never jump either way — they only ever move the value from
         where it is.</li>
     </ul>
-    <p>Choose it in Settings ▸ MIDI ▸ In ▸ <strong>First touch</strong>; it applies to every mapping.</p>
+    <p>Choose it in Settings ▸ Connections ▸ MIDI ▸ In ▸ <strong>First touch</strong>; it applies to every mapping.</p>
 
     <h3 id="midi-out">MIDI Out — pads that play other things</h3>
     <p>A pad can also <strong>send</strong> MIDI when you play it. MIDI is a set of simple commands — "note 36 on",
@@ -1759,7 +1761,7 @@
     </ul>
     <figure class="fig">
       <svg viewBox="0 0 640 300" role="img" aria-labelledby="figMidiOutT">
-        <title id="figMidiOutT">A pad's MIDI screen, the Out tab: Send — Off, Note, CC, Program, with Note chosen; Channel 10, Note 36 · C2, Velocity 100; a Test button; and the switch Play the pad's sound, on.</title>
+        <title id="figMidiOutT">A pad's MIDI screen, the Out tab: Send — Off, Note, CC, Program, with Note chosen; Channel 10, Note 36 · C2, Velocity 100; and a Test button, on.</title>
         <rect x="0" y="0" width="420" height="300" rx="16" style="fill: var(--surface-2)"/>
         <text x="210" y="32" font-size="14" font-weight="700" text-anchor="middle" style="fill: var(--text)">MIDI · Out</text>
         <rect x="20" y="52" width="380" height="36" rx="10" style="fill: var(--surface-1); stroke: var(--border-strong)"/>
@@ -1774,15 +1776,11 @@
           <rect x="150" y="124" width="110" height="34" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="162" y="146" style="fill: var(--text)">36</text>
           <rect x="280" y="124" width="120" height="34" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="292" y="146" style="fill: var(--text)">100</text>
           <rect x="20" y="172" width="80" height="36" rx="8" style="fill: none; stroke: var(--border-strong)"/><text x="60" y="195" text-anchor="middle" style="fill: var(--text)">Test</text>
-          <rect x="20" y="232" width="44" height="26" rx="13" style="fill: var(--accent)"/><circle cx="51" cy="245" r="10" style="fill: #fff"/>
-          <text x="76" y="244" font-weight="600" style="fill: var(--text)">Play the pad's sound</text>
-          <text x="76" y="262" font-size="11" style="fill: var(--text-muted)">Off: the pad only sends MIDI.</text>
         </g>
         <g font-size="11" font-weight="700" text-anchor="middle">
           <circle cx="410" cy="70" r="10" style="fill: var(--marker, var(--accent))"/><text x="410" y="74" style="fill: var(--on-marker, var(--on-accent))">1</text>
           <circle cx="410" cy="141" r="10" style="fill: var(--marker, var(--accent))"/><text x="410" y="145" style="fill: var(--on-marker, var(--on-accent))">2</text>
           <circle cx="110" cy="190" r="10" style="fill: var(--marker, var(--accent))"/><text x="110" y="194" style="fill: var(--on-marker, var(--on-accent))">3</text>
-          <circle cx="10" cy="245" r="10" style="fill: var(--marker, var(--accent))"/><text x="10" y="249" style="fill: var(--on-marker, var(--on-accent))">4</text>
         </g>
         <g font-size="12">
           <text x="448" y="60" font-weight="700" style="fill: var(--text)">On the board</text>
@@ -1796,18 +1794,17 @@
         <li><b>1</b><span><strong>Send</strong> — a note (most synths, lights and video software), a controller (CC: effects, dimmers, switches) or a program change (another preset or scene).</span></li>
         <li><b>2</b><span>The <strong>channel</strong> (1–16), the <strong>number</strong> — for a note with its name, C4 = 60 — and how hard: the velocity, or a CC's value.</span></li>
         <li><b>3</b><span><strong>Test</strong> — sends it once, without playing the pad.</span></li>
-        <li><b>4</b><span><strong>Play the pad's sound</strong> — on by default. Off, the pad is a silent remote that still lights and sends.</span></li>
       </ol>
     </figure>
     <ul>
       <li><strong>When:</strong> a one-shot sends as you hit it and releases the note as you let go. A loop sends when it
         really starts — on the bar, if it waited — and releases when it stops; a loop taking over in its group releases
         the old note first. Every way of playing counts: a tap, the keyboard, a controller.</li>
-      <li><strong>Where:</strong> Settings ▸ MIDI ▸ Out ▸ <strong>Send to</strong> — all outputs, or one device. A device
+      <li><strong>Where:</strong> Settings ▸ Connections ▸ MIDI ▸ Out ▸ <strong>Send to</strong> — all outputs, or one device. A device
         that is unplugged gets nothing until it is back. Below it, <strong>Last sent</strong> shows the last message
         that went out ("Note C2 off · ch 10") — the quick way to see that a pad really sends.</li>
       <li><strong>Over the Wi-Fi:</strong> switch on <strong>Network (Wi-Fi)</strong> under Connections at the top of
-        Settings ▸ MIDI (the first time, allow
+        Settings ▸ Connections ▸ MIDI (the first time, allow
         Blitzfingers on the local network). On a Mac on the same network, open Audio MIDI Setup ▸ MIDI Network Setup,
         create an <strong>RTP</strong> session (a "Network MIDI 2" session does not list the iPhone), switch it on, pick
         the iPhone or iPad under Sessions and Directories and <strong>Connect</strong> — no cable to the software you drive.</li>
@@ -1836,9 +1833,10 @@
 
     <h3 id="osc">OSC</h3>
     <ul>
-      <li><strong>Where it goes</strong> — Settings ▸ <strong>Network</strong> ▸ <strong>OSC goes to</strong>: the
+      <li><strong>Where it goes</strong> — Settings ▸ Connections ▸ <strong>OSC</strong> ▸ <strong>OSC goes to</strong>: the
         computer or device (an address such as 192.168.1.20, or a name such as studio-mac.local) and its port. Add as
-        many as you need — every pad sends to all of them, and each one reacts only to the addresses it knows. The
+        many as you need — a pad sends to all of them, and each one reacts only to the addresses it knows; with two or
+        more, a pad can also send to one of them (its <strong>Send to</strong>). The
         buttons fill in the usual ports: QLab 53000, Companion 12321. <strong>Send a test</strong> sends
         /blitzfingers/test to every target.</li>
       <li><strong>What a pad sends</strong> — an <strong>address</strong> (set for you as /blitzfingers/&lt;bank&gt;/&lt;pad&gt;,
@@ -1849,9 +1847,9 @@
     </ul>
     <figure class="fig">
       <svg viewBox="0 0 640 230" role="img" aria-labelledby="figNetTargetsT">
-        <title id="figNetTargetsT">Settings, Network: OSC goes to two targets, QLab at 192.168.1.20 port 53000 and Lights at lights.local port 8000, each with a remove button; Add, the port buttons QLab 53000 and Companion 12321, and Send a test</title>
+        <title id="figNetTargetsT">Settings, Connections, OSC: OSC goes to two targets, QLab at 192.168.1.20 port 53000 and Lights at lights.local port 8000, each with a remove button; Add, the port buttons QLab 53000 and Companion 12321, and Send a test</title>
         <rect x="0" y="0" width="420" height="230" rx="16" style="fill: var(--surface-2)"/>
-        <text x="210" y="30" font-size="14" font-weight="700" text-anchor="middle" style="fill: var(--text)">Network</text>
+        <text x="210" y="30" font-size="14" font-weight="700" text-anchor="middle" style="fill: var(--text)">OSC</text>
         <text x="20" y="62" font-size="13" font-weight="700" style="fill: var(--text)">OSC goes to</text>
         <rect x="20" y="74" width="90" height="30" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="30" y="94" font-size="11" style="fill: var(--text)">QLab</text><rect x="118" y="74" width="170" height="30" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="128" y="94" font-size="11" font-family="ui-monospace, Menlo, monospace" style="fill: var(--text)">192.168.1.20</text><rect x="296" y="74" width="70" height="30" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="306" y="94" font-size="11" style="fill: var(--text)">53000</text><text x="388" y="94" font-size="16" text-anchor="middle" style="fill: var(--text-muted)">×</text>
         <rect x="20" y="112" width="90" height="30" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="30" y="132" font-size="11" style="fill: var(--text)">Lights</text><rect x="118" y="112" width="170" height="30" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="128" y="132" font-size="11" font-family="ui-monospace, Menlo, monospace" style="fill: var(--text)">lights.local</text><rect x="296" y="112" width="70" height="30" rx="8" style="fill: var(--surface-1); stroke: var(--border-strong)"/><text x="306" y="132" font-size="11" style="fill: var(--text)">8000</text><text x="388" y="132" font-size="16" text-anchor="middle" style="fill: var(--text-muted)">×</text>
@@ -1863,7 +1861,7 @@
         <g font-size="11" font-weight="700" text-anchor="middle"><circle cx="410" cy="108" r="10" style="fill: var(--marker, var(--accent))"/><text x="410" y="112" style="fill: var(--on-marker, var(--on-accent))">1</text><circle cx="10" cy="168" r="10" style="fill: var(--marker, var(--accent))"/><text x="10" y="172" style="fill: var(--on-marker, var(--on-accent))">2</text><circle cx="130" cy="206" r="10" style="fill: var(--marker, var(--accent))"/><text x="130" y="210" style="fill: var(--on-marker, var(--on-accent))">3</text></g>
       </svg>
       <ol class="keys">
-        <li><b>1</b><span>Each <strong>target</strong>: a name for you, the computer or device, and its port. Every pad sends to all of them.</span></li>
+        <li><b>1</b><span>Each <strong>target</strong>: a name for you, the computer or device, and its port. A pad sends to all of them, or to the one it chooses.</span></li>
         <li><b>2</b><span><strong>Add</strong> another; the buttons fill in the usual ports of QLab and Companion.</span></li>
         <li><b>3</b><span><strong>Send a test</strong> — /blitzfingers/test to every target.</span></li>
       </ol>
@@ -1912,7 +1910,7 @@
         </g>
       </svg>
       <ol class="keys">
-        <li><b>1</b><span><strong>OSC</strong> — on or off for this pad; the line under it says where it goes (Settings ▸ Network).</span></li>
+        <li><b>1</b><span><strong>OSC</strong> — on or off for this pad; the line under it says where it goes (Settings ▸ Connections ▸ OSC); with two or more targets, <strong>Send to</strong> picks all or one. No target yet? The first one is set right here.</span></li>
         <li><b>2</b><span>The <strong>address</strong> your software listens for, and the <strong>value</strong> — empty sends the address alone. <strong>0 on release</strong> sends 0 when you let go.</span></li>
         <li><b>3</b><span><strong>Webhook</strong> — the web address the pad calls; <strong>On release too</strong> adds a second one for letting go.</span></li>
         <li><b>4</b><span><strong>More</strong> — the method (GET, POST, PUT), a body and one header line, for web interfaces that want them.</span></li>
@@ -1924,7 +1922,7 @@
     <ul>
       <li>A pad sends at the same moments as <a href="#midi-out">MIDI Out</a>: as you hit it, as you let go, when a loop
         really starts and stops, and Stop all sends every "off" still due. A tap, the keyboard and a controller all
-        count. <strong>Play the pad's sound</strong> — the same switch as in MIDI Out — turns a pad into a silent remote.</li>
+        count. <strong>Play the pad's sound</strong>, in the pad's Playback, turns a pad into a silent remote.</li>
       <li><strong>Test</strong> on the pad's Network screen sends once without playing; below it, the last result
         ("Webhook 200 OK, 18:42").</li>
       <li>The pad's → mark shows that it sends. A <strong>dot on it</strong> means its last send failed — a device not
@@ -2011,8 +2009,8 @@
       is. The section volumes stay open after the trial —
       balancing a room is playing, not building.</p>
 
-    <h3 id="backup">Bank backup</h3>
-    <p><strong>Export all</strong> in Settings ▸ <strong>Bank backup</strong> saves every bank in one
+    <h3 id="backup">All banks: backup and restore</h3>
+    <p><strong>Export all</strong> in Settings ▸ Banks ▸ <strong>All banks</strong> saves every bank in one
       <code>.zip</code>, one folder each — its sounds, every pad's settings, the layout and the dates the takes were
       made. Keep it as a backup, or take it to another device. To share a single bank, open its pencil in the bank
       list and tap <strong>Export</strong>.</p>
