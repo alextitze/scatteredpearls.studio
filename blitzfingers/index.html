@@ -14,7 +14,7 @@
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Scattered Pearls">
-  <meta property="og:title" content="Blitzfingers — a finger-drumming soundboard for your pocket">
+  <meta property="og:title" content="Blitzfingers — soundboard, finger drumming, and the whole show">
   <meta property="og:description" content="Play loops and one-shots, record and shape your own sounds, map a MIDI controller. No subscriptions, no ads, no tracking.">
   <meta property="og:url" content="https://scatteredpearls.studio/blitzfingers/">
   <meta property="og:image" content="https://scatteredpearls.studio/blitzfingers/img/og.png">
@@ -22,7 +22,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Blitzfingers — a soundboard and finger-drumming pad grid.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blitzfingers — a finger-drumming soundboard for your pocket">
+  <meta name="twitter:title" content="Blitzfingers — soundboard, finger drumming, and the whole show">
   <meta name="twitter:description" content="Play loops and one-shots, record and shape your own sounds, map a MIDI controller. No subscriptions, no ads, no tracking.">
   <meta name="twitter:image" content="https://scatteredpearls.studio/blitzfingers/img/og.png">
 
@@ -200,7 +200,9 @@
     .hero-main { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: clamp(var(--sp-space-6), 5vw, var(--sp-space-7)); padding-bottom: var(--sp-space-6); }
     .hero-inner { display: flex; flex-direction: column; align-items: center; gap: var(--sp-space-5); text-align: center; }
     .hero-icon { width: clamp(68px, 9vw, 82px); height: auto; border-radius: 19px; box-shadow: 0 14px 34px rgba(0, 0, 0, .55); }
-    .hero .claim { margin: 0; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: var(--sp-weight-semibold); line-height: 1.3; max-width: 34ch; color: var(--text); }
+    .hero .claim { margin: 0; display: flex; flex-direction: column; gap: .15em; font-family: var(--font-display); font-size: clamp(1.2rem, 2.8vw, 1.85rem);
+      font-weight: var(--sp-weight-semibold); line-height: 1.15; letter-spacing: -0.01em; color: var(--text-soft); text-wrap: balance; }
+    .hero .claim em { font-style: normal; font-weight: var(--sp-weight-bold); color: #a894e6; }
     .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-space-3); }
     .hero-note { margin: 0; font-size: var(--sp-text-sm); color: var(--text-muted); }
     .promises { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-space-3); font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); }
@@ -500,7 +502,12 @@
       <div class="hero-inner">
         <img class="hero-icon" src="img/icon.svg" alt="" width="82" height="82">
         <h1>Blitzfingers</h1>
-        <p class="claim">A finger-drumming soundboard for your pocket.</p>
+        <!-- The claim (maker, 2026-10-26): the app outgrew "a soundboard" — three questions, three answers, rising to the show. -->
+        <p class="claim">
+          <span>A soundboard? <em>Sure.</em></span>
+          <span>Finger drumming? <em>Sure.</em></span>
+          <span>Running the whole show? <em>That too.</em></span>
+        </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#pricing">Download on the App&nbsp;Store</a>
           <a class="btn btn-ghost" href="#areas">See what it does</a>
