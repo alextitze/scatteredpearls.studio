@@ -36,8 +36,18 @@ section[id], [id].anchor { scroll-margin-top: calc(var(--head-h) + 16px); }
 /* On a phone the studio pages show the mark at 32 px with text-md — the same here, so it does not jump between them. */
 @media (max-width: 720px) { .site-head .home img { width: 32px; height: 32px; } .site-head .home span { font-size: var(--sp-text-md); } }
 
+/* The app beside the studio (maker, 2026-10-26: most people come for Blitzfingers, not the studio). The studio mark
+   stays exactly where it is on the studio pages; a hairline, then the app's icon and name, brighter than the studio's.
+   On a phone the studio's name gives way, its mark stays. */
+.brand { display: flex; align-items: center; gap: var(--sp-space-3); min-width: 0; }
+.brand-sep { width: 1px; height: 24px; background: var(--border-strong); }
+.site-head .app { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+.site-head .app img { width: 28px; height: 28px; display: block; border-radius: 7px; }
+.site-head .app span { font-family: var(--font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
+@media (max-width: 720px) { .site-head .home span { display: none; } .site-head .app span { font-size: var(--sp-text-md); } }
+
 /* The menu: the landing page's sections as anchors, plus the guide, which is its own page (hence
-   the arrow). Inline on wide screens; below 860px the same links fold into a "Menu" disclosure. The
+   the arrow). Inline on wide screens; below 1040px the same links fold into a "Menu" disclosure. The
    list is written twice in the markup because a closed <details> hides its content on every width. */
 .site-nav ul { list-style: none; margin: 0; padding: 0; }
 .site-nav li { margin: 0; max-width: none; }
@@ -53,7 +63,7 @@ section[id], [id].anchor { scroll-margin-top: calc(var(--head-h) + 16px); }
 .nav-inline { display: flex; align-items: center; gap: var(--sp-space-5); }
 .nav-menu { display: none; }
 
-@media (max-width: 860px) {
+@media (max-width: 1040px) {
   .nav-inline { display: none; }
   .nav-menu { display: block; }
   .nav-menu summary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid var(--border-strong); border-radius: var(--sp-radius-pill); color: var(--text); font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); cursor: pointer; list-style: none; }
