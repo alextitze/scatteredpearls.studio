@@ -349,9 +349,13 @@
     .fx-row span { font-size: var(--sp-text-sm); color: var(--text-muted); }
 
     /* ── Why ─────────────────────────────────────────────────────────────── */
-    .why { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(var(--sp-space-6), 4vw, 48px); align-items: center; }
-    .portrait { aspect-ratio: 1; border-radius: var(--sp-radius-xl); border: 1px dashed var(--border-strong); display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--sp-space-5); font-size: var(--sp-text-sm); line-height: 1.5; color: var(--text-muted); }
+    /* The picture runs the full height of the story beside it — about 9:16 at 340 px, an upright phone photo, so it
+       barely crops. Stacked (≤ 1024), it sits above the text as a 4:3 cut of the same photo. */
+    .why { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: clamp(var(--sp-space-6), 4vw, 48px); align-items: stretch; }
+    .portrait { overflow: hidden; border-radius: var(--sp-radius-xl); border: 1px dashed var(--border-strong); display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--sp-space-5); font-size: var(--sp-text-sm); line-height: 1.5; color: var(--text-muted); }
     .why .copy { display: flex; flex-direction: column; gap: var(--sp-space-4); }
+    .portrait:has(img) { padding: 0; border: 0; }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
     .why .copy p { margin: 0; font-size: clamp(1.0625rem, 1.9vw, 1.1875rem); line-height: 1.62; color: var(--text-soft); max-width: 58ch; }
     .signature { font-family: var(--font-display); font-weight: var(--sp-weight-semibold); font-size: var(--sp-text-lg); color: #e0b455; }
     .details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-space-6); margin-top: var(--sp-space-6); padding-top: var(--sp-space-6); border-top: 1px solid var(--border); }
@@ -408,7 +412,7 @@
       .stage > .fig:not(.on) { display: none; }
       .split.flip .copy { order: -1; }
       .why { grid-template-columns: minmax(0, 1fr); }
-      .portrait { max-width: 240px; }
+      .portrait { aspect-ratio: 4 / 3; width: 100%; max-width: 58ch; }
     }
     @media (max-width: 760px) {
       .halves, .plans, .faq, .details { grid-template-columns: minmax(0, 1fr); }
@@ -460,6 +464,7 @@
       <nav class="site-nav" aria-label="Blitzfingers">
         <ul class="nav-inline">
           <li><a href="#areas">How it works</a></li>
+          <li><a href="#why">Why</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#deep">The deep end</a></li>
           <li><a href="#pricing">Pricing</a></li>
@@ -470,6 +475,7 @@
           <summary>Menu</summary>
           <ul>
             <li><a href="#areas">How it works</a></li>
+            <li><a href="#why">Why</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#deep">The deep end</a></li>
             <li><a href="#pricing">Pricing</a></li>
@@ -575,7 +581,31 @@
   </div>
 </section>
 
-<!-- ── 3 · Make it yours ────────────────────────────────────────────────── -->
+<!-- ── 3 · Why ──────────────────────────────────────────────────────────── -->
+<section id="why">
+  <div class="wrap">
+    <div class="why">
+      <div class="portrait">[ photo from the wedding — Alex with the pads, guests soft behind; or hands on the pads. Upright, the subject in the middle: full height beside the text, a 4:3 cut on phones. ]</div>
+      <div class="copy">
+        <span class="kicker">Why</span>
+        <h2>It started at a friend’s wedding</h2>
+        <p>A friend was getting married, and a few of us put together a show for the evening: speeches, short acts, and sounds running alongside. Some played quietly underneath as a backdrop. Others went off as a surprise, at exactly the right moment.</p>
+        <p>I looked for an app that could simply do that. The App Store is full of soundboards, but they drowned me in ads, or rented me the good parts by the month. So I built my own. That first version could do far less than this one, but it carried the evening.</p>
+        <p>Then the details got hold of me. A loop that waits for the bar. A sound that fades out instead of cutting off. A board you can play while your eyes are on the room. Blitzfingers is what grew out of that: open it and just play, fun in a second, and still deep when you want more.</p>
+        <p>Nothing here renews. Nothing watches you. You buy it, and it is yours.</p>
+        <p class="signature">Made with care, by one pair of hands. — Alex</p>
+      </div>
+    </div>
+
+    <div class="details">
+      <div><h3>Everything stays on the device</h3><p>Your sounds and boards live on your phone. No cloud, no account, nothing uploaded — and it all works with the plane mode on.</p></div>
+      <div><h3>It behaves on iOS</h3><p>Sound comes through even with the silent switch on, it steps aside for a call or Siri, and it stops when you unplug the headphones.</p></div>
+      <div><h3>Small things you only miss when they are gone</h3><p>A short haptic under every hit, and a screen that refuses to sleep while you are recording or playing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4 · Make it yours ────────────────────────────────────────────────── -->
 <section id="features">
   <div class="wrap">
     <div class="split has-stage">
@@ -730,7 +760,7 @@
   </div>
 </section>
 
-<!-- ── 4 · The deep end ─────────────────────────────────────────────────── -->
+<!-- ── 5 · The deep end ─────────────────────────────────────────────────── -->
 <section id="deep">
   <div class="wrap">
     <div class="split flip has-stage">
@@ -832,28 +862,6 @@
           <li style="--c: var(--p-purple);"><span class="mk"></span><div><h3>Export and import boards</h3><p>A whole bank as one file you can see in Files and send to someone. It comes back intact.</p></div></li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── 5 · Why ──────────────────────────────────────────────────────────── -->
-<section id="why">
-  <div class="wrap">
-    <div class="why">
-      <div class="portrait">[ photo of Alex — at the desk, or hands on the pads. Optional, but this is the section that earns one. ]</div>
-      <div class="copy">
-        <span class="kicker">Why</span>
-        <h2>I built the one I was missing</h2>
-        <p>I wanted a soundboard I actually enjoyed. The App Store is full of them — but they drowned me in ads, or rented me the good parts by the month. So I built this one: open it and just play, fun in a second, and still deep when you want more.</p>
-        <p>Nothing here renews. Nothing watches you. You buy it, and it is yours.</p>
-        <p class="signature">Made with care, by one pair of hands. — Alex</p>
-      </div>
-    </div>
-
-    <div class="details">
-      <div><h3>Everything stays on the device</h3><p>Your sounds and boards live on your phone. No cloud, no account, nothing uploaded — and it all works with the plane mode on.</p></div>
-      <div><h3>It behaves on iOS</h3><p>Sound comes through even with the silent switch on, it steps aside for a call or Siri, and it stops when you unplug the headphones.</p></div>
-      <div><h3>Small things you only miss when they are gone</h3><p>A short haptic under every hit, and a screen that refuses to sleep while you are recording or playing.</p></div>
     </div>
   </div>
 </section>
