@@ -257,6 +257,7 @@
     <li><a href="#recording">Recording &amp; importing</a></li>
     <li><a href="#overdub">Overdub</a></li>
     <li><a href="#midi">MIDI</a></li>
+    <li><a href="#network">Network: OSC and webhooks</a></li>
     <li><a href="#keyboard">Keyboard</a></li>
     <li><a href="#sound">Sound &amp; levels</a></li>
     <li><a href="#appearance">Appearance</a></li>
@@ -758,6 +759,8 @@
       <li><a href="#midi"><strong>MIDI</strong></a> — two tabs, as in Settings ▸ MIDI: <strong>In</strong>, the controller
         that plays the pad; <strong>Out</strong>, what the pad <a href="#midi-out">sends</a> to a synth, the lights or
         video software. The row sums up both — "In: Pad · Out: Note C2".</li>
+      <li><a href="#network"><strong>Network</strong></a> — what the pad sends over the network: an OSC message, a web
+        address it calls, or both. The row says which — "OSC /lights/1", "Web POST", "OSC · Web".</li>
     </ul>
     <p><strong>Everything you change is kept as you change it</strong> — there is nothing to save, and closing
       the screen is enough. <strong>Delete</strong>, for sounds you recorded or imported, asks first.</p>
@@ -1813,6 +1816,62 @@
     <p>In edit mode the pads ignore MIDI triggers, so a stray hit does not play while you arrange; Stop all and the
       section volumes keep working. After the trial, mappings and MIDI Out keep playing — only learning and changing
       them waits for the unlock.</p>
+  </section>
+
+  <section id="network">
+    <h2>Network: OSC and webhooks</h2>
+    <p>Besides MIDI, a pad can tell other things on your network that it was played — show software, a light desk, a
+      smart home. Two ways, each switched on per pad in its settings ▸ <strong>Network</strong>:</p>
+    <ul>
+      <li><strong>OSC</strong> (Open Sound Control) — the language of show software: QLab, Resolume, TouchDesigner,
+        many light desks, and <strong>Bitfocus Companion</strong>, which passes it on to OBS, video mixers, lights and
+        smart homes.</li>
+      <li><strong>A webhook</strong> — the pad calls a web address: Home Assistant, Philips Hue, Shelly, Elgato, or
+        anything else with a web interface.</li>
+    </ul>
+
+    <h3 id="osc">OSC</h3>
+    <ul>
+      <li><strong>Where it goes</strong> — Settings ▸ <strong>Network</strong> ▸ <strong>OSC goes to</strong>: the
+        computer or device (an address such as 192.168.1.20, or a name such as studio-mac.local) and its port. Add as
+        many as you need — every pad sends to all of them, and each one reacts only to the addresses it knows. The
+        buttons fill in the usual ports: QLab 53000, Companion 12321. <strong>Send a test</strong> sends
+        /blitzfingers/test to every target.</li>
+      <li><strong>What a pad sends</strong> — an <strong>address</strong> (set for you as /blitzfingers/&lt;bank&gt;/&lt;pad&gt;,
+        change it to what your software expects, e.g. /cue/12/go) and a <strong>value</strong>, 1 to start with. Leave
+        the value empty to send the address alone — QLab's /cue/…/go wants it that way.</li>
+      <li><strong>0 on release</strong> — sends the address again with 0 when you let go of the pad; a loop sends its
+        value when it starts on the bar and 0 when it stops.</li>
+    </ul>
+
+    <h3 id="webhooks">Webhooks</h3>
+    <ul>
+      <li><strong>Address (URL)</strong> — called when the pad plays. <strong>On release too</strong> adds a second
+        address for when you let go (a loop: when it stops).</li>
+      <li><strong>More: method, body, header</strong> — for web interfaces that want more than a plain call: GET, POST
+        or PUT; a body (POST and PUT); and one header line, e.g. <code>Authorization: Bearer …</code> for Home
+        Assistant. <code>{pad}</code>, <code>{bank}</code> and <code>{state}</code> (on or off) are filled in, in the
+        body and the addresses.</li>
+      <li><strong>The header stays on this device</strong> — it usually holds a key, so it is never part of an exported
+        bank. A bank you pass on keeps its addresses; the header is added again on the other device.</li>
+      <li>Plain <code>http://</code> works for addresses on your own network (Home Assistant, a Hue bridge, a Shelly);
+        addresses on the internet need <code>https://</code>.</li>
+    </ul>
+
+    <h3>When, and when something does not answer</h3>
+    <ul>
+      <li>A pad sends at the same moments as <a href="#midi-out">MIDI Out</a>: as you hit it, as you let go, when a loop
+        really starts and stops, and Stop all sends every "off" still due. A tap, the keyboard and a controller all
+        count. <strong>Play the pad's sound</strong> — the same switch as in MIDI Out — turns a pad into a silent remote.</li>
+      <li><strong>Test</strong> on the pad's Network screen sends once without playing; below it, the last result
+        ("Webhook 200 OK, 18:42").</li>
+      <li>The pad's → mark shows that it sends. A <strong>dot on it</strong> means its last send failed — a device not
+        reachable, a wrong address, a web address answering with an error. Nothing pops up while you play; the pad's
+        Network screen says what went wrong.</li>
+      <li>The first time a pad sends, your iPhone, iPad or Mac asks once whether Blitzfingers may reach devices on
+        your network. Allow it, or nothing arrives; it can be changed later in the device's Settings ▸ Blitzfingers
+        (on a Mac: System Settings ▸ Privacy &amp; Security ▸ Local Network).</li>
+    </ul>
   </section>
 
   <section id="keyboard">
