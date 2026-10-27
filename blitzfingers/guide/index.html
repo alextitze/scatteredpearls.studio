@@ -1753,6 +1753,8 @@
       "control 7 to 127", "program 5" — and what the receiver does with one is its own business. You set it in the pad's
       settings ▸ <strong>MIDI</strong> ▸ <strong>Out</strong>. So a pad can:</p>
     <ul>
+      <li><strong>Send on every hit</strong> — <strong>Send on: Each hit</strong> sends the note on every hit of the
+        pad's sound, not only when you press it (see <a href="#each-hit">Each hit</a>).</li>
       <li><strong>Play a synth or a drum machine</strong> — the pad's note plays on the hardware, with or without the
         pad's own sound.</li>
       <li><strong>Switch the lights</strong> — lighting software and many light desks start a scene or an effect on a
@@ -1874,8 +1876,8 @@
         address for when you let go (a loop: when it stops).</li>
       <li><strong>More: method, body, header</strong> — for web interfaces that want more than a plain call: GET, POST
         or PUT; a body (POST and PUT); and one header line, e.g. <code>Authorization: Bearer …</code> for Home
-        Assistant. <code>{pad}</code>, <code>{bank}</code> and <code>{state}</code> (on or off) are filled in, in the
-        body and the addresses.</li>
+        Assistant. <code>{pad}</code>, <code>{bank}</code>, <code>{state}</code> (on or off) and <code>{level}</code>
+        (a hit's strength, 0.00 to 1.00 — see <a href="#each-hit">Each hit</a>) are filled in, in the body and the addresses.</li>
       <li><strong>The header stays on this device</strong> — it usually holds a key, so it is never part of an exported
         bank. A bank you pass on keeps its addresses; the header is added again on the other device.</li>
       <li>Plain <code>http://</code> works for addresses on your own network (Home Assistant, a Hue bridge, a Shelly);
@@ -1918,6 +1920,24 @@
         <li><b>5</b><span><strong>Test</strong> — sends once without playing; beside it the last result.</span></li>
       </ol>
     </figure>
+
+    <h3 id="each-hit">Each hit — on every hit of the sound</h3>
+    <p>A hi-hat loop sends once when you start it. Set a way to <strong>Send on: Each hit</strong> and it sends on
+      <strong>every hat</strong> instead — the strobe flashes with each one. It works for OSC, the webhook and
+      <a href="#midi-out">MIDI Out</a> (a note or a controller), each on its own.</p>
+    <ul>
+      <li>Blitzfingers finds the hits in the sound in advance and sends each one the moment you hear it — light and sound
+        land together, at any tempo, with Speed, Pitch, Reverse and the trim.</li>
+      <li><strong>Hits</strong>, once per pad: <strong>Sensitivity</strong> (Low, Medium, High — raise it when quiet hits
+        are missed), <strong>Flash</strong> (how long each hit stays on before its "off", 20 to 500 ms) and
+        <strong>Value follows the hit</strong> (soft hits send less: a MIDI velocity, an OSC float from 0 to 1,
+        <code>{level}</code> in a webhook). A line says how many hits it found.</li>
+      <li>On Each hit, OSC's switch reads <strong>0 after the flash</strong> — on, so a light desk's flash button lets go
+        after every hit.</li>
+      <li>A webhook sends at most ten calls a second; a hit closer than that is skipped for it.</li>
+      <li>A pad on Each hit sends nothing on the press itself — the first hit is the start. With its sound off it still
+        sends: a silent light track in time with a loop.</li>
+    </ul>
 
     <h3>When, and when something does not answer</h3>
     <ul>
