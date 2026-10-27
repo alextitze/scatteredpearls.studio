@@ -1753,7 +1753,7 @@
       "control 7 to 127", "program 5" — and what the receiver does with one is its own business. You set it in the pad's
       settings ▸ <strong>MIDI</strong> ▸ <strong>Out</strong>. So a pad can:</p>
     <ul>
-      <li><strong>Send on every hit</strong> — <strong>Send on: Each hit</strong> sends the note on every hit of the
+      <li><strong>Send on every hit</strong> — <strong>Send: Each hit</strong> sends the note on every hit of the
         pad's sound, not only when you press it (see <a href="#each-hit">Each hit</a>).</li>
       <li><strong>Play a synth or a drum machine</strong> — the pad's note plays on the hardware, with or without the
         pad's own sound.</li>
@@ -1922,21 +1922,22 @@
     </figure>
 
     <h3 id="each-hit">Each hit — on every hit of the sound</h3>
-    <p>A hi-hat loop sends once when you start it. Set a way to <strong>Send on: Each hit</strong> and it sends on
-      <strong>every hat</strong> instead — the strobe flashes with each one. It works for OSC, the webhook and
-      <a href="#midi-out">MIDI Out</a> (a note or a controller), each on its own.</p>
+    <p>A hi-hat loop sends once when you start it. Set <strong>Send</strong> to <strong>Each hit</strong> and it sends on
+      <strong>every hat</strong> instead — the strobe flashes with each one. Each way has the switch in its own card: OSC,
+      the webhook and <a href="#midi-out">MIDI Out</a> (a note or a controller).</p>
     <ul>
       <li>Blitzfingers finds the hits in the sound in advance and sends each one the moment you hear it — light and sound
         land together, at any tempo, with Speed, Pitch, Reverse and the trim.</li>
-      <li><strong>Hits</strong>, once per pad: <strong>Sensitivity</strong> (Low, Medium, High — raise it when quiet hits
-        are missed), <strong>Flash</strong> (how long each hit stays on before its "off", 20 to 500 ms) and
-        <strong>Value follows the hit</strong> (soft hits send less: a MIDI velocity, an OSC float from 0 to 1,
-        <code>{level}</code> in a webhook). A line says how many hits it found.</li>
-      <li>On Each hit, OSC's switch reads <strong>0 after the flash</strong> — on, so a light desk's flash button lets go
-        after every hit.</li>
+      <li><strong>Which hits</strong> — <strong>Only loud</strong>, <strong>Most</strong> or <strong>Also quiet</strong>.
+        Under it, how many hits it found in the sound; too few, pick Also quiet; too many, Only loud.</li>
+      <li><strong>Stays on for</strong> — how long each hit stays on before its "off" follows: OSC sends 0, a MIDI note
+        its note-off, a controller 0, the webhook its address on release (if you set one). Short for a strobe, longer for
+        a lamp.</li>
+      <li><strong>Louder hit, bigger value</strong> — soft hits send less: a lower velocity, an OSC value from 0.0 to 1.0
+        (a dimmer follows the groove), <code>{level}</code> in a webhook. Off, every hit sends the value you set.</li>
       <li>A webhook sends at most ten calls a second; a hit closer than that is skipped for it.</li>
-      <li>A pad on Each hit sends nothing on the press itself — the first hit is the start. With its sound off it still
-        sends: a silent light track in time with a loop.</li>
+      <li>On Each hit a way sends nothing on the press itself — the first hit is the start. With the pad's sound off it
+        still sends: a silent light track in time with a loop.</li>
     </ul>
 
     <h3>When, and when something does not answer</h3>
