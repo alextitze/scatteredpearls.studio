@@ -284,7 +284,7 @@
       <li><strong>Record your own:</strong> tap an empty slot (<strong>+</strong>), choose
         <strong>Record…</strong>, switch on the <strong>Metronome</strong>, and tap Start. A big 4–3–2–1 counts
         you in; the take stops by itself and lands on the slot.</li>
-      <li><strong>Shape it:</strong> <strong>Edit pads</strong> (the pencil in the header) turns on edit mode —
+      <li><strong>Shape it:</strong> <strong>Edit pads</strong> (in the menu behind the faders, top right) turns on edit mode —
         tap the new pad to trim it, name it, colour it and add effects. <strong>✓ Done</strong> ends it.</li>
     </ol>
     <p class="note">The first time you open Blitzfingers, a short tour on the <strong>Intro</strong> bank walks you
@@ -303,7 +303,7 @@
       stops it there — nothing plays.</p>
     <figure class="fig">
       <svg viewBox="0 0 640 430" role="img" aria-labelledby="figBoardT">
-        <title id="figBoardT">The board: a header with the logo — Stop all while sound plays — the bank tabs, Edit pads and settings; one-shots above, loops below.</title>
+        <title id="figBoardT">The board: a header with the logo — Stop all while sound plays — the bank tabs and the faders, a menu with Edit pads and Settings; one-shots above, loops below.</title>
         <!-- header -->
         <rect x="0" y="0" width="640" height="56" rx="14" style="fill: var(--surface-2)"/>
         <!-- the logo while sound plays: Stop all, its bolt a yellow square -->
@@ -320,10 +320,8 @@
           <text x="302" y="33" style="fill: var(--text-muted)">Party</text>
         </g>
         <path d="M346 23 h14 M346 28 h14 M346 33 h14" style="stroke: var(--text-muted)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M498 38 l3-9 11-11 6 6 -11 11z" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linejoin="round"/>
-        <text x="522" y="33" font-size="13" font-weight="600" style="fill: var(--text-soft)">Edit pads</text>
-        <path d="M614.0 28.0 L610.4 31.1 L610.8 35.8 L606.1 35.4 L603.0 39.0 L599.9 35.4 L595.2 35.8 L595.6 31.1 L592.0 28.0 L595.6 24.9 L595.2 20.2 L599.9 20.6 L603.0 17.0 L606.1 20.6 L610.8 20.2 L610.4 24.9Z" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linejoin="round"/>
-        <circle cx="603" cy="28" r="3.5" style="fill: none; stroke: var(--text-soft)" stroke-width="2"/>
+        <!-- the faders: a menu with Edit pads and Settings -->
+        <g transform="translate(591 16)" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v4M6 11v10M12 3v10M12 17v4M18 3v2M18 9v12"/><rect x="4" y="7" width="4" height="4" rx="1.2"/><rect x="10" y="13" width="4" height="4" rx="1.2"/><rect x="16" y="5" width="4" height="4" rx="1.2"/></g>
         <!-- one-shots -->
         <text x="16" y="88" font-size="11" font-weight="700" letter-spacing="2" style="fill: var(--text-soft)">ONE-SHOTS</text>
         <text x="100" y="88" font-size="11" style="fill: var(--text-muted)">instant, can overlap</text>
@@ -357,30 +355,28 @@
         <g font-size="11" font-weight="700" text-anchor="middle">
           <circle cx="128" cy="12" r="10" style="fill: var(--marker, var(--accent))"/><text x="128" y="16" style="fill: var(--on-marker, var(--on-accent))">1</text>
           <circle cx="30" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="30" y="62" style="fill: var(--on-marker, var(--on-accent))">2</text>
-          <circle cx="540" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="540" y="62" style="fill: var(--on-marker, var(--on-accent))">3</text>
-          <circle cx="603" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="603" y="62" style="fill: var(--on-marker, var(--on-accent))">4</text>
-          <circle cx="172" cy="170" r="10" style="fill: var(--marker, var(--accent))"/><text x="172" y="174" style="fill: var(--on-marker, var(--on-accent))">5</text>
-          <circle cx="620" cy="104" r="10" style="fill: var(--marker, var(--accent))"/><text x="620" y="108" style="fill: var(--on-marker, var(--on-accent))">6</text>
-          <circle cx="16" cy="256" r="10" style="fill: var(--marker, var(--accent))"/><text x="16" y="260" style="fill: var(--on-marker, var(--on-accent))">7</text>
-          <circle cx="214" cy="262" r="10" style="fill: var(--marker, var(--accent))"/><text x="214" y="266" style="fill: var(--on-marker, var(--on-accent))">8</text>
+          <circle cx="603" cy="58" r="10" style="fill: var(--marker, var(--accent))"/><text x="603" y="62" style="fill: var(--on-marker, var(--on-accent))">3</text>
+          <circle cx="172" cy="170" r="10" style="fill: var(--marker, var(--accent))"/><text x="172" y="174" style="fill: var(--on-marker, var(--on-accent))">4</text>
+          <circle cx="620" cy="104" r="10" style="fill: var(--marker, var(--accent))"/><text x="620" y="108" style="fill: var(--on-marker, var(--on-accent))">5</text>
+          <circle cx="16" cy="256" r="10" style="fill: var(--marker, var(--accent))"/><text x="16" y="260" style="fill: var(--on-marker, var(--on-accent))">6</text>
+          <circle cx="214" cy="262" r="10" style="fill: var(--marker, var(--accent))"/><text x="214" y="266" style="fill: var(--on-marker, var(--on-accent))">7</text>
         </g>
         <text x="320" y="400" font-size="12" text-anchor="middle" style="fill: var(--text-muted)">The colour sits in each pad's lower edge, so you find a pad without reading it.</text>
       </svg>
       <ol class="keys">
         <li><b>1</b><span>The banks — tap one to switch; <strong>≡</strong> lists them all, to add, rename, export or sort one. On a phone: the bank's name with ≡, which opens the list.</span></li>
         <li><b>2</b><span>The logo — while anything sounds, its bolt is a yellow square: <strong>Stop all</strong>, a tap stops everything.</span></li>
-        <li><b>3</b><span><strong>Edit pads</strong> — edit mode, to arrange and set up pads; <strong>✓ Done</strong> ends it.</span></li>
-        <li><b>4</b><span>Settings — sound, appearance, MIDI, backup, the guide.</span></li>
-        <li><b>5</b><span>A pad's marks — what each one means is just below.</span></li>
-        <li><b>6</b><span>An empty slot — tap the + to add a sound there.</span></li>
-        <li><b>7</b><span>A playing loop glows in its colour.</span></li>
-        <li><b>8</b><span>A round letter, top left: the loop's <a href="#groups">group</a>. Loops of one group take over from each other; a loop without one keeps playing.</span></li>
+        <li><b>3</b><span>The faders — a small menu: <strong>Edit pads</strong> (edit mode, to arrange and set up pads; <strong>✓ Done</strong> beside the faders ends it) and <strong>Settings</strong> (sound, appearance, MIDI, backup, the guide).</span></li>
+        <li><b>4</b><span>A pad's marks — what each one means is just below.</span></li>
+        <li><b>5</b><span>An empty slot — tap the + to add a sound there.</span></li>
+        <li><b>6</b><span>A playing loop glows in its colour.</span></li>
+        <li><b>7</b><span>A round letter, top left: the loop's <a href="#groups">group</a>. Loops of one group take over from each other; a loop without one keeps playing.</span></li>
       </ol>
     </figure>
     <p><strong>Stop all</strong> is the logo, top left. While nothing sounds it is just the logo; as soon as anything
       plays, its bolt turns into a yellow square — tap it. It silences everything at once — loops, one-shots, and a loop
       still fading out. It cuts, it does not fade. On a wide screen the words "Stop all" appear beside it; on a phone and
-      on an iPad held upright, the square alone (and Edit pads its icon alone).</p>
+      on an iPad held upright, the square alone.</p>
 
     <h3 id="pad-marks">The marks on a pad</h3>
     <p>Small marks on a pad tell you how it behaves without opening it. They sit in a row along the bottom; the
@@ -688,18 +684,19 @@
 
   <section id="edit">
     <h2>Editing a pad</h2>
-    <p>The <strong>pencil</strong> in the header turns on edit mode: the pads wobble, the marks make room for the
-      names, and the pencil becomes a check to finish. While editing, pads do not play — a tap opens their
+    <p><strong>Edit pads</strong>, in the menu behind the faders at the top right, turns on edit mode: the pads wobble,
+      the marks make room for the names, and <strong>✓ Done</strong> appears beside the faders to finish. While editing, pads do not play — a tap opens their
       settings instead — and a stray MIDI hit does not play either. What is already playing keeps playing:
       rearrange, recolour or switch an effect on while the loops run, and you hear the change at once.</p>
 
     <h3>Arranging</h3>
     <figure class="fig">
       <svg viewBox="0 0 640 310" role="img" aria-labelledby="figEditT">
-        <title id="figEditT">Edit mode (a phone): the pencil has become a check — Done; a lifted pad is dragged between two others, which make room; another goes into an empty slot; and one is dragged across from the one-shots to the loops.</title>
+        <title id="figEditT">Edit mode (a phone): ✓ Done beside the faders; a lifted pad is dragged between two others, which make room; another goes into an empty slot; and one is dragged across from the one-shots to the loops.</title>
         <rect x="0" y="0" width="640" height="44" rx="12" style="fill: var(--surface-2)"/>
         <rect x="54" y="9" width="90" height="26" rx="13" style="fill: var(--accent-soft)"/><text x="68" y="27" font-size="12" font-weight="700" style="fill: var(--text)">Groove ≡</text>
-        <circle cx="603" cy="22" r="14" style="fill: var(--accent)"/><path d="M596 22 l5 5 9-10" style="fill: none; stroke: var(--on-accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="560" cy="22" r="14" style="fill: var(--accent)"/><path d="M553 22 l5 5 9-10" style="fill: none; stroke: var(--on-accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(591 10)" style="fill: none; stroke: var(--text-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v4M6 11v10M12 3v10M12 17v4M18 3v2M18 9v12"/><rect x="4" y="7" width="4" height="4" rx="1.2"/><rect x="10" y="13" width="4" height="4" rx="1.2"/><rect x="16" y="5" width="4" height="4" rx="1.2"/></g>
         <g transform="translate(0 30)">
         <text x="16" y="70" font-size="10" font-weight="700" letter-spacing="1.5" style="fill: var(--text-soft)">ONE-SHOTS</text>
         <g transform="rotate(-2 70 115)"><rect x="16" y="80" width="110" height="70" rx="12" style="fill: var(--surface-2)" /><rect x="16" y="145" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-coral))"/><text x="71.0" y="119.0" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Kick</text></g>
@@ -721,7 +718,7 @@
           <rect x="40" y="18" width="110" height="70" rx="12" style="fill: var(--surface-2); stroke: var(--accent)" stroke-width="2"/><rect x="40" y="83" width="110" height="5" rx="2.5" style="fill: rgb(var(--p-rose))"/><text x="95" y="57" font-size="12" font-weight="600" text-anchor="middle" style="fill: var(--text)">Zap</text>
         </g>
         <path d="M300 66 C 250 60, 190 80, 156 108" style="fill: none; stroke: var(--accent)" stroke-width="2"/><path d="M161 100 l-5 9 10 0" style="fill: none; stroke: var(--accent)" stroke-width="2"/>
-        <circle cx="603" cy="48" r="10" style="fill: var(--marker, var(--accent))"/><text x="603" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">1</text>
+        <circle cx="560" cy="48" r="10" style="fill: var(--marker, var(--accent))"/><text x="560" y="52" font-size="11" font-weight="700" text-anchor="middle" style="fill: var(--on-marker, var(--on-accent))">1</text>
       </svg>
       <ol class="keys">
         <li><b>1</b><span>The check ends edit mode.</span></li>
