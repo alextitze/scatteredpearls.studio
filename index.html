@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-surface="brand">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Scattered Pearls — a one-man app studio</title>
+  <meta name="description" content="A tiny studio for lean, ad-free apps that are yours to keep. No accounts, no subscriptions, no tracking. First app coming soon.">
+  <link rel="canonical" href="https://scatteredpearls.studio/">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#150f19">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Scattered Pearls">
+  <meta property="og:title" content="Scattered Pearls — a one-man app studio">
+  <meta property="og:description" content="Small, honest apps — the kind you buy, own, and simply use. No ads, no accounts, no subscriptions, nothing watching you.">
+  <meta property="og:url" content="https://scatteredpearls.studio/">
+  <meta property="og:image" content="https://scatteredpearls.studio/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Scattered Pearls — the strand mark beside the name, on ink.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://scatteredpearls.studio/og.png">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="studio-tile.svg">
+  <link rel="apple-touch-icon" href="studio-tile-180.png">
+
+  <!-- Shared design system (vendored from the hub) -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+
+  <style>
+    /* Locally-hosted brand fonts — no CDN, no visitor data leaves for a third party. */
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/hanken-400.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/hanken-600.woff2") format("woff2"); }
+    @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/hanken-700.woff2") format("woff2"); }
+    @font-face { font-family: "Bricolage Grotesque"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/bricolage-700.woff2") format("woff2"); }
+
+    /* Palette comes from the design system's brand surface: this page opts in
+       with data-surface="brand" on <html>, so tokens.css provides the ink
+       ground, cream card and on-ground text (plus the type/space/radius
+       scales). Not themed — one fixed branded surface, always dark. */
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      position: relative;
+      overflow-x: hidden;
+      background:
+        radial-gradient(70vw 62vh at 86% 8%, var(--sp-ground-rose) 0%, transparent 62%),
+        radial-gradient(68vw 58vh at 10% 92%, var(--sp-ground-warm) 0%, transparent 60%),
+        var(--sp-ground);
+      background-attachment: fixed;
+      color: var(--sp-on-ground);
+      font-family: var(--sp-font-body);
+      font-size: var(--sp-text-md);
+      line-height: var(--sp-leading-normal);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Pearls ──────────────────────────────────────────────────────────────
+       Each pearl is one element. --s is its diameter; the highlight, the
+       nacre sheen, the core shadow and the cast shadow all scale from it, so
+       a pearl stays a pearl at any size. */
+    .pearls { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+
+    .pearl {
+      position: absolute;
+      width: var(--s);
+      height: var(--s);
+      border-radius: 50%;
+      filter: blur(calc(var(--s) * 0.006));
+      background:
+        radial-gradient(circle at 30% 22%, #ffffff 0%, rgba(255,255,255,.90) 5%, rgba(255,255,255,0) 16%),
+        radial-gradient(circle at 76% 28%, rgba(166,232,212,.42) 0%, rgba(166,232,212,0) 44%),
+        radial-gradient(circle at 62% 74%, rgba(255,179,208,.46) 0%, rgba(255,179,208,0) 48%),
+        radial-gradient(circle at 36% 30%, #fffefb 0%, #f6f0e6 32%, #e3d8c9 64%, #b7a693 100%);
+      box-shadow:
+        inset calc(var(--s) * -0.034) calc(var(--s) * -0.040) calc(var(--s) * 0.087) rgba(88, 62, 52, .30),
+        0 calc(var(--s) * 0.063) calc(var(--s) * 0.127) rgba(8, 5, 11, .48);
+    }
+
+    .p1 { --s: clamp(300px, 47vw, 640px); right: -13%; top: -13%;  animation: sp-drift-1 19s cubic-bezier(.45,.05,.55,.95) infinite; }
+    .p2 { --s: clamp(190px, 31vw, 440px); right:  1%;  top:  31%;  animation: sp-drift-2 24s cubic-bezier(.45,.05,.55,.95) infinite; filter: blur(8px); }
+    .p3 { --s: clamp(130px, 19vw, 275px); right: 23%;  top:  65%;  animation: sp-drift-3 31s cubic-bezier(.45,.05,.55,.95) infinite; filter: blur(5px); }
+    .p4 { --s: clamp(88px,  11vw, 158px); left:  51%;  top:   7%;  animation: sp-drift-2 24s cubic-bezier(.45,.05,.55,.95) infinite; filter: blur(4px); }
+    .p5 { --s: clamp(58px,   7vw, 100px); left:  12%;  top:  15%;  animation: sp-drift-1 19s cubic-bezier(.45,.05,.55,.95) infinite; }
+
+    @keyframes sp-drift-1 { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(-14px, -26px, 0); } }
+    @keyframes sp-drift-2 { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(18px, 20px, 0); } }
+    @keyframes sp-drift-3 { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(-22px, 14px, 0); } }
+
+    /* Seats the text on the colour without flattening it. */
+    .scrim {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(100deg, rgba(21, 15, 25, .48) 0%, rgba(21, 15, 25, .26) 46%, rgba(21, 15, 25, .04) 100%);
+    }
+
+    /* ── Layout ── */
+    .page {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      gap: var(--sp-space-6);
+      min-height: 100svh;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: var(--sp-space-5) var(--sp-space-5) var(--sp-space-6);
+      padding-left: max(var(--sp-space-5), env(safe-area-inset-left));
+      padding-right: max(var(--sp-space-5), env(safe-area-inset-right));
+    }
+
+    :focus-visible { outline: 3px solid rgba(232, 196, 138, .9); outline-offset: 3px; border-radius: 6px; }
+
+    .site-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); }
+    .brand { display: inline-flex; align-items: center; gap: var(--sp-space-3); text-decoration: none; color: var(--sp-on-ground); }
+    .brand img { width: 36px; height: 36px; display: block; }
+    .brand span { font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: var(--sp-text-lg); letter-spacing: -0.01em; }
+
+    .hero { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--sp-space-5); max-width: 62ch; }
+    .eyebrow { font-size: var(--sp-text-xs); font-weight: var(--sp-weight-bold); letter-spacing: var(--sp-tracking-label); text-transform: uppercase; color: var(--sp-eyebrow); }
+    h1 { margin: 0; font-family: var(--sp-font-display); font-weight: var(--sp-weight-bold); font-size: clamp(3.2rem, 8vw, 6.4rem); line-height: 0.94; letter-spacing: -0.032em; }
+    .claim { margin: 0; font-size: clamp(1.15rem, 2.2vw, 1.62rem); font-weight: var(--sp-weight-medium); line-height: 1.3; max-width: 30ch; }
+    .lede { margin: 0; font-size: clamp(1.0625rem, 1.6vw, 1.25rem); line-height: 1.62; color: var(--sp-on-ground-2); max-width: 52ch; }
+    .lede strong { font-weight: var(--sp-weight-semibold); color: var(--sp-on-ground); }
+
+    .promises { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-space-3); margin: 0; padding: 0; list-style: none; font-size: var(--sp-text-sm); font-weight: var(--sp-weight-semibold); letter-spacing: 0.06em; text-transform: uppercase; color: var(--sp-on-ground-2); }
+    .promises li { display: inline-flex; align-items: center; gap: var(--sp-space-3); }
+    .promises li + li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgba(253, 246, 238, .55); }
+
+    /* The promises row is a label strip, not prose, so it does not share the hero's text
+       measure: from tablet up it runs to its natural width and stays on one line. */
+    @media (min-width: 560px) {
+      .promises { flex-wrap: nowrap; width: max-content; }
+    }
+
+    footer { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-space-4); font-size: var(--sp-text-sm); color: var(--sp-on-ground-3); }
+
+    /* ── Phone ── */
+    @media (max-width: 720px) {
+      /* A phone (maker, 2026-10-17: "too packed"): more air between the parts and inside the text, the promises as a
+         list, and room at the bottom for Safari's toolbar, which floats over the page. */
+      .page { gap: var(--sp-space-7); padding: var(--sp-space-4) var(--sp-space-4) calc(var(--sp-space-7) + 56px + env(safe-area-inset-bottom)); }
+      .hero { gap: var(--sp-space-5); }
+      .claim { margin-top: var(--sp-space-2); }
+      .lede { font-size: 1.0625rem; line-height: 1.7; }
+      .promises { flex-direction: column; align-items: flex-start; gap: 12px; font-size: var(--sp-text-xs); letter-spacing: 0.1em; }
+      .promises li::before, .promises li + li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--sp-eyebrow); opacity: .8; }
+      .brand img { width: 32px; height: 32px; }
+      .brand span { font-size: var(--sp-text-md); }
+
+      .p1 { --s: 320px; right: -33%; top: -15%; }
+      .p2 { --s: 140px; left: -18%; right: auto; top: auto; bottom: 18%; }
+      .p3 { --s: 210px; right: -22%; top: auto; bottom: 4%; }
+      .p4, .p5 { display: none; }
+
+      .scrim { background: linear-gradient(180deg, rgba(21, 15, 25, .30) 0%, rgba(21, 15, 25, .14) 38%, rgba(21, 15, 25, .34) 100%); }
+
+      footer { flex-direction: column; align-items: flex-start; gap: var(--sp-space-3); }
+    }
+
+    /* base.css already damps animation globally; this is the explicit belt-and-braces. */
+    @media (prefers-reduced-motion: reduce) {
+      .p1, .p2, .p3, .p4, .p5 { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pearls" aria-hidden="true">
+    <span class="pearl p1"></span>
+    <span class="pearl p2"></span>
+    <span class="pearl p3"></span>
+    <span class="pearl p4"></span>
+    <span class="pearl p5"></span>
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+
+  <div class="page">
+
+    <header class="site-head">
+      <a class="brand" href="/">
+        <img src="studio-tile.svg" alt="" width="36" height="36">
+        <span>Scattered Pearls</span>
+      </a>
+    </header>
+
+    <main class="hero">
+      <span class="eyebrow">A one-man studio</span>
+      <h1>Scattered<br>Pearls</h1>
+      <p class="claim">Small, precious, scattered pearls.</p>
+      <p class="lede"><strong>Hi, I'm Alex.</strong> I make small, honest apps — the kind you buy, own, and simply use. No ads, no accounts, no subscriptions, nothing watching you. Lean and instantly useful, but made with care.</p>
+      <ul class="promises">
+        <li>Yours to keep</li>
+        <li>no subscriptions</li>
+        <li>no ads</li>
+        <li>no accounts</li>
+        <li>no tracking</li>
+      </ul>
+    </main>
+
+    <footer>
+      <span>© 2026 Scattered Pearls</span>
+      <span>Made with care, by one pair of hands.</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
